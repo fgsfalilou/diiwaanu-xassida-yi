@@ -365,16 +365,26 @@ body.menu-open { overflow: hidden; }
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
   box-shadow: 0 10px 24px rgba(201,154,46,.22);
 }
+/* Bouton or « contourné » : texte foncé sur fond clair par défaut,
+   puis variante sur le fond sombre du héros. */
 .btn-gold-outline {
-  color: var(--gold-light);
+  color: var(--deep);
   border-color: var(--gold);
+  background: #FFFDF5;
+  box-shadow: inset 0 0 0 1px rgba(201,154,46,.28);
+}
+.btn-gold-outline:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  box-shadow: 0 10px 24px rgba(201,154,46,.22);
+}
+.hero-actions .btn-gold-outline {
+  color: var(--gold-light);
   background: rgba(7,19,13,.32);
   box-shadow: inset 0 0 0 1px rgba(247,230,168,.12);
 }
-.btn-gold-outline:hover {
+.hero-actions .btn-gold-outline:hover {
   color: #14210F;
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  box-shadow: 0 10px 24px rgba(201,154,46,.22);
 }
 .btn-ghost {
   color: var(--gold-light);
