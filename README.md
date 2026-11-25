@@ -10,9 +10,9 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 
 ## Contenu
 
-- `index.html` : page complète, sans dépendance externe ni script. Navigation réduite à cinq entrées, accroche wolof/anglais, FAQ native (`<details>`) et galerie légendée/numérotée.
+- `index.html` : page complète, sans dépendance externe ni script. Navigation principale à cinq entrées, barre secondaire à six liens de rubriques, section « Rubriques du site », accroche wolof/anglais, FAQ native (`<details>`) et galerie légendée/numérotée.
 - `bibliotheque.html` : bibliothèque statique des khassaïdes, générée depuis `assets/books.json`. Aucun script ni nombre figé ; les PDF restent hébergés sur le R2 de l’application.
-- `rubriques.html` : **texte** et liens vers toutes les rubriques — aucune capture d’écran n’y est utilisée comme contenu.
+- `rubriques.html` : page historique restaurée : aperçus réels de l’application, texte de chaque rubrique et liens directs vers les six pages complètes (Bibliothèque, Prières, Nafilas, Nafila du jour, 99 Noms, XAM YOONWI). Aucun script ni fonction interactive inventée.
 - `nafilas.html` : texte des 30 nuits de nafilas, généré depuis les modèles Dart, en texte seul avec police Amiri et filets dorés.
 - `nafila-du-jour.html` : les 7 fiches de la semaine en français, wolof et anglais, générées depuis `nafila_du_jour.dart`.
 - `99-noms.html` : les 99 Noms d’Allah (arabe, latin, sens, dhikr), générés depuis `assets/divine_names.json`.

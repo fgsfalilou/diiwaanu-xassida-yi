@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rubriques de l’application — Diiwaanu Xassida Yi</title>
-  <meta name="description" content="Toutes les rubriques de Diiwaanu Xassida Yi en texte : bibliothèque, prières, calendrier, Qibla, nafilas, 99 Noms, XAM YOONWI et lecture hors ligne.">
+  <title>Rubriques du site — Diiwaanu Xassida Yi</title>
+  <meta name="description" content="Rubriques du site Diiwaanu Xassida Yi : bibliothèque de khassaïdes, prières, nafilas, nafila du jour, 99 Noms et XAM YOONWI, avec aperçus et liens directs.">
   <link rel="canonical" href="https://diiwaanu-xassida-yi.com/rubriques.html">
   <meta property="og:url" content="https://diiwaanu-xassida-yi.com/rubriques.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Rubriques de l’application — Diiwaanu Xassida Yi">
-  <meta property="og:description" content="Toutes les rubriques de Diiwaanu Xassida Yi en texte : bibliothèque, prières, calendrier, Qibla, nafilas, 99 Noms, XAM YOONWI et lecture hors ligne.">
+  <meta property="og:title" content="Rubriques du site — Diiwaanu Xassida Yi">
+  <meta property="og:description" content="Rubriques du site Diiwaanu Xassida Yi : bibliothèque de khassaïdes, prières, nafilas, nafila du jour, 99 Noms et XAM YOONWI, avec aperçus et liens directs.">
   <meta property="og:image" content="https://diiwaanu-xassida-yi.com/assets/app-icon.png">
   <link rel="icon" type="image/png" href="assets/app-icon.png">
   <style>    @font-face {
@@ -45,6 +45,7 @@
     }
     header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
     .nav { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0 10px; font-size: .92rem; }
+    .nav > div { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; }
     .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .brand img { width: 40px; height: 40px; border-radius: 11px; border: 1px solid rgba(240,210,122,.5); }
     .brand span { font-family: "Amiri Site", serif; font-size: 1.08rem; font-weight: 700; }
@@ -60,9 +61,52 @@
     .index-section { position: relative; z-index: 2; margin-top: -34px; }
     .index-box { padding: 20px; border: 2px solid var(--gold); border-radius: 18px; background: var(--paper-2); box-shadow: inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px rgba(184,135,26,.28), 0 18px 40px rgba(8,58,36,.12); text-align: center; }
     .index-box h2 { margin: 0 0 14px; color: var(--deep); font-size: 1.1rem; letter-spacing: .1em; text-transform: uppercase; }
+    .index-box h2.index-sub { margin-top: 18px; font-size: .92rem; }
     .index-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .index-grid a { padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(184,135,26,.34); text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--deep); }
     .index-grid a:hover, .index-grid a:focus-visible { background: var(--deep); color: var(--pale-gold); }
+
+    .rubrique {
+      display: grid;
+      grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+      scroll-margin-top: 24px;
+      margin-top: 44px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffdf7, var(--paper-2));
+      box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07);
+    }
+    .rubrique:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); }
+    .rubrique:nth-of-type(even) .shots { order: 2; }
+    .rubrique:nth-of-type(even) .copy { order: 1; }
+    .shots { display: grid; gap: 12px; justify-items: center; }
+    .shots.twin { grid-template-columns: 1fr 1fr; }
+    .shots figure { margin: 0; }
+    .shots a { display: block; width: 100%; }
+    .shots img {
+      width: 100%; height: auto;
+      aspect-ratio: 720 / 1560; object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid rgba(8,58,36,.16);
+      background: var(--night);
+    }
+    .shots figcaption { margin-top: 6px; text-align: center; color: var(--muted); font-size: .78rem; }
+    .copy h2 { margin: 4px 0 10px; color: var(--deep); font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .copy p { margin: 0 0 10px; color: var(--muted); }
+    .copy ul { margin: 0 0 16px; padding-left: 20px; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 40px; padding: 8px 16px;
+      border-radius: 999px; text-decoration: none;
+      font-size: .88rem; font-weight: 700;
+    }
+    .btn-gold { color: #10281c; background: linear-gradient(135deg, var(--pale-gold), var(--gold)); }
+    .btn-ghost { color: var(--deep); border: 1px solid var(--gold); }
+
     main { padding: 30px 0 80px; }
     .entry { scroll-margin-top: 22px; margin-top: 42px; padding: 30px 32px; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 18px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07); }
     .entry h2 { margin: 4px 0 18px; color: var(--deep); font-size: clamp(1.7rem, 3vw, 2.25rem); }
@@ -83,14 +127,18 @@
     .manifesto h2 { margin: 0 0 8px; font-size: 1.8rem; }
     .manifesto p { margin: 0; color: rgba(247,244,233,.84); }
     .manifesto a { color: var(--pale-gold); font-weight: 700; }
+    .note { margin-top: 26px; text-align: center; color: var(--muted); font-size: .86rem; }
     footer { padding: 32px 0 38px; color: rgba(247,244,233,.76); background: var(--night); font-size: .88rem; }
     footer a { color: var(--pale-gold); }
     .line { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(240,210,122,.18); }
-    .top-link { position: fixed; right: 20px; bottom: 20px; z-index: 5; display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid var(--gold); border-radius: 50%; background: var(--deep); color: var(--pale-gold); text-decoration: none; box-shadow: 0 12px 28px rgba(8,58,36,.24); }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 28px, 980px); }
+      .nav > div { justify-content: flex-start; }
       .entry { padding: 24px 20px; }
       .name-grid { grid-template-columns: 1fr; }
+      .rubrique, .rubrique:nth-of-type(even) { grid-template-columns: 1fr; gap: 20px; padding: 22px; }
+      .rubrique:nth-of-type(even) .shots, .rubrique:nth-of-type(even) .copy { order: initial; }
+      .shots { max-width: 360px; margin: 0 auto; }
     }
 </style>
 </head>
@@ -104,18 +152,21 @@
         <span>Diiwaanu Xassida Yi</span>
       </a>
       <div>
-        <a href="rubriques.html">Rubriques</a> ·
-        <a href="bibliotheque.html">Bibliothèque</a> ·
-        <a href="nafilas.html">Nafilas</a> ·
-        <a href="xam-yoonwi.html">XAM YOONWI</a> ·
+        <a href="rubriques.html">Rubriques</a>
+        <a href="bibliotheque.html">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
         <a href="index.html#contact">Contact</a>
       </div>
     </nav>
     <div class="hero">
-      <p class="eyebrow">Rubriques de l’application</p>
-      <h1>Le contenu<br><span>des rubriques</span></h1>
-      <p class="lead">Pas des images : les textes, les listes et les liens qui correspondent à chaque fenêtre de l’application.</p>
-      <p class="hint">Astuce : appuyez sur Ctrl + F pour chercher une rubrique.</p>
+      <p class="eyebrow">Les rubriques du site</p>
+      <h1>Diiwaanu Xassida Yi</h1>
+      <p class="lead">La bibliothèque et les rubriques restent accessibles : aperçus réels de l’application, puis liens directs vers chaque page complète, gratuitement et sans compte.</p>
+      <p class="hint">But non lucratif — Uniquement pour servir Serigne Touba</p>
       <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
     </div>
   </div>
@@ -124,11 +175,20 @@
 <main>
   <div class="wrap">
     <section class="index-box">
-      <h2>Sommaire des rubriques</h2>
+      <h2>Accès direct aux rubriques du site</h2>
+      <nav class="index-grid" aria-label="Rubriques du site">
+        <a href="bibliotheque.html">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
+      </nav>
+      <h2 class="index-sub">Toutes les sections présentées sur cette page</h2>
       <nav class="index-grid" aria-label="Index des rubriques">
-        <a href="#bibliotheque">Bibliothèque des khassaïdes</a>
-        <a href="#prieres">Heures de prière</a>
-        <a href="#calendrier">Événements islamiques et mourides</a>
+        <a href="#bibliotheque">Bibliothèque et fiche du livre</a>
+        <a href="#prieres">Heures de prière et widget</a>
+        <a href="#calendrier">Événements et compte à rebours</a>
         <a href="#qibla">Qibla sans GPS</a>
         <a href="#nafilas">Nafilas du Ramadan</a>
         <a href="#nafila-jour">Nafila du jour</a>
@@ -136,94 +196,200 @@
         <a href="#xam-yoonwi">XAM YOONWI</a>
         <a href="#mes-pdf">Mes PDF téléchargés</a>
         <a href="#acces">Tous les accès</a>
-        <a href="#apropos">À propos</a>
+        <a href="#apropos">À propos et partage</a>
       </nav>
     </section>
 
-    <div class="name-grid">
-    <article class="name-card" id="bibliotheque">
-      <span class="name-num">Lecture</span>
-      <p class="latin">Bibliothèque des khassaïdes</p>
-      <p class="sens">Catalogue complet trié par langue puis par ordre alphabétique. Chaque fiche donne accès au PDF hébergé sur le R2 de l’application, sans passer par un site tiers.</p>
-      <p class="sens">Dans l’application : recherche avec saisie vocale, filtres favoris &#47; téléchargements &#47; langue, lecture intégrée du PDF.</p>
-      <p><a class="btn btn-gold" href="bibliotheque.html">Ouvrir la bibliothèque →</a></p>
-    </article>
-    <article class="name-card" id="prieres">
-      <span class="name-num">Horaires</span>
-      <p class="latin">Heures de prière</p>
-      <p class="sens">Horaires calculés hors ligne pour la ville choisie manuellement. Le compte à rebours suit l’heure du téléphone ; aucune position GPS n’est demandée.</p>
-      <p class="sens">L’appel personnel, enregistré avec l’accord du muezzin, reste désactivé au départ. Les permissions ne sont demandées qu’au premier activage, avec un bouton manuel « Écouter l’appel ».</p>
-      <p><a class="btn btn-gold" href="prieres.html#horaires">Voir les villes et les horaires →</a></p>
-    </article>
-    <article class="name-card" id="calendrier">
-      <span class="name-num">Calendrier</span>
-      <p class="latin">Événements islamiques et mourides</p>
-      <p class="sens">Grand Magal de Touba (18 Safar), Ramadan, Laylat al-Qadr, Aïd al-Fitr, Aïd al-Adha et les autres repères hijri sont calculés sur l’appareil.</p>
-      <p class="sens">Le réglage « Sénégal &#47; Touba (+1 jour) » ne décale que les événements religieux, jamais les prières ni le compte à rebours.</p>
-      <p><a class="btn btn-gold" href="prieres.html#calendrier">Voir les 9 événements →</a></p>
-    </article>
-    <article class="name-card" id="qibla">
-      <span class="name-num">Orientation</span>
-      <p class="latin">Qibla sans GPS</p>
-      <p class="sens">Direction calculée depuis la ville manuelle. Boussole vivante quand les capteurs le permettent, avec repli statique sinon.</p>
-      <p class="sens">Badge « Nord magnétique » et pastille de précision : Bonne, Moyenne, Faible ou Indisponible.</p>
-      <p><a class="btn btn-gold" href="prieres.html#qibla">Lire la rubrique Qibla →</a></p>
-    </article>
-    <article class="name-card" id="nafilas">
-      <span class="name-num">Ramadan</span>
-      <p class="latin">Nafilas du Ramadan — 30 nuits</p>
-      <p class="sens">Les trente nuits en texte seul : invocations, répétitions et bienfaits, avec police Amiri et filets dorés. Aucun « 7000 » ni résidu OCR.</p>
-      <p class="sens">Première nuit : الليلة الأولى · 10 rakâts.</p>
-      <p><a class="btn btn-gold" href="nafilas.html">Lire les 30 nuits →</a></p>
-    </article>
-    <article class="name-card" id="nafila-jour">
-      <span class="name-num">Quotidien</span>
-      <p class="latin">Nafila du jour — 7 fiches</p>
-      <p class="sens">Les fiches de la semaine en français, wolof et anglais. L’application ouvre le jour du téléphone avec le badge « Aujourd’hui ».</p>
-      <p class="sens">Première fiche : Altine — Lundi. Aucune image ni lien vidéo.</p>
-      <p><a class="btn btn-gold" href="nafila-du-jour.html">Lire les 7 fiches →</a></p>
-    </article>
-    <article class="name-card" id="noms">
-      <span class="name-num">Invocation</span>
-      <p class="latin">99 Noms d’Allah</p>
-      <p class="sens">Chaque Nom est donné en arabe, en transcription latine et en français, avec son dhikr quand il figure dans l’application.</p>
-      <p class="sens">Premier Nom : Allah — Le Dieu Absolu qui se révèle, l&#39;Unique digne d&#39;adoration.</p>
-      <p><a class="btn btn-gold" href="99-noms.html">Voir les 99 Noms →</a></p>
-    </article>
-    <article class="name-card" id="xam-yoonwi">
-      <span class="name-num">Connaissance</span>
-      <p class="latin">XAM YOONWI — 30 chapitres</p>
-      <p class="sens">Vie de Serigne Touba, enseignements, écrits, Touba, Grand Magal, Khalifes, famille, disciples, exil et témoignages, en texte hors ligne.</p>
-      <p class="sens">Premier chapitre : Bienvenue — Cheikh Ahmadou Bamba · Khadimou Rassoul. Portraits recadrés depuis les planches ; planches complètes hors APK.</p>
-      <p><a class="btn btn-gold" href="xam-yoonwi.html">Lire les 30 chapitres →</a></p>
-    </article>
-    <article class="name-card" id="mes-pdf">
-      <span class="name-num">Hors ligne</span>
-      <p class="latin">Mes PDF téléchargés</p>
-      <p class="sens">Les fichiers enregistrés restent dans l’application et s’ouvrent dans le lecteur intégré, avec les proportions de page conservées.</p>
-      <p class="sens">Aucun historique n’est envoyé : tout reste sur l’appareil.</p>
-      
-    </article>
-    <article class="name-card" id="acces">
-      <span class="name-num">Navigation</span>
-      <p class="latin">Tous les accès</p>
-      <p class="sens">Le bouton flottant 3D ouvre un menu unique vers la bonne fenêtre, sans modifier les barres du haut et du bas.</p>
-      <p class="sens">Les quatre rubriques du bas sont : Bibliothèque, Nafilas R, XAM YOONWI, 99 Noms.</p>
-      
-    </article>
-    <article class="name-card" id="apropos">
-      <span class="name-num">Projet</span>
-      <p class="latin">À propos</p>
-      <p class="sens">Application réalisée par Mouhamadou Falilou Seye. Gratuite, sans publicité, sans analytique et sans paiement dans l’application.</p>
-      <p class="sens">But non lucratif — Uniquement pour servir Serigne Touba. Contact : beguefallou@gmail.com.</p>
-      <p><a class="btn btn-gold" href="index.html#contact">Nous contacter →</a></p>
-    </article>
-    </div>
+    <section class="rubrique" id="bibliotheque">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/01_bibliotheque.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/01_bibliotheque.png" alt="Bibliothèque — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Bibliothèque</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Lecture</span>
+        <h2>Bibliothèque et fiche du livre</h2>
+        <p>La bibliothèque de khassaïdes reste la pièce centrale du site : les titres sont classés par langue puis par ordre alphabétique, avec un lien direct vers chaque PDF hébergé sur le R2 de l’application.</p>
+        <ul><li>Recherche par nom et saisie vocale dans l’application.</li><li>Filtres par favoris, téléchargements et langue.</li><li>Lecture intégrée des PDF, sans passer par un site tiers.</li></ul>
+        <div class="links"><a class="btn btn-gold" href="bibliotheque.html">Ouvrir la bibliothèque →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="prieres">
+      <div class="shots twin">
+        <figure>
+          <a href="assets/screenshots/v2/02_prieres.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/02_prieres.png" alt="Heures de prière — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Heures de prière</figcaption>
+        </figure>
+        <figure>
+          <a href="assets/screenshots/v2/03_fiche.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/03_fiche.png" alt="Fiche du livre — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Fiche du livre</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Horaires</span>
+        <h2>Heures de prière et widget</h2>
+        <p>Les horaires sont calculés hors ligne pour la ville choisie manuellement, sans GPS. Le compte à rebours suit l’heure du téléphone ; le widget affiche les cinq prières et la prochaine.</p>
+        <ul><li>Appel personnel désactivé au départ, activé seulement volontairement.</li><li>Bouton manuel « Écouter l’appel » conservé dans l’application.</li></ul>
+        <div class="links"><a class="btn btn-gold" href="prieres.html#horaires">Voir les villes et les horaires →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="calendrier">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/04_evenements.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/04_evenements.png" alt="Événements — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Événements</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Calendrier</span>
+        <h2>Événements et compte à rebours</h2>
+        <p>Grand Magal, Ramadan et autres repères mourides sont affichés sans connexion. Le réglage « Sénégal &#47; Touba (+1 jour) » ne décale que les événements religieux.</p>
+        
+        <div class="links"><a class="btn btn-gold" href="prieres.html#calendrier">Voir les 9 événements →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="qibla">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/10_qibla.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/10_qibla.png" alt="Qibla — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Qibla</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Orientation</span>
+        <h2>Qibla sans GPS</h2>
+        <p>La direction est calculée depuis la ville choisie manuellement. La boussole est vivante quand les capteurs le permettent ; sinon, un repère statique prend le relais.</p>
+        <ul><li>Badge « Nord magnétique » pour éviter toute confusion.</li><li>Précision indiquée : Bonne, Moyenne, Faible ou Indisponible.</li></ul>
+        <div class="links"><a class="btn btn-gold" href="prieres.html#qibla">Lire la rubrique Qibla →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="nafilas">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/07_nafilas_ramadan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/07_nafilas_ramadan.png" alt="Nafilas R — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Nafilas R</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Ramadan</span>
+        <h2>Nafilas du Ramadan — 30 nuits</h2>
+        <p>Les nuits sont présentées en texte seul, avec les invocations, leurs répétitions et leurs bienfaits, dans la même sobriété que l’application : police Amiri et filets dorés.</p>
+        
+        <div class="links"><a class="btn btn-gold" href="nafilas.html">Lire les 30 nuits →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="nafila-jour">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/11_nafila_du_jour.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/11_nafila_du_jour.png" alt="Nafila du jour — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Nafila du jour</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Quotidien</span>
+        <h2>Nafila du jour — 7 fiches</h2>
+        <p>Les fiches de la semaine sont lues en français, wolof et anglais. L’application ouvre le jour du téléphone avec le badge « Aujourd’hui ».</p>
+        
+        <div class="links"><a class="btn btn-gold" href="nafila-du-jour.html">Lire les 7 fiches →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="noms">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/06_99_noms.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/06_99_noms.png" alt="99 Noms — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>99 Noms</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Invocation</span>
+        <h2>99 Noms d’Allah</h2>
+        <p>Chaque Nom est affiché en arabe, en transcription latine et en français, avec son dhikr lorsqu’il figure dans l’application.</p>
+        
+        <div class="links"><a class="btn btn-gold" href="99-noms.html">Voir les 99 Noms →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="xam-yoonwi">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/09_xam_yoonwi.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/09_xam_yoonwi.png" alt="XAM YOONWI — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>XAM YOONWI</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Connaissance</span>
+        <h2>XAM YOONWI — 30 chapitres</h2>
+        <p>Vie de Serigne Touba, enseignements, écrits, Touba, Grand Magal, Khalifes, famille et disciples : trente chapitres lisibles hors ligne, avec portraits recadrés depuis les planches.</p>
+        
+        <div class="links"><a class="btn btn-gold" href="xam-yoonwi.html">Lire les 30 chapitres →</a></div>
+      </div>
+    </section>
+    <section class="rubrique" id="mes-pdf">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/08_mes_pdf.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/08_mes_pdf.png" alt="Mes PDF — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>Mes PDF</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Hors ligne</span>
+        <h2>Mes PDF téléchargés</h2>
+        <p>Les fichiers enregistrés restent accessibles dans l’application et s’ouvrent dans le lecteur intégré, avec les proportions des pages conservées.</p>
+        <ul><li>Aucun historique n’est envoyé : tout reste sur l’appareil.</li></ul>
+        
+      </div>
+    </section>
+    <section class="rubrique" id="acces">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/05_a_propos.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/05_a_propos.png" alt="À propos et menu — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>À propos et menu</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Navigation</span>
+        <h2>Tous les accès</h2>
+        <p>Le bouton flottant 3D ouvre un menu unique vers la bonne fenêtre, sans modifier les barres du haut et du bas de l’application.</p>
+        <ul><li>Les quatre rubriques du bas sont : Bibliothèque, Nafilas R, XAM YOONWI, 99 Noms.</li></ul>
+        
+      </div>
+    </section>
+    <section class="rubrique" id="apropos">
+      <div class="shots">
+        <figure>
+          <a href="assets/screenshots/v2/05_a_propos.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/05_a_propos.png" alt="À propos — ouvrir en grand" width="720" height="1560" loading="lazy"></a>
+          <figcaption>À propos</figcaption>
+        </figure>
+      </div>
+      <div class="copy">
+        <span class="kicker">Projet</span>
+        <h2>À propos et partage</h2>
+        <p>Application réalisée par Mouhamadou Falilou Seye. Elle est gratuite, sans publicité, sans analytique et sans paiement dans l’application.</p>
+        
+        <div class="links"><a class="btn btn-gold" href="index.html#contact">Nous contacter →</a></div>
+      </div>
+    </section>
 
     <div class="manifesto">
-      <h2>Le contenu, pas l’image</h2>
-      <p>Cette page donne accès au <strong>texte réel</strong> des rubriques, généré depuis les modèles de l’application. Les captures restent sur la page d’accueil à titre d’aperçu visuel uniquement. <a href="index.html">Retour à l’accueil →</a></p>
+      <h2>Des pages réelles, pas une simple description</h2>
+      <p>Les aperçus ci-dessus sont des captures prises dans l’application. Ils renvoient aux pages qui existent réellement sur le site : bibliothèque de khassaïdes, prières, nafilas, nafila du jour, 99 Noms et XAM YOONWI. Aucun lecteur interactif ni fonction inventée n’est ajouté.</p>
+      <p><a href="index.html">Retour à l’accueil</a> · <a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a></p>
     </div>
+
+    <p class="note">Captures prises directement dans l’application, au format 720 × 1560. Cliquez sur une image pour l’ouvrir en grand.</p>
+
   </div>
 </main>
-Closure: () => String from Function 'footer': static.()
+<footer>
+  <div class="wrap">
+    <div>Diiwaanu Xassida Yi · But non lucratif — Uniquement pour servir Serigne Touba</div>
+    <div class="line">
+      <a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a> ·
+      <a href="mailto:beguefallou@gmail.com">beguefallou@gmail.com</a> ·
+      <a href="https://wa.me/13018578776">WhatsApp</a>
+    </div>
+    <div class="line">Réalisé par Mouhamadou Falilou Seye. Les traductions et transcriptions restent la propriété de leurs auteurs respectifs ; retrait sur simple demande.</div>
+  </div>
+</footer>
+</body>
+</html>

@@ -102,6 +102,28 @@
     .nav-links a:hover, .nav-links a:focus-visible,
     .nav-links a[aria-current="page"] { color: var(--pale-gold); }
 
+    .rubrique-nav {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .rubrique-nav a {
+      padding: 5px 12px;
+      border: 1px solid rgba(240,210,122,.34);
+      border-radius: 999px;
+      color: rgba(247,244,233,.86);
+      font-size: .82rem;
+      text-decoration: none;
+    }
+    .rubrique-nav a:hover, .rubrique-nav a:focus-visible {
+      border-color: var(--pale-gold);
+      color: var(--pale-gold);
+      background: rgba(240,210,122,.1);
+    }
+
     .hero-grid {
       display: grid;
       grid-template-columns: 1.05fr .95fr;
@@ -255,6 +277,8 @@
 
     .card h3 { margin: 0 0 8px; font-size: 1.3rem; }
     .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .rubrique-grid .card p + p { margin-top: 8px; }
+    .rubrique-grid .card .btn { margin-top: 14px; }
 
     .shots { background: #fff; border-top: 1px solid rgba(14,107,64,.1); border-bottom: 1px solid rgba(14,107,64,.1); }
 
@@ -367,6 +391,8 @@
         gap: 8px;
         font-size: .8rem;
       }
+      .rubrique-nav { gap: 6px; }
+      .rubrique-nav a { padding: 4px 9px; font-size: .76rem; }
       .hero h1 { font-size: clamp(2.3rem, 12vw, 3.4rem); }
       .lead { font-size: 1rem; }
       .gallery figure { width: min(250px, 78vw); }
@@ -396,6 +422,15 @@
         <a href="#apercus">Aperçus</a>
         <a href="#contact">Contact</a>
       </div>
+    </nav>
+
+    <nav class="rubrique-nav" aria-label="Accès direct aux rubriques du site">
+      <a href="bibliotheque.html">Bibliothèque</a>
+      <a href="prieres.html">Prières</a>
+      <a href="nafilas.html">Nafilas</a>
+      <a href="nafila-du-jour.html">Nafila du jour</a>
+      <a href="99-noms.html">99 Noms</a>
+      <a href="xam-yoonwi.html">XAM YOONWI</a>
     </nav>
 
     <div class="hero-grid" id="accueil">
@@ -489,6 +524,56 @@
           <p>Sombre par défaut, clair ou automatique ; taille du texte ajustable ; respect du réglage « Réduire le mouvement ».</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="rubriques-site">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Rubriques du site</span>
+        <h2>Le contenu reste accessible</h2>
+        <p>La bibliothèque de khassaïdes et les six rubriques du site restent ouvertes à tous. Ce sont des pages réelles, sans compte, sans publicité et sans fonction interactive inventée.</p>
+      </div>
+
+      <div class="features rubrique-grid">
+        <article class="card">
+          <div class="mark" aria-hidden="true">01</div>
+          <h3>Bibliothèque</h3>
+          <p>760 khassaïdes classés par langue puis par ordre alphabétique, avec accès direct aux PDF.</p>
+          <p><a class="btn btn-ghost" href="bibliotheque.html">Ouvrir la bibliothèque →</a></p>
+        </article>
+        <article class="card">
+          <div class="mark" aria-hidden="true">02</div>
+          <h3>Prières</h3>
+          <p>Horaires hors ligne, villes choisies manuellement, calendrier, Qibla et widget.</p>
+          <p><a class="btn btn-ghost" href="prieres.html">Voir les prières →</a></p>
+        </article>
+        <article class="card">
+          <div class="mark" aria-hidden="true">03</div>
+          <h3>Nafilas</h3>
+          <p>Les 30 nuits de nafilas en texte seul, avec invocations, répétitions et bienfaits.</p>
+          <p><a class="btn btn-ghost" href="nafilas.html">Lire les nafilas →</a></p>
+        </article>
+        <article class="card">
+          <div class="mark" aria-hidden="true">04</div>
+          <h3>Nafila du jour</h3>
+          <p>Les sept fiches de la semaine en français, wolof et anglais.</p>
+          <p><a class="btn btn-ghost" href="nafila-du-jour.html">Lire la fiche du jour →</a></p>
+        </article>
+        <article class="card">
+          <div class="mark" aria-hidden="true">05</div>
+          <h3>99 Noms</h3>
+          <p>Noms d’Allah en arabe, transcription latine, français et dhikr quand il figure.</p>
+          <p><a class="btn btn-ghost" href="99-noms.html">Voir les 99 Noms →</a></p>
+        </article>
+        <article class="card">
+          <div class="mark" aria-hidden="true">06</div>
+          <h3>XAM YOONWI</h3>
+          <p>30 chapitres sur Serigne Touba, ses enseignements, Touba, le Grand Magal et sa famille.</p>
+          <p><a class="btn btn-ghost" href="xam-yoonwi.html">Lire les chapitres →</a></p>
+        </article>
+      </div>
+      <p class="note-links">Voir aussi <a href="rubriques.html">la page des rubriques et leurs aperçus</a>.</p>
     </div>
   </section>
 

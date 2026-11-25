@@ -45,6 +45,7 @@
     }
     header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
     .nav { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0 10px; font-size: .92rem; }
+    .nav > div { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; }
     .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .brand img { width: 40px; height: 40px; border-radius: 11px; border: 1px solid rgba(240,210,122,.5); }
     .brand span { font-family: "Amiri Site", serif; font-size: 1.08rem; font-weight: 700; }
@@ -60,9 +61,52 @@
     .index-section { position: relative; z-index: 2; margin-top: -34px; }
     .index-box { padding: 20px; border: 2px solid var(--gold); border-radius: 18px; background: var(--paper-2); box-shadow: inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px rgba(184,135,26,.28), 0 18px 40px rgba(8,58,36,.12); text-align: center; }
     .index-box h2 { margin: 0 0 14px; color: var(--deep); font-size: 1.1rem; letter-spacing: .1em; text-transform: uppercase; }
+    .index-box h2.index-sub { margin-top: 18px; font-size: .92rem; }
     .index-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .index-grid a { padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(184,135,26,.34); text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--deep); }
     .index-grid a:hover, .index-grid a:focus-visible { background: var(--deep); color: var(--pale-gold); }
+
+    .rubrique {
+      display: grid;
+      grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+      scroll-margin-top: 24px;
+      margin-top: 44px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffdf7, var(--paper-2));
+      box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07);
+    }
+    .rubrique:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); }
+    .rubrique:nth-of-type(even) .shots { order: 2; }
+    .rubrique:nth-of-type(even) .copy { order: 1; }
+    .shots { display: grid; gap: 12px; justify-items: center; }
+    .shots.twin { grid-template-columns: 1fr 1fr; }
+    .shots figure { margin: 0; }
+    .shots a { display: block; width: 100%; }
+    .shots img {
+      width: 100%; height: auto;
+      aspect-ratio: 720 / 1560; object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid rgba(8,58,36,.16);
+      background: var(--night);
+    }
+    .shots figcaption { margin-top: 6px; text-align: center; color: var(--muted); font-size: .78rem; }
+    .copy h2 { margin: 4px 0 10px; color: var(--deep); font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .copy p { margin: 0 0 10px; color: var(--muted); }
+    .copy ul { margin: 0 0 16px; padding-left: 20px; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 40px; padding: 8px 16px;
+      border-radius: 999px; text-decoration: none;
+      font-size: .88rem; font-weight: 700;
+    }
+    .btn-gold { color: #10281c; background: linear-gradient(135deg, var(--pale-gold), var(--gold)); }
+    .btn-ghost { color: var(--deep); border: 1px solid var(--gold); }
+
     main { padding: 30px 0 80px; }
     .entry { scroll-margin-top: 22px; margin-top: 42px; padding: 30px 32px; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 18px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07); }
     .entry h2 { margin: 4px 0 18px; color: var(--deep); font-size: clamp(1.7rem, 3vw, 2.25rem); }
@@ -83,14 +127,18 @@
     .manifesto h2 { margin: 0 0 8px; font-size: 1.8rem; }
     .manifesto p { margin: 0; color: rgba(247,244,233,.84); }
     .manifesto a { color: var(--pale-gold); font-weight: 700; }
+    .note { margin-top: 26px; text-align: center; color: var(--muted); font-size: .86rem; }
     footer { padding: 32px 0 38px; color: rgba(247,244,233,.76); background: var(--night); font-size: .88rem; }
     footer a { color: var(--pale-gold); }
     .line { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(240,210,122,.18); }
-    .top-link { position: fixed; right: 20px; bottom: 20px; z-index: 5; display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid var(--gold); border-radius: 50%; background: var(--deep); color: var(--pale-gold); text-decoration: none; box-shadow: 0 12px 28px rgba(8,58,36,.24); }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 28px, 980px); }
+      .nav > div { justify-content: flex-start; }
       .entry { padding: 24px 20px; }
       .name-grid { grid-template-columns: 1fr; }
+      .rubrique, .rubrique:nth-of-type(even) { grid-template-columns: 1fr; gap: 20px; padding: 22px; }
+      .rubrique:nth-of-type(even) .shots, .rubrique:nth-of-type(even) .copy { order: initial; }
+      .shots { max-width: 360px; margin: 0 auto; }
     }
 </style>
 </head>
@@ -104,10 +152,13 @@
         <span>Diiwaanu Xassida Yi</span>
       </a>
       <div>
-        <a href="rubriques.html">Rubriques</a> ·
-        <a href="bibliotheque.html">Bibliothèque</a> ·
-        <a href="nafilas.html">Nafilas</a> ·
-        <a href="xam-yoonwi.html">XAM YOONWI</a> ·
+        <a href="rubriques.html">Rubriques</a>
+        <a href="bibliotheque.html">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
         <a href="index.html#contact">Contact</a>
       </div>
     </nav>
@@ -457,4 +508,16 @@
     </div>
   </div>
 </main>
-Closure: () => String from Function 'footer': static.()
+<footer>
+  <div class="wrap">
+    <div>Diiwaanu Xassida Yi · But non lucratif — Uniquement pour servir Serigne Touba</div>
+    <div class="line">
+      <a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a> ·
+      <a href="mailto:beguefallou@gmail.com">beguefallou@gmail.com</a> ·
+      <a href="https://wa.me/13018578776">WhatsApp</a>
+    </div>
+    <div class="line">Réalisé par Mouhamadou Falilou Seye. Les traductions et transcriptions restent la propriété de leurs auteurs respectifs ; retrait sur simple demande.</div>
+  </div>
+</footer>
+</body>
+</html>
