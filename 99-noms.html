@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>99 Noms d’Allah — Diiwaanu Xassida Yi</title>
   <meta name="description" content="Les 99 Noms d’Allah en arabe, transcription latine et français, avec leurs dhikrs, lisibles hors ligne.">
@@ -11,168 +11,73 @@
   <meta property="og:title" content="99 Noms d’Allah — Diiwaanu Xassida Yi">
   <meta property="og:description" content="Les 99 Noms d’Allah en arabe, transcription latine et français, avec leurs dhikrs, lisibles hors ligne.">
   <meta property="og:image" content="https://diiwaanu-xassida-yi.com/assets/app-icon.png">
+  <meta name="theme-color" content="#0B1E15">
   <link rel="icon" type="image/png" href="assets/app-icon.png">
-  <style>    @font-face {
-      font-family: "Amiri Site";
-      src: url("assets/fonts/AmiriQuran-Regular.ttf") format("truetype");
-      font-display: swap;
-    }
-    :root {
-      --green: #0E6B40; --deep: #083A24; --gold: #B8871A;
-      --pale-gold: #F0D27A; --paper: #F4F6EF; --paper-2: #FBFBF6;
-      --night: #0C1F16; --ink: #16251d; --muted: #5c6a61;
-      --line: rgba(184,135,26,.34);
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: auto; }
-    body {
-      margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--ink); line-height: 1.72; -webkit-font-smoothing: antialiased;
-      background:
-        radial-gradient(circle at 8% 4%, rgba(184,135,26,.08), transparent 30%),
-        repeating-linear-gradient(0deg, rgba(184,135,26,.022) 0 1px, transparent 1px 6px),
-        var(--paper);
-    }
-    h1, h2, h3, .serif { font-family: "Amiri Site", "Times New Roman", Georgia, serif; letter-spacing: -.01em; }
-    a { color: inherit; }
-    :focus-visible { outline: 3px solid var(--pale-gold); outline-offset: 3px; border-radius: 6px; }
-    .wrap { width: min(980px, 100% - 40px); margin: 0 auto; }
-    header {
-      position: relative; overflow: hidden; color: #f7f4e9; padding-bottom: 68px;
-      background:
-        radial-gradient(circle at 84% 8%, rgba(240,210,122,.16), transparent 40%),
-        linear-gradient(150deg, var(--night), var(--deep) 62%, var(--night));
-    }
-    header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .nav { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0 10px; font-size: .92rem; }
-    .nav > div { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 14px; }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand img { width: 40px; height: 40px; border-radius: 11px; border: 1px solid rgba(240,210,122,.5); }
-    .brand span { font-family: "Amiri Site", serif; font-size: 1.08rem; font-weight: 700; }
-    .nav a:not(.brand) { text-decoration: none; color: rgba(247,244,233,.78); }
-    .nav a:not(.brand):hover { color: var(--pale-gold); }
-    .hero { position: relative; z-index: 1; padding-top: 50px; max-width: 740px; }
-    .eyebrow { display: inline-block; margin: 0 0 16px; padding: 5px 13px; border: 1px solid rgba(240,210,122,.42); border-radius: 999px; color: var(--pale-gold); font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .hero h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.06; }
-    .hero h1 span { color: var(--pale-gold); }
-    .lead { margin: 18px 0 8px; max-width: 60ch; color: rgba(247,244,233,.86); font-size: 1.05rem; }
-    .hint { margin: 0; color: var(--pale-gold); font-size: .9rem; font-style: italic; }
-    .ornament { margin: 22px 0 0; color: var(--pale-gold); letter-spacing: .5em; font-size: .72rem; }
-    .index-section { position: relative; z-index: 2; margin-top: -34px; }
-    .index-box { padding: 20px; border: 2px solid var(--gold); border-radius: 18px; background: var(--paper-2); box-shadow: inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px rgba(184,135,26,.28), 0 18px 40px rgba(8,58,36,.12); text-align: center; }
-    .index-box h2 { margin: 0 0 14px; color: var(--deep); font-size: 1.1rem; letter-spacing: .1em; text-transform: uppercase; }
-    .index-box h2.index-sub { margin-top: 18px; font-size: .92rem; }
-    .index-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-    .index-grid a { padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(184,135,26,.34); text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--deep); }
-    .index-grid a:hover, .index-grid a:focus-visible { background: var(--deep); color: var(--pale-gold); }
-
-    .rubrique {
-      display: grid;
-      grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
-      gap: 28px;
-      align-items: center;
-      scroll-margin-top: 24px;
-      margin-top: 44px;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: linear-gradient(180deg, #fffdf7, var(--paper-2));
-      box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07);
-    }
-    .rubrique:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); }
-    .rubrique:nth-of-type(even) .shots { order: 2; }
-    .rubrique:nth-of-type(even) .copy { order: 1; }
-    .shots { display: grid; gap: 12px; justify-items: center; }
-    .shots.twin { grid-template-columns: 1fr 1fr; }
-    .shots figure { margin: 0; }
-    .shots a { display: block; width: 100%; }
-    .shots img {
-      width: 100%; height: auto;
-      aspect-ratio: 720 / 1560; object-fit: contain;
-      border-radius: 14px;
-      border: 1px solid rgba(8,58,36,.16);
-      background: var(--night);
-    }
-    .shots figcaption { margin-top: 6px; text-align: center; color: var(--muted); font-size: .78rem; }
-    .copy h2 { margin: 4px 0 10px; color: var(--deep); font-size: clamp(1.6rem, 3vw, 2.2rem); }
-    .copy p { margin: 0 0 10px; color: var(--muted); }
-    .copy ul { margin: 0 0 16px; padding-left: 20px; color: var(--muted); }
-    .links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-height: 40px; padding: 8px 16px;
-      border-radius: 999px; text-decoration: none;
-      font-size: .88rem; font-weight: 700;
-    }
-    .btn-gold { color: #10281c; background: linear-gradient(135deg, var(--pale-gold), var(--gold)); }
-    .btn-ghost { color: var(--deep); border: 1px solid var(--gold); }
-
-    main { padding: 30px 0 80px; }
-    .entry { scroll-margin-top: 22px; margin-top: 42px; padding: 30px 32px; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 18px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07); }
-    .entry h2 { margin: 4px 0 18px; color: var(--deep); font-size: clamp(1.7rem, 3vw, 2.25rem); }
-    .kicker { color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-    details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
-    summary { cursor: pointer; font-weight: 700; color: var(--deep); }
-    .entry p { margin: 0 0 12px; }
-    .entry p:last-child { margin-bottom: 0; }
-    .name-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
-    .name-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: 0 10px 26px rgba(8,58,36,.06); }
-    .name-num { color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em; }
-    .arabic { margin: 6px 0; color: var(--green); font-family: "Amiri Site", serif; font-size: 1.8rem; line-height: 1.5; }
-    .latin { margin: 0 0 8px; color: var(--deep); font-family: "Amiri Site", serif; font-size: 1.25rem; font-weight: 700; }
-    .sens { margin: 0; color: var(--muted); font-size: .93rem; }
-    .dhikr { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--green); font-size: .9rem; }
-    .letter { margin: 42px 0 0; color: var(--deep); font-size: 2rem; border-bottom: 1px solid var(--line); }
-    .manifesto { margin-top: 58px; padding: 30px 34px; border: 1px solid var(--gold); border-radius: 18px; color: #f7f4e9; background: linear-gradient(145deg, var(--deep), var(--night)); box-shadow: inset 0 0 0 8px rgba(12,31,22,.5), inset 0 0 0 9px rgba(240,210,122,.22); }
-    .manifesto h2 { margin: 0 0 8px; font-size: 1.8rem; }
-    .manifesto p { margin: 0; color: rgba(247,244,233,.84); }
-    .manifesto a { color: var(--pale-gold); font-weight: 700; }
-    .note { margin-top: 26px; text-align: center; color: var(--muted); font-size: .86rem; }
-    footer { padding: 32px 0 38px; color: rgba(247,244,233,.76); background: var(--night); font-size: .88rem; }
-    footer a { color: var(--pale-gold); }
-    .line { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(240,210,122,.18); }
-    @media (max-width: 720px) {
-      .wrap { width: min(100% - 28px, 980px); }
-      .nav > div { justify-content: flex-start; }
-      .entry { padding: 24px 20px; }
-      .name-grid { grid-template-columns: 1fr; }
-      .rubrique, .rubrique:nth-of-type(even) { grid-template-columns: 1fr; gap: 20px; padding: 22px; }
-      .rubrique:nth-of-type(even) .shots, .rubrique:nth-of-type(even) .copy { order: initial; }
-      .shots { max-width: 360px; margin: 0 auto; }
-    }
-</style>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body id="haut">
-
-<header>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
   <div class="wrap">
-        <nav class="nav" aria-label="Navigation principale">
+    <nav class="site-nav" aria-label="Navigation principale">
       <a class="brand" href="index.html">
         <img src="assets/app-icon.png" alt="Icône de Diiwaanu Xassida Yi">
         <span>Diiwaanu Xassida Yi</span>
       </a>
-      <div>
+      <button class="menu-toggle" type="button" data-menu-toggle
+              aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
+        <span aria-hidden="true">☰</span><span class="menu-label">Menu</span>
+      </button>
+    </nav>
+
+    <noscript>
+      <nav class="noscript-nav" aria-label="Navigation sans JavaScript">
+        <a href="index.html">Accueil</a>
         <a href="rubriques.html">Rubriques</a>
         <a href="bibliotheque.html">Bibliothèque</a>
         <a href="prieres.html">Prières</a>
         <a href="nafilas.html">Nafilas</a>
         <a href="nafila-du-jour.html">Nafila du jour</a>
-        <a href="99-noms.html">99 Noms</a>
+        <a href="99-noms.html" aria-current="page">99 Noms</a>
         <a href="xam-yoonwi.html">XAM YOONWI</a>
         <a href="index.html#contact">Contact</a>
-      </div>
-    </nav>
+      </nav>
+    </noscript>
+
     <div class="hero">
       <p class="eyebrow">99 Noms d’Allah</p>
       <h1>Les Noms,<br><span>en trois langues</span></h1>
       <p class="lead">La même liste que dans l’application : arabe, latin, sens et dhikr, sans publicité ni suivi.</p>
-      <p class="hint">Astuce : appuyez sur Ctrl + F pour chercher un Nom.</p>
+      
       <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
     </div>
   </div>
 </header>
 
-<main>
+<div class="menu-backdrop" data-menu-backdrop aria-hidden="true"></div>
+<aside id="site-menu" class="menu-panel" aria-label="Menu du site" aria-hidden="true">
+  <div class="menu-panel-head">
+    <strong>Diiwaanu Xassida Yi</strong>
+    <button class="menu-close" type="button" data-menu-close aria-label="Fermer le menu">×</button>
+  </div>
+  <nav aria-label="Liens du site">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+        <li><a href="rubriques.html">Rubriques</a></li>
+        <li><a href="bibliotheque.html">Bibliothèque</a></li>
+        <li><a href="prieres.html">Prières</a></li>
+        <li><a href="nafilas.html">Nafilas</a></li>
+        <li><a href="nafila-du-jour.html">Nafila du jour</a></li>
+        <li><a href="99-noms.html" aria-current="page">99 Noms</a></li>
+        <li><a href="xam-yoonwi.html">XAM YOONWI</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <p class="menu-note">Application gratuite, hors ligne et sans publicité.</p>
+</aside>
+
+<main id="contenu">
   <div class="wrap">
     <section class="index-box">
       <h2>Index A → Z</h2>
@@ -896,14 +801,26 @@
 </main>
 <footer>
   <div class="wrap">
-    <div>Diiwaanu Xassida Yi · But non lucratif — Uniquement pour servir Serigne Touba</div>
-    <div class="line">
+    <div class="foot-grid">
+      <div><strong>Diiwaanu Xassida Yi</strong><br>Application Android gratuite, hors ligne et sans publicité.</div>
+      <div class="foot-links">
+        <a href="rubriques.html">Rubriques</a>
+        <a href="bibliotheque.html">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
+      </div>
+    </div>
+    <p class="privacy">
       <a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a> ·
       <a href="mailto:beguefallou@gmail.com">beguefallou@gmail.com</a> ·
       <a href="https://wa.me/13018578776">WhatsApp</a>
-    </div>
+    </p>
     <div class="line">Réalisé par Mouhamadou Falilou Seye. Les traductions et transcriptions restent la propriété de leurs auteurs respectifs ; retrait sur simple demande.</div>
   </div>
 </footer>
+
 </body>
 </html>

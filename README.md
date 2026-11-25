@@ -10,24 +10,22 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 
 ## Contenu
 
-- `index.html` : page complète, sans dépendance externe ni script. Navigation principale à cinq entrées, barre secondaire à six liens de rubriques, section « Rubriques du site », accroche wolof/anglais, FAQ native (`<details>`) et galerie légendée/numérotée.
-- `bibliotheque.html` : bibliothèque statique des khassaïdes, générée depuis `assets/books.json`. Aucun script ni nombre figé ; les PDF restent hébergés sur le R2 de l’application.
-- `rubriques.html` : page historique restaurée : aperçus réels de l’application, texte de chaque rubrique et liens directs vers les six pages complètes (Bibliothèque, Prières, Nafilas, Nafila du jour, 99 Noms, XAM YOONWI). Aucun script ni fonction interactive inventée.
-- `nafilas.html` : texte des 30 nuits de nafilas, généré depuis les modèles Dart, en texte seul avec police Amiri et filets dorés.
-- `nafila-du-jour.html` : les 7 fiches de la semaine en français, wolof et anglais, générées depuis `nafila_du_jour.dart`.
-- `99-noms.html` : les 99 Noms d’Allah (arabe, latin, sens, dhikr), générés depuis `assets/divine_names.json`.
-- `xam-yoonwi.html` : les 30 chapitres en texte et portraits recadrés, générés depuis `xam_yoonwi_entry.dart`.
-- `prieres.html` : 47 villes, 9 événements hijri, Qibla et widget, générés depuis les sources Dart de l’application.
-- `sitemap.xml` et `robots.txt` : fichiers d’aide à l’indexation Google.
-- `assets/fonts/AmiriQuran-Regular.ttf` : police serif locale, hébergée sur le site même (aucun service externe).
-- `assets/app-icon.png` : icône de l’application.
-- `assets/serigne_touba.png` : portrait encadré d’or affiché dans chaque carte de la bibliothèque (identique à `BookPortrait` dans l’application).
-- `assets/feature-graphic.png` : bandeau 1024 × 500.
-- `assets/screenshots/v2/` : 11 captures 720 × 1560 réservées à la galerie **Aperçus** de l’accueil. Elles ne servent jamais de contenu dans `rubriques.html`.
+- `index.html` : accueil mobile first. Menu hamburger, titre/CTA visibles dès le premier écran, capture dans un cadre de téléphone, formulaire « Être informé de la sortie », wolof/anglais discrets, rubriques, FAQ et contact.
+- `bibliotheque.html` : liste compacte générée depuis `assets/books.json`. Recherche, filtres par langue et index A → Z dans `assets/js/site.js`. Titres nettoyés (underscores remplacés par des espaces) ; les PDF restent sur le R2.
+- `rubriques.html` : aperçus réels de l’application, texte de chaque rubrique et liens directs vers les six pages complètes.
+- `nafilas.html` : texte des 30 nuits, généré depuis les modèles Dart.
+- `nafila-du-jour.html` : les 7 fiches de la semaine en français, wolof et anglais.
+- `99-noms.html` : les 99 Noms d’Allah (arabe, latin, sens, dhikr).
+- `xam-yoonwi.html` : les 30 chapitres, sommaire en vraie liste, visuel calligraphique à la place du portrait recadré sur les yeux.
+- `prieres.html` : 47 villes, 9 événements hijri, Qibla et widget.
+- `assets/css/site.css` : feuille unique, vert profond/or, serif élégant, responsive mobile → tablette → ordinateur. Amiri limitée à l’arabe afin que le français utilise une police système qui gère les accents.
+- `assets/js/site.js` : menu, formulaire et bibliothèque. Vanilla JS, aucune dépendance, aucun suivi.
+- `assets/fonts/AmiriQuran-Regular.ttf` : police locale, réservée aux caractères arabes.
+- `assets/screenshots/v2/` : 11 captures 720 × 1560 utilisées dans les cadres de téléphone et les aperçus.
 
 ## Mettre à jour
 
-1. Modifier les gabarits (ou remplacer les images de la galerie dans `assets/`).
+1. Modifier les gabarits ou remplacer les images dans `assets/`.
 2. Régénérer depuis la racine du projet Flutter :
    - `dart run tools/generate_bibliotheque.dart`
    - `dart run tools/generate_nafilas.dart`
@@ -42,27 +40,19 @@ GitHub Pages publie automatiquement la branche `master`.
 
 ## Activer le bouton Google Play
 
-Tant que la fiche n’est pas publiée, le bloc `#play-store` affiche **« Bientôt sur Google Play »** et la mention **« Version 1.0 · Android »**. Le bouton n’est pas cliquable (validation du compte Google Play en attente).
+Tant que la fiche n’est pas publiée, `#play-store` affiche **« Bientôt sur Google Play »** et **« Version 1.0 · Android »**. Le bouton n’est pas cliquable.
 
-Après publication, remplacer **uniquement** le `<span data-play-status>` dans `index.html` :
-
-```html
-<span class="btn btn-gold" data-play-status aria-disabled="true">Bientôt sur Google Play</span>
-```
-
-par :
+Après publication, remplacer uniquement le `<span data-play-status>` de `index.html` par :
 
 ```html
 <a class="btn btn-gold" data-play-status href="https://play.google.com/store/apps/details?id=com.khassida.khassida_app">Télécharger sur Google Play</a>
 ```
 
-La mention `<span class="play-version" data-play-version>Version 1.0 · Android</span>` reste inchangée. Raccourcir alors la note « L’application est prête et signée… ».
-
 ## Règles éditoriales
 
+- Graphie retenue : **khassaïdes** partout, sauf dans le nom propre `Diiwaanu Xassida Yi`.
 - Aucune publicité, analytics ou suivi.
-- Aucun lien vers une chaîne vidéo, aucun lecteur vidéo.
-- Aucune mention de site tiers de PDF.
-- Aucun don : le don reste uniquement dans « À propos » dans l’application.
-- Aucun nombre figé de khassaïdes.
+- Aucun lien vidéo, aucun lecteur vidéo, aucune mention de site tiers de PDF.
+- Aucun nombre figé de khassaïdes dans les textes de présentation.
+- Le formulaire ouvre la messagerie de l’utilisateur : aucune adresse n’est stockée ni transmise à un service tiers.
 - Coordonnées utilisées : les trois e-mails et les trois numéros WhatsApp officiels.

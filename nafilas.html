@@ -1,231 +1,86 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nafilas du Ramadan — Diiwaanu Xassida Yi</title>
-  <meta name="description" content="Les invocations et les bienfaits des nuits de Ramadan, en texte lisible hors ligne, dans l’esprit de l’application Diiwaanu Xassida Yi.">
+  <meta name="description" content="Les invocations et les bienfaits des trente nuits de Ramadan, en texte lisible hors ligne, dans l’esprit de l’application.">
   <link rel="canonical" href="https://diiwaanu-xassida-yi.com/nafilas.html">
-  <meta property="og:type" content="website">
   <meta property="og:url" content="https://diiwaanu-xassida-yi.com/nafilas.html">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Nafilas du Ramadan — Diiwaanu Xassida Yi">
-  <meta property="og:description" content="Trente nuits de nafilas en texte seul, sans publicité ni suivi.">
+  <meta property="og:description" content="Les invocations et les bienfaits des trente nuits de Ramadan, en texte lisible hors ligne, dans l’esprit de l’application.">
   <meta property="og:image" content="https://diiwaanu-xassida-yi.com/assets/app-icon.png">
+  <meta name="theme-color" content="#0B1E15">
   <link rel="icon" type="image/png" href="assets/app-icon.png">
-  <style>
-    @font-face {
-      font-family: "Amiri Site";
-      src: url("assets/fonts/AmiriQuran-Regular.ttf") format("truetype");
-      font-display: swap;
-    }
-
-    :root {
-      --green: #0E6B40;
-      --deep: #083A24;
-      --gold: #B8871A;
-      --pale-gold: #F0D27A;
-      --paper: #F4F6EF;
-      --paper-2: #FBFBF6;
-      --night: #0C1F16;
-      --night-2: #09120D;
-      --ink: #16251d;
-      --muted: #5c6a61;
-      --line: rgba(184,135,26,.34);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: auto; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 8% 4%, rgba(184,135,26,.08), transparent 30%),
-        repeating-linear-gradient(0deg, rgba(184,135,26,.022) 0 1px, transparent 1px 6px),
-        var(--paper);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-    h1, h2, h3, .serif {
-      font-family: "Amiri Site", "Times New Roman", Georgia, serif;
-      letter-spacing: -.01em;
-    }
-    a { color: inherit; }
-    :focus-visible { outline: 3px solid var(--pale-gold); outline-offset: 3px; border-radius: 6px; }
-    .wrap { width: min(980px, 100% - 40px); margin: 0 auto; }
-
-    header {
-      position: relative;
-      overflow: hidden;
-      color: #f7f4e9;
-      background:
-        radial-gradient(circle at 84% 10%, rgba(240,210,122,.16), transparent 38%),
-        linear-gradient(150deg, var(--night), var(--deep) 62%, var(--night-2));
-      padding-bottom: 66px;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      padding: 22px 0 10px;
-      font-size: .92rem;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand img { width: 40px; height: 40px; border-radius: 11px; border: 1px solid rgba(240,210,122,.5); }
-    .brand span { font-family: "Amiri Site", serif; font-size: 1.08rem; font-weight: 700; }
-    .nav a:not(.brand) { text-decoration: none; color: rgba(247,244,233,.78); }
-    .nav a:not(.brand):hover { color: var(--pale-gold); }
-
-    .hero { position: relative; z-index: 1; padding-top: 52px; max-width: 720px; }
-    .eyebrow {
-      display: inline-block;
-      margin: 0 0 16px;
-      padding: 5px 13px;
-      border: 1px solid rgba(240,210,122,.42);
-      border-radius: 999px;
-      color: var(--pale-gold);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .hero h1 { margin: 0; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.06; }
-    .hero h1 span { color: var(--pale-gold); }
-    .lead { margin: 20px 0 8px; max-width: 58ch; color: rgba(247,244,233,.86); font-size: 1.06rem; }
-    .hint { margin: 0; color: var(--pale-gold); font-size: .9rem; font-style: italic; }
-    .ornament { margin: 24px 0 0; color: var(--pale-gold); letter-spacing: .5em; font-size: .72rem; }
-
-    .index-section { position: relative; z-index: 2; margin-top: -34px; padding-bottom: 8px; }
-    .index-box {
-      padding: 20px;
-      border: 2px solid var(--gold);
-      border-radius: 18px;
-      background: var(--paper-2);
-      box-shadow: inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px rgba(184,135,26,.28), 0 18px 40px rgba(8,58,36,.12);
-      text-align: center;
-    }
-    .index-box h2 { margin: 0 0 14px; color: var(--deep); font-size: 1.15rem; letter-spacing: .12em; text-transform: uppercase; }
-    .index-grid { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
-    .index-grid a {
-      display: grid; place-items: center;
-      width: 34px; height: 34px;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: 700;
-      color: var(--deep);
-      border: 1px solid transparent;
-    }
-    .index-grid a:hover, .index-grid a:focus-visible { background: var(--deep); color: var(--pale-gold); }
-
-    main { padding: 36px 0 80px; }
-    .night {
-      scroll-margin-top: 22px;
-      margin-top: 34px;
-      padding: 30px 32px;
-      border: 1px solid var(--line);
-      border-left: 3px solid var(--gold);
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at 92% 12%, rgba(14,107,64,.05), transparent 42%),
-        linear-gradient(180deg, #fffdf7, var(--paper-2));
-      box-shadow: inset 0 0 0 5px rgba(244,246,239,.7), 0 14px 34px rgba(8,58,36,.07);
-    }
-    .night-head { display: flex; align-items: center; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
-    .medallion {
-      flex: 0 0 auto;
-      display: grid; place-items: center;
-      width: 62px; height: 62px;
-      border-radius: 50%;
-      border: 1px solid var(--gold);
-      color: var(--pale-gold);
-      background: linear-gradient(145deg, var(--deep), var(--night));
-      box-shadow: inset 0 0 0 4px rgba(240,210,122,.12), 0 8px 18px rgba(8,58,36,.2);
-      font-family: "Amiri Site", serif;
-      font-size: 1.15rem;
-    }
-    .kicker { color: var(--gold); font-size: .78rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
-    .night-title h2 { margin: 2px 0 2px; font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--deep); }
-    .arabic { margin: 0; color: var(--green); font-family: "Amiri Site", serif; font-size: 1.12rem; }
-    .night-body { display: grid; grid-template-columns: minmax(230px, .85fr) minmax(0, 1.15fr); gap: 28px; padding-top: 22px; }
-    .block h3 { margin: 0 0 10px; color: var(--deep); font-size: 1.2rem; }
-    .block ul { margin: 0; padding-left: 20px; }
-    .block li { margin-bottom: 6px; }
-    .reward { padding-left: 26px; border-left: 1px solid var(--line); }
-    .reward p { margin: 0; }
-
-    .manifesto {
-      margin-top: 58px;
-      padding: 30px 34px;
-      border: 1px solid var(--gold);
-      border-radius: 18px;
-      color: #f7f4e9;
-      background: linear-gradient(145deg, var(--deep), var(--night));
-      box-shadow: inset 0 0 0 8px rgba(12,31,22,.5), inset 0 0 0 9px rgba(240,210,122,.22);
-    }
-    .manifesto h2 { margin: 0 0 8px; font-size: 1.8rem; }
-    .manifesto p { margin: 0; color: rgba(247,244,233,.84); }
-    .manifesto a { color: var(--pale-gold); }
-
-    footer { padding: 32px 0 38px; color: rgba(247,244,233,.76); background: var(--night); font-size: .88rem; }
-    footer a { color: var(--pale-gold); }
-    .line { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(240,210,122,.18); }
-
-    @media (max-width: 720px) {
-      .wrap { width: min(100% - 28px, 980px); }
-      .night { padding: 24px 20px; }
-      .night-head { align-items: flex-start; }
-      .night-body { grid-template-columns: 1fr; gap: 20px; }
-      .reward { padding-left: 0; border-left: 0; padding-top: 18px; border-top: 1px solid var(--line); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .index-grid a { transition: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body>
-
-<header id="haut">
+<body id="haut">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
   <div class="wrap">
-    <nav class="nav" aria-label="Navigation principale">
+    <nav class="site-nav" aria-label="Navigation principale">
       <a class="brand" href="index.html">
         <img src="assets/app-icon.png" alt="Icône de Diiwaanu Xassida Yi">
         <span>Diiwaanu Xassida Yi</span>
       </a>
-      <div>
-        <a href="rubriques.html">Rubriques</a> ·
-        <a href="bibliotheque.html">Bibliothèque</a> ·
-        <a href="prieres.html">Prières</a> ·
-        <a href="nafilas.html" aria-current="page">Nafilas</a> ·
-        <a href="nafila-du-jour.html">Nafila du jour</a> ·
-        <a href="99-noms.html">99 Noms</a> ·
-        <a href="xam-yoonwi.html">XAM YOONWI</a> ·
-        <a href="index.html#contact">Contact</a>
-      </div>
+      <button class="menu-toggle" type="button" data-menu-toggle
+              aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
+        <span aria-hidden="true">☰</span><span class="menu-label">Menu</span>
+      </button>
     </nav>
+
+    <noscript>
+      <nav class="noscript-nav" aria-label="Navigation sans JavaScript">
+        <a href="index.html">Accueil</a>
+        <a href="rubriques.html">Rubriques</a>
+        <a href="bibliotheque.html">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html" aria-current="page">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </noscript>
 
     <div class="hero">
       <p class="eyebrow">Nafilas du Ramadan</p>
       <h1>Trente nuits,<br><span>un texte clair</span></h1>
       <p class="lead">Les invocations et leurs bienfaits, présentés en texte seul comme dans l’application. Aucune image, aucun lien vidéo, aucune donnée envoyée.</p>
-      <p class="hint">Astuce : appuyez sur Ctrl + F pour chercher une invocation.</p>
+      
       <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
     </div>
   </div>
 </header>
 
-<section class="index-section">
+<div class="menu-backdrop" data-menu-backdrop aria-hidden="true"></div>
+<aside id="site-menu" class="menu-panel" aria-label="Menu du site" aria-hidden="true">
+  <div class="menu-panel-head">
+    <strong>Diiwaanu Xassida Yi</strong>
+    <button class="menu-close" type="button" data-menu-close aria-label="Fermer le menu">×</button>
+  </div>
+  <nav aria-label="Liens du site">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+        <li><a href="rubriques.html">Rubriques</a></li>
+        <li><a href="bibliotheque.html">Bibliothèque</a></li>
+        <li><a href="prieres.html">Prières</a></li>
+        <li><a href="nafilas.html" aria-current="page">Nafilas</a></li>
+        <li><a href="nafila-du-jour.html">Nafila du jour</a></li>
+        <li><a href="99-noms.html">99 Noms</a></li>
+        <li><a href="xam-yoonwi.html">XAM YOONWI</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <p class="menu-note">Application gratuite, hors ligne et sans publicité.</p>
+</aside>
+
+<main id="contenu">
   <div class="wrap">
-    <div class="index-box">
-      <h2>Les nuits</h2>
+    <section class="index-box">
+      <h2>Les trente nuits</h2>
       <nav class="index-grid" aria-label="Choix d’une nuit">
         <a href="#nuit-1">1</a>
         <a href="#nuit-2">2</a>
@@ -258,12 +113,7 @@
         <a href="#nuit-29">29</a>
         <a href="#nuit-30">30</a>
       </nav>
-    </div>
-  </div>
-</section>
-
-<main>
-  <div class="wrap">
+    </section>
       <article class="night" id="nuit-1">
         <div class="night-head">
           <div class="medallion" aria-hidden="true">١</div>
@@ -982,19 +832,29 @@
 
     <div class="manifesto">
       <h2>Les mêmes textes, hors ligne</h2>
-      <p>Dans l’application <strong>Diiwaanu Xassida Yi</strong>, ces nafilas sont lisibles sans connexion, avec la même sobriété : texte seul, filets dorés et police Amiri. <a href="rubriques.html">Découvrir toutes les rubriques →</a></p>
+      <p>Dans l’application <strong>Diiwaanu Xassida Yi</strong>, ces nafilas sont lisibles sans connexion, avec la même sobriété : texte seul, filets dorés et police Amiri réservée à l’arabe. <a href="rubriques.html">Découvrir toutes les rubriques →</a></p>
     </div>
   </div>
 </main>
-
 <footer>
   <div class="wrap">
-    <div>Diiwaanu Xassida Yi · But non lucratif — Uniquement pour servir Serigne Touba</div>
-    <div class="line">
+    <div class="foot-grid">
+      <div><strong>Diiwaanu Xassida Yi</strong><br>Application Android gratuite, hors ligne et sans publicité.</div>
+      <div class="foot-links">
+        <a href="rubriques.html">Rubriques</a>
+        <a href="bibliotheque.html">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
+      </div>
+    </div>
+    <p class="privacy">
       <a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a> ·
       <a href="mailto:beguefallou@gmail.com">beguefallou@gmail.com</a> ·
       <a href="https://wa.me/13018578776">WhatsApp</a>
-    </div>
+    </p>
     <div class="line">Réalisé par Mouhamadou Falilou Seye. Les traductions et transcriptions restent la propriété de leurs auteurs respectifs ; retrait sur simple demande.</div>
   </div>
 </footer>
