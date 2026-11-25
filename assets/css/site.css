@@ -851,6 +851,48 @@ footer a { color: var(--gold-light); }
 .more-books:hover { background: var(--gold); }
 .more-books[hidden] { display: none; }
 
+/* ---------- Page audio ---------- */
+.audio-count { margin: 16px 0 10px; color: var(--muted); font-size: 1rem; }
+.audio-grid { display: grid; gap: 12px; }
+.audio-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--gold-line);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #062C1B, #0E6B40);
+  box-shadow: 0 8px 20px rgba(3, 20, 12, .22);
+}
+.audio-thumb {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  background: #F7F4E9;
+  object-fit: contain;
+}
+.audio-copy { min-width: 0; }
+.audio-card h2 {
+  margin: 0 0 8px;
+  color: #FFF7E2;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.audio-card audio { display: block; width: 100%; height: 42px; }
+.audio-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tap);
+  margin-top: 6px;
+  color: #F7E6A8;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 /* Retour rapide en haut, injecté par site.js sur toutes les pages. */
 .to-top {
   position: fixed;
