@@ -10,7 +10,7 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 
 ## Contenu
 
-- `index.html` : page complète, sans dépendance externe ni script.
+- `index.html` : page complète, sans dépendance externe ni script. Navigation réduite à cinq entrées, accroche wolof/anglais, FAQ native (`<details>`) et galerie légendée/numérotée.
 - `bibliotheque.html` : bibliothèque statique des khassaïdes, générée depuis `assets/books.json`. Aucun script ni nombre figé ; les PDF restent hébergés sur le R2 de l’application.
 - `rubriques.html` : **texte** et liens vers toutes les rubriques — aucune capture d’écran n’y est utilisée comme contenu.
 - `nafilas.html` : texte des 30 nuits de nafilas, généré depuis les modèles Dart, en texte seul avec police Amiri et filets dorés.
@@ -42,21 +42,21 @@ GitHub Pages publie automatiquement la branche `master`.
 
 ## Activer le bouton Google Play
 
-Tant que la fiche n’est pas publiée, le bouton affiche **« Bientôt sur Google Play »** et n’est pas cliquable (l’application est prête mais la validation d’identité du compte Google Play est en attente).
+Tant que la fiche n’est pas publiée, le bloc `#play-store` affiche **« Bientôt sur Google Play »** et la mention **« Version 1.0 · Android »**. Le bouton n’est pas cliquable (validation du compte Google Play en attente).
 
-Après publication, remplacer dans `index.html` le bloc :
+Après publication, remplacer **uniquement** le `<span data-play-status>` dans `index.html` :
 
 ```html
-<span class="btn btn-gold" aria-disabled="true">Bientôt sur Google Play</span>
+<span class="btn btn-gold" data-play-status aria-disabled="true">Bientôt sur Google Play</span>
 ```
 
 par :
 
 ```html
-<a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.khassida.khassida_app">Disponible sur Google Play</a>
+<a class="btn btn-gold" data-play-status href="https://play.google.com/store/apps/details?id=com.khassida.khassida_app">Télécharger sur Google Play</a>
 ```
 
-Puis supprimer ou raccourcir la note « L’application est terminée et signée… ».
+La mention `<span class="play-version" data-play-version>Version 1.0 · Android</span>` reste inchangée. Raccourcir alors la note « L’application est prête et signée… ».
 
 ## Règles éditoriales
 
