@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nafila du jour — Diiwaanu Xassida Yi</title>
+  <meta name="description" content="Les sept nafilas de la semaine en français, wolof et anglais, telles que lues dans l’application hors ligne.">
+  <link rel="canonical" href="https://diiwaanu-xassida-yi.com/nafila-du-jour.html">
+  <meta property="og:url" content="https://diiwaanu-xassida-yi.com/nafila-du-jour.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nafila du jour — Diiwaanu Xassida Yi">
+  <meta property="og:description" content="Les sept nafilas de la semaine en français, wolof et anglais, telles que lues dans l’application hors ligne.">
+  <meta property="og:image" content="https://diiwaanu-xassida-yi.com/assets/app-icon.png">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <style>    @font-face {
+      font-family: "Amiri Site";
+      src: url("assets/fonts/AmiriQuran-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+    :root {
+      --green: #0E6B40; --deep: #083A24; --gold: #B8871A;
+      --pale-gold: #F0D27A; --paper: #F4F6EF; --paper-2: #FBFBF6;
+      --night: #0C1F16; --ink: #16251d; --muted: #5c6a61;
+      --line: rgba(184,135,26,.34);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink); line-height: 1.72; -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(184,135,26,.08), transparent 30%),
+        repeating-linear-gradient(0deg, rgba(184,135,26,.022) 0 1px, transparent 1px 6px),
+        var(--paper);
+    }
+    h1, h2, h3, .serif { font-family: "Amiri Site", "Times New Roman", Georgia, serif; letter-spacing: -.01em; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--pale-gold); outline-offset: 3px; border-radius: 6px; }
+    .wrap { width: min(980px, 100% - 40px); margin: 0 auto; }
+    header {
+      position: relative; overflow: hidden; color: #f7f4e9; padding-bottom: 68px;
+      background:
+        radial-gradient(circle at 84% 8%, rgba(240,210,122,.16), transparent 40%),
+        linear-gradient(150deg, var(--night), var(--deep) 62%, var(--night));
+    }
+    header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .nav { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0 10px; font-size: .92rem; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 40px; height: 40px; border-radius: 11px; border: 1px solid rgba(240,210,122,.5); }
+    .brand span { font-family: "Amiri Site", serif; font-size: 1.08rem; font-weight: 700; }
+    .nav a:not(.brand) { text-decoration: none; color: rgba(247,244,233,.78); }
+    .nav a:not(.brand):hover { color: var(--pale-gold); }
+    .hero { position: relative; z-index: 1; padding-top: 50px; max-width: 740px; }
+    .eyebrow { display: inline-block; margin: 0 0 16px; padding: 5px 13px; border: 1px solid rgba(240,210,122,.42); border-radius: 999px; color: var(--pale-gold); font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .hero h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.06; }
+    .hero h1 span { color: var(--pale-gold); }
+    .lead { margin: 18px 0 8px; max-width: 60ch; color: rgba(247,244,233,.86); font-size: 1.05rem; }
+    .hint { margin: 0; color: var(--pale-gold); font-size: .9rem; font-style: italic; }
+    .ornament { margin: 22px 0 0; color: var(--pale-gold); letter-spacing: .5em; font-size: .72rem; }
+    .index-section { position: relative; z-index: 2; margin-top: -34px; }
+    .index-box { padding: 20px; border: 2px solid var(--gold); border-radius: 18px; background: var(--paper-2); box-shadow: inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px rgba(184,135,26,.28), 0 18px 40px rgba(8,58,36,.12); text-align: center; }
+    .index-box h2 { margin: 0 0 14px; color: var(--deep); font-size: 1.1rem; letter-spacing: .1em; text-transform: uppercase; }
+    .index-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .index-grid a { padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(184,135,26,.34); text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--deep); }
+    .index-grid a:hover, .index-grid a:focus-visible { background: var(--deep); color: var(--pale-gold); }
+    main { padding: 30px 0 80px; }
+    .entry { scroll-margin-top: 22px; margin-top: 42px; padding: 30px 32px; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 18px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07); }
+    .entry h2 { margin: 4px 0 18px; color: var(--deep); font-size: clamp(1.7rem, 3vw, 2.25rem); }
+    .kicker { color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    summary { cursor: pointer; font-weight: 700; color: var(--deep); }
+    .entry p { margin: 0 0 12px; }
+    .entry p:last-child { margin-bottom: 0; }
+    .name-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
+    .name-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: 0 10px 26px rgba(8,58,36,.06); }
+    .name-num { color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em; }
+    .arabic { margin: 6px 0; color: var(--green); font-family: "Amiri Site", serif; font-size: 1.8rem; line-height: 1.5; }
+    .latin { margin: 0 0 8px; color: var(--deep); font-family: "Amiri Site", serif; font-size: 1.25rem; font-weight: 700; }
+    .sens { margin: 0; color: var(--muted); font-size: .93rem; }
+    .dhikr { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--green); font-size: .9rem; }
+    .letter { margin: 42px 0 0; color: var(--deep); font-size: 2rem; border-bottom: 1px solid var(--line); }
+    .manifesto { margin-top: 58px; padding: 30px 34px; border: 1px solid var(--gold); border-radius: 18px; color: #f7f4e9; background: linear-gradient(145deg, var(--deep), var(--night)); box-shadow: inset 0 0 0 8px rgba(12,31,22,.5), inset 0 0 0 9px rgba(240,210,122,.22); }
+    .manifesto h2 { margin: 0 0 8px; font-size: 1.8rem; }
+    .manifesto p { margin: 0; color: rgba(247,244,233,.84); }
+    .manifesto a { color: var(--pale-gold); font-weight: 700; }
+    footer { padding: 32px 0 38px; color: rgba(247,244,233,.76); background: var(--night); font-size: .88rem; }
+    footer a { color: var(--pale-gold); }
+    .line { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(240,210,122,.18); }
+    .top-link { position: fixed; right: 20px; bottom: 20px; z-index: 5; display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid var(--gold); border-radius: 50%; background: var(--deep); color: var(--pale-gold); text-decoration: none; box-shadow: 0 12px 28px rgba(8,58,36,.24); }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 980px); }
+      .entry { padding: 24px 20px; }
+      .name-grid { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body id="haut">
+
+<header>
+  <div class="wrap">
+        <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html">
+        <img src="assets/app-icon.png" alt="Icône de Diiwaanu Xassida Yi">
+        <span>Diiwaanu Xassida Yi</span>
+      </a>
+      <div>
+        <a href="rubriques.html">Rubriques</a> ·
+        <a href="bibliotheque.html">Bibliothèque</a> ·
+        <a href="nafilas.html">Nafilas</a> ·
+        <a href="xam-yoonwi.html">XAM YOONWI</a> ·
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <p class="eyebrow">Nafila du jour</p>
+      <h1>Sept jours,<br><span>sept fiches</span></h1>
+      <p class="lead">Le texte exact des fiches de l’application. Ouvrez une langue pour lire, aucune donnée n’est envoyée.</p>
+      <p class="hint">Astuce : appuyez sur Ctrl + F pour chercher une invocation.</p>
+      <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="index-box">
+      <h2>Les sept fiches de la semaine</h2>
+      <nav class="index-grid" aria-label="Choix d’un jour">
+        <a href="#altine">Altine — Lundi</a>
+        <a href="#talaata">Talaata — Mardi</a>
+        <a href="#alarba">Alarba — Mercredi</a>
+        <a href="#alxamis">Alxamis — Jeudi</a>
+        <a href="#ajjuma">Ajjuma — Vendredi</a>
+        <a href="#gaawu">Gaawu — Samedi</a>
+        <a href="#diber">Diber — Dimanche</a>
+      </nav>
+    </section>
+    <article class="entry" id="altine">
+      <span class="kicker">Nafila du jour</span>
+      <h2>Altine — Lundi</h2>
+      <details open>
+        <summary>Français</summary>
+        <div><p>1. PRIÈRE DE LA NUIT DU LUNDI - 4 RAKA</p>
+          <p>Celui qui prie la nuit du lundi 4 raka : dans la 1ère, Fatiha + Sourate Al-Ikhlass (Qul Huwal Lahu Ahad) 10 fois, dans la 2ème, Fatiha + Al-Ikhlass 20 fois, dans la 3ème, Fatiha + Al-Ikhlass 30 fois, dans la 4ème, Fatiha + Al-Ikhlass 40 fois. Après le salut final, il récite Al-Ikhlass 75 fois, puis il dit : « O Allah, pardonne-moi ainsi qu&#39;à mes parents » — 75 fois, puis il prie sur le Prophète (PSL) — 75 fois.</p>
+          <p>Bienfait :</p>
+          <p>S&#39;il demande alors le pardon, Allah le lui pardonnera.</p>
+          <p>2. DEUX RAKA (2)</p>
+          <p>Dans chaque raka : Fatiha + Qul Huwal Lahu Ahad 15 fois. Après le salut final, il récite Ayatul Kursiyyi 15 fois, puis : « Je demande pardon à Allah, le Très Grand, en dehors de Qui il n&#39;y a point de divinité, le Vivant, Celui qui subsiste par Lui-même » — 10 fois, puis il prie sur le Prophète (PSL) — 10 fois.</p>
+          <p>Bienfait :</p>
+          <p>Allah le préservera au Jour du Jugement et lui pardonnera tous les péchés qu&#39;il a commis.</p>
+          <p>3. DOUZE RAKA (12)</p>
+          <p>Dans chaque raka : Fatiha + Ayatul Kursiyyi 1 fois. Après le salut final, il récite Qul Huwal Lahu Ahad 12 fois, puis : « Je demande pardon à Allah » — 12 fois.</p>
+          <p>Bienfait :</p>
+          <p>Au Jour du Jugement, Allah ordonnera à un ange de l&#39;appeler : « Où est le serviteur, fils du serviteur et serviteur ? » Il dira : « Me voici. » L&#39;ange lui dira : « Lève-toi, Allah t&#39;a donné ta récompense. » On l&#39;entourera de 1 000 serviteurs, on lui cherchera une monture en or, on l&#39;accompagnera de 100 000 anges, chacun tenant un cadeau pour lui, on le conduira au Paradis, avec lui 1 000 servantes qui lui appartiennent.</p></div>
+      </details>
+      <details>
+        <summary>Wolof</summary>
+        <div><p>1. GUDDIG ALTINE - 4 RAKA</p>
+          <p>(1er) Fatiha ak Lixlaas (Qul Huwal Lahu Ahad) fukki yoon (10 fois), bu naareel ba (2e) Fatiha ak Lixlaas naar-fukki yoon (20 fois), netteel ba (3e) Fatiha ak Lixlaas fanweeri yoon (30 fois), neenteel ba (4e) Fatiha ak Lixlaas neent-fukki yoon (40 fois).</p>
+          <p>Bu selmalee mu jang Lixlaas juroom-naar-fukki yoon ak juroom (75 fois), bu noppee mu wax li :</p>
+          <p>Allahumma ighfir lii wa liwaalidayya - 75 fois</p>
+          <p>Julli ci Yonent bi (PSL) — juroom-naar-fukki yoon ak juroom (75 fois).</p>
+          <p>NJARIN :</p>
+          <p>Bu noppee naan aajoom, kon Yalla dana ko faj.</p>
+          <p>2. NAARI RAKA (2)</p>
+          <p>Bu ci ne Fatiha ak Khul Huwa Lahu Ahad fukk ak juroom (15 fois), bu sélmalee mu jang Ayatul kursiyyi fukk ak juroomi yoon (15 fois), teg ca li :</p>
+          <p>Astakhfiroul lahal hazimal lazi la ilaha illa huwal hayyul khayomu - fukki yoon (10 fois)</p>
+          <p>Julli ci Yonent bi (PSL) — fukki yoon (10 fois).</p>
+          <p>NJARIN :</p>
+          <p>Yalla dana ko begal ca besub péenc ba te dana ko jéggal bépp bakkaar bu mu mas a def.</p>
+          <p>3. FUKKI RAKA AK NAAR (12)</p>
+          <p>Bu ci ne Fatiha ak Ayatul kursiyyi benn yoon (1 fois), bu selmalee mu jang khul huwal Lahu ahad fukki yoon ak naar (12 fois), teg ca li :</p>
+          <p>Astakhfiroullaha - fukki yoon ak naar (12 fois)</p>
+          <p>NJARIN :</p>
+          <p>Bu bésub péenc baa Yalla dana digal malaaka mu wax ci kaw ne ana diw, doom diw ak diw, nga ne ko maangi nii, mu ne la jogal Yalla jox la sa ag fay. Nu daal di koy wodd junniy koddaay (1000), wutal ko ndabul wurus, boole ko ak teemeeri junniy (100.000) malaaka yoo xam ni ku ci ne yor na ajiya ju mu koy jox, nu gaddu ko yoobu ko Ajana, war ak moom junniy (1000) njénde yoo xam ni moo leen moom.</p></div>
+      </details>
+      <details>
+        <summary>English</summary>
+        <div><p>1. MONDAY NIGHT PRAYER - 4 RAKA</p>
+          <p>Whoever prays on Monday night 4 raka: in the 1st, Fatiha + Surah Al-Ikhlass (Qul Huwal Lahu Ahad) 10 times, in the 2nd, Fatiha + Al-Ikhlass 20 times, in the 3rd, Fatiha + Al-Ikhlass 30 times, in the 4th, Fatiha + Al-Ikhlass 40 times. After the final salam, he recites Al-Ikhlass 75 times, then he says: « O Allah, forgive me and my parents » — 75 times, then he prays upon the Prophet (PBUH) — 75 times.</p>
+          <p>Benefit:</p>
+          <p>If he then asks for forgiveness, Allah will forgive him.</p>
+          <p>2. TWO RAKA (2)</p>
+          <p>In each raka: Fatiha + Qul Huwal Lahu Ahad 15 times. After the final salam, he recites Ayatul Kursiyyi 15 times, then: « I ask forgiveness from Allah, the Great, besides Whom there is no god, the Living, the Self-Subsisting » — 10 times, then he prays upon the Prophet (PBUH) — 10 times.</p>
+          <p>Benefit:</p>
+          <p>Allah will protect him on the Day of Judgment and will forgive him all the sins he has committed.</p>
+          <p>3. TWELVE RAKA (12)</p>
+          <p>In each raka: Fatiha + Ayatul Kursiyyi 1 time. After the final salam, he recites Qul Huwal Lahu Ahad 12 times, then: « I ask forgiveness from Allah » — 12 times.</p>
+          <p>Benefit:</p>
+          <p>On the Day of Judgment, Allah will order an angel to call him: « Where is the servant, son of the servant and servant? » He will say: « Here I am. » The angel will say to him: « Rise, Allah has given you your reward. » He will be surrounded by 1,000 servants, a mount of gold will be sought for him, he will be accompanied by 100,000 angels, each holding a gift for him, he will be led to Paradise, with him 1,000 maidservants who belong to him.</p></div>
+      </details>
+    </article>
+    <article class="entry" id="talaata">
+      <span class="kicker">Nafila du jour</span>
+      <h2>Talaata — Mardi</h2>
+      <details open>
+        <summary>Français</summary>
+        <div><p>1. PRIÈRE DE LA NUIT DU MARDI - 12 RAKA</p>
+          <p>Celui qui prie la nuit du mardi 12 raka : dans chaque raka, Fatiha + Sourate An-Nasr (Idha jaa) 5 fois.</p>
+          <p>Bienfait :</p>
+          <p>Allah lui construira au Paradis une maison qui est 7 fois plus grande que le monde.</p>
+          <p>2. APRÈS LE COUCHER DU SOLEIL (10 RAKA)</p>
+          <p>10 raka : dans chaque raka, Fatiha + Ayatul Kursiyyi 1 fois + Qul Huwal Lahu Ahad 3 fois.</p>
+          <p>Bienfait :</p>
+          <p>On ne lui inscrira aucun péché pendant 70 jours, et s&#39;il meurt dans cet état, ce sera comme celui qui est mort en martyr (jihaad), et on lui pardonnera les péchés de 70 ans.</p></div>
+      </details>
+      <details>
+        <summary>Wolof</summary>
+        <div><p>1. GUDDIG TALAATA - 12 RAKA</p>
+          <p>Ku julli guddig Talaata (maanaam Altine ci guddi) fukki raka ak naar (12) bu ci ne Fatiha ak isa ja-a juroomi yoon (5 fois).</p>
+          <p>Isa ja-a (Idha jaa) - juroomi yoon (5 fois)</p>
+          <p>NJARIN :</p>
+          <p>Yalla dana ko tabaxal ca Ajjana ker goo xam ni épp na adduna juroom-haari yoon (7 fois).</p>
+          <p>2. GANAAAW BU DIGG-BECCEG WEYEE (10 RAKA)</p>
+          <p>Fukki raka (10), bu ci ne Fatiha, ak Ayatul kursiyyi benn yoon, ak Khul Huwal Lahu Ahad ñetti yoon.</p>
+          <p>NJARIN :</p>
+          <p>Dees na ko bindal bakkaar diirub juroom-naar-fukki bés (70 jours), te bu ca deewee dana mel ni ku deeyee ci jihaad, te dees na ko jéggal bakkaari juroom-naar-fukki at (70 ans).</p></div>
+      </details>
+      <details>
+        <summary>English</summary>
+        <div><p>1. TUESDAY NIGHT PRAYER - 12 RAKA</p>
+          <p>Whoever prays on Tuesday night 12 raka: in each raka, Fatiha + Surah An-Nasr (Idha jaa) 5 times.</p>
+          <p>Benefit:</p>
+          <p>Allah will build for him in Paradise a house which is 7 times bigger than the world.</p>
+          <p>2. AFTER SUNSET (10 RAKA)</p>
+          <p>10 raka: in each raka, Fatiha + Ayatul Kursiyyi 1 time + Qul Huwal Lahu Ahad 3 times.</p>
+          <p>Benefit:</p>
+          <p>No sin will be written for him for 70 days, and if he dies in that state, it will be like one who died as a martyr (jihaad), and he will be forgiven the sins of 70 years.</p></div>
+      </details>
+    </article>
+    <article class="entry" id="alarba">
+      <span class="kicker">Nafila du jour</span>
+      <h2>Alarba — Mercredi</h2>
+      <details open>
+        <summary>Français</summary>
+        <div><p>1. PRIÈRE DE LA NUIT DU MERCREDI - 2 RAKA</p>
+          <p>Celui qui prie la nuit du mercredi 2 raka : dans la 1ère, Fatiha 1 fois puis Sourate Al-Falaq 10 fois, dans la 2ème, Fatiha 1 fois puis Sourate An-Naas 10 fois.</p>
+          <p>Bienfait :</p>
+          <p>S&#39;il le fait, les 7 cieux, dans chacun 70 000 anges descendront, et ils lui inscriront tous des bonnes actions jusqu&#39;au Jour du Jugement.</p>
+          <p>2. YOR-YOR (12 RAKA)</p>
+          <p>12 raka : dans chaque raka, Fatiha + Ayatul Kursiyyi 1 fois + Al-Ikhlass + Al-Falaq + An-Naas, chacun 3 fois.</p>
+          <p>Bienfait :</p>
+          <p>On lui pardonnera tous ses péchés, on le préservera de la colère de son père et de sa mère, et de la peur et de la tristesse du Jour du Jugement, et on lui inscrira l&#39;adoration d&#39;Allah et de Son Prophète.</p></div>
+      </details>
+      <details>
+        <summary>Wolof</summary>
+        <div><p>1. GUDDIG ALARBA - 2 RAKA</p>
+          <p>Ku julli guddig Alarba (maanaam Talaata ci guddi) Naari raka, bu njekk ba (1er) Fatiha benn yoon (1 fois) teg ca Falaqi fukki yoon (10 fois), bu naareel ba (2e) Fatiha (1 fois) ak Naasi fukki yoon (10 fois).</p>
+          <p>Falaqi - fukki yoon (10 fois)</p>
+          <p>Naasi — fukki yoon (10 fois)</p>
+          <p>NJARIN :</p>
+          <p>Bu ko defee juroom-haari (7) asamaan yépp, bu ci ne juroom-naar-fukki junniy (70 000) malaaka dananu ca joge, noom népp hu di la bindal ay tuyaaba ba keroog bésub péenc.</p>
+          <p>2. YOR-YOR (12 RAKA)</p>
+          <p>Fukki raka ak naar (12), bu ci ne Fatiha ak Ayatul kursiyyi benn yoon (1 fois), ak Lixlaas, ak Falaqi ak Naasi bu ci ne ñetti yoon (3 fois).</p>
+          <p>NJARIN :</p>
+          <p>Dees na ko jéggal bakkaaram yépp, te dees na ko musal ci mbugalum bameel akug lendemam, akug xatam ak tisi bésub péenc yépp, te dees na ko bindal jaamu Yalla ak ab Yonent.</p></div>
+      </details>
+      <details>
+        <summary>English</summary>
+        <div><p>1. WEDNESDAY NIGHT PRAYER - 2 RAKA</p>
+          <p>Whoever prays on Wednesday night 2 raka: in the 1st, Fatiha 1 time then Surah Al-Falaq 10 times, in the 2nd, Fatiha 1 time then Surah An-Naas 10 times.</p>
+          <p>Benefit:</p>
+          <p>If he does it, the 7 heavens, in each 70,000 angels will descend, and they will all record good deeds for him until the Day of Judgment.</p>
+          <p>2. YOR-YOR (12 RAKA)</p>
+          <p>12 raka: in each raka, Fatiha + Ayatul Kursiyyi 1 time + Al-Ikhlass + Al-Falaq + An-Naas, each 3 times.</p>
+          <p>Benefit:</p>
+          <p>He will be forgiven all his sins, he will be protected from the anger of his father and his mother, and from the fear and sadness of the Day of Judgment, and the worship of Allah and His Prophet will be recorded for him.</p></div>
+      </details>
+    </article>
+    <article class="entry" id="alxamis">
+      <span class="kicker">Nafila du jour</span>
+      <h2>Alxamis — Jeudi</h2>
+      <details open>
+        <summary>Français</summary>
+        <div><p>1. PRIÈRE DE LA NUIT DU JEUDI - 2 RAKA</p>
+          <p>Celui qui prie la nuit du jeudi, entre le coucher du soleil et la nuit, 2 raka : dans chaque raka, Fatiha 1 fois + Ayatul Kursiyyi + Al-Ikhlass + Al-Falaq + An-Naas, chacun 5 fois. Après, il dit : « Je demande pardon à Allah, le Très Grand, en dehors de Qui il n&#39;y a point de divinité, le Vivant, Celui qui subsiste par Lui-même, et je me repens vers Lui » — 15 fois, puis il en fait don à ses parents.</p>
+          <p>Bienfait :</p>
+          <p>C&#39;est comme s&#39;il avait fait pour eux ce qu&#39;il leur devait, même s&#39;il les avait désobéis aussi, et on lui inscrira la récompense de celui qui est mort en martyr.</p>
+          <p>2. ENTRE TISBAAR ET TAKKUSAAN (2 RAKA)</p>
+          <p>2 raka : dans la 1ère, Fatiha + Ayatul Kursiyyi 100 fois, dans la 2ème, Fatiha + Al-Ikhlass 100 fois. Après le salut final, il prie sur le Prophète (PSL) 100 fois.</p>
+          <p>Bienfait :</p>
+          <p>On lui inscrira la récompense de celui qui a jeûné Rajab, Chaabane et Ramadan, et la récompense de celui qui a fait le pèlerinage à La Mecque, et la récompense de tous les musulmans.</p></div>
+      </details>
+      <details>
+        <summary>Wolof</summary>
+        <div><p>1. GUDDIG ALXAMIS - 2 RAKA</p>
+          <p>Ku julli guddig Alxamis (maanaam Alarba ci guddi digante timis ak geewe) Naari raka (2), bu ci ne Fatiha benn yoon ak Ayatul kursiyyi ak Lixlaas ak Falaqi ak Naasi lu ci ne juroomi yoon (5 fois), bu noppee mu wax lii :</p>
+          <p>(Astakhfiroul lahal hazimal lazi la ilaha illa huwal hayyul khayoma wa atubu ilayhi) fukki yoon ak juroom (15 fois), bu noppee def ko ajiya ay waajuram.</p>
+          <p>NJARIN :</p>
+          <p>Kon mel na ni def na la ko waroon ci hoom, donte da leen a saaganeewon itam, te dees na ko ca bindal tuyaabay ku deeyee ci jihaad.</p>
+          <p>2. DIGANTE TISBAAR AK TAKKUSAAN (2 RAKA)</p>
+          <p>Naari raka, bu njekk ba (1er) Fatiha ak Ayatul kursiyyi téeméeri yoon (100 fois), bu haareel ba (2e) Fatiha ak Lixlaas téeméeri yoon (100 fois), bu selmalee mu julli ci Yonent bi téeméeri yoon (100 fois).</p>
+          <p>Julli ci Yonent bi (PSL) - téeméeri yoon (100 fois)</p>
+          <p>NJARIN :</p>
+          <p>Dees na ko ca bindal tuyaabay ku woor rajab, ak sahban, ak ramadan, ak tuyaabay ku ajj Makka ak tuyaabay mbooléem jullit népp.</p></div>
+      </details>
+      <details>
+        <summary>English</summary>
+        <div><p>1. THURSDAY NIGHT PRAYER - 2 RAKA</p>
+          <p>Whoever prays on Thursday night, between sunset and night, 2 raka: in each raka, Fatiha 1 time + Ayatul Kursiyyi + Al-Ikhlass + Al-Falaq + An-Naas, each 5 times. After, he says: « I ask forgiveness from Allah, the Great, besides Whom there is no god, the Living, the Self-Subsisting, and I repent to Him » — 15 times, then he offers it as a gift to his parents.</p>
+          <p>Benefit:</p>
+          <p>It is as if he had done for them what he owed them, even if he had disobeyed them too, and the reward of one who died as a martyr will be recorded for him.</p>
+          <p>2. BETWEEN TISBAAR AND TAKKUSAAN (2 RAKA)</p>
+          <p>2 raka: in the 1st, Fatiha + Ayatul Kursiyyi 100 times, in the 2nd, Fatiha + Al-Ikhlass 100 times. After the final salam, he prays upon the Prophet (PBUH) 100 times.</p>
+          <p>Benefit:</p>
+          <p>The reward of one who fasted Rajab, Shaban and Ramadan will be recorded for him, and the reward of one who performed pilgrimage to Makkah, and the reward of all Muslims.</p></div>
+      </details>
+    </article>
+    <article class="entry" id="ajjuma">
+      <span class="kicker">Nafila du jour</span>
+      <h2>Ajjuma — Vendredi</h2>
+      <details open>
+        <summary>Français</summary>
+        <div><p>1. NUIT DU VENDREDI - 2 RAKA</p>
+          <p>Celui qui prie la nuit du vendredi 2 raka : Fatiha + Sourate Az-Zalzalah 15 fois.</p>
+          <p>Bienfait :</p>
+          <p>Allah le préservera de la colère de son père.</p>
+          <p>2. NUIT DU VENDREDI (12 RAKA)</p>
+          <p>Celui qui prie la nuit du vendredi après Timis 12 raka : Fatiha + Al-Ikhlass 10 fois.</p>
+          <p>Bienfait :</p>
+          <p>C&#39;est comme celui qui a adoré Allah 12 ans en jeûnant le jour et en priant la nuit.</p>
+          <p>3. NUIT DU VENDREDI - 10 RAKA</p>
+          <p>Celui qui prie la nuit du vendredi après la prière de la nuit 10 raka : Fatiha + Al-Ikhlass + Al-Falaq + An-Naas, chacun 1 fois, puis Witr.</p>
+          <p>Bienfait :</p>
+          <p>C&#39;est comme celui qui a veillé Laylatul Qadr.</p>
+          <p>4. APRÈS LE LEVER DU SOLEIL (2 RAKA)</p>
+          <p>Celui qui prie le vendredi après le lever du soleil 2 raka.</p>
+          <p>Bienfait :</p>
+          <p>On lui effacera 200 péchés, on lui inscrira 200 bonnes actions.</p>
+          <p>5. ENTRE TISBAAR ET TAKKUSAAN (2 RAKA)</p>
+          <p>2 raka : 1ère Fatiha + Ayatul Kursiyyi 1 fois + Al-Falaq 20 fois, 2ème Fatiha + Al-Ikhlass 1 fois + Al-Falaq 20 fois, puis : « Il n&#39;y a ni force ni puissance qu&#39;en Allah, le Très Haut, le Très Grand » — 50 fois.</p>
+          <p>Bienfait :</p>
+          <p>Avant qu&#39;il ne meure, il verra son Seigneur en rêve, ou sa place au Paradis, ou on la lui montrera.</p>
+          <p>6. APRÈS LE COUCHER DU SOLEIL (2 + 8 RAKA)</p>
+          <p>2 raka après le coucher du soleil : 1ère Fatiha + Al-Falaq 1 fois, 2ème Fatiha + An-Naas 1 fois, puis Ayatul Kursiyyi 7 fois, puis 8 raka en 2 salams : Fatiha + An-Nasr 1 fois + Al-Ikhlass 25 fois, puis « La hawla... » — 70 fois.</p>
+          <p>Bienfait :</p>
+          <p>Avant qu&#39;il ne quitte ce qu&#39;il faisait, on lui pardonnera tous ses péchés, à lui et à ses parents s&#39;ils sont musulmans, et il ira forcément au Paradis.</p>
+          <p>7. CELUI QUI PRIE 4 RAKA</p>
+          <p>Celui qui prie 4 raka le vendredi.</p>
+          <p>Bienfait :</p>
+          <p>On l&#39;élèvera de 400 degrés au Paradis.</p>
+          <p>8. CELUI QUI PRIE 8 RAKA</p>
+          <p>Celui qui prie 8 raka le vendredi.</p>
+          <p>Bienfait :</p>
+          <p>On l&#39;élèvera de 800 degrés.</p>
+          <p>9. CELUI QUI PRIE 12 RAKA</p>
+          <p>Celui qui prie 12 raka le vendredi.</p>
+          <p>Bienfait :</p>
+          <p>On l&#39;élèvera de 1 200 degrés, on lui effacera autant de péchés, on lui inscrira autant de bonnes actions.</p>
+          <p>10. SUBA EN GROUPE</p>
+          <p>Celui qui prie Suba en groupe puis reste à invoquer Allah jusqu&#39;au lever du soleil.</p>
+          <p>Bienfait :</p>
+          <p>On l&#39;élèvera de 70 degrés.</p>
+          <p>11. TISBAAR EN GROUPE</p>
+          <p>Celui qui prie Tisbaar en groupe.</p>
+          <p>Bienfait :</p>
+          <p>On l&#39;élèvera de 50 degrés.</p>
+          <p>12. TAKUSAAN EN GROUPE</p>
+          <p>Celui qui prie Takusaan en groupe.</p>
+          <p>Bienfait :</p>
+          <p>C&#39;est comme celui qui a affranchi 8 esclaves.</p>
+          <p>13. TIMIS EN GROUPE</p>
+          <p>Celui qui prie Timis en groupe.</p>
+          <p>Bienfait :</p>
+          <p>C&#39;est comme celui qui a fait le pèlerinage puis la Umra.</p></div>
+      </details>
+      <details>
+        <summary>Wolof</summary>
+        <div><p>1. GUDDIG AJJUMA - 2 RAKA</p>
+          <p>Ku julli guddig Ajjuma (maanaam Alxamis ci guddi) naari raka (2) bu ci ne Fatiha ak Isa Zulzilati fukki yoon ak juroom (15 fois).</p>
+          <p>Isa Zulzilati (Idha zulzilati) - 15 fois</p>
+          <p>NJARIN :</p>
+          <p>Yalla dana ko musal ci mbugalum bameel.</p>
+          <p>2. GUDDIG AJJUMA (12 RAKA)</p>
+          <p>Ku julli guddig Ajuma gannaaw timis (maanaam Alxamis ci guddi gannaaw bi mu jullee timis ba noppi) 12 raka Bu ci ne Fatiha ak Lixlaas fukki yoon (10 fois).</p>
+          <p>NJARIN :</p>
+          <p>Dana mel ni ku jaamu Yalla fukki at ak naar (12 ans) yoo xam ni day yendoo woor di fanaane julli.</p>
+          <p>3. GUDDIG AJJUMA - 10 RAKA</p>
+          <p>Ku julli guddig Ajjuma gannaaw sunnas geewe (maanaam Alxamis gannaaw bi mu jullee geewe ak sunnaam ba noppi) 10 raka Bu ci ne Fatiha ak Lixlaas ak Falaqi ak Naasi lu ci ne benn yoon, door a witar.</p>
+          <p>NJARIN :</p>
+          <p>Dana mel ni ku dundal Laylatul qadr.</p>
+          <p>4. GANAAAW BU JANT BI YEKKATIKO (2 RAKA)</p>
+          <p>Ku julli bésub Ajjuma gannaaw bu jant bi yékkatiko tuuti Naari raka.</p>
+          <p>NJARIN :</p>
+          <p>Dees na ko faral naari téeméeri nawteef (200), bindal ko naari téeméeri tuyaaba (200).</p>
+          <p>5. DIGANTE TISBAARI AJJUMA AK TAKKUSAAN (2 RAKA)</p>
+          <p>Naari raka, bu njekk ba (1er) Fatiha ak Ayatul Kursiyyi benn yoon (1 fois), ak Falaqi naar-fukki yoon (20 fois), bu naareel ba Fatiha ak Lixlaas benn yoon (1 fois), ak Falaqi naar-fukki yoon (20 fois) bu selmalee mu wax lii :</p>
+          <p>(La hawla wala khuwata illa bil lahil haliyyil hazimi) - juroom-fukki yoon (50 fois)</p>
+          <p>NJARIN :</p>
+          <p>Bala moo faatu dana gis Boroomam ci ay nelaw walla barabam ca Aljana walla nu gisal ko ko.</p>
+          <p>6. GANAAAW BU JANT BI FENKEE (2 RAKA + 8 RAKA)</p>
+          <p>Naari raka (2 raka) gannaaw bu jant bi fenkee, bu njekk ba (1er) Fatiha ak Falaqi benn yoon (1 fois), bu aareel ba Fatiha ak Naasi benn yoon, bu noppee jang Ayatul kursiyyi juroom-haari yoon (7 fois), dellu julliwaat juroom-netti raka (8 raka) yoo xam ni naari selmal lay doon, bu ci ne Fatiha ak Isa ja-a benn yoon (1 fois), ak Lixlaas naar-fukki yoon ak juroom (25 fois), bu selmalee mu wax lii :</p>
+          <p>(La hawla wala khuwata illa bil lahil haliyyil hazimi) - Juroom-naar-fukki yoon (70 fois)</p>
+          <p>NJARIN :</p>
+          <p>Bala moo joge fa mu ko doon defee, dees na ko jéggal mboolem lu mu mesa def ci ay naawteef moom ak ay waajuram bu nu dee ay jullit, te faww dana dem Aljana.</p>
+          <p>7. KU CA JULLI NEENTI RAKA (4 RAKA)</p>
+          <p>Ku ca julli neenti raka (4 raka) bésub Ajuma.</p>
+          <p>NJARIN :</p>
+          <p>Nu yekkatil ko neenti téeméeri daraja (400) ca Aljana.</p>
+          <p>8. KU CA JULLI JUROOM-NETTI RAKA (8 RAKA)</p>
+          <p>Ku ca julli juroom-netti raka (8 raka) bésub Ajjuma.</p>
+          <p>NJARIN :</p>
+          <p>Nu yekkatil ko juroom-netti téeméeri daraja (800).</p>
+          <p>9. KU CA JULLI FUKKI RAKA AK NAAR (12)</p>
+          <p>Ku ca julli fukki raka ak naar (12) bésub Ajjuma.</p>
+          <p>NJARIN :</p>
+          <p>Nu yekkatil ko junne ak naar téeméeri (1 200) daraja, faral ko lu ni toll ci ay aawteef, bindal ko lu ni toll ci ay tuyaaba.</p>
+          <p>10. BU CA JULLEE SUBA CI MBOOLOO</p>
+          <p>Bu ca jullee suba ci mbooloo ba noppi toog fa di tudd Yalla ba jant bi fenk.</p>
+          <p>NJARIN :</p>
+          <p>Dees na ko yekkatil juroom-naar-fukki (70) daraja.</p>
+          <p>11. BU CA JULLEE TISBAAR CI MBOOLOO</p>
+          <p>Bu ca jullee tisbaar ci mbooloo bésub Ajuma.</p>
+          <p>NJARIN :</p>
+          <p>Nu yekkatil ko juroom-fukki (50) daraja.</p>
+          <p>12. BU CA JULLEE TAKUSAAN CI MBOOLOO</p>
+          <p>Bu ca jullee takusaan ci mbooloo bésub Ajjuma.</p>
+          <p>NJARIN :</p>
+          <p>Mel na ni ku goreel juroom-netti (8) jaam.</p>
+          <p>13. BU CA JULLEE TIMIS CI MBOOLOO</p>
+          <p>Bu ca jullee timis ci mbooloo bésub Ajjuma.</p>
+          <p>NJARIN :</p>
+          <p>Mel na ni ku aj ba noppi umra.</p></div>
+      </details>
+      <details>
+        <summary>English</summary>
+        <div><p>1. FRIDAY NIGHT - 2 RAKA</p>
+          <p>Whoever prays on Friday night 2 raka: Fatiha + Surah Az-Zalzalah 15 times.</p>
+          <p>Benefit:</p>
+          <p>Allah will protect him from his father&#39;s anger.</p>
+          <p>2. FRIDAY NIGHT (12 RAKA)</p>
+          <p>Whoever prays on Friday night after Timis 12 raka: Fatiha + Al-Ikhlass 10 times.</p>
+          <p>Benefit:</p>
+          <p>It is like one who worshipped Allah for 12 years, fasting by day and praying by night.</p>
+          <p>3. FRIDAY NIGHT - 10 RAKA</p>
+          <p>Whoever prays on Friday night after the night prayer 10 raka: Fatiha + Al-Ikhlass + Al-Falaq + An-Naas, each 1 time, then Witr.</p>
+          <p>Benefit:</p>
+          <p>It is like one who stayed awake on Laylatul Qadr.</p>
+          <p>4. AFTER SUNRISE (2 RAKA)</p>
+          <p>Whoever prays on Friday after sunrise 2 raka.</p>
+          <p>Benefit:</p>
+          <p>200 sins will be erased for him, 200 good deeds will be recorded for him.</p>
+          <p>5. BETWEEN TISBAAR AND TAKKUSAAN (2 RAKA)</p>
+          <p>2 raka: 1st Fatiha + Ayatul Kursiyyi 1 time + Al-Falaq 20 times, 2nd Fatiha + Al-Ikhlass 1 time + Al-Falaq 20 times, then: « There is no power nor strength except in Allah, the Most High, the Great » — 50 times.</p>
+          <p>Benefit:</p>
+          <p>Before he dies, he will see his Lord in a dream, or his place in Paradise, or it will be shown to him.</p>
+          <p>6. AFTER SUNSET (2 + 8 RAKA)</p>
+          <p>2 raka after sunset: 1st Fatiha + Al-Falaq 1 time, 2nd Fatiha + An-Naas 1 time, then Ayatul Kursiyyi 7 times, then 8 raka in 2 salams: Fatiha + An-Nasr 1 time + Al-Ikhlass 25 times, then « La hawla... » — 70 times.</p>
+          <p>Benefit:</p>
+          <p>Before he leaves what he was doing, all his sins will be forgiven, his and his parents&#39; if they are Muslims, and he will surely go to Paradise.</p>
+          <p>7. WHOEVER PRAYS 4 RAKA</p>
+          <p>Whoever prays 4 raka on Friday.</p>
+          <p>Benefit:</p>
+          <p>He will be raised by 400 degrees in Paradise.</p>
+          <p>8. WHOEVER PRAYS 8 RAKA</p>
+          <p>Whoever prays 8 raka on Friday.</p>
+          <p>Benefit:</p>
+          <p>He will be raised by 800 degrees.</p>
+          <p>9. WHOEVER PRAYS 12 RAKA</p>
+          <p>Whoever prays 12 raka on Friday.</p>
+          <p>Benefit:</p>
+          <p>He will be raised by 1,200 degrees, as many sins erased, as many good deeds recorded.</p>
+          <p>10. SUBA IN CONGREGATION</p>
+          <p>Whoever prays Suba in congregation then stays invoking Allah until sunrise.</p>
+          <p>Benefit:</p>
+          <p>He will be raised by 70 degrees.</p>
+          <p>11. TISBAAR IN CONGREGATION</p>
+          <p>Whoever prays Tisbaar in congregation.</p>
+          <p>Benefit:</p>
+          <p>He will be raised by 50 degrees.</p>
+          <p>12. TAKUSAAN IN CONGREGATION</p>
+          <p>Whoever prays Takusaan in congregation.</p>
+          <p>Benefit:</p>
+          <p>It is like one who freed 8 slaves.</p>
+          <p>13. TIMIS IN CONGREGATION</p>
+          <p>Whoever prays Timis in congregation.</p>
+          <p>Benefit:</p>
+          <p>It is like one who performed Hajj then Umra.</p></div>
+      </details>
+    </article>
+    <article class="entry" id="gaawu">
+      <span class="kicker">Nafila du jour</span>
+      <h2>Gaawu — Samedi</h2>
+      <details open>
+        <summary>Français</summary>
+        <div><p>1. NUIT DU SAMEDI (12 RAKA)</p>
+          <p>Celui qui prie la nuit du samedi, après la prière surérogatoire de Timis, 12 raka.</p>
+          <p>Bienfait :</p>
+          <p>Allah lui construira une grande maison au Paradis, ce sera comme s&#39;il avait fait l&#39;aumône à tous les musulmans de ce qui lui suffit, il mourra avec la foi, et on lui pardonnera tous ses péchés à l&#39;instant.</p>
+          <p>2. JOUR DU SAMEDI (4 RAKA)</p>
+          <p>Celui qui prie le jour du samedi 4 raka : dans chaque raka, Fatiha + « Dis : O vous les mécréants » 3 fois, après le salut final, il récite Ayatul Kursiyyi 1 fois.</p>
+          <p>Bienfait :</p>
+          <p>Allah lui inscrira, pour chaque lettre d&#39;Ayatul Kursiyyi, la récompense d&#39;un pèlerinage complet et d&#39;une Umra complète, et la récompense d&#39;une année passée à jeûner le jour et à prier la nuit, et la récompense de celui qui est mort en martyr, et quand le jour se lèvera, Allah le rapprochera du Trône, avec les Prophètes et ceux qui sont morts en martyr.</p></div>
+      </details>
+      <details>
+        <summary>Wolof</summary>
+        <div><p>1. GUDDIG GAAWU (12 RAKA)</p>
+          <p>Ku julli guddig Gaawu gannaaw sunnas timis (maanaam Ajuma ci guddi gannaaw boo jullee timis ak sunnaam) fukki raka ak naar (12 raka).</p>
+          <p>NJARIN :</p>
+          <p>Yalla dana ko tabaxal njende lu rey ca Aljana, te dana mel ni ku sarax mboolem jullit yépp ku ci ne lu ko suur, te dana deeyale ak ngem, te dees na ko jéggal bakkaar am yépp fa saasa.</p>
+          <p>2. BESUB GAAWU (4 RAKA)</p>
+          <p>Ku julli bésub Gaawu ñeenti raka (4), bu ci ne Fatiha ak khul ya ayyuhal kafiron netti yoon (3 fois), bu selmalee mu jang Ayatul kursiyyi benn yoon (1 fois).</p>
+          <p>Khul ya ayyuhal kafiron - ñetti yoon (3 fois)</p>
+          <p>NJARIN :</p>
+          <p>Yalla dana ko bindal ci araf wu ne ci Ayatul kursiyyi yoolub aj gu mat ak umragu mat, ak tuyaabay atmooxam ni dakoyendoo woor, di fanaane julli, ak yoolub kudeeyee ci jihaad, te bu bésub péenc ba Yalla dana ko keeral ca Aras boole ko ak Yonente yi ak hi deeye ci jihaad.</p></div>
+      </details>
+      <details>
+        <summary>English</summary>
+        <div><p>1. SATURDAY NIGHT (12 RAKA)</p>
+          <p>Whoever prays on Saturday night, after the voluntary prayer of Timis, 12 raka.</p>
+          <p>Benefit:</p>
+          <p>Allah will build him a great house in Paradise, it will be as if he had given charity to all Muslims of what suffices them, he will die with faith, and all his sins will be forgiven at once.</p>
+          <p>2. SATURDAY DAY (4 RAKA)</p>
+          <p>Whoever prays on Saturday day 4 raka: in each raka, Fatiha + « Say: O you disbelievers » 3 times, after the final salam, he recites Ayatul Kursiyyi 1 time.</p>
+          <p>Benefit:</p>
+          <p>Allah will record for him, for each letter of Ayatul Kursiyyi, the reward of a complete pilgrimage and a complete Umra, and the reward of a year spent fasting by day and praying by night, and the reward of one who died as a martyr, and when the day breaks, Allah will bring him close to the Throne, with the Prophets and those who died as martyrs.</p></div>
+      </details>
+    </article>
+    <article class="entry" id="diber">
+      <span class="kicker">Nafila du jour</span>
+      <h2>Diber — Dimanche</h2>
+      <details open>
+        <summary>Français</summary>
+        <div><p>1. NUIT DU DIMANCHE (20 RAKA)</p>
+          <p>Celui qui prie la nuit du dimanche 20 raka : dans chaque raka, Fatiha 1 fois, Al-Ikhlass 50 fois, Al-Falaq et An-Naas 1 fois. Après le salut final, il dit : « O Allah, pardonne-moi et à mes parents » — 100 fois. Puis il prie sur le Prophète (PSL) 100 fois. Puis il dit la longue invocation de désaveu et de témoignage.</p>
+          <p>Bienfait :</p>
+          <p>S&#39;il fait cela, on lui inscrira une récompense égale au nombre de toutes les créatures, et quand le jour se lèvera, il ne verra rien qui lui fasse mal jusqu&#39;à ce qu&#39;il entre au Paradis.</p>
+          <p>2. PRIÈRE DU MILIEU DE JOURNÉE (4 RAKA)</p>
+          <p>Dans chaque raka, Fatiha + « Le Messager a cru... » jusqu&#39;à la fin du verset.</p>
+          <p>Bienfait :</p>
+          <p>On lui inscrira une récompense égale au nombre de tous les chrétiens et la récompense d&#39;un Prophète. Ce sera comme s&#39;il avait fait le pèlerinage à La Mecque 2 fois. Pour chaque raka aussi, on lui construira 1 000 villes, et pour chaque lettre, on lui construira une grande maison au Paradis.</p>
+          <p>3. PRIÈRE DU MILIEU DE JOURNÉE APRÈS TISBAAR (4 RAKA)</p>
+          <p>1ère raka : Fatiha + Sourate As-Sajda, 2ème : Fatiha + Sourate Al-Mulk, 3ème et 4ème : Fatiha + Sourate Al-Jumu&#39;a.</p>
+          <p>Bienfait :</p>
+          <p>Après le salut final, s&#39;il demande le Paradis, Allah le lui donnera, et il mourra avec la foi.</p></div>
+      </details>
+      <details>
+        <summary>Wolof</summary>
+        <div><p>1. GUDDIG DIBEER (20 RAKA)</p>
+          <p>Ku julli guddig dibeer (maanaam Gaawu ci guddi) 20 raka, raka bu ci ne fatiha benn yoon (1 fois), Lixlaas juroom-fukki yoon (50 fois) ak Falaqi ak Naasi benn yoon (1 fois). Bu selmalee mu wax li :</p>
+          <p>(Allahuma ikhfir li wa li walidayya) téeméeri yoon (100 fois). Daadi julli ci yonent bi (PsL) teemeeri yoon (100 fois). Bu pare teg ca li :</p>
+          <p>(Tabara&#39;tu min hawli wa quwwati wat taja&#39;tu ila hawlil lahi wa quwwatihi wa ash-hadu an la ilaha illallah wa ash-hadu anna Adama safwatullahi wa fitratuhu wa Ibrahima khalilullahi azza wa jalla wa Musa kalimullahi ta&#39;ala wa &#39;Isa rohullahi subhanahu wa Muhammadann habibullahi azza wa jalla, salawatullahi wa taslimatuhu &#39;alayhi wa &#39;alayhim ajma&#39;in)</p>
+          <p>NJARIN :</p>
+          <p>Loolu su ko def dees na ko bindal tuyaaba ju tollu ni limub mbindeef yi yepp te bu bes péenc ba du gis lu ko naqari ba ba muy tabbi Aljana.</p>
+          <p>2. JULLI BECCEG (4 RAKA)</p>
+          <p>Bu ci ne Fatiha ak Amanar rassulu... ba saar wa jeex.</p>
+          <p>Amanar rassulu (Amanar-Rasulu) - ba saar wajeex</p>
+          <p>NJARIN :</p>
+          <p>Dees na ko bindal tuyaaba ju tollu ni limub nasaaraan yepp ak tuyaabay ab Yonente. Dana mel ni itam ku aji Makka fiaari yoon (2 fois). Raka bu ci nekk tamit dees na ko ca defal junniy (1000) may. araf wu ci ne yit dees na ko ca tabaxal njende (ker) lu rey ca Aljana.</p>
+          <p>3. JULLI BECCEGGANAAAW TISBAAR AK SUNNAAM (4 RAKA)</p>
+          <p>Raka bu njekk ba (1er) mu tari : Fatiha ak saru Sajdati, naareel ba (2e), mu tari Fatiha ak suratul Mulki, netteel ba (3e) ak eenteel ba (4e), mu tari Fatiha ak suratul Jumuhati.</p>
+          <p>Saru Sajdati - Sourate As-Sajda</p>
+          <p>Suratul Mulki - Sourate Al-Mulk</p>
+          <p>Suratul Jumuhati - Sourate Al-Jumu&#39;a</p>
+          <p>NJARIN :</p>
+          <p>Bu selmalee mu naan aajoom, kon Yalla dana ko faj, te dana deeyale ak ngem.</p></div>
+      </details>
+      <details>
+        <summary>English</summary>
+        <div><p>1. SUNDAY NIGHT (20 RAKA)</p>
+          <p>Whoever prays on Sunday night 20 raka: in each raka, Fatiha 1 time, Al-Ikhlass 50 times, Al-Falaq and An-Naas 1 time. After the final salam, he says: « O Allah, forgive me and my parents » — 100 times. Then he prays upon the Prophet (PBUH) 100 times. Then he says the long invocation of disavowal and testimony.</p>
+          <p>Benefit:</p>
+          <p>If he does this, a reward equal to the number of all creatures will be recorded for him, and when the day breaks, he will see nothing that harms him until he enters Paradise.</p>
+          <p>2. MIDDAY PRAYER (4 RAKA)</p>
+          <p>In each raka, Fatiha + « The Messenger has believed... » to the end of the verse.</p>
+          <p>Benefit:</p>
+          <p>A reward equal to the number of all Christians and the reward of a Prophet will be recorded for him. It will be as if he had performed pilgrimage to Makkah twice. For each raka also, 1,000 cities will be built for him, and for each letter, a great house will be built for him in Paradise.</p>
+          <p>3. MIDDAY PRAYER AFTER TISBAAR (4 RAKA)</p>
+          <p>1st raka: Fatiha + Surah As-Sajda, 2nd: Fatiha + Surah Al-Mulk, 3rd and 4th: Fatiha + Surah Al-Jumu&#39;a.</p>
+          <p>Benefit:</p>
+          <p>After the final salam, if he asks for Paradise, Allah will give it to him, and he will die with faith.</p></div>
+      </details>
+    </article>
+
+    <div class="manifesto">
+      <h2>Le bon jour, sans calcul</h2>
+      <p>Dans l’application, l’écran s’ouvre sur le jour du téléphone avec le badge « Aujourd’hui ». Ici, les sept fiches sont ouvertes en texte : français, wolof et anglais, sans image ni lien vidéo. <a href="rubriques.html">Retour aux rubriques →</a></p>
+    </div>
+  </div>
+</main>
+Closure: () => String from Function 'footer': static.()

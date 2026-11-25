@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prières, calendrier et Qibla — Diiwaanu Xassida Yi</title>
+  <meta name="description" content="Horaires de prière calculés hors ligne, villes disponibles, calendrier islamique et Qibla sans GPS dans Diiwaanu Xassida Yi.">
+  <link rel="canonical" href="https://diiwaanu-xassida-yi.com/prieres.html">
+  <meta property="og:url" content="https://diiwaanu-xassida-yi.com/prieres.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prières, calendrier et Qibla — Diiwaanu Xassida Yi">
+  <meta property="og:description" content="Horaires de prière calculés hors ligne, villes disponibles, calendrier islamique et Qibla sans GPS dans Diiwaanu Xassida Yi.">
+  <meta property="og:image" content="https://diiwaanu-xassida-yi.com/assets/app-icon.png">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <style>    @font-face {
+      font-family: "Amiri Site";
+      src: url("assets/fonts/AmiriQuran-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+    :root {
+      --green: #0E6B40; --deep: #083A24; --gold: #B8871A;
+      --pale-gold: #F0D27A; --paper: #F4F6EF; --paper-2: #FBFBF6;
+      --night: #0C1F16; --ink: #16251d; --muted: #5c6a61;
+      --line: rgba(184,135,26,.34);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink); line-height: 1.72; -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(184,135,26,.08), transparent 30%),
+        repeating-linear-gradient(0deg, rgba(184,135,26,.022) 0 1px, transparent 1px 6px),
+        var(--paper);
+    }
+    h1, h2, h3, .serif { font-family: "Amiri Site", "Times New Roman", Georgia, serif; letter-spacing: -.01em; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--pale-gold); outline-offset: 3px; border-radius: 6px; }
+    .wrap { width: min(980px, 100% - 40px); margin: 0 auto; }
+    header {
+      position: relative; overflow: hidden; color: #f7f4e9; padding-bottom: 68px;
+      background:
+        radial-gradient(circle at 84% 8%, rgba(240,210,122,.16), transparent 40%),
+        linear-gradient(150deg, var(--night), var(--deep) 62%, var(--night));
+    }
+    header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .nav { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0 10px; font-size: .92rem; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 40px; height: 40px; border-radius: 11px; border: 1px solid rgba(240,210,122,.5); }
+    .brand span { font-family: "Amiri Site", serif; font-size: 1.08rem; font-weight: 700; }
+    .nav a:not(.brand) { text-decoration: none; color: rgba(247,244,233,.78); }
+    .nav a:not(.brand):hover { color: var(--pale-gold); }
+    .hero { position: relative; z-index: 1; padding-top: 50px; max-width: 740px; }
+    .eyebrow { display: inline-block; margin: 0 0 16px; padding: 5px 13px; border: 1px solid rgba(240,210,122,.42); border-radius: 999px; color: var(--pale-gold); font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .hero h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.06; }
+    .hero h1 span { color: var(--pale-gold); }
+    .lead { margin: 18px 0 8px; max-width: 60ch; color: rgba(247,244,233,.86); font-size: 1.05rem; }
+    .hint { margin: 0; color: var(--pale-gold); font-size: .9rem; font-style: italic; }
+    .ornament { margin: 22px 0 0; color: var(--pale-gold); letter-spacing: .5em; font-size: .72rem; }
+    .index-section { position: relative; z-index: 2; margin-top: -34px; }
+    .index-box { padding: 20px; border: 2px solid var(--gold); border-radius: 18px; background: var(--paper-2); box-shadow: inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px rgba(184,135,26,.28), 0 18px 40px rgba(8,58,36,.12); text-align: center; }
+    .index-box h2 { margin: 0 0 14px; color: var(--deep); font-size: 1.1rem; letter-spacing: .1em; text-transform: uppercase; }
+    .index-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .index-grid a { padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(184,135,26,.34); text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--deep); }
+    .index-grid a:hover, .index-grid a:focus-visible { background: var(--deep); color: var(--pale-gold); }
+    main { padding: 30px 0 80px; }
+    .entry { scroll-margin-top: 22px; margin-top: 42px; padding: 30px 32px; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 18px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: inset 0 0 0 5px rgba(244,246,239,.72), 0 14px 34px rgba(8,58,36,.07); }
+    .entry h2 { margin: 4px 0 18px; color: var(--deep); font-size: clamp(1.7rem, 3vw, 2.25rem); }
+    .kicker { color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    summary { cursor: pointer; font-weight: 700; color: var(--deep); }
+    .entry p { margin: 0 0 12px; }
+    .entry p:last-child { margin-bottom: 0; }
+    .name-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
+    .name-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, var(--paper-2)); box-shadow: 0 10px 26px rgba(8,58,36,.06); }
+    .name-num { color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em; }
+    .arabic { margin: 6px 0; color: var(--green); font-family: "Amiri Site", serif; font-size: 1.8rem; line-height: 1.5; }
+    .latin { margin: 0 0 8px; color: var(--deep); font-family: "Amiri Site", serif; font-size: 1.25rem; font-weight: 700; }
+    .sens { margin: 0; color: var(--muted); font-size: .93rem; }
+    .dhikr { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--green); font-size: .9rem; }
+    .letter { margin: 42px 0 0; color: var(--deep); font-size: 2rem; border-bottom: 1px solid var(--line); }
+    .manifesto { margin-top: 58px; padding: 30px 34px; border: 1px solid var(--gold); border-radius: 18px; color: #f7f4e9; background: linear-gradient(145deg, var(--deep), var(--night)); box-shadow: inset 0 0 0 8px rgba(12,31,22,.5), inset 0 0 0 9px rgba(240,210,122,.22); }
+    .manifesto h2 { margin: 0 0 8px; font-size: 1.8rem; }
+    .manifesto p { margin: 0; color: rgba(247,244,233,.84); }
+    .manifesto a { color: var(--pale-gold); font-weight: 700; }
+    footer { padding: 32px 0 38px; color: rgba(247,244,233,.76); background: var(--night); font-size: .88rem; }
+    footer a { color: var(--pale-gold); }
+    .line { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(240,210,122,.18); }
+    .top-link { position: fixed; right: 20px; bottom: 20px; z-index: 5; display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid var(--gold); border-radius: 50%; background: var(--deep); color: var(--pale-gold); text-decoration: none; box-shadow: 0 12px 28px rgba(8,58,36,.24); }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 980px); }
+      .entry { padding: 24px 20px; }
+      .name-grid { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body id="haut">
+
+<header>
+  <div class="wrap">
+        <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html">
+        <img src="assets/app-icon.png" alt="Icône de Diiwaanu Xassida Yi">
+        <span>Diiwaanu Xassida Yi</span>
+      </a>
+      <div>
+        <a href="rubriques.html">Rubriques</a> ·
+        <a href="bibliotheque.html">Bibliothèque</a> ·
+        <a href="nafilas.html">Nafilas</a> ·
+        <a href="xam-yoonwi.html">XAM YOONWI</a> ·
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <p class="eyebrow">Calendrier & prières</p>
+      <h1>Prier,<br><span>sans connexion</span></h1>
+      <p class="lead">Les données réelles de l’application : villes, événements hijri, Qibla et widget, présentées en texte.</p>
+      <p class="hint">Astuce : appuyez sur Ctrl + F pour chercher une ville ou un événement.</p>
+      <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="index-box">
+      <h2>Quatre onglets, tout hors ligne</h2>
+      <nav class="index-grid" aria-label="Sommaire">
+        <a href="#horaires">Heures de prière</a>
+        <a href="#villes">Villes</a>
+        <a href="#calendrier">Calendrier</a>
+        <a href="#qibla">Qibla</a>
+        <a href="#widget">Widget</a>
+      </nav>
+    </section>
+
+    <article class="entry" id="horaires">
+      <span class="kicker">Onglet 1</span>
+      <h2>Heures de prière</h2>
+      <p>Les horaires sont calculés sur le téléphone, pour la ville choisie manuellement dans la liste. Aucune position GPS n’est demandée, aucun serveur n’est interrogé.</p>
+      <p>Le compte à rebours suit l’heure du téléphone. L’appel à la prière est personnel, enregistré avec l’accord du muezzin : il reste désactivé au départ. Les permissions Android ne sont demandées qu’au premier activage, et un bouton manuel « Écouter l’appel » reste disponible.</p>
+    </article>
+
+    <h2 class="letter" id="villes">Villes disponibles (47)</h2>
+    <p>Choix manuel, sans géolocalisation. Coordonnées et fuseaux repris de l’application.</p>
+    <h2 class="letter" id="pays-Arabie-saoudite">Arabie saoudite</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Riyad</p>
+        <p class="sens">24.7136°, 46.6753° · Asia&#47;Riyadh</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">La Mecque</p>
+        <p class="sens">21.4225°, 39.8262° · Asia&#47;Riyadh</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Médine</p>
+        <p class="sens">24.5247°, 39.5692° · Asia&#47;Riyadh</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Jeddah</p>
+        <p class="sens">21.4858°, 39.1925° · Asia&#47;Riyadh</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Belgique">Belgique</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Bruxelles</p>
+        <p class="sens">50.8503°, 4.3517° · Europe&#47;Brussels</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Burkina-Faso">Burkina Faso</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Ouagadougou</p>
+        <p class="sens">12.3714°, -1.5197° · Africa&#47;Ouagadougou</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Canada">Canada</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Toronto</p>
+        <p class="sens">43.6532°, -79.3832° · America&#47;Toronto</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Montréal</p>
+        <p class="sens">45.5019°, -73.5674° · America&#47;Toronto</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Vancouver</p>
+        <p class="sens">49.2827°, -123.1207° · America&#47;Vancouver</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-C-te-d-Ivoire">Côte d’Ivoire</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Abidjan</p>
+        <p class="sens">5.3599°, -4.0083° · Africa&#47;Abidjan</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-France">France</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Paris</p>
+        <p class="sens">48.8566°, 2.3522° · Europe&#47;Paris</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Lyon</p>
+        <p class="sens">45.7640°, 4.8357° · Europe&#47;Paris</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Marseille</p>
+        <p class="sens">43.2965°, 5.3698° · Europe&#47;Paris</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Bordeaux</p>
+        <p class="sens">44.8378°, -0.5792° · Europe&#47;Paris</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Guin-e">Guinée</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Conakry</p>
+        <p class="sens">9.6412°, -13.5784° · Africa&#47;Conakry</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Mali">Mali</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Bamako</p>
+        <p class="sens">12.6392°, -8.0029° · Africa&#47;Bamako</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Maroc">Maroc</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Casablanca</p>
+        <p class="sens">33.5731°, -7.5898° · Africa&#47;Casablanca</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Niger">Niger</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Niamey</p>
+        <p class="sens">13.5116°, 2.1254° · Africa&#47;Niamey</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Royaume-Uni">Royaume-Uni</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Londres</p>
+        <p class="sens">51.5072°, -0.1276° · Europe&#47;London</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Suisse">Suisse</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Genève</p>
+        <p class="sens">46.2044°, 6.1432° · Europe&#47;Zurich</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-S-n-gal">Sénégal</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Touba</p>
+        <p class="sens">14.8667°, -15.8833° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Dakar</p>
+        <p class="sens">14.7167°, -17.4677° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Thiès</p>
+        <p class="sens">14.8167°, -16.9500° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Diourbel</p>
+        <p class="sens">14.8167°, -16.2333° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Saint-Louis</p>
+        <p class="sens">16.2667°, -16.5000° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Kaolack</p>
+        <p class="sens">14.1333°, -16.0667° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Kaffrine</p>
+        <p class="sens">14.1000°, -15.5500° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Tambacounda</p>
+        <p class="sens">13.7833°, -13.6500° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Ziguinchor</p>
+        <p class="sens">12.5833°, -16.2667° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Sédhiou</p>
+        <p class="sens">12.7000°, -15.5500° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Kolda</p>
+        <p class="sens">12.9000°, -14.9400° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Matam</p>
+        <p class="sens">15.6500°, -13.2500° · Africa&#47;Dakar</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Louga</p>
+        <p class="sens">15.6167°, -16.2333° · Africa&#47;Dakar</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Tchad">Tchad</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">N’Djamena</p>
+        <p class="sens">12.1348°, 15.0557° · Africa&#47;Ndjamena</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Tunisie">Tunisie</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Tunis</p>
+        <p class="sens">36.8065°, 10.1815° · Africa&#47;Tunis</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays-Turquie">Turquie</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Istanbul</p>
+        <p class="sens">41.0082°, 28.9784° · Europe&#47;Istanbul</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays--gypte">Égypte</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Le Caire</p>
+        <p class="sens">30.0444°, 31.2357° · Africa&#47;Cairo</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays--mirats-arabes-unis">Émirats arabes unis</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">Dubaï</p>
+        <p class="sens">25.2048°, 55.2708° · Asia&#47;Dubai</p>
+      </article>
+    </div>
+    <h2 class="letter" id="pays--tats-Unis">États-Unis</h2>
+    <div class="name-grid">
+      <article class="name-card">
+        <p class="latin">New York</p>
+        <p class="sens">40.7128°, -74.0060° · America&#47;New_York</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Washington</p>
+        <p class="sens">38.9072°, -77.0369° · America&#47;New_York</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Atlanta</p>
+        <p class="sens">33.7490°, -84.3880° · America&#47;New_York</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Miami</p>
+        <p class="sens">25.7617°, -80.1918° · America&#47;New_York</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Houston</p>
+        <p class="sens">29.7604°, -95.3698° · America&#47;Chicago</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Los Angeles</p>
+        <p class="sens">34.0522°, -118.2437° · America&#47;Los_Angeles</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Chicago</p>
+        <p class="sens">41.8781°, -87.6298° · America&#47;Chicago</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">San Francisco</p>
+        <p class="sens">37.7749°, -122.4194° · America&#47;Los_Angeles</p>
+      </article>
+      <article class="name-card">
+        <p class="latin">Seattle</p>
+        <p class="sens">47.6062°, -122.3321° · America&#47;Los_Angeles</p>
+      </article>
+    </div>
+
+
+    <h2 class="letter" id="calendrier">Calendrier des événements (9)</h2>
+    <p>Dates hijri affichées dans l’application. Le réglage « Sénégal / Touba (+1 jour) » ne décale que ces événements religieux, jamais les heures de prière ni le compte à rebours.</p>
+      <article class="entry">
+        <span class="kicker">1 Mouharram</span>
+        <h2>Nouvel an islamique </h2>
+        <p>Début de l’année Hijri.</p>
+      </article>
+      <article class="entry">
+        <span class="kicker">10 Mouharram</span>
+        <h2>Achoura </h2>
+        <p>Jour de jeûne recommandé et de rappel de la délivrance de Moussa.</p>
+      </article>
+      <article class="entry">
+        <span class="kicker">18 Safar</span>
+        <h2>Grand Magal de Touba <span class="chapter-num">Mouride</span></h2>
+        <p>Pèlerinage annuel de Serigne Touba, Ahmadou Bamba. Le rassemblement a lieu à Touba le 18 Safar.</p>
+      </article>
+      <article class="entry">
+        <span class="kicker">12 Rabi al-awwal</span>
+        <h2>Mawlid — Naissance du Prophète </h2>
+        <p></p>
+      </article>
+      <article class="entry">
+        <span class="kicker">27 Rajab</span>
+        <h2>Isra et Miraj </h2>
+        <p></p>
+      </article>
+      <article class="entry">
+        <span class="kicker">1 Ramadan</span>
+        <h2>Début du Ramadan </h2>
+        <p>Premier jour du mois de jeûne.</p>
+      </article>
+      <article class="entry">
+        <span class="kicker">27 Ramadan</span>
+        <h2>Laylat al-Qadr </h2>
+        <p>La Nuit du Destin, meilleure que mille mois.</p>
+      </article>
+      <article class="entry">
+        <span class="kicker">1 Chawwal</span>
+        <h2>Aïd al-Fitr </h2>
+        <p>Fête de la fin du Ramadan.</p>
+      </article>
+      <article class="entry">
+        <span class="kicker">10 Dhou al-Hijja</span>
+        <h2>Aïd al-Adha </h2>
+        <p>Fête du sacrifice, pendant le pèlerinage à La Mecque.</p>
+      </article>
+
+    <article class="entry" id="qibla">
+      <span class="kicker">Onglet 3</span>
+      <h2>Qibla sans GPS</h2>
+      <p>La direction est calculée depuis la ville choisie manuellement. Quand les capteurs le permettent, la boussole est vivante ; sinon, un repère statique prend le relais.</p>
+      <p>Le badge « Nord magnétique » évite toute confusion avec le nord géographique. Une pastille indique la précision : Bonne, Moyenne, Faible ou Indisponible.</p>
+    </article>
+
+    <article class="entry" id="widget">
+      <span class="kicker">Écran d’accueil</span>
+      <h2>Widget Android</h2>
+      <p>Ville choisie, prochaine prière et cinq horaires visibles en un coup d’œil, sans connexion. Le widget utilise uniquement des éléments Android simples et ne demande aucune permission supplémentaire.</p>
+    </article>
+
+    <div class="manifesto">
+      <h2>Retrouver ces rubriques dans l’application</h2>
+      <p>Diiwaanu Xassida Yi fonctionne hors ligne, sans compte ni publicité. <a href="rubriques.html">Voir toutes les rubriques →</a></p>
+    </div>
+  </div>
+</main>
+Closure: () => String from Function 'footer': static.()

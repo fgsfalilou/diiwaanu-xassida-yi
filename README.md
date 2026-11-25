@@ -12,23 +12,30 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 
 - `index.html` : page complète, sans dépendance externe ni script.
 - `bibliotheque.html` : bibliothèque statique des khassaïdes, générée depuis `assets/books.json`. Aucun script ni nombre figé ; les PDF restent hébergés sur le R2 de l’application.
-- `rubriques.html` : présentation de toutes les rubriques de l’application, avec captures et liens vers la bibliothèque et les nafilas.
-- `nafilas.html` : texte des nuits de nafilas, généré depuis les modèles Dart, en texte seul avec police Amiri et filets dorés.
+- `rubriques.html` : **texte** et liens vers toutes les rubriques — aucune capture d’écran n’y est utilisée comme contenu.
+- `nafilas.html` : texte des 30 nuits de nafilas, généré depuis les modèles Dart, en texte seul avec police Amiri et filets dorés.
+- `nafila-du-jour.html` : les 7 fiches de la semaine en français, wolof et anglais, générées depuis `nafila_du_jour.dart`.
+- `99-noms.html` : les 99 Noms d’Allah (arabe, latin, sens, dhikr), générés depuis `assets/divine_names.json`.
+- `xam-yoonwi.html` : les 30 chapitres en texte et portraits recadrés, générés depuis `xam_yoonwi_entry.dart`.
+- `prieres.html` : 47 villes, 9 événements hijri, Qibla et widget, générés depuis les sources Dart de l’application.
 - `sitemap.xml` et `robots.txt` : fichiers d’aide à l’indexation Google.
 - `assets/fonts/AmiriQuran-Regular.ttf` : police serif locale, hébergée sur le site même (aucun service externe).
 - `assets/app-icon.png` : icône de l’application.
 - `assets/feature-graphic.png` : bandeau 1024 × 500.
-- `assets/screenshots/v2/` : 11 captures 720 × 1560 prises dans l’application (8 utilisées sur le Play Store + XAM YOONWI, Qibla et Nafila du jour). Elles conservent leurs proportions et s’ouvrent en taille réelle au clic.
+- `assets/screenshots/v2/` : 11 captures 720 × 1560 réservées à la galerie **Aperçus** de l’accueil. Elles ne servent jamais de contenu dans `rubriques.html`.
 
 ## Mettre à jour
 
-1. Modifier `index.html` / `rubriques.html` (ou remplacer les images dans `assets/`).
-2. Si le catalogue a changé, régénérer la bibliothèque depuis la racine du projet Flutter :
-   `dart run tools/generate_bibliotheque.dart`
-3. Si les textes des nafilas ont changé, régénérer la page dédiée :
-   `dart run tools/generate_nafilas.dart`
-4. Copier le dossier `store/site/` dans un clone du dépôt `diiwaanu-xassida-yi`.
-5. `git add . && git commit -m "Mise à jour du site" && git push`.
+1. Modifier les gabarits (ou remplacer les images de la galerie dans `assets/`).
+2. Régénérer depuis la racine du projet Flutter :
+   - `dart run tools/generate_bibliotheque.dart`
+   - `dart run tools/generate_nafilas.dart`
+   - `dart run tools/generate_xam_yoonwi.dart`
+   - `dart run tools/generate_site_pages.dart`
+   - `dart run tools/generate_prieres.dart`
+   - `dart run tools/generate_rubriques.dart`
+3. Copier le dossier `store/site/` dans un clone du dépôt `diiwaanu-xassida-yi`.
+4. `git add . && git commit -m "Mise à jour du site" && git push`.
 
 GitHub Pages publie automatiquement la branche `master`.
 
@@ -36,7 +43,7 @@ GitHub Pages publie automatiquement la branche `master`.
 
 Tant que la fiche n’est pas publiée, le bouton affiche **« Bientôt sur Google Play »** et n’est pas cliquable (l’application est prête mais la validation d’identité du compte Google Play est en attente).
 
-Après publication, remplacer dans `index.html` **et** `rubriques.html` le bloc :
+Après publication, remplacer dans `index.html` le bloc :
 
 ```html
 <span class="btn btn-gold" aria-disabled="true">Bientôt sur Google Play</span>
