@@ -2,7 +2,7 @@
 
 Page statique de présentation de l’application, hébergée sur GitHub Pages :
 
-**https://fgsfalilou.github.io/diiwaanu-xassida-yi/**
+**https://diiwaanu-xassida-yi.com/**
 
 La politique de confidentialité reste à son adresse officielle, inchangée :
 
