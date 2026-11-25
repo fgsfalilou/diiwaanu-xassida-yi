@@ -13,6 +13,7 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 - `index.html` : page complète, sans dépendance externe ni script.
 - `bibliotheque.html` : bibliothèque statique des khassaïdes, générée depuis `assets/books.json`. Aucun script ni nombre figé ; les PDF restent hébergés sur le R2 de l’application.
 - `sitemap.xml` et `robots.txt` : fichiers d’aide à l’indexation Google.
+- `assets/fonts/AmiriQuran-Regular.ttf` : police serif locale, hébergée sur le site même (aucun service externe).
 - `assets/app-icon.png` : icône de l’application.
 - `assets/feature-graphic.png` : bandeau 1024 × 500.
 - `assets/screenshots/v2/` : les 8 captures 720 × 1560 utilisées sur le Play Store. Elles conservent leurs proportions sur la page et s’ouvrent en taille réelle au clic pour lire le texte.
