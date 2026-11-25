@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khassaïdes en Anglais — Bibliothèque — Diiwaanu Xassida Yi</title>
+  <meta name="description" content="4 khassaïdes en Anglais : recherche, index alphabétique, affichage progressif et lecture directe des PDF, sans compte ni publicité.">
+  <link rel="canonical" href="https://diiwaanu-xassida-yi.com/bibliotheque-anglais.html">
+  <meta property="og:url" content="https://diiwaanu-xassida-yi.com/bibliotheque-anglais.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Khassaïdes en Anglais — Bibliothèque — Diiwaanu Xassida Yi">
+  <meta property="og:description" content="4 khassaïdes en Anglais : recherche, index alphabétique, affichage progressif et lecture directe des PDF, sans compte ni publicité.">
+  <meta property="og:image" content="https://diiwaanu-xassida-yi.com/assets/app-icon.png">
+  <meta name="theme-color" content="#0B1E15">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="stylesheet" href="assets/css/site.css?v=biblio1">
+  <script src="assets/js/site.js?v=biblio1" defer></script>
+</head>
+<body id="haut">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html">
+        <img src="assets/app-icon.png" alt="Icône de Diiwaanu Xassida Yi">
+        <span>Diiwaanu Xassida Yi</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle
+              aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
+        <span aria-hidden="true">☰</span><span class="menu-label">Menu</span>
+      </button>
+    </nav>
+
+    <noscript>
+      <nav class="noscript-nav" aria-label="Navigation sans JavaScript">
+        <a href="index.html">Accueil</a>
+        <a href="rubriques.html">Rubriques</a>
+        <a href="bibliotheque.html" aria-current="page">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </noscript>
+
+    <div class="hero">
+      <p class="eyebrow">Bibliothèque · Anglais</p>
+      <h1>Les khassaïdes<br><span>en Anglais</span></h1>
+      <p class="lead">4 khassaïdes en Anglais, classés par ordre alphabétique. Cherchez un titre ou utilisez l’index, puis ouvrez le PDF.</p>
+      <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
+    </div>
+  </div>
+</header>
+
+<div class="menu-backdrop" data-menu-backdrop aria-hidden="true"></div>
+<aside id="site-menu" class="menu-panel" aria-label="Menu du site" aria-hidden="true">
+  <div class="menu-panel-head">
+    <strong>Diiwaanu Xassida Yi</strong>
+    <button class="menu-close" type="button" data-menu-close aria-label="Fermer le menu">×</button>
+  </div>
+  <nav aria-label="Liens du site">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+        <li><a href="rubriques.html">Rubriques</a></li>
+        <li class="menu-group">
+          <a href="bibliotheque.html" aria-current="page">Bibliothèque</a>
+          <ul class="menu-sub">
+            <li><a href="bibliotheque-arabe.html">Arabe</a></li>
+            <li><a href="bibliotheque-francais.html">Français</a></li>
+            <li><a href="bibliotheque-wolof.html">Wolof</a></li>
+            <li><a href="bibliotheque-anglais.html">Anglais</a></li>
+          </ul>
+        </li>
+        <li><a href="prieres.html">Prières</a></li>
+        <li><a href="nafilas.html">Nafilas</a></li>
+        <li><a href="nafila-du-jour.html">Nafila du jour</a></li>
+        <li><a href="99-noms.html">99 Noms</a></li>
+        <li><a href="xam-yoonwi.html">XAM YOONWI</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <p class="menu-note">Application gratuite, hors ligne et sans publicité.</p>
+</aside>
+
+<main id="contenu">
+  <div class="wrap">
+  <nav class="lang-switch" aria-label="Choisir une langue de la bibliothèque">
+      <a class="filter-chip" href="bibliotheque.html">Toutes les langues</a>
+      <a class="filter-chip" href="bibliotheque-arabe.html">Arabe</a>
+      <a class="filter-chip" href="bibliotheque-francais.html">Français</a>
+      <a class="filter-chip" href="bibliotheque-wolof.html">Wolof</a>
+      <a class="filter-chip" href="bibliotheque-anglais.html" aria-current="page">Anglais</a>
+  </nav>
+
+    <section class="library-toolbar" aria-label="Outils de la bibliothèque">
+      <div class="search-wrap">
+        <label class="sr-only" for="book-search">Rechercher un khassaïde en Anglais</label>
+        <input id="book-search" type="search" placeholder="Rechercher un khassaïde…" autocomplete="off">
+      </div>
+      <div class="alpha-index" id="alpha-index" role="group" aria-label="Index alphabétique"></div>
+    </section>
+
+    <p class="result-count" id="book-count" role="status" aria-live="polite"></p>
+
+    <ul class="book-list" id="book-list">
+<li class="book-row"
+            data-title="Axiru Zaman (Traduction)"
+            data-lang="anglais"
+            data-letter="A">
+          <div>
+            <h3>Axiru Zaman (Traduction)</h3>
+            <p class="book-meta"><span class="book-lang">Anglais</span><span>khassaïde</span></p>
+          </div>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Axiru-Zaman-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </li>
+<li class="book-row"
+            data-title="Huqal bukaa u (Anglais)"
+            data-lang="anglais"
+            data-letter="H">
+          <div>
+            <h3>Huqal bukaa u (Anglais)</h3>
+            <p class="book-meta"><span class="book-lang">Anglais</span><span>khassaïde</span></p>
+          </div>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;HUQQAL-BUKKAU-BACKGROUND-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </li>
+<li class="book-row"
+            data-title="Jawartul laha (Traduction)"
+            data-lang="anglais"
+            data-letter="J">
+          <div>
+            <h3>Jawartul laha (Traduction)</h3>
+            <p class="book-meta"><span class="book-lang">Anglais</span><span>khassaïde</span></p>
+          </div>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jawartu-En.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </li>
+<li class="book-row"
+            data-title="Munawwirus Suduur (Traduction)"
+            data-lang="anglais"
+            data-letter="M">
+          <div>
+            <h3>Munawwirus Suduur (Traduction)</h3>
+            <p class="book-meta"><span class="book-lang">Anglais</span><span>khassaïde</span></p>
+          </div>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;MUNAWWIRU-C-%C3%87UDDUR-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </li>
+    </ul>
+
+    <button class="more-books" type="button" data-more-books hidden>Afficher 50 khassaïdes de plus</button>
+
+    <div class="manifesto">
+      <h2>Lecture directe, sans compte</h2>
+      <p>Chaque titre mène au fichier PDF hébergé sur le stockage de l’application. Aucun suivi, aucune publicité. <a href="bibliotheque.html">Choisir une autre langue →</a></p>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><strong>Diiwaanu Xassida Yi</strong><br>Application Android gratuite, hors ligne et sans publicité.</div>
+      <div class="foot-links">
+        <a href="rubriques.html">Rubriques</a>
+        <a href="bibliotheque.html">Bibliothèque</a>
+        <a href="prieres.html">Prières</a>
+        <a href="nafilas.html">Nafilas</a>
+        <a href="nafila-du-jour.html">Nafila du jour</a>
+        <a href="99-noms.html">99 Noms</a>
+        <a href="xam-yoonwi.html">XAM YOONWI</a>
+      </div>
+    </div>
+    <p class="privacy">
+      <a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a> ·
+      <a href="mailto:beguefallou@gmail.com">beguefallou@gmail.com</a> ·
+      <a href="https://wa.me/13018578776">WhatsApp</a>
+    </p>
+    <div class="line">Réalisé par Mouhamadou Falilou Seye. Les traductions et transcriptions restent la propriété de leurs auteurs respectifs ; retrait sur simple demande.</div>
+  </div>
+</footer>
+
+</body>
+</html>

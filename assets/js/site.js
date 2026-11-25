@@ -74,6 +74,9 @@
     const rows = $$('.book-row', list);
     if (!rows.length) return;
 
+    const more = $('[data-more-books]');
+    const step = 50;
+    let limit = step;
     const state = { query: '', lang: 'Toutes', letter: 'Toutes' };
 
     const uniqueLetters = Array.from(
@@ -99,7 +102,8 @@
 
     const apply = () => {
       const query = normalise(state.query);
-      let visible = 0;
+      let matching = 0;
+      let shown = 0;
 
       rows.forEach((row) => {
         const title = normalise(row.dataset.title);
@@ -110,24 +114,44 @@
         const matchesLetter = state.letter === 'Toutes' || letter === state.letter;
         const show = matchesQuery && matchesLang && matchesLetter;
         row.hidden = !show;
-        if (show) visible += 1;
+        row.classList.remove('is-truncated');
+        if (show) {
+          matching += 1;
+          if (shown < limit) {
+            shown += 1;
+          } else {
+            row.classList.add('is-truncated');
+          }
+        }
       });
 
-      count.textContent = `${visible} khassaïde${visible > 1 ? 's' : ''} affichée${visible > 1 ? 's' : ''}`;
+      const truncated = matching > shown;
+      const word = matching > 1 ? 's' : '';
+      count.textContent = truncated
+        ? `${shown} khassaïde${shown > 1 ? 's' : ''} affichée${shown > 1 ? 's' : ''} sur ${matching}`
+        : `${matching} khassaïde${word} affichée${word}`;
+
+      if (more) {
+        more.hidden = !truncated;
+        const next = Math.min(step, matching - shown);
+        more.textContent = `Afficher ${next} khassaïde${next > 1 ? 's' : ''} de plus`;
+      }
     };
+
+    const reset = () => { limit = step; apply(); };
 
     search.addEventListener('input', (event) => {
       state.query = event.target.value.trim();
-      apply();
+      reset();
     });
 
-    $$('[data-lang]').forEach((button) => {
+    $$('button[data-lang]').forEach((button) => {
       button.addEventListener('click', () => {
         state.lang = button.dataset.lang;
-        $$('[data-lang]').forEach((other) => {
+        $$('button[data-lang]').forEach((other) => {
           other.setAttribute('aria-pressed', String(other === button));
         });
-        apply();
+        reset();
       });
     });
 
@@ -139,16 +163,39 @@
         $$('[data-letter]', alpha).forEach((other) => {
           other.setAttribute('aria-pressed', String(other === button));
         });
-        apply();
+        reset();
       });
     }
 
+    if (more) more.addEventListener('click', () => { limit += step; apply(); });
+
     apply();
+  }
+
+  /* ---------- Retour rapide en haut, sur toutes les pages ---------- */
+  function initToTop() {
+    if ($('.to-top')) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'to-top';
+    button.setAttribute('aria-label', 'Retour en haut');
+    button.innerHTML = '<span aria-hidden="true">↑</span>';
+    document.body.appendChild(button);
+
+    const update = () => button.classList.toggle('is-visible', window.scrollY > 400);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+
+    button.addEventListener('click', () => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initNotifyForm();
     initLibrary();
+    initToTop();
   });
 })();
