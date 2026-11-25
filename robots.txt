@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diiwaanu-xassida-yi.com/sitemap.xml
