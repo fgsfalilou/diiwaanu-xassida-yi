@@ -13,7 +13,7 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 - `index.html` : page complète, sans dépendance externe ni script.
 - `assets/app-icon.png` : icône de l’application.
 - `assets/feature-graphic.png` : bandeau 1024 × 500.
-- `assets/screenshots/` : les 8 captures 720 × 1560 utilisées sur le Play Store.
+- `assets/screenshots/v2/` : les 8 captures 720 × 1560 utilisées sur le Play Store. Elles conservent leurs proportions sur la page et s’ouvrent en taille réelle au clic pour lire le texte.
 
 ## Mettre à jour
 

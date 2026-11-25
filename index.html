@@ -223,20 +223,31 @@
 
     .gallery figure {
       flex: 0 0 auto;
-      width: 268px;
+      width: min(292px, 72vw);
       margin: 0;
       scroll-snap-align: center;
       text-align: center;
     }
 
+    .gallery a { display: block; }
+
     .gallery img {
       width: 100%;
+      height: auto;
+      aspect-ratio: 720 / 1560;
+      object-fit: contain;
+      background: var(--night-2);
       border-radius: 22px;
       border: 1px solid rgba(8,58,36,.14);
       box-shadow: var(--shadow);
+      transition: transform .18s ease;
     }
 
+    .gallery a:hover img { transform: translateY(-3px); }
+
     .gallery figcaption { margin-top: 10px; font-size: .86rem; color: var(--muted); }
+
+    .zoom-hint { margin-top: 8px; color: var(--gold); font-size: .85rem; font-weight: 700; }
 
     .contact { background: var(--paper); }
 
@@ -277,8 +288,9 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn { transition: none; }
+      .btn, .gallery img { transition: none; }
       .btn:hover { transform: none; }
+      .gallery a:hover img { transform: none; }
     }
   </style>
 </head>
@@ -384,16 +396,17 @@
         <h2>L’application en images</h2>
         <p>Faites défiler pour voir la bibliothèque, les prières, le calendrier, les 99 noms, les nafilas et les PDF téléchargés.</p>
         <p><small>Captures refaites le 25 novembre 2026 directement depuis l’application, sans lecteur vidéo ni contenu externe.</small></p>
+        <span class="zoom-hint">Cliquer sur une capture pour l’ouvrir en grand et lire le texte.</span>
       </div>
       <div class="gallery" aria-label="Captures de l’application">
-        <figure><img src="assets/screenshots/v2/01_bibliotheque.png" alt="Bibliothèque des khassaïdes" width="720" height="1560" loading="lazy"><figcaption>Bibliothèque</figcaption></figure>
-        <figure><img src="assets/screenshots/v2/02_prieres.png" alt="Heures de prière" width="720" height="1560" loading="lazy"><figcaption>Heures de prière</figcaption></figure>
-        <figure><img src="assets/screenshots/v2/03_fiche.png" alt="Fiche détaillée d’un livre" width="720" height="1560" loading="lazy"><figcaption>Fiche du livre</figcaption></figure>
-        <figure><img src="assets/screenshots/v2/04_evenements.png" alt="Calendrier des événements" width="720" height="1560" loading="lazy"><figcaption>Événements</figcaption></figure>
-        <figure><img src="assets/screenshots/v2/05_a_propos.png" alt="Page À propos" width="720" height="1560" loading="lazy"><figcaption>À propos</figcaption></figure>
-        <figure><img src="assets/screenshots/v2/06_99_noms.png" alt="Section des 99 noms" width="720" height="1560" loading="lazy"><figcaption>99 Noms</figcaption></figure>
-        <figure><img src="assets/screenshots/v2/07_nafilas_ramadan.png" alt="Nafilas du Ramadan" width="720" height="1560" loading="lazy"><figcaption>Nafilas R</figcaption></figure>
-        <figure><img src="assets/screenshots/v2/08_mes_pdf.png" alt="Espace Mes PDF téléchargés" width="720" height="1560" loading="lazy"><figcaption>Mes PDF</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/01_bibliotheque.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/01_bibliotheque.png" alt="Bibliothèque des khassaïdes — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>Bibliothèque</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/02_prieres.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/02_prieres.png" alt="Heures de prière — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>Heures de prière</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/03_fiche.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/03_fiche.png" alt="Fiche détaillée d’un livre — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>Fiche du livre</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/04_evenements.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/04_evenements.png" alt="Calendrier des événements — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>Événements</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/05_a_propos.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/05_a_propos.png" alt="Page À propos — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>À propos</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/06_99_noms.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/06_99_noms.png" alt="Section des 99 noms — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>99 Noms</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/07_nafilas_ramadan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/07_nafilas_ramadan.png" alt="Nafilas du Ramadan — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>Nafilas R</figcaption></figure>
+        <figure><a href="assets/screenshots/v2/08_mes_pdf.png" target="_blank" rel="noopener"><img src="assets/screenshots/v2/08_mes_pdf.png" alt="Espace Mes PDF téléchargés — ouvrir en grand" width="720" height="1560" loading="lazy"></a><figcaption>Mes PDF</figcaption></figure>
       </div>
     </div>
   </section>
