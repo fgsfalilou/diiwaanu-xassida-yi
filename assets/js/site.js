@@ -107,9 +107,10 @@
 
       rows.forEach((row) => {
         const title = normalise(row.dataset.title);
+        const arabic = normalise(row.dataset.arabic);
         const lang = row.dataset.lang || '';
         const letter = (row.dataset.letter || '#').toUpperCase();
-        const matchesQuery = !query || title.includes(query);
+        const matchesQuery = !query || title.includes(query) || arabic.includes(query);
         const matchesLang = state.lang === 'Toutes' || lang === state.lang;
         const matchesLetter = state.letter === 'Toutes' || letter === state.letter;
         const show = matchesQuery && matchesLang && matchesLetter;
