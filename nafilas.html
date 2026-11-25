@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nafilas du Ramadan — Diiwaanu Xassida Yi</title>
+  <meta name="description" content="Les invocations et les bienfaits des nuits de Ramadan, en texte lisible hors ligne, dans l’esprit de l’application Diiwaanu Xassida Yi.">
+  <link rel="canonical" href="https://diiwaanu-xassida-yi.com/nafilas.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diiwaanu-xassida-yi.com/nafilas.html">
+  <meta property="og:title" content="Nafilas du Ramadan — Diiwaanu Xassida Yi">
+  <meta property="og:description" content="Trente nuits de nafilas en texte seul, sans publicité ni suivi.">
+  <meta property="og:image" content="https://diiwaanu-xassida-yi.com/assets/app-icon.png">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <style>
+    @font-face {
+      font-family: "Amiri Site";
+      src: url("assets/fonts/AmiriQuran-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
+
+    :root {
+      --green: #0E6B40;
+      --deep: #083A24;
+      --gold: #B8871A;
+      --pale-gold: #F0D27A;
+      --paper: #F4F6EF;
+      --paper-2: #FBFBF6;
+      --night: #0C1F16;
+      --night-2: #09120D;
+      --ink: #16251d;
+      --muted: #5c6a61;
+      --line: rgba(184,135,26,.34);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(184,135,26,.08), transparent 30%),
+        repeating-linear-gradient(0deg, rgba(184,135,26,.022) 0 1px, transparent 1px 6px),
+        var(--paper);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .serif {
+      font-family: "Amiri Site", "Times New Roman", Georgia, serif;
+      letter-spacing: -.01em;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--pale-gold); outline-offset: 3px; border-radius: 6px; }
+    .wrap { width: min(980px, 100% - 40px); margin: 0 auto; }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: #f7f4e9;
+      background:
+        radial-gradient(circle at 84% 10%, rgba(240,210,122,.16), transparent 38%),
+        linear-gradient(150deg, var(--night), var(--deep) 62%, var(--night-2));
+      padding-bottom: 66px;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 22px 0 10px;
+      font-size: .92rem;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 40px; height: 40px; border-radius: 11px; border: 1px solid rgba(240,210,122,.5); }
+    .brand span { font-family: "Amiri Site", serif; font-size: 1.08rem; font-weight: 700; }
+    .nav a:not(.brand) { text-decoration: none; color: rgba(247,244,233,.78); }
+    .nav a:not(.brand):hover { color: var(--pale-gold); }
+
+    .hero { position: relative; z-index: 1; padding-top: 52px; max-width: 720px; }
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 16px;
+      padding: 5px 13px;
+      border: 1px solid rgba(240,210,122,.42);
+      border-radius: 999px;
+      color: var(--pale-gold);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .hero h1 { margin: 0; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.06; }
+    .hero h1 span { color: var(--pale-gold); }
+    .lead { margin: 20px 0 8px; max-width: 58ch; color: rgba(247,244,233,.86); font-size: 1.06rem; }
+    .hint { margin: 0; color: var(--pale-gold); font-size: .9rem; font-style: italic; }
+    .ornament { margin: 24px 0 0; color: var(--pale-gold); letter-spacing: .5em; font-size: .72rem; }
+
+    .index-section { position: relative; z-index: 2; margin-top: -34px; padding-bottom: 8px; }
+    .index-box {
+      padding: 20px;
+      border: 2px solid var(--gold);
+      border-radius: 18px;
+      background: var(--paper-2);
+      box-shadow: inset 0 0 0 5px var(--paper-2), inset 0 0 0 6px rgba(184,135,26,.28), 0 18px 40px rgba(8,58,36,.12);
+      text-align: center;
+    }
+    .index-box h2 { margin: 0 0 14px; color: var(--deep); font-size: 1.15rem; letter-spacing: .12em; text-transform: uppercase; }
+    .index-grid { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .index-grid a {
+      display: grid; place-items: center;
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--deep);
+      border: 1px solid transparent;
+    }
+    .index-grid a:hover, .index-grid a:focus-visible { background: var(--deep); color: var(--pale-gold); }
+
+    main { padding: 36px 0 80px; }
+    .night {
+      scroll-margin-top: 22px;
+      margin-top: 34px;
+      padding: 30px 32px;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--gold);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 92% 12%, rgba(14,107,64,.05), transparent 42%),
+        linear-gradient(180deg, #fffdf7, var(--paper-2));
+      box-shadow: inset 0 0 0 5px rgba(244,246,239,.7), 0 14px 34px rgba(8,58,36,.07);
+    }
+    .night-head { display: flex; align-items: center; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .medallion {
+      flex: 0 0 auto;
+      display: grid; place-items: center;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      color: var(--pale-gold);
+      background: linear-gradient(145deg, var(--deep), var(--night));
+      box-shadow: inset 0 0 0 4px rgba(240,210,122,.12), 0 8px 18px rgba(8,58,36,.2);
+      font-family: "Amiri Site", serif;
+      font-size: 1.15rem;
+    }
+    .kicker { color: var(--gold); font-size: .78rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .night-title h2 { margin: 2px 0 2px; font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--deep); }
+    .arabic { margin: 0; color: var(--green); font-family: "Amiri Site", serif; font-size: 1.12rem; }
+    .night-body { display: grid; grid-template-columns: minmax(230px, .85fr) minmax(0, 1.15fr); gap: 28px; padding-top: 22px; }
+    .block h3 { margin: 0 0 10px; color: var(--deep); font-size: 1.2rem; }
+    .block ul { margin: 0; padding-left: 20px; }
+    .block li { margin-bottom: 6px; }
+    .reward { padding-left: 26px; border-left: 1px solid var(--line); }
+    .reward p { margin: 0; }
+
+    .manifesto {
+      margin-top: 58px;
+      padding: 30px 34px;
+      border: 1px solid var(--gold);
+      border-radius: 18px;
+      color: #f7f4e9;
+      background: linear-gradient(145deg, var(--deep), var(--night));
+      box-shadow: inset 0 0 0 8px rgba(12,31,22,.5), inset 0 0 0 9px rgba(240,210,122,.22);
+    }
+    .manifesto h2 { margin: 0 0 8px; font-size: 1.8rem; }
+    .manifesto p { margin: 0; color: rgba(247,244,233,.84); }
+    .manifesto a { color: var(--pale-gold); }
+
+    footer { padding: 32px 0 38px; color: rgba(247,244,233,.76); background: var(--night); font-size: .88rem; }
+    footer a { color: var(--pale-gold); }
+    .line { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(240,210,122,.18); }
+
+    .top-link {
+      position: fixed; right: 20px; bottom: 20px; z-index: 5;
+      display: grid; place-items: center;
+      width: 46px; height: 46px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: var(--deep);
+      color: var(--pale-gold);
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(8,58,36,.24);
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 980px); }
+      .night { padding: 24px 20px; }
+      .night-head { align-items: flex-start; }
+      .night-body { grid-template-columns: 1fr; gap: 20px; }
+      .reward { padding-left: 0; border-left: 0; padding-top: 18px; border-top: 1px solid var(--line); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .index-grid a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="haut">
+  <div class="wrap">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html">
+        <img src="assets/app-icon.png" alt="Icône de Diiwaanu Xassida Yi">
+        <span>Diiwaanu Xassida Yi</span>
+      </a>
+      <div>
+        <a href="rubriques.html">Rubriques</a> ·
+        <a href="bibliotheque.html">Bibliothèque</a> ·
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <p class="eyebrow">Nafilas du Ramadan</p>
+      <h1>Trente nuits,<br><span>un texte clair</span></h1>
+      <p class="lead">Les invocations et leurs bienfaits, présentés en texte seul comme dans l’application. Aucune image, aucun lien vidéo, aucune donnée envoyée.</p>
+      <p class="hint">Astuce : appuyez sur Ctrl + F pour chercher une invocation.</p>
+      <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
+    </div>
+  </div>
+</header>
+
+<section class="index-section">
+  <div class="wrap">
+    <div class="index-box">
+      <h2>Les nuits</h2>
+      <nav class="index-grid" aria-label="Choix d’une nuit">
+        <a href="#nuit-1">1</a>
+        <a href="#nuit-2">2</a>
+        <a href="#nuit-3">3</a>
+        <a href="#nuit-4">4</a>
+        <a href="#nuit-5">5</a>
+        <a href="#nuit-6">6</a>
+        <a href="#nuit-7">7</a>
+        <a href="#nuit-8">8</a>
+        <a href="#nuit-9">9</a>
+        <a href="#nuit-10">10</a>
+        <a href="#nuit-11">11</a>
+        <a href="#nuit-12">12</a>
+        <a href="#nuit-13">13</a>
+        <a href="#nuit-14">14</a>
+        <a href="#nuit-15">15</a>
+        <a href="#nuit-16">16</a>
+        <a href="#nuit-17">17</a>
+        <a href="#nuit-18">18</a>
+        <a href="#nuit-19">19</a>
+        <a href="#nuit-20">20</a>
+        <a href="#nuit-21">21</a>
+        <a href="#nuit-22">22</a>
+        <a href="#nuit-23">23</a>
+        <a href="#nuit-24">24</a>
+        <a href="#nuit-25">25</a>
+        <a href="#nuit-26">26</a>
+        <a href="#nuit-27">27</a>
+        <a href="#nuit-28">28</a>
+        <a href="#nuit-29">29</a>
+        <a href="#nuit-30">30</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+      <article class="night" id="nuit-1">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١</div>
+          <div class="night-title">
+            <span class="kicker">Guddi gi njékk · 10 rakâts</span>
+            <h2>1re Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الأولى</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Inna anzalnahu (2 fois)</li>
+          <li>Al Kafirun (2 fois)</li>
+          <li>Al-Ikhlas (2 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit que celui qui accomplit cette prière : Inchallah, Allah le préservera du feu de l&#39;Enfer. Et s&#39;il invoque Allah, CE DERNIER lui exaucera</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-2">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢</div>
+          <div class="night-title">
+            <span class="kicker">Naareelu guddi gi · 6 rakâts</span>
+            <h2>2e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثانية</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Inna ahtaynakal kawthar (10 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, tous ses péchés seront pardonnés avant sa mort. On lui inscrira la récompense de 1000 pèlerinages, 1000 Omra, le mérite de planter 1000 arbres et de lire un Coran complet. On lui inscrira aussi la récompense de 70 ans d&#39;adoration d&#39;Allah</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-3">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٣</div>
+          <div class="night-title">
+            <span class="kicker">Niatélu guddi gi · 6 rakâts</span>
+            <h2>3e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثالثة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Inna anzalnahu (4 fois)</li>
+          <li>Al Kafirun (4 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Il sera comme celui qui a libéré 1000 esclaves, nourri 1000 jeûneurs, habillé 1000 personnes nues, rassasié 1000 affamés. On lui inscrira des récompenses égales au nombre de toutes les étoiles. On lui accordera ce que reçoivent les plus grands anges et ceux morts au combat, et il ne sera pas éprouvé dans la tombe</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-4">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٤</div>
+          <div class="night-title">
+            <span class="kicker">Neenteelu guddi gi · 4 rakâts</span>
+            <h2>4e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الرابعة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al Kafirun (3 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, tous ses péchés seront pardonnés avant sa mort. Et on lui inscrira des récompenses égales à l&#39;adoration d&#39;Allah de 1000 personnes</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-5">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٥</div>
+          <div class="night-title">
+            <span class="kicker">Juróomeelu guddi gi · 4 rakâts</span>
+            <h2>5e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الخامسة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Alam Nashrah (1 fois)</li>
+          <li>Al-Ikhlas (3 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, il sera comme celui qui a fait 1000 pèlerinages et 1000 Omra. Il sera protégé de la pauvreté et sa subsistance sera augmentée. Deux anges lui seront assignés pour effacer ses péchés et inscrire ses bonnes actions. Il recevra des récompenses jusqu&#39;au jour de la résurrection. Il recevra la récompense du martyr, ses péchés seront pardonnés, Il sera protégé de l&#39;agonie de la mort, Il aura la miséricorde d&#39;Allah, et à sa mort les portes du Paradis lui seront ouvertes</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-6">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٦</div>
+          <div class="night-title">
+            <span class="kicker">Juróom-bennéelu guddi gi · 2 rakâts</span>
+            <h2>6e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة السادسة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (12 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Il sera comme celui qui a prié 1000 Rakâ à la station d&#39;Ibrahim, prié 1000 Rakâ à la Kaaba de La Mecque, fait l&#39;aumône de 1000 pièces d&#39;or, nourri 1000 affamés. Le jour du Jugement Il sera accepté. Il sera comme celui qui a nourri tous les proches du Prophète (SA W). A sa mort Il sera compté parmi les martyrs, protégé de l&#39;agonie de la mort. Sa tombe sera comme un jardin du Paradis Il entrera au Paradis sans jugement et sera parmi les prophètes</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-7">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٧</div>
+          <div class="night-title">
+            <span class="kicker">Juróom-ñaareelu guddi gi · 6 rakâts</span>
+            <h2>7e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة السابعة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al Kafirun (7 fois)</li>
+          <li>Al-Ikhlas (7 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui inscrira de bonnes actions Il sera comme celui qui a fait l&#39;aumône de 1000 dinars. Toute demande qu&#39;il fera à Allah sera exaucée. On lui inscrira des récompenses égales au nombre de jours de ce monde. Et on lui construira une grande demeure au Paradis</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-8">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٨</div>
+          <div class="night-title">
+            <span class="kicker">Juróom-ñatteelu guddi gi · 2 rakâts</span>
+            <h2>8e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثامنة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (12 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Pour chaque lettre récitée, Il lui est accordé la récompense de 1000 années d&#39;adoration vouée à Allah. Il sera comme celui qui a nourri tous les proches du Prophète (PSL) pendant 70 ans complets, les habillant et les nourrissant. Il sera comme celui qui a libéré 1000 esclaves. Le jour du Jugement, Allah l&#39;acceptera. Il ressuscitera dans la lumière, traversera le Sirat comme un ange, et intercédera pour 70 personnes destinées à l&#39;Enfer</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-9">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٩</div>
+          <div class="night-title">
+            <span class="kicker">Juróom-ñeenteelu guddi gi · 4 rakâts</span>
+            <h2>9e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة التاسعة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Tabat yada (3 fois)</li>
+          <li>Al-Ikhlas (1 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui inscrira la récompense de tous les patients et de tous les reconnaissants. Il sera comme celui qui a lu un Coran complet. On lui inscrira la récompense de 70 ans d&#39;adoration ininterrompue. Deux anges effaceront ses péchés et inscriront ses bonnes actions jusqu&#39;au Jour du Jugement. Allah acceptera ses prières et son jeûne. Il sera aidé et protégé. Il sera préservé de Satan et de toute maladie. Au Jour du Jugement, il sera parmi ceux qui ne connaîtront ni peur ni tristesse. Les 8 portes du Paradis lui seront ouvertes sans jugement</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-10">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٠</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi · 4 rakâts</span>
+            <h2>10e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة العاشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Ayat al-Kursi (1 fois)</li>
+          <li>Inna anzalnahu fi laylat al-Qadr (12 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : Inchallah, Avant qu&#39;il ne se relève de son lieu de prière, tous ses péchés anciens et récents seront pardonnés. On lui inscrira la récompense de 70 martyrs Avant de quitter ce monde, Il goûtera aux délices du Paradis Et il intercédera pour 70 personnes destinées à l&#39;Enfer</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-11">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١١</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak benn · 4 rakâts</span>
+            <h2>11e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الحادية عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Inna anzalnahu fi laylat al-Qadr (7 fois)</li>
+          <li>Al Kafirun (7 fois)</li>
+          <li>Al-Ikhlas (7 fois)</li>
+          <li>Après le salam — La hawla walâ khuwata illâ billâh (70 fois)</li>
+          <li>Allahumma salli alâ sayyidinâ Muhammadin wa sallim (70 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, tous ses péchés anciens et récents seront pardonnés. On lui inscrira la récompense d&#39;une année entière d&#39;adoration d&#39;Allah. Il sera comme celui qui a libéré 1000 esclaves, fait l&#39;aumône de 1000 dinars, rassasié 1000 affamés, habillé 1000 personnes nues. Tout ce qui est sur terre, Allah le lui pardonnera, le grand comme le petit. Il sera protégé des épreuves, des tentations, de la faim, de la maladie et de la folie des djinns. Il sera protégé de l&#39;agonie de la mort. Il entrera au Paradis sans jugement</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-12">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٢</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak ñaar · 10 rakâts</span>
+            <h2>12e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثانية عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (6 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui donnera au Paradis 8000 épouses (Ouroul Ayni). Il sera dans la compagnie du Prophète Muhammad (SA W). Il sera comme celui qui a lu la torah (Tawrêt), l&#39;Evangile (Injîl), le Psaumes (Zabur) et le Coran (Al-khur-ân). Tous ses péchés seront pardonnés, même s&#39;ils sont aussi nombreux que les gouttes de la mer. On lui inscrira la récompense de 70 ans d&#39;adoration. Il sera comme celui qui a libéré mille esclaves. Au Jour du Jugement, Il intercédera pour ceux destinés à l&#39;Enfer. Il entrera au Paradis sans jugement</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-13">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٣</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak ñatt · 2 rakâts</span>
+            <h2>13e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثالثة عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (5 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui construira au Paradis une grande demeure avec 7 chambres, toutes en or. Chaque chambre contiendra 1000 lits. Sur chaque lit se trouvera une épouse. On lui inscrira la récompense de 20 ans de jeûne et de 1000 rakâ de prière</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-14">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٤</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak ñeent · 8 rakâts</span>
+            <h2>14e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الرابعة عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Isâ jâ-a Nasrullâh (7 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Il sera comme celui qui a fait l&#39;aumône de 1000 dinars, libéré 1000 esclaves, nourri 1000 affamés. Ses prières et son jeûne seront acceptés. Il sera protégé de tous les maux de ce monde et de l&#39;au-delà. Au Jour du Jugement, il sera parmi ceux qui ne connaîtront ni tristesse ni peur. Il intercédera pour ceux destinés à l&#39;Enfer et les conduira au Paradis sans jugement</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-15">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٥</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak juróom · 6 rakâts</span>
+            <h2>15e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الخامسة عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Isâ jâ-a Nasrullâh (1 fois)</li>
+          <li>Al-Ikhlas (35 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, ses prières et son jeûne seront acceptés. Tous ses péchés seront transformés en bonnes actions On lui construira une grande cité au Paradis. Il sera comme celui qui a nourri tous les proches du Prophète (PSL)</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-16">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٦</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak juróom-benn · 2 rakâts</span>
+            <h2>16e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة السادسة عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Isâ Zulzilati (10 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui inscrira de nombreuses récompenses. Tous ses péchés seront pardonnés. S&#39;il était malade, Allah le guérira. Il sera protégé de tous les maux de ce monde et de l&#39;au-delà. Il sera protégé de la pauvreté et ses biens seront multipliés. Allah lui accordera sa miséricorde. Et quand Il entrera au Paradis, il sera parmi les premiers</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-17">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٧</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak juróom-ñaar · 12 rakâts</span>
+            <h2>17e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة السابعة عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Inna anzalnahu fi laylat al-Qadr (2 fois)</li>
+          <li>Al-Ikhlas (2 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui inscrira des récompenses égales au nombre de ceux qui connaissent Allah depuis le début jusqu&#39;à la fin. S&#39;il avait fait le tawaf, Il sera récompensé. S&#39;il avait des dettes, Allah les paiera. S&#39;il était malade, Allah le guérira et lui préservera de l&#39;enfer</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-18">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٨</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak juróom-ñatt · 10 rakâts</span>
+            <h2>18e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثامنة عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Sabihisma rabbikal a&#39;la (1 fois)</li>
+          <li>Al Kafirun (1 fois)</li>
+          <li>Al-Ikhlas (1 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Il sera comme celui qui possédait le monde entier et l&#39;a dépensé dans la voie d&#39;Allah. On lui construira une grande cité au Paradis. Il sera comme celui qui a adoré Allah pendant 70 ans sans interruption. Il sera comme celui qui a lu le khur-ân 100 fois, fait 100 pèlerinages et 100 Omra. On lui inscrira des récompenses que seul Allah connaît. Avant de mourir, Il verra sa demeure au Paradis. Au Jour du Jugement, Il n&#39;aura ni peur ni tristesse jusqu&#39;aux portes éternelles du paradis</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-19">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">١٩</div>
+          <div class="night-title">
+            <span class="kicker">Fukkeelu guddi gi ak juróom-ñeent · 6 rakâts</span>
+            <h2>19e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة التاسعة عشرة</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (7 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, cette prière, sa récompense est le Paradis. Celui qui l&#39;accomplit, Allah le protégera de tout ce qu&#39;il craint. Quand Il demande à Allah, il lui exaucera toutes ses prières. Au Jour du Jugement, Allah le sauvera. Satan le fuira et Il mourra toujours dans la foi. Il sera parmi les premiers à entrer au Paradis</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-20">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٠</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi · 8 rakâts</span>
+            <h2>20e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة العشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (3 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui inscrira des récompenses égales à toutes les bonnes actions jamais accomplies par l&#39;humanité. Tous ses péchés anciens et récents seront pardonnés. Allah le protégera des ténèbres de la tombe. Et quand il entrera au Paradis, c&#39;est le Prophète (SA W) lui-même qui l&#39;accompagnera</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-21">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢١</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak benn · 4 rakâts</span>
+            <h2>21e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الحادية والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (20 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Il sera comme celui qui possédait le monde entier et l&#39;a consacré à la voie d&#39;Allah. Il sera comme celui qui a lu la tawrat (Tawrêt), l&#39;Évangile (Injîl), les Psaumes (Zabûr), le Coran (Al-khur-ân). Et en quittant ce monde, il sera comme le jour où il est né, sans aucun péché</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-22">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٢</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak ñaar · 2 rakâts</span>
+            <h2>22e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثانية والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Sabihisma rabbikal a&#39;la (3 fois)</li>
+          <li>Inna anzalnahu (3 fois)</li>
+          <li>Al-Ikhlas (3 fois)</li>
+          <li>Al-Falaq (3 fois)</li>
+          <li>An-Nas (3 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Allah lui construira au Paradis 70 cités Chaque cité contiendra 1000 maisons. Chaque maison contiendra 1000 chambres, toutes en or et en argent. Chaque chambre contiendra 1000 lits. Et sur chaque lit se trouvera une épouse</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-23">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٣</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak ñatt · 4 rakâts</span>
+            <h2>23e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثالثة والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Isâ jâ-a Nasrullâh (5 fois)</li>
+          <li>Al-Ikhlas (5 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, tous ses péchés seront pardonnés. Deux anges lui seront assignés pour effacer ses péchés et inscrire ses bonnes actions jusqu &#39;au Jour du Jugement. A sa mort, on lui inscrira la récompense du martyr. Il ressuscitera dans la lumière. Et quand Il traversera le Sirat, il sera comme un ange</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-24">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٤</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak ñeent · 6 rakâts</span>
+            <h2>24e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الرابعة والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (3 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, Il entrera au Paradis sans jugement</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-25">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٥</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak juróom · 8 rakâts</span>
+            <h2>25e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الخامسة والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (4 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, avant sa mort, Allah notre Seigneur lui pardonnera tous ses péchés et ne le punira jamais</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-26">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٦</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak juróom-benn · 10 rakâts</span>
+            <h2>26e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة السادسة والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al khârihatu mal khârihatu (1 fois)</li>
+          <li>Al-Ikhlas (5 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, il sera protégé de l&#39;enfer. Il sera comme celui qui a jeûné toute l&#39;éternité. On lui inscrira des récompenses égales au nombre de toutes les créatures et de toutes les feuilles des arbres, et des récompenses qui remplissent l&#39;espace entre le ciel et la terre. A sa résurrection, il sera accompagné de Djibril, Mîkâ-îl, Isrâfîl et Ismâhîl qui le conduiront jusqu&#39;au Paradis</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-27">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٧</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak juróom-ñaar · 12 rakâts</span>
+            <h2>27e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة السابعة والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Inna anzalnahu (10 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, on lui inscrira des récompenses égales au nombre de tous les jours de ce monde. Et à sa résurrection, il sera parmi les prophètes</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-28">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٨</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak juróom-ñatt · 4 rakâts</span>
+            <h2>28e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثامنة والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Watini wa Zaytuni (5 fois)</li>
+          <li>Al Kafirun (5 fois)</li>
+          <li>Al-Ikhlas (5 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, tous ses péchés anciens et récents seront pardonnés</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-29">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٢٩</div>
+          <div class="night-title">
+            <span class="kicker">Ñaar-fukkeelu guddi gi ak juróom-ñeent · 4 rakâts</span>
+            <h2>29e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة التاسعة والعشرون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Watini wa Zaytuni (5 fois)</li>
+          <li>Al Kafirun (5 fois)</li>
+          <li>Al-Ikhlas (5 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : INCHALLAH, tous ses péchés anciens et récents seront pardonnés</p>
+          </div>
+        </div>
+      </article>
+      <article class="night" id="nuit-30">
+        <div class="night-head">
+          <div class="medallion" aria-hidden="true">٣٠</div>
+          <div class="night-title">
+            <span class="kicker">Guddig fanweer ga · 6 rakâts</span>
+            <h2>30e Nuit</h2>
+            <p class="arabic" dir="rtl" lang="ar">الليلة الثلاثون</p>
+          </div>
+        </div>
+        <div class="night-body">
+          <div class="block">
+            <h3>Invocations</h3>
+            <ul>
+          <li>Fatiha (1 fois)</li>
+          <li>Al-Ikhlas (1 fois)</li>
+            </ul>
+          </div>
+          <div class="block reward">
+            <h3>Bienfaits</h3>
+            <p>Le Cheikh a dit : il lui sera construite une grande demeure au Paradis. Serigne Ibra Ndoye.</p>
+          </div>
+        </div>
+      </article>
+
+    <div class="manifesto">
+      <h2>Les mêmes textes, hors ligne</h2>
+      <p>Dans l’application <strong>Diiwaanu Xassida Yi</strong>, ces nafilas sont lisibles sans connexion, avec la même sobriété : texte seul, filets dorés et police Amiri. <a href="rubriques.html">Découvrir toutes les rubriques →</a></p>
+    </div>
+  </div>
+</main>
+
+<a class="top-link" href="#haut" aria-label="Revenir en haut de la page">↑</a>
+
+<footer>
+  <div class="wrap">
+    <div>Diiwaanu Xassida Yi · But non lucratif — Uniquement pour servir Serigne Touba</div>
+    <div class="line">Réalisé par Mouhamadou Falilou Seye. Les traductions et transcriptions restent la propriété de leurs auteurs respectifs ; retrait sur simple demande.</div>
+  </div>
+</footer>
+
+</body>
+</html>
