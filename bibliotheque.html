@@ -167,12 +167,18 @@
     .lead { margin: 22px 0 10px; max-width: 58ch; font-size: 1.08rem; color: rgba(247,244,233,.86); }
     .hint { margin: 0; color: var(--pale-gold); font-size: .92rem; font-style: italic; }
     .collections { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-    .collections span {
+    .collections span, .collections a {
       padding: 5px 12px;
       border: 1px solid rgba(240,210,122,.3);
       border-radius: 999px;
       font-size: .8rem;
       color: rgba(247,244,233,.82);
+      text-decoration: none;
+    }
+    .collections a:hover, .collections a:focus-visible {
+      border-color: var(--pale-gold);
+      color: var(--pale-gold);
+      background: rgba(240,210,122,.1);
     }
 
     /* ---------- Index ---------- */
@@ -223,7 +229,19 @@
 
     /* ---------- Bibliothèque ---------- */
     .library { padding: 34px 0 84px; }
-    .letter-block { scroll-margin-top: 24px; margin-top: 52px; }
+    .lang-section { scroll-margin-top: 24px; margin-top: 70px; }
+    .lang-head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .lang-head .lang-mark { color: var(--gold); font-size: 1.25rem; }
+    .lang-head h2 { margin: 0; font-size: clamp(2rem, 4vw, 2.8rem); color: var(--deep); }
+    .lang-head .rule { flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
+    .alphabet-small {
+      margin-bottom: 28px;
+      padding: 14px;
+      border-width: 1px;
+      box-shadow: inset 0 0 0 4px var(--paper-2), inset 0 0 0 5px rgba(184,135,26,.22);
+    }
+    .alphabet-small a { min-width: 32px; height: 32px; font-size: .84rem; }
+    .letter-block { scroll-margin-top: 24px; margin-top: 46px; }
     .letter-head { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
     .letter-head::before { content: "❧"; color: var(--gold); font-size: 1.1rem; }
     .letter-head span {
@@ -430,7 +448,7 @@
       <p class="lead">Une présentation sobre des titres disponibles dans l’application. Ouvrez un PDF directement, sans compte, sans publicité et sans suivi.</p>
       <p class="hint">Astuce : appuyez sur Ctrl + F pour rechercher un titre dans cette page.</p>
       <div class="collections" aria-label="Langues disponibles">
-        <span>Arabe</span><span>Français</span><span>Wolof</span><span>Anglais</span>
+        <a href="#langue-arabe">Arabe</a><a href="#langue-francais">Français</a><a href="#langue-wolof">Wolof</a><a href="#langue-anglais">Anglais</a>
       </div>
       <p class="ornament-strip" aria-hidden="true">◆ ◆ ◆</p>
     </div>
@@ -440,47 +458,54 @@
 <main>
   <section class="index-section">
     <div class="wrap">
-      <p class="index-title">Sommaire</p>
-      <nav class="alphabet" aria-label="Index alphabétique">
-        <a href="#lettre-a">A</a>
-          <a href="#lettre-b">B</a>
-          <a href="#lettre-c">C</a>
-          <a href="#lettre-d">D</a>
-          <a href="#lettre-e">E</a>
-          <a href="#lettre-f">F</a>
-          <a href="#lettre-g">G</a>
-          <a href="#lettre-h">H</a>
-          <a href="#lettre-i">I</a>
-          <a href="#lettre-j">J</a>
-          <a href="#lettre-k">K</a>
-          <a href="#lettre-l">L</a>
-          <a href="#lettre-m">M</a>
-          <a href="#lettre-n">N</a>
-          <a href="#lettre-o">O</a>
-          <a href="#lettre-p">P</a>
-          <a href="#lettre-q">Q</a>
-          <a href="#lettre-r">R</a>
-          <a href="#lettre-s">S</a>
-          <a href="#lettre-t">T</a>
-          <a href="#lettre-u">U</a>
-          <a href="#lettre-v">V</a>
-          <a href="#lettre-w">W</a>
-          <a href="#lettre-x">X</a>
-          <a href="#lettre-y">Y</a>
-          <a href="#lettre-z">Z</a>
+      <p class="index-title">Sommaire — par langue</p>
+      <nav class="alphabet" aria-label="Index des langues">
+        <a href="#langue-arabe">Arabe</a>
+          <a href="#langue-francais">Français</a>
+          <a href="#langue-wolof">Wolof</a>
+          <a href="#langue-anglais">Anglais</a>
       </nav>
-      <p class="index-note">Choisissez une initiale pour aller directement aux titres correspondants.</p>
+      <p class="index-note">Choisissez une langue, puis une initiale dans la section correspondante.</p>
     </div>
   </section>
 
   <section class="library">
     <div class="wrap">
-      <section class="letter-block" id="lettre-a">
-        <div class="letter-head">
-          <span>A</span>
+      <section class="lang-section" id="langue-arabe">
+        <div class="lang-head">
+          <span class="lang-mark" aria-hidden="true">❧</span>
+          <h2>Arabe</h2>
           <div class="rule" aria-hidden="true"></div>
         </div>
-        <div class="cards">
+        <nav class="alphabet alphabet-small" aria-label="Index alphabétique Arabe">
+          <a href="#lettre-a-arabe">A</a>
+          <a href="#lettre-b-arabe">B</a>
+          <a href="#lettre-c-arabe">C</a>
+          <a href="#lettre-d-arabe">D</a>
+          <a href="#lettre-f-arabe">F</a>
+          <a href="#lettre-h-arabe">H</a>
+          <a href="#lettre-i-arabe">I</a>
+          <a href="#lettre-j-arabe">J</a>
+          <a href="#lettre-k-arabe">K</a>
+          <a href="#lettre-l-arabe">L</a>
+          <a href="#lettre-m-arabe">M</a>
+          <a href="#lettre-n-arabe">N</a>
+          <a href="#lettre-q-arabe">Q</a>
+          <a href="#lettre-r-arabe">R</a>
+          <a href="#lettre-s-arabe">S</a>
+          <a href="#lettre-t-arabe">T</a>
+          <a href="#lettre-u-arabe">U</a>
+          <a href="#lettre-w-arabe">W</a>
+          <a href="#lettre-x-arabe">X</a>
+          <a href="#lettre-y-arabe">Y</a>
+          <a href="#lettre-z-arabe">Z</a>
+        </nav>
+        <section class="letter-block" id="lettre-a-arabe">
+          <div class="letter-head">
+            <span>A</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">A</div>
           <div class="card-top">
@@ -1105,15 +1130,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">A</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Alxuraan ci Wolof</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Alxuran%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">A</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Alxuraan mbindum Daaru Minnan</h3>
@@ -1155,15 +1171,6 @@
           <h3>Anta Rabbi</h3>
           <p class="cat">shukr</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Anta_Rabbii_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Anta_Rabbii_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">A</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Anta Rabbi (Traduction)</h3>
-          <p class="cat">shukr</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Anta-Rabi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">A</div>
@@ -1267,15 +1274,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">A</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Assiiru mahal abrari (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Assiiru_fr_1.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">A</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Astahfirou laha bihi</h3>
@@ -1299,15 +1297,6 @@
           <h3>Astaxfirul Laaha bihii</h3>
           <p class="cat">istihfar</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_10.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_2.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_3.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_4.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_5.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_6.pdf" target="_blank" rel="noopener">Partie 7 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_7.pdf" target="_blank" rel="noopener">Partie 8 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_8.pdf" target="_blank" rel="noopener">Partie 9 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astahfirul_laha_bihi_9.pdf" target="_blank" rel="noopener">Partie 10 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;astaghfiroulah.pdf" target="_blank" rel="noopener">Partie 11 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;%D8%A3%D8%B3%D8%AA%D8%BA%D9%81%D8%B1_%D8%A7%D9%84%D9%84%D9%87_%D8%A8%D9%87_%D9%A2_%D8%A8%D8%AE%D8%B7_%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D8%AA%D8%A7%D8%AC%D8%B1.pdf" target="_blank" rel="noopener">Partie 12 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">A</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Astaxfirul Laaha bihii (Traduction)</h3>
-          <p class="cat">istihfar</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astaghfiroulaha%20bihi%20Wolof.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astaxfirul%20Laaha%20Bihii.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">A</div>
@@ -1339,38 +1328,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">A</div>
           <div class="card-top">
-            <span class="lang lang-anglais">Anglais</span>
-          </div>
-          <h3>Axiru Zaman (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Axiru-Zaman-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">A</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Axiru zaman (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Axiru_zaman-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">A</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Axnaaniyal</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ahnaniyal.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">A</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Ay waxi Mame CHEIKH IBRAHIMA FALL</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;CauseriesAspirantVeridique.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">A</div>
@@ -1390,14 +1352,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Azhaba%20shahbaanu%20masasin.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-b">
-        <div class="letter-head">
-          <span>B</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-b-arabe">
+          <div class="letter-head">
+            <span>B</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">B</div>
           <div class="card-top">
@@ -1659,23 +1621,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Bushraanaa%20jamsashunaa.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-c">
-        <div class="letter-head">
-          <span>C</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">C</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
           </div>
-          <h3>Calendrier khassida</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Calendrier%20khassida.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
+        </section>
+        <section class="letter-block" id="lettre-c-arabe">
+          <div class="letter-head">
+            <span>C</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">C</div>
           <div class="card-top">
@@ -1694,14 +1647,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;ChahrouSafar.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-d">
-        <div class="letter-head">
-          <span>D</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-d-arabe">
+          <div class="letter-head">
+            <span>D</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">D</div>
           <div class="card-top">
@@ -1999,14 +1952,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Durrussamin_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Durrussamin_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-f">
-        <div class="letter-head">
-          <span>F</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-f-arabe">
+          <div class="letter-head">
+            <span>F</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">F</div>
           <div class="card-top">
@@ -2199,15 +2152,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">F</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Fathul manan (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;InspirationduBIENFAISANT.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Fathulmanan-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">F</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Fathul mukarrimi</h3>
@@ -2322,31 +2266,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Fuzti-Felicite-A-Toi-Marie.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-g">
-        <div class="letter-head">
-          <span>G</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">G</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
           </div>
-          <h3>Guide du Mouridisme</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;GuideMouridisme.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-h">
-        <div class="letter-head">
-          <span>H</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+        </section>
+        <section class="letter-block" id="lettre-h-arabe">
+          <div class="letter-head">
+            <span>H</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">H</div>
           <div class="card-top">
@@ -2584,47 +2511,20 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">H</div>
           <div class="card-top">
-            <span class="lang lang-anglais">Anglais</span>
-          </div>
-          <h3>Huqal bukaa u (Anglais)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;HUQQAL-BUKKAU-BACKGROUND-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">H</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Huqal bukaa u (Français)</h3>
-          <p class="cat">tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Huqqal-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">H</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>huqal bukaa u (wolof)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Huqal%20Bukaa%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">H</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Husmaan</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Hunsmaan.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-i">
-        <div class="letter-head">
-          <span>I</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-i-arabe">
+          <div class="letter-head">
+            <span>I</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">I</div>
           <div class="card-top">
@@ -2637,29 +2537,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">I</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Ihdi jami hana (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ihdi%20jamihaanas%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">I</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>ihdinaa siraatika bika</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;IHDINAA%20SIRAATIKA%20BIKA.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">I</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Ihfas li wajhikal kariimi (Traduction)</h3>
-          <p class="cat">douah</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ihfas%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">I</div>
@@ -2741,24 +2623,6 @@
           <h3>Ilhaamul illah - Wajaba hamdu xaaliqil rahmani</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Wadiaba%20hamdou%20haaliqil.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;%D9%88%D8%AC%D8%A8%20%D8%AD%D9%85%D8%AF%20%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D9%82.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">I</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Ilhamul Salaam (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ilhamul-Salaam-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">I</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Ilhamul Wadud (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ilhamul_Wadud_Cheikh_Ahmadou_Bamba-fr.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;InspirationAFFECTUEUX.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">I</div>
@@ -2880,24 +2744,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">I</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Irwa-un Nadiim (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Irwaun-Nadiim-wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">I</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Irwa-un nadiim (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Abreuvoir-du-commensal-irwanoun%20nadiim.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Irwaou%20nadim-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Irwanu-Nadim.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">I</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Irwaawun naddym</h3>
@@ -2912,15 +2758,6 @@
           <h3>Islaahud daarayni</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Islaahud-Daarayni.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;%D8%A7%D9%95%D8%B5%D9%84%D8%A7%D8%AD%20%D8%A7%D9%84%D8%AF%D8%A7%D8%B1%D9%8A%D9%86%20(3).pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">I</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Islam</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Islam-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">I</div>
@@ -2940,14 +2777,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ikhlass.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;%D9%82%D9%84%20%D9%87%D9%88%20%D8%A7%D9%84%D9%84%D9%87%20%D8%A7%D9%94%D8%AD%D8%AF.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-j">
-        <div class="letter-head">
-          <span>J</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-j-arabe">
+          <div class="letter-head">
+            <span>J</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
           <div class="card-top">
@@ -2983,15 +2820,6 @@
           <h3>Jaalibatul Maraaxib</h3>
           <p class="cat">salat</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_5.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_6.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_7.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_8.pdf" target="_blank" rel="noopener">Partie 7 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_9.pdf" target="_blank" rel="noopener">Partie 8 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul_Maraaxib_4.pdf" target="_blank" rel="noopener">Partie 9 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaalibatul%20Maraaxib%20Sr%20Mansuur%20Njaay.pdf" target="_blank" rel="noopener">Partie 10 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Jaawartou (arabe et traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaawartu%20AR%20TR.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
@@ -3041,15 +2869,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Jawartou (traduction française)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jawartou-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Jawartul Laha</h3>
@@ -3059,29 +2878,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
           <div class="card-top">
-            <span class="lang lang-anglais">Anglais</span>
-          </div>
-          <h3>Jawartul laha (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jawartu-En.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Jawharun nafis</h3>
           <p class="cat">fikh</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;JAWHAR_J.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jeuwharoune%20nafis.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Jawharun Nafis (Traduction)</h3>
-          <p class="cat">fikh</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;LeJoyauPrecieux.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jawharou-n-nafis-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
@@ -3104,15 +2905,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jazaahul ihsaan lil xuddaami - alhamdulilaahi lazi</h3>
-          <p class="cat">shukr</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jazaahul%20ihsaan%20lil%20xuddaami%20alhamdulilaahi%20lazi%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Jazbatus Sikhaar</h3>
@@ -3122,92 +2914,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Jazbul murid (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;DiazbouMurid-fr.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;JazbulMurid.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Jazbul Qulob (Traduction)</h3>
-          <p class="cat">madh</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;djeuzbou-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Jibriil</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jibriil.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jotaayu Texe Tome 1</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%201.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jotaayu Texe Tome 2</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%202.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jotaayu Texe Tome 3</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%203.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jotaayu Texe Tome 4</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%204.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jotaayu Texe Tome 5</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%205.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jotaayu Texe Tome 6</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%206.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">J</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Jotaayu Texe Tome 7</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%207.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">J</div>
@@ -3497,14 +3208,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;09-quran9-ar.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-k">
-        <div class="letter-head">
-          <span>K</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-k-arabe">
+          <div class="letter-head">
+            <span>K</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">K</div>
           <div class="card-top">
@@ -3603,15 +3314,6 @@
           <h3>Khaatimatu Munaajaatii</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Khaatimatu%20Munaajaatii.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">K</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Khaatimatu Munajaati (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Khatimatu-Munajati-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">K</div>
@@ -3748,23 +3450,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Kun%20Kaatiman.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">K</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
           </div>
-          <h3>Kun Kaatiman (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Kun-Kaariman-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-l">
-        <div class="letter-head">
-          <span>L</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+        </section>
+        <section class="letter-block" id="lettre-l-arabe">
+          <div class="letter-head">
+            <span>L</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">L</div>
           <div class="card-top">
@@ -3782,15 +3475,6 @@
           <h3>La in sakartum La aziidan nakum</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;La%20in%20sakartum%20La%20aziidan%20nakum.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;La-in%20Shakartum.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">L</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>La recherche du remède</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mathlabou-Chifaa-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">L</div>
@@ -3930,51 +3614,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">L</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Le notable (Sindidi)</h3>
-          <p class="cat">douah</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">L</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Les dons du Seigneur Bienfaisant</h3>
-          <p class="cat">madh</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibou-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">L</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Les dons du Seigneur Bienfaisant (Mouwahibu)</h3>
-          <p class="cat">madh</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mouwahibu-Nafih-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">L</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Les itinéraires du Paradis (Massalik)</h3>
-          <p class="cat">tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Masaalikul%20Jinaan-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">L</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Les sept choses</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sabhoune-takhi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">L</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Lil Moustapha</h3>
@@ -4065,15 +3704,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">L</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Livret de Cheikh Mouhammad al-Faadhil</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;livret-cheikh-mouhammad-al-faadhil-1.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">L</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Liya Marhabam birajabi</h3>
@@ -4107,14 +3737,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Te%CC%81ere%20l%C3%A9nn%20ci%20n%CC%83aani%20att%20mi.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-m">
-        <div class="letter-head">
-          <span>M</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-m-arabe">
+          <div class="letter-head">
+            <span>M</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
           <div class="card-top">
@@ -4249,15 +3879,6 @@
           <h3>Maghalihul Niiran wa mafaatihul jinan</h3>
           <p class="cat">tassaouf</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;MAGHAALIKHUN-NIIRAAN-ar.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;maghaliqu_niraan.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Maghalihul Niiran wa mafaatihul jinan (Traduction)</h3>
-          <p class="cat">tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;LES-VERROUS-DE-L-ENFER-ET-LES-CLEFS-DU-PARADIS.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
@@ -4415,15 +4036,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Massalikul jinane (Traduction)</h3>
-          <p class="cat">tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Massalik.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;massalik-ul%20jinnan.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Matlabou_Shifay_2</h3>
@@ -4438,15 +4050,6 @@
           <h3>Matlabul fawzayni</h3>
           <p class="cat">douah</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabul_Fawzeyni_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabul_Fawzeyni_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabul_Fawzeyni_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabul_Fawzeyni_4.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabul_Fawzeyni_5.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabul_Fawzeyni_6.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Matlabul fawzayni (Traduction)</h3>
-          <p class="cat">douah</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlaboul%20fawzayni-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
@@ -4496,15 +4099,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Matlabush Shifa-i (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabus_Shifa-i_fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabus_Shifa-i_fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Mawahibal khadiimi</h3>
@@ -4519,15 +4113,6 @@
           <h3>Mawahibu naafih</h3>
           <p class="cat">madh</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_4.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_5.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_6.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_7.pdf" target="_blank" rel="noopener">Partie 7 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_8.pdf" target="_blank" rel="noopener">Partie 8 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_9.pdf" target="_blank" rel="noopener">Partie 9 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;mawahibu.pdf" target="_blank" rel="noopener">Partie 10 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Mawahibu naafih (Traduction)</h3>
-          <p class="cat">madh</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
@@ -4550,38 +4135,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Mawahibul xuduss (Traduction)</h3>
-          <p class="cat">tawhid</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahboul%20khoudouss-fr.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;LES-DONS-DU-TR_S-SAINT.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Midaadi wa aqlaami</h3>
           <p class="cat">shukr</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadii.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;midadi.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Midaadi wa aqlaami (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi_fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi_fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi_fr_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Miftahul Huyob</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji_Mbacke-Miftahul_Huyob.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
@@ -4681,42 +4239,6 @@
           <h3>Minanul Baaqil Qadiim</h3>
           <p class="cat">shukr</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Minanul_Baaqil_Qadiim_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Minanul_Baaqil_Qadiim_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Minanul_Baaqil_Qadiim_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Minanul_Baaqil_Qadiim_4.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Minanul_Baaqil_Qadiim_5.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;minan.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Minanul Bakhil Khadim fi Siratul Cheikh al-Khadim</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Serigne-Bachir-MBACKE-les-bienfaits-de-l-eternel.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Mon encre et mes plumes (Midaadi)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Mon encre et mes plumes (Midadi, traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midadi%20-%20Traduction%20en%20francais.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Mon encre et mes plumes (Midadi, variante)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midadi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
@@ -4946,24 +4468,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
           <div class="card-top">
-            <span class="lang lang-anglais">Anglais</span>
-          </div>
-          <h3>Munawwirus Suduur (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;MUNAWWIRU-C-%C3%87UDDUR-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Munawwirus suduur (Traduction)</h3>
-          <p class="cat">tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;ILLUMINATION-DES-CEURS.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Muntaxabaat 1</h3>
@@ -5000,15 +4504,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">M</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Muqadammatul Amdah (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Muqadammatul_Amdah_fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">M</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Muxaddamatul Kubraa</h3>
@@ -5033,14 +4528,14 @@
           <p class="cat">salat</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Muqadamatul_Xidma_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Muqadamatul_Xidma_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Muqadamatul_Xidma_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Muqadammatul_xidma_1.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Muqadammatul_xidma_2.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xidma.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;qidmah.pdf" target="_blank" rel="noopener">Partie 7 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;%D9%85%D9%82%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D9%8A%D8%AF%20%D8%B3%D8%B1%D8%AC%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86.pdf" target="_blank" rel="noopener">Partie 8 <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-n">
-        <div class="letter-head">
-          <span>N</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-n-arabe">
+          <div class="letter-head">
+            <span>N</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">N</div>
           <div class="card-top">
@@ -5058,24 +4553,6 @@
           <h3>Nahju qadaa il haj</h3>
           <p class="cat">tassaouf</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;NAHJU-KHADAAIL-HAAJI-ar.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">N</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Nahju qadaa il haj (Traduction)</h3>
-          <p class="cat">tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nahju.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nahdjou-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;nahju_qadahil_haaj.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">N</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Nahju qadaa il haj (Traduction)</h3>
-          <p class="cat">tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nahjul-Xadaail-Haaji-wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">N</div>
@@ -5098,29 +4575,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">N</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>NAYLUL AWTAAR</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;NAYLUL%20AWTAAR_FR.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">N</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Nazmou roufaat - Salatoul awliya i</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nazmou%20roufaat%20-%20Salatoul%20awliya%20i.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">N</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Ndaxam ab murid</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ndaxam%20ab%20murid_SMbayeDiakhate.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">N</div>
@@ -5194,14 +4653,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nuzhatul%20khaashikh.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-q">
-        <div class="letter-head">
-          <span>Q</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-q-arabe">
+          <div class="letter-head">
+            <span>Q</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">Q</div>
           <div class="card-top">
@@ -5283,14 +4742,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;QurratulAyni-1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;QurratulAyni-2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;QurratulAyni-3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;QurratulAyni-4.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;QurratulAyni-5.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;QurratulAyni-6.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;QurratulAyni.pdf" target="_blank" rel="noopener">Partie 7 <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-r">
-        <div class="letter-head">
-          <span>R</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-r-arabe">
+          <div class="letter-head">
+            <span>R</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">R</div>
           <div class="card-top">
@@ -5438,38 +4897,20 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">R</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Recueil de Sermons de Cheikh Mouhamadou Moustapha Mbacke</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;RecueilsSermonsCheikhMoustapha.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">R</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Recueil de Sermons Serigne Saalihu Mbakké</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;RecueilSermonsSerignSaalihu.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">R</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Rumnaa shukur</h3>
           <p class="cat">shukr</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Rumnaa_shukur_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Rumnaa_shukur_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Rumnaa_shukur_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;rumna.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-s">
-        <div class="letter-head">
-          <span>S</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-s-arabe">
+          <div class="letter-head">
+            <span>S</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">S</div>
           <div class="card-top">
@@ -5487,15 +4928,6 @@
           <h3>Sabhun Taqii</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sabhun%20Taqii.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">S</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Sabhun taqii (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sabhun_tahi-fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sabhun_tahi-fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">S</div>
@@ -5532,15 +4964,6 @@
           <h3>Safar Safar Safar Safar</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;SafarSafarSafar.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">S</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Safarass bakkaar</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji_Mbacke-Safarass_bakkaar.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">S</div>
@@ -5604,15 +5027,6 @@
           <h3>Sakuuru raafihu</h3>
           <p class="cat">shukr</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Chakuru_raafihu_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Chakuru_raafihu_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Shakourou%20Rafi-ou.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sakuuru%20raafihu.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Shakuru%20Raafihu%20wa%20sulamul%20hufrani%20par%20S%20Abdu%20Rahman%20Mbacke.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;%D8%B4%D9%83%D9%88%D8%B1%20%D8%B1%D8%A7%D9%81%D8%B9%20%D8%A8%D8%AE%D8%B7%20%D8%A7%D9%84%D9%85%D9%86%D8%B5%D9%88%D8%B1%20%D8%A7%D9%84%D8%AA%D8%A7%D8%AC%D8%B1.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">S</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Sakuuru Raafihu (wolof)</h3>
-          <p class="cat">shukr</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sakuuru%20Raafihu%20Wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">S</div>
@@ -5986,15 +5400,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">S</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Silkul Jawahiri (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Silkul-Jawahir-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">S</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Silsilatul Xaadiriya</h3>
@@ -6009,15 +5414,6 @@
           <h3>Sindidi</h3>
           <p class="cat">douah</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_10.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_11.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_3.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_4.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_5.pdf" target="_blank" rel="noopener">Partie 6 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_7.pdf" target="_blank" rel="noopener">Partie 7 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_8.pdf" target="_blank" rel="noopener">Partie 8 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_9.pdf" target="_blank" rel="noopener">Partie 9 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;sindidi.pdf" target="_blank" rel="noopener">Partie 10 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">S</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Sindiidi (Traduction)</h3>
-          <p class="cat">douah</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_6.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">S</div>
@@ -6145,14 +5541,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Khassida%20Surat%20Nassi%20.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-t">
-        <div class="letter-head">
-          <span>T</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-t-arabe">
+          <div class="letter-head">
+            <span>T</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">T</div>
           <div class="card-top">
@@ -6237,38 +5633,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">T</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Tazawudu-s shubbaan (Traduction)</h3>
-          <p class="cat">tawhid-fikh-tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tazawwudou-sh-subban-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">T</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Tazawudu-s sighar</h3>
           <p class="cat">tawhid-fikh-tassaouf</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tazawoudou%20Cighar.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;tazawudu%20ss%20sikhar.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tazawudussikhar.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;tazawwud-ss-sighar.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;tazawudu_shighar.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">T</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Tazawudu-s Sighar (Traduction)</h3>
-          <p class="cat">tawhid-fikh-tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tasawudus-Sixaar-wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">T</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Tazawudu-s sighar (Traduction)</h3>
-          <p class="cat">tawhid-fikh-tassaouf</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tazawwud-ss-sighar-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">T</div>
@@ -6300,29 +5669,20 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">T</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Tuhfatun Niswaan</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji_Mbacke-TuhfatunNiswaan.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">T</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Tuubaa lahum wahusnu ma-aabin</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;%D8%B7%D9%88%D8%A8%D9%89%20%D9%84%D9%87%D9%85%20%D9%88%D8%AD%D8%B3%D9%86%20%D9%85%D8%A7%D9%93%D8%A8.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-u">
-        <div class="letter-head">
-          <span>U</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-u-arabe">
+          <div class="letter-head">
+            <span>U</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">U</div>
           <div class="card-top">
@@ -6341,31 +5701,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Oubikhtou.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-v">
-        <div class="letter-head">
-          <span>V</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">V</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
           </div>
-          <h3>Viatique du Muharram</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Viatique_du_Muharram.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-w">
-        <div class="letter-head">
-          <span>W</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+        </section>
+        <section class="letter-block" id="lettre-w-arabe">
+          <div class="letter-head">
+            <span>W</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">W</div>
           <div class="card-top">
@@ -6666,15 +6009,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">W</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Wakhi serigne bi</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Wakhi%20serigne%20bi.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">W</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Wal Baladou Tayib</h3>
@@ -6725,15 +6059,6 @@
           <h3>Waqaanii hafizun</h3>
           <p class="cat">shukr</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Waxaanii.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;waqaani.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Waqani%20par%20S%20Abdu%20Rahman%20Mbacke.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Wallaahu%20yahsimuka%20minan%20naasi_Waqaanii.pdf" target="_blank" rel="noopener">Partie 4 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;waqani_hafizun.pdf" target="_blank" rel="noopener">Partie 5 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">W</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Wasful muriid \u0026 shifaatu shaadiqil muriid</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;FIri_Wasful_muriid_shifaatu_shaadiqil_muriid_wolof-francais.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">W</div>
@@ -6891,15 +6216,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">W</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Wolofal S Mbaye DIAKHATE</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Wolofal_S_Mbaye%20DIAKHATE.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">W</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Woudohou</h3>
@@ -6915,14 +6231,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Wuduuhu%20ihtilaa%20i.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-x">
-        <div class="letter-head">
-          <span>X</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-x-arabe">
+          <div class="letter-head">
+            <span>X</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">X</div>
           <div class="card-top">
@@ -6940,24 +6256,6 @@
           <h3>Xaaluu liyarkan</h3>
           <p class="cat">tawhid</p>
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Khalo%20liyarkane.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">X</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Xaaluu liyarkan (français)</h3>
-          <p class="cat">tawhid</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Khaalou%20liyal%20kaan-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">X</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Xaaluu liyarkan (wolof)</h3>
-          <p class="cat">tawhid</p>
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xaaluu%20liyarkan%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">X</div>
@@ -6989,15 +6287,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">X</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Xarnu BI</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xarnu-BI-wolof.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xarnu%20BI.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">X</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Xasida Innii Aquulu (Amdi Moustapha)</h3>
@@ -7025,47 +6314,20 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">X</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Xassida Seriñ Tuuba</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Receuil_Khassaides.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">X</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Xassidatani</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xassidatani.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">X</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
           </div>
-          <h3>Xurratul ayni</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xurratul_ayni.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">X</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
+        </section>
+        <section class="letter-block" id="lettre-y-arabe">
+          <div class="letter-head">
+            <span>Y</span>
+            <div class="rule" aria-hidden="true"></div>
           </div>
-          <h3>Xurratul Ayni (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;KHOURATOULAYNI.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-y">
-        <div class="letter-head">
-          <span>Y</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">Y</div>
           <div class="card-top">
@@ -7083,15 +6345,6 @@
           <h3>Yaa Khayra Dayfine</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Yaa%20xayra%20dayfin.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ya_khayra_dayfin.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">Y</div>
-          <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Yaa Khayra Dayfine (Traduction)</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;YaaKhayraDayfine-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">Y</div>
@@ -7375,47 +6628,11 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">Y</div>
           <div class="card-top">
-            <span class="lang lang-francais">Français</span>
-          </div>
-          <h3>Yawmul Qamiissi fi rajab</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;jeudi_Rajab.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">Y</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Yawmul Qamiissi fii rajab</h3>
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Yawmul%20xamiisi%20fi%20rajab.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">Y</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Yonou Mourid</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Yonou%20Mourid.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">Y</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Yoonu Ga gnu baax gni</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Yoonu%20Ga%20gnu%20baax%20gni.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">Y</div>
-          <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Yoonu jam</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Yoonu%20jam.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="book-card">
           <div class="vignette" aria-hidden="true">Y</div>
@@ -7426,14 +6643,14 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Yumna%20Kazi%20Saxrika%20Rajabin.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
-        </div>
-      </section>
-      <section class="letter-block" id="lettre-z">
-        <div class="letter-head">
-          <span>Z</span>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="cards">
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-z-arabe">
+          <div class="letter-head">
+            <span>Z</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
         <article class="book-card">
           <div class="vignette" aria-hidden="true">Z</div>
           <div class="card-top">
@@ -7473,15 +6690,6 @@
         <article class="book-card">
           <div class="vignette" aria-hidden="true">Z</div>
           <div class="card-top">
-            <span class="lang lang-wolof">Wolof</span>
-          </div>
-          <h3>Ziyara Serigne Touba</h3>
-          
-          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Ziyara%20Serigne%20Touba.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
-        </article>
-        <article class="book-card">
-          <div class="vignette" aria-hidden="true">Z</div>
-          <div class="card-top">
             <span class="lang lang-arabe">Arabe</span>
           </div>
           <h3>Zul hijjati busharun</h3>
@@ -7497,7 +6705,1133 @@
           
           <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Zul%20hijjati%20wa%20kullu%20shaxrin%20qablaxo.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
         </article>
+          </div>
+        </section>
+      </section>
+      <section class="lang-section" id="langue-francais">
+        <div class="lang-head">
+          <span class="lang-mark" aria-hidden="true">❧</span>
+          <h2>Français</h2>
+          <div class="rule" aria-hidden="true"></div>
         </div>
+        <nav class="alphabet alphabet-small" aria-label="Index alphabétique Français">
+          <a href="#lettre-a-francais">A</a>
+          <a href="#lettre-c-francais">C</a>
+          <a href="#lettre-f-francais">F</a>
+          <a href="#lettre-g-francais">G</a>
+          <a href="#lettre-h-francais">H</a>
+          <a href="#lettre-i-francais">I</a>
+          <a href="#lettre-j-francais">J</a>
+          <a href="#lettre-k-francais">K</a>
+          <a href="#lettre-l-francais">L</a>
+          <a href="#lettre-m-francais">M</a>
+          <a href="#lettre-n-francais">N</a>
+          <a href="#lettre-r-francais">R</a>
+          <a href="#lettre-s-francais">S</a>
+          <a href="#lettre-t-francais">T</a>
+          <a href="#lettre-v-francais">V</a>
+          <a href="#lettre-x-francais">X</a>
+          <a href="#lettre-y-francais">Y</a>
+        </nav>
+        <section class="letter-block" id="lettre-a-francais">
+          <div class="letter-head">
+            <span>A</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">A</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Anta Rabbi (Traduction)</h3>
+          <p class="cat">shukr</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Anta-Rabi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">A</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Assiiru mahal abrari (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Assiiru_fr_1.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">A</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Axiru zaman (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Axiru_zaman-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">A</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Ay waxi Mame CHEIKH IBRAHIMA FALL</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;CauseriesAspirantVeridique.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-c-francais">
+          <div class="letter-head">
+            <span>C</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">C</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Calendrier khassida</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Calendrier%20khassida.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-f-francais">
+          <div class="letter-head">
+            <span>F</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">F</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Fathul manan (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;InspirationduBIENFAISANT.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Fathulmanan-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-g-francais">
+          <div class="letter-head">
+            <span>G</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">G</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Guide du Mouridisme</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;GuideMouridisme.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-h-francais">
+          <div class="letter-head">
+            <span>H</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">H</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Huqal bukaa u (Français)</h3>
+          <p class="cat">tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Huqqal-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-i-francais">
+          <div class="letter-head">
+            <span>I</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">I</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Ilhamul Salaam (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ilhamul-Salaam-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">I</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Ilhamul Wadud (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ilhamul_Wadud_Cheikh_Ahmadou_Bamba-fr.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;InspirationAFFECTUEUX.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">I</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Irwa-un nadiim (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Abreuvoir-du-commensal-irwanoun%20nadiim.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Irwaou%20nadim-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Irwanu-Nadim.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">I</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Islam</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Islam-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-j-francais">
+          <div class="letter-head">
+            <span>J</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Jaawartou (arabe et traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jaawartu%20AR%20TR.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Jawartou (traduction française)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jawartou-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Jawharun Nafis (Traduction)</h3>
+          <p class="cat">fikh</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;LeJoyauPrecieux.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jawharou-n-nafis-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Jazbul murid (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;DiazbouMurid-fr.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;JazbulMurid.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Jazbul Qulob (Traduction)</h3>
+          <p class="cat">madh</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;djeuzbou-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-k-francais">
+          <div class="letter-head">
+            <span>K</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">K</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Khaatimatu Munajaati (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Khatimatu-Munajati-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">K</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Kun Kaatiman (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Kun-Kaariman-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-l-francais">
+          <div class="letter-head">
+            <span>L</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">L</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>La recherche du remède</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mathlabou-Chifaa-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">L</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Le notable (Sindidi)</h3>
+          <p class="cat">douah</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">L</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Les dons du Seigneur Bienfaisant</h3>
+          <p class="cat">madh</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibou-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">L</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Les dons du Seigneur Bienfaisant (Mouwahibu)</h3>
+          <p class="cat">madh</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mouwahibu-Nafih-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">L</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Les itinéraires du Paradis (Massalik)</h3>
+          <p class="cat">tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Masaalikul%20Jinaan-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">L</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Les sept choses</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sabhoune-takhi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">L</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Livret de Cheikh Mouhammad al-Faadhil</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;livret-cheikh-mouhammad-al-faadhil-1.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-m-francais">
+          <div class="letter-head">
+            <span>M</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Maghalihul Niiran wa mafaatihul jinan (Traduction)</h3>
+          <p class="cat">tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;LES-VERROUS-DE-L-ENFER-ET-LES-CLEFS-DU-PARADIS.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Massalikul jinane (Traduction)</h3>
+          <p class="cat">tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Massalik.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;massalik-ul%20jinnan.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Matlabul fawzayni (Traduction)</h3>
+          <p class="cat">douah</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlaboul%20fawzayni-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Matlabush Shifa-i (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabus_Shifa-i_fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Matlabus_Shifa-i_fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Mawahibu naafih (Traduction)</h3>
+          <p class="cat">madh</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahibu_nafih_fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Mawahibul xuduss (Traduction)</h3>
+          <p class="cat">tawhid</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Mawahboul%20khoudouss-fr.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;LES-DONS-DU-TR_S-SAINT.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Midaadi wa aqlaami (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi_fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi_fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi_fr_3.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Minanul Bakhil Khadim fi Siratul Cheikh al-Khadim</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Serigne-Bachir-MBACKE-les-bienfaits-de-l-eternel.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Mon encre et mes plumes (Midaadi)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midaadi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Mon encre et mes plumes (Midadi, traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midadi%20-%20Traduction%20en%20francais.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Mon encre et mes plumes (Midadi, variante)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Midadi-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Munawwirus suduur (Traduction)</h3>
+          <p class="cat">tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;ILLUMINATION-DES-CEURS.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Muqadammatul Amdah (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Muqadammatul_Amdah_fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-n-francais">
+          <div class="letter-head">
+            <span>N</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">N</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Nahju qadaa il haj (Traduction)</h3>
+          <p class="cat">tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nahju.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nahdjou-fr.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;nahju_qadahil_haaj.pdf" target="_blank" rel="noopener">Partie 3 <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-r-francais">
+          <div class="letter-head">
+            <span>R</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">R</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Recueil de Sermons de Cheikh Mouhamadou Moustapha Mbacke</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;RecueilsSermonsCheikhMoustapha.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">R</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Recueil de Sermons Serigne Saalihu Mbakké</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;RecueilSermonsSerignSaalihu.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-s-francais">
+          <div class="letter-head">
+            <span>S</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">S</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Sabhun taqii (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sabhun_tahi-fr_1.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sabhun_tahi-fr_2.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">S</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Silkul Jawahiri (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Silkul-Jawahir-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">S</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Sindiidi (Traduction)</h3>
+          <p class="cat">douah</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sindidi_6.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-t-francais">
+          <div class="letter-head">
+            <span>T</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">T</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Tazawudu-s shubbaan (Traduction)</h3>
+          <p class="cat">tawhid-fikh-tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tazawwudou-sh-subban-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">T</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Tazawudu-s sighar (Traduction)</h3>
+          <p class="cat">tawhid-fikh-tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tazawwud-ss-sighar-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-v-francais">
+          <div class="letter-head">
+            <span>V</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">V</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Viatique du Muharram</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Viatique_du_Muharram.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-x-francais">
+          <div class="letter-head">
+            <span>X</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">X</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Xaaluu liyarkan (français)</h3>
+          <p class="cat">tawhid</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Khaalou%20liyal%20kaan-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">X</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Xassida Seriñ Tuuba</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Receuil_Khassaides.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">X</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Xurratul ayni</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xurratul_ayni.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">X</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Xurratul Ayni (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;KHOURATOULAYNI.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-y-francais">
+          <div class="letter-head">
+            <span>Y</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">Y</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Yaa Khayra Dayfine (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;YaaKhayraDayfine-fr.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">Y</div>
+          <div class="card-top">
+            <span class="lang lang-francais">Français</span>
+          </div>
+          <h3>Yawmul Qamiissi fi rajab</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;jeudi_Rajab.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+      </section>
+      <section class="lang-section" id="langue-wolof">
+        <div class="lang-head">
+          <span class="lang-mark" aria-hidden="true">❧</span>
+          <h2>Wolof</h2>
+          <div class="rule" aria-hidden="true"></div>
+        </div>
+        <nav class="alphabet alphabet-small" aria-label="Index alphabétique Wolof">
+          <a href="#lettre-a-wolof">A</a>
+          <a href="#lettre-h-wolof">H</a>
+          <a href="#lettre-i-wolof">I</a>
+          <a href="#lettre-j-wolof">J</a>
+          <a href="#lettre-m-wolof">M</a>
+          <a href="#lettre-n-wolof">N</a>
+          <a href="#lettre-s-wolof">S</a>
+          <a href="#lettre-t-wolof">T</a>
+          <a href="#lettre-w-wolof">W</a>
+          <a href="#lettre-x-wolof">X</a>
+          <a href="#lettre-y-wolof">Y</a>
+          <a href="#lettre-z-wolof">Z</a>
+        </nav>
+        <section class="letter-block" id="lettre-a-wolof">
+          <div class="letter-head">
+            <span>A</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">A</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Alxuraan ci Wolof</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Alxuran%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">A</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Astaxfirul Laaha bihii (Traduction)</h3>
+          <p class="cat">istihfar</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astaghfiroulaha%20bihi%20Wolof.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Astaxfirul%20Laaha%20Bihii.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-h-wolof">
+          <div class="letter-head">
+            <span>H</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">H</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>huqal bukaa u (wolof)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Huqal%20Bukaa%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-i-wolof">
+          <div class="letter-head">
+            <span>I</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">I</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Ihdi jami hana (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ihdi%20jamihaanas%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">I</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Ihfas li wajhikal kariimi (Traduction)</h3>
+          <p class="cat">douah</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ihfas%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">I</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Irwa-un Nadiim (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Irwaun-Nadiim-wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-j-wolof">
+          <div class="letter-head">
+            <span>J</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jazaahul ihsaan lil xuddaami - alhamdulilaahi lazi</h3>
+          <p class="cat">shukr</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jazaahul%20ihsaan%20lil%20xuddaami%20alhamdulilaahi%20lazi%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jotaayu Texe Tome 1</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%201.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jotaayu Texe Tome 2</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%202.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jotaayu Texe Tome 3</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%203.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jotaayu Texe Tome 4</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%204.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jotaayu Texe Tome 5</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%205.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jotaayu Texe Tome 6</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%206.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Jotaayu Texe Tome 7</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Jotaayu%20Texe%20Tome%207.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-m-wolof">
+          <div class="letter-head">
+            <span>M</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Miftahul Huyob</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji_Mbacke-Miftahul_Huyob.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-n-wolof">
+          <div class="letter-head">
+            <span>N</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">N</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Nahju qadaa il haj (Traduction)</h3>
+          <p class="cat">tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Nahjul-Xadaail-Haaji-wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">N</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>NAYLUL AWTAAR</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;NAYLUL%20AWTAAR_FR.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">N</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Ndaxam ab murid</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Ndaxam%20ab%20murid_SMbayeDiakhate.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-s-wolof">
+          <div class="letter-head">
+            <span>S</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">S</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Safarass bakkaar</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji_Mbacke-Safarass_bakkaar.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">S</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Sakuuru Raafihu (wolof)</h3>
+          <p class="cat">shukr</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Sakuuru%20Raafihu%20Wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-t-wolof">
+          <div class="letter-head">
+            <span>T</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">T</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Tazawudu-s Sighar (Traduction)</h3>
+          <p class="cat">tawhid-fikh-tassaouf</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Tasawudus-Sixaar-wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">T</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Tuhfatun Niswaan</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji_Mbacke-TuhfatunNiswaan.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-w-wolof">
+          <div class="letter-head">
+            <span>W</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">W</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Wakhi serigne bi</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Wakhi%20serigne%20bi.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">W</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Wasful muriid \u0026 shifaatu shaadiqil muriid</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;FIri_Wasful_muriid_shifaatu_shaadiqil_muriid_wolof-francais.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">W</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Wolofal S Mbaye DIAKHATE</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Wolofal_S_Mbaye%20DIAKHATE.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-x-wolof">
+          <div class="letter-head">
+            <span>X</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">X</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Xaaluu liyarkan (wolof)</h3>
+          <p class="cat">tawhid</p>
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xaaluu%20liyarkan%20wolof.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">X</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Xarnu BI</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xarnu-BI-wolof.pdf" target="_blank" rel="noopener">Partie 1 <span aria-hidden="true">↗</span></a><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Xarnu%20BI.pdf" target="_blank" rel="noopener">Partie 2 <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-y-wolof">
+          <div class="letter-head">
+            <span>Y</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">Y</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Yonou Mourid</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Yonou%20Mourid.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">Y</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Yoonu Ga gnu baax gni</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Yoonu%20Ga%20gnu%20baax%20gni.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">Y</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Yoonu jam</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Yoonu%20jam.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-z-wolof">
+          <div class="letter-head">
+            <span>Z</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">Z</div>
+          <div class="card-top">
+            <span class="lang lang-wolof">Wolof</span>
+          </div>
+          <h3>Ziyara Serigne Touba</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;S%20Aladji%20Mbacke-Ziyara%20Serigne%20Touba.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+      </section>
+      <section class="lang-section" id="langue-anglais">
+        <div class="lang-head">
+          <span class="lang-mark" aria-hidden="true">❧</span>
+          <h2>Anglais</h2>
+          <div class="rule" aria-hidden="true"></div>
+        </div>
+        <nav class="alphabet alphabet-small" aria-label="Index alphabétique Anglais">
+          <a href="#lettre-a-anglais">A</a>
+          <a href="#lettre-h-anglais">H</a>
+          <a href="#lettre-j-anglais">J</a>
+          <a href="#lettre-m-anglais">M</a>
+        </nav>
+        <section class="letter-block" id="lettre-a-anglais">
+          <div class="letter-head">
+            <span>A</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">A</div>
+          <div class="card-top">
+            <span class="lang lang-anglais">Anglais</span>
+          </div>
+          <h3>Axiru Zaman (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Axiru-Zaman-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-h-anglais">
+          <div class="letter-head">
+            <span>H</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">H</div>
+          <div class="card-top">
+            <span class="lang lang-anglais">Anglais</span>
+          </div>
+          <h3>Huqal bukaa u (Anglais)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;HUQQAL-BUKKAU-BACKGROUND-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-j-anglais">
+          <div class="letter-head">
+            <span>J</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">J</div>
+          <div class="card-top">
+            <span class="lang lang-anglais">Anglais</span>
+          </div>
+          <h3>Jawartul laha (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;Jawartu-En.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
+        <section class="letter-block" id="lettre-m-anglais">
+          <div class="letter-head">
+            <span>M</span>
+            <div class="rule" aria-hidden="true"></div>
+          </div>
+          <div class="cards">
+        <article class="book-card">
+          <div class="vignette" aria-hidden="true">M</div>
+          <div class="card-top">
+            <span class="lang lang-anglais">Anglais</span>
+          </div>
+          <h3>Munawwirus Suduur (Traduction)</h3>
+          
+          <div class="links"><a class="read" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;BOOKS&#47;MUNAWWIRU-C-%C3%87UDDUR-en.pdf" target="_blank" rel="noopener">Lire le PDF <span aria-hidden="true">↗</span></a></div>
+        </article>
+          </div>
+        </section>
       </section>
     </div>
   </section>
