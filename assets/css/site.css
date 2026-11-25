@@ -722,45 +722,116 @@ footer a { color: var(--gold-light); }
 .alpha-index button[aria-pressed="true"] { background: var(--gold-light); }
 
 .result-count { margin: 16px 0 10px; color: var(--muted); font-size: 1rem; }
-.book-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.book-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .book-row {
   display: grid;
-  gap: 8px;
-  padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #FFF;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--gold-line);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #062C1B 0%, #0E6B40 58%, #12563A 100%);
+  box-shadow: 0 8px 20px rgba(3, 20, 12, .22);
 }
-.book-row h3 { margin: 0; font-size: 1.05rem; line-height: 1.3; color: var(--deep); }
+.book-thumb {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: #F7F4E9;
+  object-fit: contain;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .25);
+}
+.book-copy { min-width: 0; }
+.book-row h3 {
+  margin: 0;
+  color: #FFF7E2;
+  font-size: 1rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
 .book-arabic {
-  margin: 6px 0 2px;
-  color: var(--green);
+  margin: 2px 0 0;
+  color: #F7E6A8;
   font-family: "Amiri Site", Georgia, serif;
-  font-size: 1.35rem;
-  line-height: 1.6;
+  font-size: 1.15rem;
+  line-height: 1.3;
   text-align: right;
 }
-.book-meta { display: flex; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: 1rem; }
+.book-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 2px 0 0;
+  color: #D6E7DA;
+  font-size: 1rem;
+  line-height: 1.25;
+}
 .book-lang {
   padding: 2px 8px;
   border-radius: 999px;
-  background: rgba(14,107,64,.10);
-  color: var(--green);
+  background: rgba(247, 230, 168, .16);
+  color: #F7E6A8;
   font-weight: 800;
 }
+.links { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
 .read {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 7px;
   min-height: var(--tap);
-  padding: 9px 16px;
+  padding: 8px 12px;
   border-radius: 12px;
-  background: var(--green);
-  color: #FFF;
-  font-weight: 800;
+  background: linear-gradient(180deg, #F7E6A8, #C99A2E);
+  color: #0B1E15;
+  font-size: .95rem;
+  font-weight: 900;
   text-decoration: none;
+  box-shadow: 0 4px 0 #8A6414, 0 7px 14px rgba(0, 0, 0, .28);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
 }
-.read:hover { background: var(--deep); }
+.read:hover { filter: brightness(1.06); }
+.read:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #8A6414, 0 3px 8px rgba(0, 0, 0, .28);
+}
+.pdf-icon {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 20px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #FFFDF5 0%, #F7E6A8 55%, #C99A2E 100%);
+  box-shadow: 2px 3px 0 #8A6414, 3px 5px 6px rgba(0, 0, 0, .32);
+  transform: rotate(-5deg);
+}
+.pdf-icon::before {
+  content: "PDF";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  text-align: center;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  color: #0B1E15;
+}
+.pdf-icon::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid #8A6414;
+  border-bottom: 1px solid #8A6414;
+  background: #FFF7E2;
+  transform: rotate(45deg);
+}
 .empty-state { padding: 28px; text-align: center; color: var(--muted); }
 .book-row.is-truncated { display: none; }
 .more-books {
@@ -1006,7 +1077,8 @@ footer a { color: var(--gold-light); }
   .hero-portrait { order: 2; }
   .portrait-frame { width: min(340px, 100%); }
   .phone { width: min(300px, 100%); }
-  .book-row { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .book-row { grid-template-columns: 52px minmax(0, 1fr) auto; gap: 12px; padding: 12px 16px; }
+  .book-thumb { width: 52px; height: 52px; }
   .lang-hub { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .name-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .chapter-head { grid-template-columns: minmax(220px, 300px) minmax(0, 1fr); }
