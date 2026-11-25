@@ -21,6 +21,7 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 - `sitemap.xml` et `robots.txt` : fichiers d’aide à l’indexation Google.
 - `assets/fonts/AmiriQuran-Regular.ttf` : police serif locale, hébergée sur le site même (aucun service externe).
 - `assets/app-icon.png` : icône de l’application.
+- `assets/serigne_touba.png` : portrait encadré d’or affiché dans chaque carte de la bibliothèque (identique à `BookPortrait` dans l’application).
 - `assets/feature-graphic.png` : bandeau 1024 × 500.
 - `assets/screenshots/v2/` : 11 captures 720 × 1560 réservées à la galerie **Aperçus** de l’accueil. Elles ne servent jamais de contenu dans `rubriques.html`.
 
