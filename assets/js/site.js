@@ -212,10 +212,163 @@
     });
   }
 
+
+  /* ---------- Playlist audio : lecture en ligne, aucun téléchargement ---------- */
+  function initAudioPlaylist() {
+    const player = $('#audio-player');
+    const list = $('#playlist');
+    const status = $('#audio-status');
+    if (!player || !list) return;
+    const rows = $$('.playlist-row', list);
+    if (!rows.length) return;
+    let current = -1;
+
+    const titleOf = (row) => row.dataset.title || 'cet enregistrement';
+
+    const reflect = () => {
+      rows.forEach((row, index) => {
+        const playing = index === current && !player.paused;
+        row.classList.toggle('is-current', index === current);
+        const button = $('.playlist-play', row);
+        if (button) {
+          button.textContent = playing ? '❚❚' : '▶';
+          button.setAttribute('aria-label', (playing ? 'Mettre en pause : ' : 'Lire : ') + titleOf(row));
+        }
+      });
+    };
+
+    const announce = (message) => {
+      if (status) status.textContent = message;
+    };
+
+    const setTrack = (index, play) => {
+      if (index < 0 || index >= rows.length) return;
+      current = index;
+      player.src = rows[index].dataset.src;
+      player.load();
+      announce('En cours : ' + titleOf(rows[index]));
+      reflect();
+      if (play) {
+        const pending = player.play();
+        if (pending && pending.catch) {
+          pending.catch(() => announce('Lecture bloquée par le navigateur : utilisez le bouton du lecteur.'));
+        }
+      }
+    };
+
+    const toggle = (index) => {
+      if (index !== current) {
+        setTrack(index, true);
+        return;
+      }
+      if (player.paused) {
+        const pending = player.play();
+        if (pending && pending.catch) pending.catch(() => announce('Lecture indisponible.'));
+      } else {
+        player.pause();
+      }
+    };
+
+    rows.forEach((row, index) => {
+      const button = $('.playlist-play', row);
+      if (button) button.addEventListener('click', () => toggle(index));
+    });
+
+    const previous = $('[data-audio-prev]');
+    const next = $('[data-audio-next]');
+    if (previous) previous.addEventListener('click', () => {
+      setTrack(current <= 0 ? rows.length - 1 : current - 1, true);
+    });
+    if (next) next.addEventListener('click', () => {
+      setTrack(current >= rows.length - 1 ? 0 : current + 1, true);
+    });
+
+    player.addEventListener('play', reflect);
+    player.addEventListener('pause', reflect);
+    player.addEventListener('ended', () => {
+      if (current < rows.length - 1) {
+        setTrack(current + 1, true);
+      } else {
+        announce('Fin de la playlist.');
+        reflect();
+      }
+    });
+  }
+
+  /* ---------- Recherche globale : index local, aucun envoi ---------- */
+  function initGlobalSearch() {
+    const input = $('#global-search');
+    const results = $('#search-results');
+    const status = $('#search-status');
+    if (!input || !results || !status) return;
+    const index = window.DIIWAANU_SEARCH_INDEX || [];
+    let selected = 'Tous';
+
+    const normalise = (value) => String(value || '')
+      .toLocaleLowerCase('fr')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+
+    const escapeHtml = (value) => String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
+    const render = () => {
+      const query = normalise(input.value.trim());
+      status.textContent = query
+        ? ''
+        : index.length + ' entrées disponibles — tapez un mot pour chercher.';
+      if (!query) {
+        results.innerHTML = '';
+        return;
+      }
+      const found = index.filter((item) => {
+        if (selected !== 'Tous' && item.kind !== selected) return false;
+        return normalise(String(item.title) + ' ' + String(item.text)).includes(query);
+      }).slice(0, 40);
+
+      status.textContent = found.length
+        ? found.length + ' résultat' + (found.length > 1 ? 's' : '') + ' affiché' + (found.length > 1 ? 's' : '') + ' sur ' + index.length + ' entrées (40 maximum).'
+        : 'Aucun résultat pour cette recherche.';
+
+      if (!found.length) {
+        results.innerHTML = '<p class="search-empty">Essayez un autre mot : un titre, une langue, un nom ou un chapitre.</p>';
+        return;
+      }
+      results.innerHTML = found.map((item) => {
+        const target = item.external ? ' target="_blank" rel="noopener"' : '';
+        return '<a class="search-item" href="' + escapeHtml(item.url) + '"' + target + '>'
+          + '<span class="search-kind">' + escapeHtml(item.kind) + '</span>'
+          + '<span class="search-title">' + escapeHtml(item.title) + '</span>'
+          + '<span class="search-snippet">' + escapeHtml(item.text) + '</span>'
+          + '</a>';
+      }).join('');
+    };
+
+    $$('[data-search-kind]').forEach((button) => {
+      button.addEventListener('click', () => {
+        selected = button.dataset.searchKind;
+        $$('[data-search-kind]').forEach((other) => {
+          other.setAttribute('aria-pressed', String(other === button));
+        });
+        render();
+      });
+    });
+
+    input.addEventListener('input', render);
+    input.addEventListener('search', render);
+    render();
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initNotifyForm();
     initLibrary();
+    initAudioPlaylist();
+    initGlobalSearch();
     initToTop();
   });
 })();

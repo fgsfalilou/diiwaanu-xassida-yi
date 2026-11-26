@@ -11,10 +11,11 @@
   <meta property="og:title" content="Audio — Diiwaanu Xassida Yi">
   <meta property="og:description" content="Écoutez les khassaïdes en ligne au format MP3, directement sur le site, sans compte ni publicité ni enregistrement sur l’appareil.">
   <meta property="og:image" content="https://www.diiwaanu-xassida-yi.com/assets/app-icon.png">
+  <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#0B1E15">
   <link rel="icon" type="image/png" href="assets/app-icon.png">
-  <link rel="stylesheet" href="assets/css/site.css?v=biblio28">
-  <script src="assets/js/site.js?v=biblio28" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=biblio29">
+  <script src="assets/js/site.js?v=biblio29" defer></script>
 </head>
 <body id="haut">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -31,12 +32,13 @@
       </button>
     </nav>
 
-        <noscript>
+    <noscript>
       <nav class="noscript-nav" aria-label="Navigation sans JavaScript">
         <a href="index.html">Accueil</a>
         <a href="voie-mouride.html">La Voie Mouride</a>
         <a href="voie-mouride.html#fondements">Fondements</a>
         <a href="voie-mouride.html#lumiere">La Lumière de Touba</a>
+        <a href="voie-mouride.html#sous-rubriques">Sous-rubriques mourides</a>
         <a href="xam-yoonwi.html">XAM YOONWI</a>
         <a href="livres.html">Livres</a>
         <a href="bibliotheque.html">Bibliothèque</a>
@@ -53,16 +55,18 @@
         <a href="guides.html">Guides</a>
         <a href="prieres.html">Prières</a>
         <a href="actualites.html">Actualités</a>
+        <a href="actualites.html">Journal du projet</a>
+        <a href="agenda.html">Agenda mouride</a>
         <a href="contact.html">Contact</a>
         <a href="rubriques.html">Plan du site</a>
+        <a href="recherche.html">Recherche globale</a>
       </nav>
     </noscript>
 
     <div class="hero">
       <p class="eyebrow">Audio</p>
       <h1>Les khassaïdes<br><span>à écouter</span></h1>
-      <p class="lead">Lecteur direct, sans inscription ni suivi. Choisissez un enregistrement et écoutez-le ici même. L’écoute se fait en ligne : aucun MP3 n’est enregistré sur l’appareil.</p>
-      
+      <p class="lead">Vingt-trois enregistrements dans une seule playlist, avec lecture en ligne, sans inscription ni suivi.</p>
       <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
     </div>
   </div>
@@ -81,6 +85,7 @@
         <ul class="menu-sub">
           <li><a href="voie-mouride.html#fondements">Fondements</a></li>
           <li><a href="voie-mouride.html#lumiere">La Lumière de Touba</a></li>
+          <li><a href="voie-mouride.html#sous-rubriques">Sous-rubriques mourides</a></li>
           <li><a href="xam-yoonwi.html">XAM YOONWI</a></li>
         </ul>
       </li>
@@ -110,9 +115,18 @@
           <li><a href="prieres.html">Prières</a></li>
         </ul>
       </li>
-      <li><a href="actualites.html">Actualités</a></li>
+      <li class="menu-group"><a href="actualites.html">Actualités</a>
+        <ul class="menu-sub">
+          <li><a href="actualites.html">Journal du projet</a></li>
+          <li><a href="agenda.html">Agenda mouride</a></li>
+        </ul>
+      </li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="rubriques.html">Plan du site</a></li>
+      <li class="menu-group"><a href="rubriques.html">Plan du site</a>
+        <ul class="menu-sub">
+          <li><a href="recherche.html">Recherche globale</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
   <p class="menu-note">Application gratuite, sans publicité — audio en ligne.</p>
@@ -120,234 +134,233 @@
 
 <main id="contenu">
   <div class="wrap">
-    <p class="audio-count" role="status">23 enregistrements disponibles</p>
-    <section class="audio-grid" aria-label="Enregistrements audio">
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>332 Khassida Ikfini Kurel 1 Hizbut Tarqyyah Mbacké Kadior 2015</h2>
-          <p class="audio-duration">Durée : 29 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;332%20-%20Khassida%20Ikfini%20Kurel%201%20Hizbut%20Tarqyyah%20Mbacke%CC%81%20Kadior%202015.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;332%20-%20Khassida%20Ikfini%20Kurel%201%20Hizbut%20Tarqyyah%20Mbacke%CC%81%20Kadior%202015.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
+    <section>
+      <div class="section-head">
+        <span class="kicker">À écouter</span>
+        <h2>Lecture en ligne, sans téléchargement</h2>
+        <p>Les enregistrements sont hébergés avec les fichiers du projet. Choisissez une piste dans la liste : elle se charge dans le lecteur ci-dessus. Aucun MP3 n’est enregistré sur l’appareil, aucun suivi n’est ajouté.</p>
+      </div>
+      <div class="player-panel">
+        <h2 id="player-title">Lecteur des khassaïdes</h2>
+        <audio id="audio-player" controls preload="none" aria-label="Lecteur audio des khassaïdes"></audio>
+        <div class="player-controls" role="group" aria-label="Contrôles de la playlist">
+          <button type="button" data-audio-prev aria-label="Piste précédente">‹ Précédent</button>
+          <button type="button" data-audio-next aria-label="Piste suivante">Suivant ›</button>
         </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>COMPLET ALBUM MAGAL 1445 2023 KOUREL HT</h2>
-          <p class="audio-duration">Durée : 6 h 19 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20COMPLET%20ALBUM%20MAGAL%201445%202023%20%20KOUREL%20HT.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20COMPLET%20ALBUM%20MAGAL%201445%202023%20%20KOUREL%20HT.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>Hizbut Tarqiyyah Darou KHoudoss Touba Magal Touba 2023 Kourel 1</h2>
-          <p class="audio-duration">Durée : 52 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Hizbut%20Tarqiyyah%20Darou%20KHoudoss%20Touba%20Magal%20Touba%202023%20Kourel%201.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Hizbut%20Tarqiyyah%20Darou%20KHoudoss%20Touba%20Magal%20Touba%202023%20Kourel%201.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>Khassasïd Diaalibatou Maraxib interpréter par Serigne Ibrahima Gueye</h2>
-          <p class="audio-duration">Durée : 1 h 12 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Khassas%C3%AFd_%20Diaalibatou%20Maraxib%20interpr%C3%A9ter%20par%20Serigne%20Ibrahima%20Gueye.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Khassas%C3%AFd_%20Diaalibatou%20Maraxib%20interpr%C3%A9ter%20par%20Serigne%20Ibrahima%20Gueye.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>Khassida Compilation Kurel 1A Touba, Al Mashrabu&#39;c Châfî, Ramadan 1444 2023</h2>
-          <p class="audio-duration">Durée : 3 h 06 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Khassida_%20Compilation%20Kurel%201A%20%20%20Touba%2C%20Al%20Mashrabu%27c%20Ch%C3%A2f%C3%AE%2C%20Ramadan%201444%20_2023.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Khassida_%20Compilation%20Kurel%201A%20%20%20Touba%2C%20Al%20Mashrabu%27c%20Ch%C3%A2f%C3%AE%2C%20Ramadan%201444%20_2023.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA KOUREL MAGAL 2023 Sélection Meilleure Prestation Hizbout Tarqiyyah</h2>
-          <p class="audio-duration">Durée : 3 h 43 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20MAGAL%202023_%20S%C3%A9lection%20Meilleure%20Prestation%20Hizbout%20Tarqiyyah.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20MAGAL%202023_%20S%C3%A9lection%20Meilleure%20Prestation%20Hizbout%20Tarqiyyah.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA KOUREL RAMADAN 2022 SELECTION DES MEILLEURS DECLAMATIONS</h2>
-          <p class="audio-duration">Durée : 10 h 35 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20RAMADAN%202022_%20SELECTION%20DES%20MEILLEURS%20DECLAMATIONS.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20RAMADAN%202022_%20SELECTION%20DES%20MEILLEURS%20DECLAMATIONS.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA KOUREL RAMADAN 2023 SÉLECTION MEILLEUR PRESTATION HIZBOUT TARQIYYAH Résidence SéxulXadim</h2>
-          <p class="audio-duration">Durée : 5 h 55 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20RAMADAN%202023_%20S%C3%89LECTION%20MEILLEUR%20PRESTATION%20HIZBOUT%20TARQIYYAH__%20R%C3%A9sidence%20S%C3%A9xulXadim.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20RAMADAN%202023_%20S%C3%89LECTION%20MEILLEUR%20PRESTATION%20HIZBOUT%20TARQIYYAH__%20R%C3%A9sidence%20S%C3%A9xulXadim.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2020 1442</h2>
-          <p class="audio-duration">Durée : 3 h 45 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%20%202020%20HT%20%26%20HTDKH%2018%20SAFAR%202020%20-%201442.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%20%202020%20HT%20%26%20HTDKH%2018%20SAFAR%202020%20-%201442.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2023 1445</h2>
-          <p class="audio-duration">Durée : 3 h 30 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202020%20HT%20%26%20HTDKH%2018%20SAFAR%202023%20-%201445.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202020%20HT%20%26%20HTDKH%2018%20SAFAR%202023%20-%201445.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA MAGAL TOUBA 2021 HT 18 SAFAR 2021 1443</h2>
-          <p class="audio-duration">Durée : 5 h 09 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202021%20HT%2018%20SAFAR%202021%20-%201443.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202021%20HT%2018%20SAFAR%202021%20-%201443.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA MAGAL TOUBA 2022 HT &amp; HTDKH 18 SAFAR 2022 1444</h2>
-          <p class="audio-duration">Durée : 4 h 20 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202022%20HT%20%26%20HTDKH%2018%20SAFAR%202022%20-%201444.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202022%20HT%20%26%20HTDKH%2018%20SAFAR%202022%20-%201444.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA RAMADAN 2023 SELECTION MEILLEURS DECLAMATION</h2>
-          <p class="audio-duration">Durée : 2 h 50 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20RAMADAN%202023%20SELECTION%20MEILLEURS%20DECLAMATION.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20RAMADAN%202023%20SELECTION%20MEILLEURS%20DECLAMATION.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KHASSIDA SPECIAL DAAJU SERIGNE CISSE</h2>
-          <p class="audio-duration">Durée : 3 h 07 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20%20%20SPECIAL%20DAAJU%20SERIGNE%20CISSE.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20%20%20SPECIAL%20DAAJU%20SERIGNE%20CISSE.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>KOUREL RAMADAN 2023 « Mashrabu Çâfî minal manbahi Shâfî» SELECTION DES MEILLEURS DECLAMATIONS</h2>
-          <p class="audio-duration">Durée : 10 h 35 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KOUREL%20RAMADAN%202023%20%C2%AB%20Mashrabu%20%C3%87%C3%A2f%C3%AE%20minal%20manbahi%20Sh%C3%A2f%C3%AE%C2%BB_%20SELECTION%20DES%20MEILLEURS%20DECLAMATIONS.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KOUREL%20RAMADAN%202023%20%C2%AB%20Mashrabu%20%C3%87%C3%A2f%C3%AE%20minal%20manbahi%20Sh%C3%A2f%C3%AE%C2%BB_%20SELECTION%20DES%20MEILLEURS%20DECLAMATIONS.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>Kun katimane Kourel 1 Hizbut Tarqqiyyah 06e. jour Ramadan 2019 1440</h2>
-          <p class="audio-duration">Durée : 6 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Kun%20katimane%20_%20Kourel%201%20Hizbut%20Tarqqiyyah_%2006e.%20jour%20Ramadan%202019%20_%201440.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Kun%20katimane%20_%20Kourel%201%20Hizbut%20Tarqqiyyah_%2006e.%20jour%20Ramadan%202019%20_%201440.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>La prestation de S. Ibra GUEYE (Vivification du Ramadan à la Grande Mosquée de Touba Episode 2 )</h2>
-          <p class="audio-duration">Durée : 43 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;La%20prestation%20de%20S.%20Ibra%20GUEYE%20%20%28Vivification%20du%20Ramadan%20%C3%A0%20la%20Grande%20Mosqu%C3%A9e%20de%20Touba%20-%20Episode%202%20%29.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;La%20prestation%20de%20S.%20Ibra%20GUEYE%20%20%28Vivification%20du%20Ramadan%20%C3%A0%20la%20Grande%20Mosqu%C3%A9e%20de%20Touba%20-%20Episode%202%20%29.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>Lirabine Khaforine Baye Ablaye Niang Kurel 1 Tout Tank HTDKH Touba DUNDAL WEERU KOOR</h2>
-          <p class="audio-duration">Durée : 11 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Lirabine%20Khaforine%20Baye%20Ablaye%20Niang%20Kurel%201%20Tout%20Tank%20HTDKH%20Touba%20DUNDAL%20WEERU%20KOOR.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Lirabine%20Khaforine%20Baye%20Ablaye%20Niang%20Kurel%201%20Tout%20Tank%20HTDKH%20Touba%20DUNDAL%20WEERU%20KOOR.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>MAGAL 2023 SELECTION MEILLEURE PRESTATION HTDKH</h2>
-          <p class="audio-duration">Durée : 4 h 18 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20MAGAL%202023_%20SELECTION%20MEILLEURE%20PRESTATION%20HTDKH.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20MAGAL%202023_%20SELECTION%20MEILLEURE%20PRESTATION%20HTDKH.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>MAGAL TOUBA 2023 SINDIDI HIZBUT DAROU KHOUDOSS</h2>
-          <p class="audio-duration">Durée : 10 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;MAGAL%20TOUBA%202023%20-%20SINDIDI%20-%20HIZBUT%20DAROU%20KHOUDOSS.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;MAGAL%20TOUBA%202023%20-%20SINDIDI%20-%20HIZBUT%20DAROU%20KHOUDOSS.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>Matlabul Fawzayni S Moustapha Seck</h2>
-          <p class="audio-duration">Durée : 34 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Matlabul%20Fawzayni%20%20%20S%20%20Moustapha%20Seck.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Matlabul%20Fawzayni%20%20%20S%20%20Moustapha%20Seck.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>MOUKHADIMAT KOURÉL MASSALIKOUL DJINANE KEUR SERIGNE MBACKÉ ABDOULAHI</h2>
-          <p class="audio-duration">Durée : 40 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20MOUKHADIMAT_%20KOUR%C3%89L%20MASSALIKOUL%20DJINANE_KEUR%20SERIGNE%20MBACK%C3%89%20ABDOULAHI.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20MOUKHADIMAT_%20KOUR%C3%89L%20MASSALIKOUL%20DJINANE_KEUR%20SERIGNE%20MBACK%C3%89%20ABDOULAHI.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
-      <article class="audio-card">
-        <img class="audio-thumb" src="assets/serigne_touba.png" alt="" width="56" height="56">
-        <div class="audio-copy">
-          <h2>RADITOU KUREL 1 ADOLESCENT HIZBUT TARQIYYAH RAMADAN 2023</h2>
-          <p class="audio-duration">Durée : 16 min</p>
-          <audio controls preload="none" src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20RADITOU%20KUREL%201%20ADOLESCENT%20HIZBUT%20TARQIYYAH%20RAMADAN%202023.mp3"></audio>
-          <a class="audio-download" href="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20RADITOU%20KUREL%201%20ADOLESCENT%20HIZBUT%20TARQIYYAH%20RAMADAN%202023.mp3" download>Ouvrir le MP3 <span aria-hidden="true">↓</span></a>
-        </div>
-      </article>
+        <p class="audio-status" id="audio-status" role="status" aria-live="polite">Choissez une piste pour commencer l’écoute.</p>
+      </div>
+      <ol class="playlist" id="playlist" aria-label="Playlist des khassaïdes">
+        <li class="playlist-row" id="piste-1"
+            data-title="COMPLET ALBUM MAGAL 1445 2023 KOUREL HT" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20COMPLET%20ALBUM%20MAGAL%201445%202023%20%20KOUREL%20HT.mp3" data-duration="6 h 19 min">
+          <button class="playlist-play" type="button" aria-label="Lire : COMPLET ALBUM MAGAL 1445 2023 KOUREL HT"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">01</span>COMPLET ALBUM MAGAL 1445 2023 KOUREL HT</h3>
+            <p class="playlist-duration">Durée : 6 h 19 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-2"
+            data-title="Hizbut Tarqiyyah Darou KHoudoss Touba Magal Touba 2023 Kourel 1" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Hizbut%20Tarqiyyah%20Darou%20KHoudoss%20Touba%20Magal%20Touba%202023%20Kourel%201.mp3" data-duration="52 min">
+          <button class="playlist-play" type="button" aria-label="Lire : Hizbut Tarqiyyah Darou KHoudoss Touba Magal Touba 2023 Kourel 1"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">02</span>Hizbut Tarqiyyah Darou KHoudoss Touba Magal Touba 2023 Kourel 1</h3>
+            <p class="playlist-duration">Durée : 52 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-3"
+            data-title="Khassasïd Diaalibatou Maraxib interpréter par Serigne Ibrahima Gueye" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Khassas%C3%AFd_%20Diaalibatou%20Maraxib%20interpr%C3%A9ter%20par%20Serigne%20Ibrahima%20Gueye.mp3" data-duration="1 h 12 min">
+          <button class="playlist-play" type="button" aria-label="Lire : Khassasïd Diaalibatou Maraxib interpréter par Serigne Ibrahima Gueye"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">03</span>Khassasïd Diaalibatou Maraxib interpréter par Serigne Ibrahima Gueye</h3>
+            <p class="playlist-duration">Durée : 1 h 12 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-4"
+            data-title="KHASSIDA SPECIAL DAAJU SERIGNE CISSE" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20%20%20SPECIAL%20DAAJU%20SERIGNE%20CISSE.mp3" data-duration="3 h 7 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA SPECIAL DAAJU SERIGNE CISSE"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">04</span>KHASSIDA SPECIAL DAAJU SERIGNE CISSE</h3>
+            <p class="playlist-duration">Durée : 3 h 7 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-5"
+            data-title="KHASSIDA KOUREL MAGAL 2023 Sélection Meilleure Prestation Hizbout Tarqiyyah" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20MAGAL%202023_%20S%C3%A9lection%20Meilleure%20Prestation%20Hizbout%20Tarqiyyah.mp3" data-duration="3 h 43 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA KOUREL MAGAL 2023 Sélection Meilleure Prestation Hizbout Tarqiyyah"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">05</span>KHASSIDA KOUREL MAGAL 2023 Sélection Meilleure Prestation Hizbout Tarqiyyah</h3>
+            <p class="playlist-duration">Durée : 3 h 43 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-6"
+            data-title="KHASSIDA KOUREL RAMADAN 2022 SELECTION DES MEILLEURS DECLAMATIONS" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20RAMADAN%202022_%20SELECTION%20DES%20MEILLEURS%20DECLAMATIONS.mp3" data-duration="10 h 35 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA KOUREL RAMADAN 2022 SELECTION DES MEILLEURS DECLAMATIONS"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">06</span>KHASSIDA KOUREL RAMADAN 2022 SELECTION DES MEILLEURS DECLAMATIONS</h3>
+            <p class="playlist-duration">Durée : 10 h 35 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-7"
+            data-title="KHASSIDA KOUREL RAMADAN 2023 SÉLECTION MEILLEUR PRESTATION HIZBOUT TARQIYYAH Résidence SéxulXadim" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20KOUREL%20RAMADAN%202023_%20S%C3%89LECTION%20MEILLEUR%20PRESTATION%20HIZBOUT%20TARQIYYAH__%20R%C3%A9sidence%20S%C3%A9xulXadim.mp3" data-duration="5 h 55 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA KOUREL RAMADAN 2023 SÉLECTION MEILLEUR PRESTATION HIZBOUT TARQIYYAH Résidence SéxulXadim"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">07</span>KHASSIDA KOUREL RAMADAN 2023 SÉLECTION MEILLEUR PRESTATION HIZBOUT TARQIYYAH Résidence SéxulXadim</h3>
+            <p class="playlist-duration">Durée : 5 h 55 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-8"
+            data-title="KHASSIDA RAMADAN 2023 SELECTION MEILLEURS DECLAMATION" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KHASSIDA%20RAMADAN%202023%20SELECTION%20MEILLEURS%20DECLAMATION.mp3" data-duration="2 h 50 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA RAMADAN 2023 SELECTION MEILLEURS DECLAMATION"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">08</span>KHASSIDA RAMADAN 2023 SELECTION MEILLEURS DECLAMATION</h3>
+            <p class="playlist-duration">Durée : 2 h 50 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-9"
+            data-title="Khassida Compilation Kurel 1A Touba, Al Mashrabu&#39;c Châfî, Ramadan 1444 2023" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Khassida_%20Compilation%20Kurel%201A%20%20%20Touba%2C%20Al%20Mashrabu%27c%20Ch%C3%A2f%C3%AE%2C%20Ramadan%201444%20_2023.mp3" data-duration="3 h 6 min">
+          <button class="playlist-play" type="button" aria-label="Lire : Khassida Compilation Kurel 1A Touba, Al Mashrabu&#39;c Châfî, Ramadan 1444 2023"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">09</span>Khassida Compilation Kurel 1A Touba, Al Mashrabu&#39;c Châfî, Ramadan 1444 2023</h3>
+            <p class="playlist-duration">Durée : 3 h 6 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-10"
+            data-title="KOUREL RAMADAN 2023 « Mashrabu Çâfî minal manbahi Shâfî» SELECTION DES MEILLEURS DECLAMATIONS" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20KOUREL%20RAMADAN%202023%20%C2%AB%20Mashrabu%20%C3%87%C3%A2f%C3%AE%20minal%20manbahi%20Sh%C3%A2f%C3%AE%C2%BB_%20SELECTION%20DES%20MEILLEURS%20DECLAMATIONS.mp3" data-duration="10 h 35 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KOUREL RAMADAN 2023 « Mashrabu Çâfî minal manbahi Shâfî» SELECTION DES MEILLEURS DECLAMATIONS"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">10</span>KOUREL RAMADAN 2023 « Mashrabu Çâfî minal manbahi Shâfî» SELECTION DES MEILLEURS DECLAMATIONS</h3>
+            <p class="playlist-duration">Durée : 10 h 35 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-11"
+            data-title="Kun katimane Kourel 1 Hizbut Tarqqiyyah 06e. jour Ramadan 2019 1440" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Kun%20katimane%20_%20Kourel%201%20Hizbut%20Tarqqiyyah_%2006e.%20jour%20Ramadan%202019%20_%201440.mp3" data-duration="6 min">
+          <button class="playlist-play" type="button" aria-label="Lire : Kun katimane Kourel 1 Hizbut Tarqqiyyah 06e. jour Ramadan 2019 1440"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">11</span>Kun katimane Kourel 1 Hizbut Tarqqiyyah 06e. jour Ramadan 2019 1440</h3>
+            <p class="playlist-duration">Durée : 6 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-12"
+            data-title="Lirabine Khaforine Baye Ablaye Niang Kurel 1 Tout Tank HTDKH Touba DUNDAL WEERU KOOR" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Lirabine%20Khaforine%20Baye%20Ablaye%20Niang%20Kurel%201%20Tout%20Tank%20HTDKH%20Touba%20DUNDAL%20WEERU%20KOOR.mp3" data-duration="11 min">
+          <button class="playlist-play" type="button" aria-label="Lire : Lirabine Khaforine Baye Ablaye Niang Kurel 1 Tout Tank HTDKH Touba DUNDAL WEERU KOOR"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">12</span>Lirabine Khaforine Baye Ablaye Niang Kurel 1 Tout Tank HTDKH Touba DUNDAL WEERU KOOR</h3>
+            <p class="playlist-duration">Durée : 11 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-13"
+            data-title="MAGAL 2023 SELECTION MEILLEURE PRESTATION HTDKH" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20MAGAL%202023_%20SELECTION%20MEILLEURE%20PRESTATION%20HTDKH.mp3" data-duration="4 h 18 min">
+          <button class="playlist-play" type="button" aria-label="Lire : MAGAL 2023 SELECTION MEILLEURE PRESTATION HTDKH"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">13</span>MAGAL 2023 SELECTION MEILLEURE PRESTATION HTDKH</h3>
+            <p class="playlist-duration">Durée : 4 h 18 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-14"
+            data-title="Matlabul Fawzayni S Moustapha Seck" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20Matlabul%20Fawzayni%20%20%20S%20%20Moustapha%20Seck.mp3" data-duration="34 min">
+          <button class="playlist-play" type="button" aria-label="Lire : Matlabul Fawzayni S Moustapha Seck"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">14</span>Matlabul Fawzayni S Moustapha Seck</h3>
+            <p class="playlist-duration">Durée : 34 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-15"
+            data-title="MOUKHADIMAT KOURÉL MASSALIKOUL DJINANE KEUR SERIGNE MBACKÉ ABDOULAHI" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20MOUKHADIMAT_%20KOUR%C3%89L%20MASSALIKOUL%20DJINANE_KEUR%20SERIGNE%20MBACK%C3%89%20ABDOULAHI.mp3" data-duration="40 min">
+          <button class="playlist-play" type="button" aria-label="Lire : MOUKHADIMAT KOURÉL MASSALIKOUL DJINANE KEUR SERIGNE MBACKÉ ABDOULAHI"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">15</span>MOUKHADIMAT KOURÉL MASSALIKOUL DJINANE KEUR SERIGNE MBACKÉ ABDOULAHI</h3>
+            <p class="playlist-duration">Durée : 40 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-16"
+            data-title="RADITOU KUREL 1 ADOLESCENT HIZBUT TARQIYYAH RAMADAN 2023" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;-%20RADITOU%20KUREL%201%20ADOLESCENT%20HIZBUT%20TARQIYYAH%20RAMADAN%202023.mp3" data-duration="16 min">
+          <button class="playlist-play" type="button" aria-label="Lire : RADITOU KUREL 1 ADOLESCENT HIZBUT TARQIYYAH RAMADAN 2023"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">16</span>RADITOU KUREL 1 ADOLESCENT HIZBUT TARQIYYAH RAMADAN 2023</h3>
+            <p class="playlist-duration">Durée : 16 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-17"
+            data-title="332 Khassida Ikfini Kurel 1 Hizbut Tarqyyah Mbacké Kadior 2015" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;332%20-%20Khassida%20Ikfini%20Kurel%201%20Hizbut%20Tarqyyah%20Mbacke%CC%81%20Kadior%202015.mp3" data-duration="29 min">
+          <button class="playlist-play" type="button" aria-label="Lire : 332 Khassida Ikfini Kurel 1 Hizbut Tarqyyah Mbacké Kadior 2015"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">17</span>332 Khassida Ikfini Kurel 1 Hizbut Tarqyyah Mbacké Kadior 2015</h3>
+            <p class="playlist-duration">Durée : 29 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-18"
+            data-title="KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2020 1442" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%20%202020%20HT%20%26%20HTDKH%2018%20SAFAR%202020%20-%201442.mp3" data-duration="3 h 45 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2020 1442"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">18</span>KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2020 1442</h3>
+            <p class="playlist-duration">Durée : 3 h 45 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-19"
+            data-title="KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2023 1445" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202020%20HT%20%26%20HTDKH%2018%20SAFAR%202023%20-%201445.mp3" data-duration="3 h 30 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2023 1445"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">19</span>KHASSIDA MAGAL TOUBA 2020 HT &amp; HTDKH 18 SAFAR 2023 1445</h3>
+            <p class="playlist-duration">Durée : 3 h 30 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-20"
+            data-title="KHASSIDA MAGAL TOUBA 2021 HT 18 SAFAR 2021 1443" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202021%20HT%2018%20SAFAR%202021%20-%201443.mp3" data-duration="5 h 9 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA MAGAL TOUBA 2021 HT 18 SAFAR 2021 1443"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">20</span>KHASSIDA MAGAL TOUBA 2021 HT 18 SAFAR 2021 1443</h3>
+            <p class="playlist-duration">Durée : 5 h 9 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-21"
+            data-title="KHASSIDA MAGAL TOUBA 2022 HT &amp; HTDKH 18 SAFAR 2022 1444" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;KHASSIDA%20-%20MAGAL%20TOUBA%202022%20HT%20%26%20HTDKH%2018%20SAFAR%202022%20-%201444.mp3" data-duration="4 h 20 min">
+          <button class="playlist-play" type="button" aria-label="Lire : KHASSIDA MAGAL TOUBA 2022 HT &amp; HTDKH 18 SAFAR 2022 1444"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">21</span>KHASSIDA MAGAL TOUBA 2022 HT &amp; HTDKH 18 SAFAR 2022 1444</h3>
+            <p class="playlist-duration">Durée : 4 h 20 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-22"
+            data-title="La prestation de S. Ibra GUEYE (Vivification du Ramadan à la Grande Mosquée de Touba Episode 2 )" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;La%20prestation%20de%20S.%20Ibra%20GUEYE%20%20%28Vivification%20du%20Ramadan%20%C3%A0%20la%20Grande%20Mosqu%C3%A9e%20de%20Touba%20-%20Episode%202%20%29.mp3" data-duration="43 min">
+          <button class="playlist-play" type="button" aria-label="Lire : La prestation de S. Ibra GUEYE (Vivification du Ramadan à la Grande Mosquée de Touba Episode 2 )"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">22</span>La prestation de S. Ibra GUEYE (Vivification du Ramadan à la Grande Mosquée de Touba Episode 2 )</h3>
+            <p class="playlist-duration">Durée : 43 min</p>
+          </div>
+        </li>
+        <li class="playlist-row" id="piste-23"
+            data-title="MAGAL TOUBA 2023 SINDIDI HIZBUT DAROU KHOUDOSS" data-src="https:&#47;&#47;pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev&#47;AUDIO&#47;MAGAL%20TOUBA%202023%20-%20SINDIDI%20-%20HIZBUT%20DAROU%20KHOUDOSS.mp3" data-duration="10 min">
+          <button class="playlist-play" type="button" aria-label="Lire : MAGAL TOUBA 2023 SINDIDI HIZBUT DAROU KHOUDOSS"><span aria-hidden="true">▶</span></button>
+          <div class="playlist-copy">
+            <h3><span class="playlist-num" aria-hidden="true">23</span>MAGAL TOUBA 2023 SINDIDI HIZBUT DAROU KHOUDOSS</h3>
+            <p class="playlist-duration">Durée : 10 min</p>
+          </div>
+        </li>
+
+      </ol>
     </section>
-    <div class="manifesto">
-      <h2>Écoute directe, sans compte</h2>
-      <p>Les MP3 sont hébergés avec nos fichiers, comme les PDF. Aucun suivi, aucune publicité. <a href="bibliotheque.html">Voir la bibliothèque →</a></p>
-    </div>
+
+    <section>
+      <div class="manifesto">
+        <h2>Écoute directe, sans compte</h2>
+        <p>Les MP3 sont diffusés depuis le même stockage que les PDF. Pas de publicité, pas de formulaire, pas d’historique : la lecture dépend uniquement du lecteur de votre navigateur. <a href="bibliotheque.html">Voir la bibliothèque →</a></p>
+      </div>
+    </section>
+
   </div>
 </main>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div><strong>Diiwaanu Xassida Yi</strong><br>Application Android gratuite, sans publicité — audio en ligne.</div>
-            <div class="foot-links">
+      <div class="foot-links">
         <a href="rubriques.html">Plan du site</a>
+        <a href="recherche.html">Recherche globale</a>
         <a href="voie-mouride.html">La Voie Mouride</a>
         <a href="livres.html">Livres</a>
         <a href="enseignements.html">Enseignements</a>
         <a href="media.html">Média</a>
         <a href="guides.html">Guides</a>
         <a href="actualites.html">Actualités</a>
+        <a href="agenda.html">Agenda</a>
         <a href="contact.html">Contact</a>
         <a href="bibliotheque.html">Bibliothèque</a>
         <a href="audio.html">Audio</a>
@@ -357,11 +370,7 @@
         <a href="xam-yoonwi.html">XAM YOONWI</a>
       </div>
     </div>
-    <p class="privacy">
-      <a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a> ·
-      <a href="mailto:beguefallou@gmail.com">beguefallou@gmail.com</a> ·
-      <a href="https://wa.me/13018578776">WhatsApp</a>
-    </p>
+    <p class="privacy"><a href="https://fgsfalilou.github.io/khassida-privacy/">Politique de confidentialité</a> — aucune donnée personnelle collectée.</p>
     <div class="line">Réalisé par Mouhamadou Falilou Seye. Les traductions et transcriptions restent la propriété de leurs auteurs respectifs ; retrait sur simple demande.</div>
   </div>
 </footer>
