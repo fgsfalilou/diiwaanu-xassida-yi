@@ -1361,3 +1361,6 @@ footer a { color: var(--gold-light); }
 .faq details p, .notice, .note { color: #E7F0E6; }
 .faq details a, .card a, .notice a, .note a { color: var(--gold-light); }
 .rubrique .shots img { border-color: rgba(201, 154, 46, .55); }
+/* Le panneau doit rester fixe : `position: relative` ci-dessus le ferait
+   entrer dans le flux et décalerait toute la page sur téléphone. */
+.menu-panel { position: fixed; }
