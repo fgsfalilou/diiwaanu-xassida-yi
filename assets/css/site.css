@@ -526,6 +526,35 @@ section { padding: 52px 0; }
   font-weight: 800;
 }
 .rubrique-grid .card p + p { margin-top: 8px; }
+
+/* Carte « Les cinq prières » : le fond de la Grande Mosquée de Touba
+   utilisé dans l’application, avec un voile sombre pour garder le texte lisible. */
+.card.prayer-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 224px;
+  padding: 22px;
+  border-color: rgba(201, 154, 46, .72);
+  background-color: var(--deep);
+  background-image:
+    linear-gradient(180deg, rgba(6, 30, 19, .48) 0%, rgba(6, 30, 19, .88) 78%),
+    url("../prayer_background.jpg");
+  background-position: center, center 42%;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1px rgba(247, 230, 168, .10), 0 12px 28px rgba(3, 20, 12, .26);
+}
+.card.prayer-card .mark {
+  margin-bottom: auto;
+  border: 1px solid var(--gold);
+  background: rgba(201, 154, 46, .22);
+  color: var(--gold-light);
+}
+.card.prayer-card h3 { color: #FFF7E2; }
+.card.prayer-card p { color: #E7F0E6; }
 .notice, .note { margin-top: 18px; color: var(--muted); font-size: 1rem; }
 .notice a, .note-links a { color: var(--green); font-weight: 700; }
 .note-links { margin-top: 12px; color: var(--muted); font-size: 1rem; }
