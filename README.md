@@ -2,7 +2,7 @@
 
 Page statique de présentation de l’application, hébergée sur GitHub Pages :
 
-**https://diiwaanu-xassida-yi.com/**
+**https://www.diiwaanu-xassida-yi.com/**
 
 La politique de confidentialité reste à son adresse officielle, inchangée :
 
@@ -12,7 +12,14 @@ La politique de confidentialité reste à son adresse officielle, inchangée :
 
 - `index.html` : accueil mobile first. Menu hamburger, titre/CTA visibles dès le premier écran, capture dans un cadre de téléphone, formulaire « Être informé de la sortie », wolof/anglais discrets, rubriques, FAQ et contact.
 - `bibliotheque.html` : liste compacte générée depuis `assets/books.json`. Recherche, filtres par langue et index A → Z dans `assets/js/site.js`. Titres nettoyés (underscores remplacés par des espaces) ; les PDF restent sur le R2.
-- `rubriques.html` : aperçus réels de l’application, texte de chaque rubrique et liens directs vers les six pages complètes.
+- `rubriques.html` : plan du site et aperçus réels de l’application, avec liens directs vers toutes les pages.
+- `voie-mouride.html` : La Voie Mouride, avec les sections « Fondements » et « La Lumière de Touba ».
+- `livres.html` : hub des 760 khassaïdes en quatre langues, vers la bibliothèque et les listes A → Z.
+- `enseignements.html` : khassaïdes, nafilas, nafila du jour, 99 Noms et XAM YOONWI.
+- `media.html` : audio en ligne, galerie de captures et icône du projet.
+- `guides.html` : guides pratiques et confidentialité.
+- `actualites.html` : journal daté des changements réels du site et de l’application.
+- `contact.html` : e-mails, WhatsApp, droits et politique de confidentialité.
 - `nafilas.html` : texte des 30 nuits, généré depuis les modèles Dart.
 - `nafila-du-jour.html` : les 7 fiches de la semaine en français, wolof et anglais.
 - `99-noms.html` : les 99 Noms d’Allah (arabe, latin, sens, dhikr).

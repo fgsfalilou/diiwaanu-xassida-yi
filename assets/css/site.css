@@ -207,10 +207,12 @@ h1, h2, h3, h4, .serif {
 }
 .menu-sub li + li { margin-top: 2px; }
 .menu-sub a {
-  display: block;
-  padding: 6px 4px;
+  display: flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 8px 4px;
   color: var(--gold-light);
-  font-size: .98rem;
+  font-size: 1rem;
 }
 
 .menu-panel-head {
