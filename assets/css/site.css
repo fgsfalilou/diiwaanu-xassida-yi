@@ -722,7 +722,7 @@ footer a { color: var(--gold-light); }
 .alpha-index button[aria-pressed="true"] { background: var(--gold-light); }
 
 .result-count { margin: 16px 0 10px; color: var(--muted); font-size: 1rem; }
-/* Cartes nettes et non étirées : une colonne sur mobile, deux sur grand écran. */
+/* Cartes de hauteur identique : le titre reste sur une ligne, les numéros sur une bande défilante. */
 .book-list {
   list-style: none;
   margin: 0 auto;
@@ -733,17 +733,23 @@ footer a { color: var(--gold-light); }
 }
 .book-row {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
-  gap: 10px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-areas:
+    "thumb copy"
+    "links links";
   align-items: center;
+  gap: 6px 10px;
+  height: 148px;
   padding: 10px 12px;
   border: 1px solid rgba(201, 154, 46, .72);
   border-left: 3px solid var(--gold);
   border-radius: 10px;
   background: linear-gradient(135deg, #062C1B 0%, #0E6B40 58%, #12563A 100%);
   box-shadow: inset 0 0 0 1px rgba(247, 230, 168, .08), 0 6px 14px rgba(3, 20, 12, .22);
+  overflow: hidden;
 }
 .book-thumb {
+  grid-area: thumb;
   width: 44px;
   height: 44px;
   border: 1px solid var(--gold);
@@ -752,13 +758,15 @@ footer a { color: var(--gold-light); }
   object-fit: contain;
   box-shadow: 0 2px 0 rgba(0, 0, 0, .25);
 }
-.book-copy { min-width: 0; }
+.book-copy { grid-area: copy; min-width: 0; overflow: hidden; }
 .book-row h3 {
   margin: 0;
   color: #FFF7E2;
   font-size: 1rem;
   line-height: 1.25;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .book-arabic {
   margin: 2px 0 0;
@@ -767,25 +775,45 @@ footer a { color: var(--gold-light); }
   font-size: 1.15rem;
   line-height: 1.3;
   text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .book-meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
   margin: 2px 0 0;
   color: #D6E7DA;
   font-size: 1rem;
   line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .book-lang {
+  flex: 0 0 auto;
   padding: 2px 8px;
   border-radius: 6px;
   background: rgba(247, 230, 168, .16);
   color: #F7E6A8;
   font-weight: 800;
 }
-.links { display: flex; flex-wrap: wrap; gap: 4px; justify-content: flex-end; }
+.book-row .links {
+  grid-area: links;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 154, 46, .85) transparent;
+  padding-bottom: 2px;
+}
+.book-row .links::-webkit-scrollbar { height: 4px; }
+.book-row .links::-webkit-scrollbar-thumb { background: rgba(201, 154, 46, .85); border-radius: 4px; }
 .read {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1108,7 +1136,7 @@ footer a { color: var(--gold-light); }
   .hero-portrait { order: 2; }
   .portrait-frame { width: min(340px, 100%); }
   .phone { width: min(300px, 100%); }
-  .book-row { grid-template-columns: 52px minmax(0, 1fr) auto; gap: 12px; padding: 12px 16px; }
+  .book-row { gap: 6px 12px; padding: 10px 14px; }
   .book-thumb { width: 52px; height: 52px; }
   .lang-hub { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .name-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
