@@ -79,6 +79,13 @@
     let limit = step;
     const state = { query: '', lang: 'Toutes', letter: 'Toutes' };
 
+    const syncAlpha = () => {
+      if (!alpha) return;
+      $$('[data-letter]', alpha).forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.letter === state.letter));
+      });
+    };
+
     const uniqueLetters = Array.from(
       new Set(rows.map((row) => (row.dataset.letter || '#').toUpperCase()))
     ).sort((a, b) => {
@@ -144,6 +151,10 @@
 
     const onSearch = (event) => {
       state.query = String(event.target.value || '').trim();
+      /* Une recherche démarre toujours depuis la liste complète : une lettre
+         restée active faisait sinon afficher « 0 résultat » sans explication. */
+      state.letter = 'Toutes';
+      syncAlpha();
       reset();
     };
     /* `input` suffit sur les navigateurs modernes ; `change` et `search`
@@ -166,10 +177,12 @@
       alpha.addEventListener('click', (event) => {
         const button = event.target.closest('[data-letter]');
         if (!button) return;
+        /* Choisir une lettre efface la recherche : le clic montre toujours
+           les khassaïdes de cette lettre, même après une recherche précédente. */
         state.letter = button.dataset.letter;
-        $$('[data-letter]', alpha).forEach((other) => {
-          other.setAttribute('aria-pressed', String(other === button));
-        });
+        state.query = '';
+        search.value = '';
+        syncAlpha();
         reset();
       });
     }
