@@ -1463,3 +1463,77 @@ footer a { color: var(--gold-light); }
   }
   #fonctionnalites .features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* ---------- Modernisation commune : panneaux, grilles et tables ---------- */
+/* Même logique que l’accueil : un bandeau mosquée pour l’introduction,
+   des surfaces translucides pour les listes, des numéros en pastilles d’or. */
+.section-head {
+  padding: clamp(20px, 3.5vw, 32px);
+  border: 1px solid rgba(201, 154, 46, .55);
+  border-radius: var(--radius);
+  background-position: center 40%;
+  box-shadow: 0 14px 34px rgba(3, 20, 12, .22);
+}
+.section-head h2 { max-width: 24ch; }
+.section-head p { max-width: 72ch; }
+
+.features, .card-grid, .rubrique-grid, .lang-hub, .faq-list, .phone-strip {
+  padding: clamp(14px, 2.4vw, 20px);
+  border: 1px solid rgba(201, 154, 46, .42);
+  border-radius: var(--radius);
+  background-color: rgba(6, 30, 19, .82);
+  background-image:
+    linear-gradient(180deg, rgba(6, 30, 19, .90), rgba(6, 30, 19, .95)),
+    url("../prayer_background.jpg");
+  background-size: cover;
+  background-position: center 42%;
+  box-shadow: inset 0 0 0 1px rgba(247, 230, 168, .06), 0 16px 36px rgba(3, 20, 12, .20);
+}
+.features .card:not(.prayer-card), .card-grid .card, .rubrique-grid .card,
+.lang-hub .lang-card, .faq details, .notify, .panel {
+  border: 1px solid rgba(201, 154, 46, .40);
+  border-top: 3px solid rgba(201, 154, 46, .72);
+  border-radius: 16px;
+  background: rgba(9, 45, 29, .86);
+  box-shadow: 0 10px 24px rgba(3, 20, 12, .20);
+}
+.card .mark, .rubrique-grid .card .mark {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: rgba(201, 154, 46, .18);
+}
+.lang-card { border-left: 3px solid var(--gold); }
+.lang-card h2, .panel h2, .panel h3, .notify h3 { color: #FFF7E2; }
+.lang-count, .panel p, .panel li, .notify p, .notify small,
+.notify-form label, .form-status { color: #E7F0E6; }
+.notify-form input {
+  border-color: rgba(201, 154, 46, .45);
+  background: rgba(6, 30, 19, .65);
+  color: #FFF7E2;
+}
+.notify-form input::placeholder { color: rgba(231, 240, 230, .65); }
+.form-status { color: var(--gold-light); }
+.notify a, .panel a { color: var(--gold-light); }
+
+.name-grid, .chapter-index, .book-list {
+  padding: clamp(12px, 2vw, 18px);
+  border: 1px solid rgba(201, 154, 46, .32);
+  border-radius: var(--radius);
+  background: rgba(6, 30, 19, .32);
+}
+.rubrique {
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid rgba(201, 154, 46, .40);
+  border-top: 3px solid rgba(201, 154, 46, .72);
+  border-radius: var(--radius);
+}
+.rubrique .copy h2 { max-width: 24ch; }
+.rubrique .copy ul { margin: 10px 0 0; padding-left: 20px; }
+
+@media (min-width: 720px) {
+  .features, .card-grid, .rubrique-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lang-hub { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .name-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
