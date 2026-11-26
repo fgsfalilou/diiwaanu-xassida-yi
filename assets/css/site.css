@@ -1369,3 +1369,97 @@ footer a { color: var(--gold-light); }
 /* Le panneau doit rester fixe : `position: relative` ci-dessus le ferait
    entrer dans le flux et décalerait toute la page sur téléphone. */
 .menu-panel { position: fixed; }
+
+/* ---------- Accueil : présentation « Ce que contient l’application » ---------- */
+/* Un seul grand bandeau mosquée pour l’introduction, puis des cartes
+   translucides au lieu du même cliché répété neuf fois : la grille respire. */
+#fonctionnalites .feature-head {
+  position: relative;
+  isolation: isolate;
+  max-width: none;
+  margin: 0 0 22px;
+  padding: clamp(22px, 4vw, 34px);
+  overflow: hidden;
+  border: 1px solid rgba(201, 154, 46, .72);
+  border-radius: var(--radius);
+  background-color: var(--deep);
+  background-image:
+    linear-gradient(180deg, rgba(6, 30, 19, .72), rgba(6, 30, 19, .92)),
+    url("../prayer_background.jpg");
+  background-size: cover;
+  background-position: center 42%;
+  box-shadow: 0 18px 42px rgba(3, 20, 12, .28);
+}
+#fonctionnalites .feature-head::after {
+  content: "";
+  position: absolute;
+  left: clamp(22px, 4vw, 34px);
+  bottom: 0;
+  width: 140px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-light), transparent);
+}
+#fonctionnalites .feature-head .kicker { color: var(--gold-light); }
+#fonctionnalites .feature-head h2 { color: #FFF7E2; }
+#fonctionnalites .feature-head p { color: #E7F0E6; max-width: 72ch; }
+
+#fonctionnalites .features {
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: clamp(14px, 2.5vw, 22px);
+  border: 1px solid rgba(201, 154, 46, .48);
+  border-radius: var(--radius);
+  background-color: rgba(6, 30, 19, .88);
+  background-image:
+    linear-gradient(180deg, rgba(6, 30, 19, .92), rgba(6, 30, 19, .96)),
+    url("../prayer_background.jpg");
+  background-size: cover;
+  background-position: center 42%;
+  box-shadow: 0 18px 42px rgba(3, 20, 12, .24);
+}
+#fonctionnalites .features .card:not(.prayer-card) {
+  min-height: 100%;
+  padding: 22px;
+  border: 1px solid rgba(201, 154, 46, .38);
+  border-top: 3px solid rgba(201, 154, 46, .78);
+  border-radius: 16px;
+  background: rgba(9, 45, 29, .86);
+  box-shadow: 0 10px 24px rgba(3, 20, 12, .22);
+}
+#fonctionnalites .features .card:not(.prayer-card) .mark {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: rgba(201, 154, 46, .18);
+  color: var(--gold-light);
+  font-size: 1.05rem;
+}
+#fonctionnalites .features .card h3 { color: #FFF7E2; }
+#fonctionnalites .features .card p { color: #E7F0E6; }
+#fonctionnalites .features .prayer-card {
+  min-height: 100%;
+  border-radius: 16px;
+}
+
+@media (min-width: 720px) {
+  #fonctionnalites .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 980px) {
+  #fonctionnalites .feature-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: end;
+    column-gap: 36px;
+  }
+  #fonctionnalites .feature-head .kicker,
+  #fonctionnalites .feature-head h2 { grid-column: 1; }
+  #fonctionnalites .feature-head p {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+  #fonctionnalites .features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
