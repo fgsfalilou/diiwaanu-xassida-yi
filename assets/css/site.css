@@ -40,9 +40,9 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  /* Serif moderne : Georgia, héritier de Times, puis Times en repli.
+  /* Police demandée : Times New Roman, avec Times en repli.
      L’arabe garde sa police Amiri déclarée plus haut. */
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +61,7 @@ button { cursor: pointer; }
 }
 
 h1, h2, h3, h4, .serif {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
   letter-spacing: -.015em;
 }
 
@@ -143,7 +143,7 @@ h1, h2, h3, h4, .serif {
   border: 1px solid var(--gold-line);
 }
 .brand span {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1rem;
   font-weight: 700;
   color: #FFF7E2;
@@ -219,7 +219,7 @@ h1, h2, h3, h4, .serif {
   margin-bottom: 20px;
 }
 .menu-panel-head strong {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", Times, serif;
   color: var(--gold-light);
   font-size: 1.05rem;
 }
@@ -399,14 +399,14 @@ body.menu-open { overflow: hidden; }
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
   box-shadow: 0 10px 24px rgba(201,154,46,.22);
 }
-.hero-actions .btn-gold-outline {
-  color: var(--gold-light);
-  background: rgba(7,19,13,.32);
-  box-shadow: inset 0 0 0 1px rgba(247,230,168,.12);
-}
+/* Même contraste que le bouton doré : texte vert foncé sur or plein.
+   L’ancienne version or clair sur fond sombre rendait le libellé invisible. */
+.hero-actions .btn-gold-outline,
 .hero-actions .btn-gold-outline:hover {
   color: #14210F;
+  border-color: var(--gold);
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  box-shadow: 0 10px 24px rgba(201,154,46,.22);
 }
 .btn-ghost {
   color: var(--gold-light);
@@ -815,7 +815,7 @@ footer a { color: var(--gold-light); }
 .book-arabic {
   margin: 2px 0 0;
   color: #F7E6A8;
-  font-family: "Amiri Site", Georgia, serif;
+  font-family: "Amiri Site", serif;
   font-size: 1.15rem;
   line-height: 1.3;
   text-align: left;
@@ -1060,7 +1060,7 @@ footer a { color: var(--gold-light); }
 .arabic {
   margin: 6px 0;
   color: var(--green);
-  font-family: "Amiri Site", Georgia, serif;
+  font-family: "Amiri Site", serif;
   font-size: 1.7rem;
   line-height: 1.7;
 }
