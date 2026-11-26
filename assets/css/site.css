@@ -1102,19 +1102,42 @@ footer a { color: var(--gold-light); }
 .manifesto p { margin: 0; color: #E5DCC2; }
 .manifesto a { color: var(--gold-light); font-weight: 700; }
 
-/* ---------- Tables de lecture ornées de fleurs dorées ---------- */
-/* Fleurs en pur CSS : aucun fichier externe, aucun suivi, aucune image réseau. */
+/* ---------- Tables de lecture : vert profond, or et motifs arabisants ---------- */
+/* Fleurs, treillis et étoiles en pur CSS : aucune image réseau, aucun suivi. */
 .index-box, .entry, .name-card, .night, .manifesto {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border-color: var(--gold-line);
-  box-shadow: var(--shadow);
+  color: #F7F4E9;
+  border-color: rgba(201, 154, 46, .62);
+  box-shadow: 0 16px 36px rgba(3, 20, 12, .30);
   background-image:
-    radial-gradient(circle at var(--fx, 100%) var(--fy, 8%), rgba(201, 154, 46, .20), transparent 42%),
-    linear-gradient(150deg, var(--tile-a, #FFFDF7), var(--tile-b, #F6EED8));
+    radial-gradient(circle at var(--fx, 100%) var(--fy, 8%), rgba(201, 154, 46, .24), transparent 44%),
+    repeating-linear-gradient(45deg, transparent 0 21px, rgba(201, 154, 46, .055) 21px 22px, transparent 22px 43px),
+    repeating-linear-gradient(-45deg, transparent 0 21px, rgba(201, 154, 46, .055) 21px 22px, transparent 22px 43px),
+    linear-gradient(150deg, var(--tile-a, #0B3A25), var(--tile-b, #062C1B));
+  background-size: auto, 44px 44px, 44px 44px, auto;
 }
-.manifesto { --tile-a: #083A24; --tile-b: #07130D; --fx: 92%; --fy: 6%; }
+.manifesto { --tile-a: #0E4630; --tile-b: #062219; --fx: 92%; --fy: 6%; }
+.index-box h2, .entry h2, .night-title h2, .letter,
+.entry summary, .block h3, .name-num, .latin, .dhikr {
+  color: var(--gold-light);
+}
+.entry p, .name-card p, .night p, .block li, .manifesto p { color: #E7F0E6; }
+.sens { color: #D6E7DA; }
+.entry .arabic, .night .arabic, .name-card .arabic { color: var(--gold-light); }
+.entry details, .reward, .letter { border-color: rgba(201, 154, 46, .35); }
+.index-grid a {
+  border-color: rgba(201, 154, 46, .55);
+  background: rgba(247, 230, 168, .10);
+  color: var(--gold-light);
+}
+.index-grid a:hover, .index-grid a[aria-current="page"] {
+  border-color: var(--gold);
+  background: var(--gold-light);
+  color: var(--deep);
+}
+
 .index-box::before, .entry::before, .name-card::before, .night::before, .manifesto::before,
 .index-box::after, .entry::after, .name-card::after, .night::after, .manifesto::after {
   position: absolute;
@@ -1128,52 +1151,57 @@ footer a { color: var(--gold-light); }
   top: -16px;
   right: 12px;
   font-size: 3.6rem;
-  opacity: .22;
+  opacity: .26;
   transform: rotate(var(--turn, 0deg));
 }
 .index-box::after, .entry::after, .name-card::after, .night::after, .manifesto::after {
-  content: "✿";
-  bottom: -20px;
-  left: 10px;
-  font-size: 3rem;
-  opacity: .14;
+  content: "❖ ✧ ❖ ✧ ❖ ✧ ❖";
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: .5em;
+  opacity: .38;
   transform: rotate(var(--turn, 0deg));
 }
 .index-box h2, .entry h2, .night-title h2, .letter {
   position: relative;
 }
 .index-box h2::after, .entry h2::after, .night-title h2::after, .letter::after {
-  content: "❀";
+  content: "❀ ❖ ❀";
   display: block;
   margin-top: 4px;
   color: var(--gold);
-  font-size: .9rem;
+  font-size: .82rem;
   line-height: 1;
   letter-spacing: .28em;
 }
-.name-card { --tile-a: #FFFDF7; --tile-b: #F9F0DA; }
-.name-card:nth-child(6n+2) { --tile-a: #FFFDF7; --tile-b: #E9F1E6; --fx: 6%; --fy: 92%; --turn: 45deg; }
-.name-card:nth-child(6n+3) { --tile-a: #FFFDF7; --tile-b: #F4E9DA; --fx: 92%; --fy: 90%; --turn: 90deg; }
-.name-card:nth-child(6n+4) { --tile-a: #FFFDF7; --tile-b: #E6EFEA; --fx: 50%; --fy: 4%; --turn: 135deg; }
-.name-card:nth-child(6n+5) { --tile-a: #FFFDF7; --tile-b: #F7ECDC; --fx: 4%; --fy: 50%; --turn: 180deg; }
-.name-card:nth-child(6n+6) { --tile-a: #FFFDF7; --tile-b: #EAF0E3; --fx: 96%; --fy: 50%; --turn: 225deg; }
 
-/* Sept fiches du jour : un fond différent pour chaque jour de la semaine. */
-.entry:nth-of-type(7n+1) { --tile-a: #FFFDF7; --tile-b: #F7EED6; --fx: 8%; --fy: 8%; --turn: 0deg; }
-.entry:nth-of-type(7n+2) { --tile-a: #FFFDF7; --tile-b: #E7F0E6; --fx: 92%; --fy: 10%; --turn: 50deg; }
-.entry:nth-of-type(7n+3) { --tile-a: #FFFDF7; --tile-b: #F4E8D8; --fx: 10%; --fy: 92%; --turn: 100deg; }
-.entry:nth-of-type(7n+4) { --tile-a: #FFFDF7; --tile-b: #E9EFE0; --fx: 90%; --fy: 92%; --turn: 150deg; }
-.entry:nth-of-type(7n+5) { --tile-a: #FFFDF7; --tile-b: #F7E9DC; --fx: 50%; --fy: 6%; --turn: 200deg; }
-.entry:nth-of-type(7n+6) { --tile-a: #FFFDF7; --tile-b: #E6F0EC; --fx: 6%; --fy: 50%; --turn: 250deg; }
-.entry:nth-of-type(7n+7) { --tile-a: #FFFDF7; --tile-b: #F5ECD9; --fx: 94%; --fy: 50%; --turn: 300deg; }
+/* 99 Noms : six fonds vert/or alternés, avec fleur et treillis dorés. */
+.name-card { --tile-a: #0B3A25; --tile-b: #062C1B; }
+.name-card:nth-child(6n+2) { --tile-a: #0E4630; --tile-b: #082F20; --fx: 6%; --fy: 92%; --turn: 45deg; }
+.name-card:nth-child(6n+3) { --tile-a: #123F2B; --tile-b: #07251A; --fx: 92%; --fy: 90%; --turn: 90deg; }
+.name-card:nth-child(6n+4) { --tile-a: #0A3D30; --tile-b: #052C22; --fx: 50%; --fy: 4%; --turn: 135deg; }
+.name-card:nth-child(6n+5) { --tile-a: #10452A; --tile-b: #082718; --fx: 4%; --fy: 50%; --turn: 180deg; }
+.name-card:nth-child(6n+6) { --tile-a: #0C3A31; --tile-b: #05261F; --fx: 96%; --fy: 50%; --turn: 225deg; }
 
-/* Trente nuits : 6 palettes × 5 emplacements = 30 fonds distincts. */
-.night:nth-of-type(6n+1) { --tile-a: #FFFDF7; --tile-b: #F7EED6; }
-.night:nth-of-type(6n+2) { --tile-a: #FFFDF7; --tile-b: #E7F0E6; }
-.night:nth-of-type(6n+3) { --tile-a: #FFFDF7; --tile-b: #F4E8D8; }
-.night:nth-of-type(6n+4) { --tile-a: #FFFDF7; --tile-b: #E9EFE0; }
-.night:nth-of-type(6n+5) { --tile-a: #FFFDF7; --tile-b: #F7E9DC; }
-.night:nth-of-type(6n+6) { --tile-a: #FFFDF7; --tile-b: #E6F0EC; }
+/* Sept fiches du jour : un fond vert/or différent pour chaque jour. */
+.entry:nth-of-type(7n+1) { --tile-a: #0B3A25; --tile-b: #062C1B; --fx: 8%; --fy: 8%; --turn: 0deg; }
+.entry:nth-of-type(7n+2) { --tile-a: #0E4630; --tile-b: #082F20; --fx: 92%; --fy: 10%; --turn: 50deg; }
+.entry:nth-of-type(7n+3) { --tile-a: #123F2B; --tile-b: #07251A; --fx: 10%; --fy: 92%; --turn: 100deg; }
+.entry:nth-of-type(7n+4) { --tile-a: #0A3D30; --tile-b: #052C22; --fx: 90%; --fy: 92%; --turn: 150deg; }
+.entry:nth-of-type(7n+5) { --tile-a: #10452A; --tile-b: #082718; --fx: 50%; --fy: 6%; --turn: 200deg; }
+.entry:nth-of-type(7n+6) { --tile-a: #0C3A31; --tile-b: #05261F; --fx: 6%; --fy: 50%; --turn: 250deg; }
+.entry:nth-of-type(7n+7) { --tile-a: #0E3D28; --tile-b: #06241A; --fx: 94%; --fy: 50%; --turn: 300deg; }
+
+/* Trente nuits : 6 palettes vert/or × 5 emplacements = 30 fonds distincts. */
+.night:nth-of-type(6n+1) { --tile-a: #0B3A25; --tile-b: #062C1B; }
+.night:nth-of-type(6n+2) { --tile-a: #0E4630; --tile-b: #082F20; }
+.night:nth-of-type(6n+3) { --tile-a: #123F2B; --tile-b: #07251A; }
+.night:nth-of-type(6n+4) { --tile-a: #0A3D30; --tile-b: #052C22; }
+.night:nth-of-type(6n+5) { --tile-a: #10452A; --tile-b: #082718; }
+.night:nth-of-type(6n+6) { --tile-a: #0C3A31; --tile-b: #05261F; }
 .night:nth-of-type(5n+1) { --fx: 8%; --fy: 8%; --turn: 0deg; }
 .night:nth-of-type(5n+2) { --fx: 92%; --fy: 10%; --turn: 72deg; }
 .night:nth-of-type(5n+3) { --fx: 10%; --fy: 92%; --turn: 144deg; }
