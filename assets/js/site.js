@@ -128,9 +128,10 @@
 
       const truncated = matching > shown;
       const word = matching > 1 ? 's' : '';
-      count.textContent = truncated
+      const recap = truncated
         ? `${shown} khassaïde${shown > 1 ? 's' : ''} affichée${shown > 1 ? 's' : ''} sur ${matching}`
         : `${matching} khassaïde${word} affichée${word}`;
+      count.textContent = state.query ? `Recherche « ${state.query} » — ${recap}` : recap;
 
       if (more) {
         more.hidden = !truncated;
@@ -141,10 +142,15 @@
 
     const reset = () => { limit = step; apply(); };
 
-    search.addEventListener('input', (event) => {
-      state.query = event.target.value.trim();
+    const onSearch = (event) => {
+      state.query = String(event.target.value || '').trim();
       reset();
-    });
+    };
+    /* `input` suffit sur les navigateurs modernes ; `change` et `search`
+       couvrent la validation clavier et le bouton « effacer » natif. */
+    search.addEventListener('input', onSearch);
+    search.addEventListener('change', onSearch);
+    search.addEventListener('search', onSearch);
 
     $$('button[data-lang]').forEach((button) => {
       button.addEventListener('click', () => {

@@ -722,23 +722,32 @@ footer a { color: var(--gold-light); }
 .alpha-index button[aria-pressed="true"] { background: var(--gold-light); }
 
 .result-count { margin: 16px 0 10px; color: var(--muted); font-size: 1rem; }
-.book-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+/* Cartes nettes et non étirées : une colonne sur mobile, deux sur grand écran. */
+.book-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  max-width: 760px;
+}
 .book-row {
   display: grid;
   grid-template-columns: 44px minmax(0, 1fr) auto;
   gap: 10px;
   align-items: center;
   padding: 10px 12px;
-  border: 1px solid var(--gold-line);
-  border-radius: 16px;
+  border: 1px solid rgba(201, 154, 46, .72);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
   background: linear-gradient(135deg, #062C1B 0%, #0E6B40 58%, #12563A 100%);
-  box-shadow: 0 8px 20px rgba(3, 20, 12, .22);
+  box-shadow: inset 0 0 0 1px rgba(247, 230, 168, .08), 0 6px 14px rgba(3, 20, 12, .22);
 }
 .book-thumb {
   width: 44px;
   height: 44px;
   border: 1px solid var(--gold);
-  border-radius: 12px;
+  border-radius: 8px;
   background: #F7F4E9;
   object-fit: contain;
   box-shadow: 0 2px 0 rgba(0, 0, 0, .25);
@@ -770,7 +779,7 @@ footer a { color: var(--gold-light); }
 }
 .book-lang {
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: rgba(247, 230, 168, .16);
   color: #F7E6A8;
   font-weight: 800;
@@ -783,7 +792,7 @@ footer a { color: var(--gold-light); }
   gap: 7px;
   min-height: var(--tap);
   padding: 8px 12px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: linear-gradient(180deg, #F7E6A8, #C99A2E);
   color: #0B1E15;
   font-size: .95rem;
@@ -1137,6 +1146,16 @@ footer a { color: var(--gold-light); }
   .rubrique:nth-of-type(even) .shots { order: 2; }
   .rubrique:nth-of-type(even) .copy { order: 1; }
   .foot-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+/* Bibliothèque : deux colonnes dès que les cartes ont assez de place. */
+@media (min-width: 900px) {
+  .book-list {
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .book-row { padding: 12px 14px; }
 }
 
 /* ---------- Ordinateur ---------- */
