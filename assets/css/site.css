@@ -99,9 +99,14 @@ h1, h2, h3, h4, .serif {
   position: relative;
   overflow: hidden;
   color: #F7F4E9;
-  background:
+  background-color: var(--night);
+  background-image:
     radial-gradient(circle at 88% 0%, rgba(201,154,46,.20), transparent 42%),
+    linear-gradient(180deg, rgba(6, 30, 19, .62), rgba(6, 30, 19, .88)),
+    url("../prayer_background.jpg"),
     linear-gradient(155deg, var(--night), var(--green-2) 70%, var(--night-2));
+  background-size: auto, auto, cover, auto;
+  background-position: center, center, center 42%, center;
 }
 .site-header::after {
   content: "";
