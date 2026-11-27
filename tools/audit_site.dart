@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio42')) {
+    if (!html.contains('?v=biblio43')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
