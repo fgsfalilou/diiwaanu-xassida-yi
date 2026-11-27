@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio40')) {
+    if (!html.contains('?v=biblio41')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -169,11 +169,15 @@ void main() {
   }
 
   final homeButtons = read('index.html');
-  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<', '>Conférences<']) {
+  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<', '>Taalif<', '>Conférences<']) {
     if (!homeButtons.contains(marker)) {
       stdout.writeln('BOUTONS $marker : absents');
       problems++;
     }
+  }
+  if (!File('$dir/assets/pdf/xarnubi.pdf').existsSync()) {
+    stdout.writeln('PDF Taalif : assets/pdf/xarnubi.pdf absent');
+    problems++;
   }
   final voieInfos = read('voie-mouride.html');
   for (final anchor in ['info-mouride', 'xam-sa-serigne', 'xam-sa-diine', 'galerie-mouride', 'conferences']) {

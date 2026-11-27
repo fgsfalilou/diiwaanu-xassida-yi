@@ -1903,6 +1903,30 @@ footer a { color: var(--gold-light); }
   font-size: 1rem;
   font-weight: 800;
 }
+.mouride-btn-taalif {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 100% 8%, rgba(247, 230, 168, .24), transparent 54%),
+    linear-gradient(135deg, rgba(9, 45, 29, .96), rgba(6, 30, 19, .96));
+}
+.mouride-btn-taalif > span:not(.mouride-btn-num):not(.mouride-btn-call) {
+  position: relative;
+  z-index: 1;
+}
+.mouride-btn-call {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Amiri Site", serif;
+  font-size: clamp(1.45rem, 5vw, 1.9rem);
+  line-height: 1;
+  color: rgba(247, 230, 168, .34);
+  pointer-events: none;
+}
+.mouride-btn-taalif:hover .mouride-btn-call,
+.mouride-btn-taalif:focus-visible .mouride-btn-call { color: rgba(247, 230, 168, .52); }
 
 .infos-mourides > .section-head { margin-bottom: 18px; }
 .mouride-nav {

@@ -1,4 +1,4 @@
-// Ajoute le bouton « Conférences » à côté de « Galerie mouride » sur l'accueil,
+// Ajoute les boutons « Taalif » et « Conférences » après « Galerie mouride » sur l'accueil,
 // et une section d'écoute de 22 MP3 hébergés sur R2 dans voie-mouride.html.
 
 import 'dart:convert';
@@ -6,7 +6,7 @@ import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio34';
-const version = 'biblio40';
+const version = 'biblio41';
 const r2Base = 'https://pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev';
 
 List<String> get noms => List<String>.generate(
@@ -66,16 +66,17 @@ void bumpVersion() {
 void patchHomeButton() {
   final path = '$siteDir\\index.html';
   var html = File(path).readAsStringSync();
-  if (html.contains('href="voie-mouride.html#conferences"')) return;
+  if (html.contains('href="assets/pdf/xarnubi.pdf"')) return;
   const galerie = '''        <a class="mouride-btn" href="voie-mouride.html#galerie-mouride"><span class="mouride-btn-num" aria-hidden="true">04</span><span>Galerie mouride</span></a>''';
   if (!html.contains(galerie)) {
     stdout.writeln('ACCUEIL : bouton Galerie mouride introuvable');
     return;
   }
   html = html.replaceFirst(galerie, '''$galerie
-        <a class="mouride-btn" href="voie-mouride.html#conferences"><span class="mouride-btn-num" aria-hidden="true">05</span><span>Conférences</span></a>''');
+        <a class="mouride-btn mouride-btn-taalif" href="assets/pdf/xarnubi.pdf" target="_blank" rel="noopener" aria-label="Taalif — ouvrir le PDF Xarnubi"><span class="mouride-btn-num" aria-hidden="true">05</span><span>Taalif</span><span class="mouride-btn-call" lang="ar" dir="rtl" aria-hidden="true">تأليف</span></a>''');
+  html = html.replaceFirst('aria-hidden="true">05</span><span>Conférences', 'aria-hidden="true">06</span><span>Conférences');
   write(path, html);
-  stdout.writeln('Accueil : bouton Conférences ajouté');
+  stdout.writeln('Accueil : bouton Taalif ajouté après Galerie mouride');
 }
 
 String conferenceItems() => List<String>.generate(noms.length, (i) {
@@ -217,14 +218,18 @@ const auditNew = r'''
 void patchAudit() {
   final path = '$siteDir\\tools\\audit_site.dart';
   var text = File(path).readAsStringSync();
-  text = text.replaceFirst(
-    "'>Galerie mouride<'",
-    "'>Galerie mouride<', '>Conférences<'",
-  );
-  text = text.replaceFirst(
-    "'galerie-mouride']",
-    "'galerie-mouride', 'conferences']",
-  );
+  if (!text.contains("'>Taalif<'")) {
+    text = text.replaceFirst(
+      "'>Galerie mouride<'",
+      "'>Galerie mouride<', '>Taalif<', '>Conférences<'",
+    );
+  }
+  if (!text.contains("'conferences']")) {
+    text = text.replaceFirst(
+      "'galerie-mouride']",
+      "'galerie-mouride', 'conferences']",
+    );
+  }
   if (!text.contains('CONFERENCES pistes')) {
     const finalMarker = "  stdout.writeln('Pages : \${files.length}";
     text = text.replaceFirst(finalMarker, auditNew + finalMarker);
@@ -235,6 +240,7 @@ void patchAudit() {
 void patchMemo() {
   final path = '$siteDir\\DEMARRAGE.md';
   var text = File(path).readAsStringSync();
+  if (text.contains('Taalif')) return;
   text = text.replaceAll('814 entrées', '836 entrées');
   const marker = '- `index.html#videos-accueil` :';
   if (!text.contains(marker)) {
@@ -243,7 +249,7 @@ void patchMemo() {
   }
   text = text.replaceFirst(
     marker,
-    '- `index.html` : cinquième bouton mouride « Conférences » à côté de « Galerie mouride », vers `voie-mouride.html#conferences` (22 MP3 de S. Moustapha Saliou, préfixe R2 `CONFERENCES/`, lecteur natif, aucun téléchargement).\n$marker',
+    '- `index.html` : bouton mouride « Taalif » inséré après « Galerie mouride », vers `assets/pdf/xarnubi.pdf`.\n$marker',
   );
   write(path, text);
 }
