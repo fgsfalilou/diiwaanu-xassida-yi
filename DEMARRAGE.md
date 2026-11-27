@@ -23,7 +23,7 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio38`. Toute modification CSS/JS doit passer à `biblio39` (prochaine valeur) puis mettre à jour
+- Cache des assets : `?v=biblio40`. Toute modification CSS/JS doit passer à `biblio41` (prochaine valeur) puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
