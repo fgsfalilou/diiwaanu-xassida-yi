@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio31')) {
+    if (!html.contains('?v=biblio32')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -180,28 +180,34 @@ void main() {
   }
 
   final media = read('media.html');
-  for (final marker in ['id="direct-youtube"', 'Regarder sur YouTube ↗']) {
+  for (final marker in ['id="nos-videos"', '<video controls', 'controlsList="nodownload"']) {
     if (!media.contains(marker)) {
       stdout.writeln('MEDIA $marker : absent');
       problems++;
     }
   }
-  final videoLinks = RegExp(r'class="video-btn"').allMatches(media).length;
-  if (videoLinks != 7) {
-    stdout.writeln('MEDIA liens YouTube : $videoLinks (attendu 7)');
+  final lecteursVideo = '<video'.allMatches(media).length;
+  if (lecteursVideo != 3) {
+    stdout.writeln('MEDIA lecteurs vidéo : $lecteursVideo (attendu 3)');
+    problems++;
+  }
+  if (!media.contains('VIDEOS/promo-site.mp4') ||
+      !media.contains('VIDEOS/promo-app.mp4') ||
+      !media.contains('VIDEOS/promo-site-et-app.mp4')) {
+    stdout.writeln('MEDIA : URLs R2 vidéo manquantes');
     problems++;
   }
   if (media.contains('youtube.com/embed') || media.contains('youtube-nocookie') || media.contains('<iframe')) {
     stdout.writeln('MEDIA : lecteur YouTube intégré détecté');
     problems++;
   }
-  final indexChaines = '"kind":"Chaîne YouTube"'.allMatches(indexJs).length;
-  if (indexChaines != 7) {
-    stdout.writeln('INDEX chaînes : $indexChaines (attendu 7)');
+  final indexVideos = '"kind":"Vidéo"'.allMatches(indexJs).length;
+  if (indexVideos != 3) {
+    stdout.writeln('INDEX vidéos : $indexVideos (attendu 3)');
     problems++;
   }
-  if (!recherche.contains('data-search-kind="Chaîne YouTube"')) {
-    stdout.writeln('RECHERCHE filtre chaînes : absent');
+  if (!recherche.contains('data-search-kind="Vidéo"')) {
+    stdout.writeln('RECHERCHE filtre vidéos : absent');
     problems++;
   }
   stdout.writeln('Pages : ${files.length} · URLs sitemap : ${locs.length} · Index recherche : $entrees · Problèmes : $problems');

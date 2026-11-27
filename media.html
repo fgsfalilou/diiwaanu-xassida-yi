@@ -14,8 +14,8 @@
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#0B1E15">
   <link rel="icon" type="image/png" href="assets/app-icon.png">
-  <link rel="stylesheet" href="assets/css/site.css?v=biblio31">
-  <script src="assets/js/site.js?v=biblio31" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=biblio32">
+  <script src="assets/js/site.js?v=biblio32" defer></script>
 </head>
 <body id="haut">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -66,7 +66,7 @@
     <div class="hero">
       <p class="eyebrow">Média</p>
       <h1>Audio et images</h1>
-      <p class="lead">Écoutez les khassaïdes en ligne, parcourez les captures de l’application et trouvez les directs mourides sur YouTube, sans lecteur intégré ni suivi.</p>
+      <p class="lead">Écoutez les khassaïdes en ligne, parcourez les captures de l’application et regardez nos vidéos de présentation avec le bouton play, sans lecteur externe ni suivi.</p>
       <p class="ornament" aria-hidden="true">◆ ◆ ◆</p>
     </div>
   </div>
@@ -138,13 +138,13 @@
       <div class="section-head">
         <span class="kicker">Média</span>
         <h2>Audio et images du projet</h2>
-        <p>Le média de ce site reste volontairement simple : une page d’écoute en ligne, des captures réelles de l’application et l’icône utilisée sur le site et dans l’application. Aucun lecteur externe, aucune publicité, aucun suivi.</p>
+        <p>Le média de ce site reste volontairement simple : une page d’écoute en ligne, des captures réelles de l’application et trois vidéos hébergées chez nous. Aucun lecteur externe, aucune publicité, aucun suivi.</p>
       </div>
       <div class="card-grid">
         <article class="card"><div class="mark" aria-hidden="true">01</div><h3>Audio des khassaïdes</h3><p>Vingt-trois enregistrements diffusés depuis le stockage de l’application. La lecture reste en ligne : aucun fichier n’est enregistré sur le téléphone.</p><p><a class="btn btn-gold" href="audio.html">Ouvrir la page audio →</a></p></article>
         <article class="card"><div class="mark" aria-hidden="true">02</div><h3>Livres et lecture</h3><p>Les PDF sont consultables depuis la bibliothèque, en ligne ou dans l’application après téléchargement volontaire.</p><p><a class="btn btn-gold" href="livres.html">Ouvrir les livres →</a></p></article>
         <article class="card"><div class="mark" aria-hidden="true">03</div><h3>Icône du projet</h3><p>La même icône accompagne le site et l’application Android, dans un cadre vert profond et or.</p><p><a class="btn btn-gold" href="assets/app-icon.png" target="_blank" rel="noopener">Voir l’icône →</a></p></article>
-        <article class="card"><div class="mark" aria-hidden="true">04</div><h3>En direct sur YouTube</h3><p>Les chaînes mourides et la Grande Mosquée de Touba, en simples liens externes : aucun lecteur Google intégré.</p><p><a class="btn btn-gold" href="#direct-youtube">Voir les chaînes →</a></p></article>
+        <article class="card"><div class="mark" aria-hidden="true">04</div><h3>Vidéos du projet</h3><p>Trois présentations hébergées sur notre stockage, lisibles ici avec le bouton play du navigateur.</p><p><a class="btn btn-gold" href="#nos-videos">Voir les vidéos →</a></p></article>
       </div>
     </section>
 
@@ -167,51 +167,42 @@
       </div>
     </section>
 
-    <section class="video-direct" id="direct-youtube">
+        <section class="nos-videos" id="nos-videos">
       <div class="section-head">
-        <span class="kicker">En direct</span>
-        <h2>Les chaînes mourides sur YouTube</h2>
-        <p>Sept chaînes qui diffusent des prières, des enseignements et des grands rendez-vous mourides. Chaque lien ouvre l’onglet « Direct » de la chaîne dans un nouvel onglet. Nous n’intégrons aucun lecteur YouTube ici : aucun cookie ni suivi Google n’est chargé sur notre page.</p>
+        <span class="kicker">Vidéos</span>
+        <h2>Nos vidéos de présentation</h2>
+        <p>Trois vidéos réalisées pour le projet et hébergées sur notre stockage R2. Le bouton play est celui du lecteur du navigateur : aucun lecteur Google, aucune publicité, aucun cookie de suivi.</p>
       </div>
-      <p class="video-note">Les directs dépendent de ces chaînes externes : leur disponibilité et leurs programmes ne sont pas contrôlés par Diiwaanu Xassida Yi.</p>
       <div class="video-grid">
-        <article class="video-card">
-          <div class="video-card-head"><span class="card-index">01</span><h3>GMT -Tv — Grande Mosquée de Touba</h3></div>
-          <p>Chaîne officielle IP-TV de la Grande Mosquée de Touba, par Moukhaddamatoul Khidma : prières, conférences et directs depuis la mosquée.</p>
-          <p><a class="video-btn" href="https://www.youtube.com/@GMTTv/streams" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></p>
+        <article class="video-card" id="video-promo-site">
+          <div class="video-card-head"><span class="card-index">≈ 28 s</span><h3>Le site en 28 secondes</h3></div>
+          <video controls playsinline preload="metadata" controlsList="nodownload"
+                 poster="assets/prayer_background.jpg" aria-label="Le site en 28 secondes — vidéo de présentation">
+            <source src="https://pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev/VIDEOS/promo-site.mp4" type="video/mp4">
+            Votre navigateur ne lit pas les vidéos MP4. Ouvrez cette page avec un navigateur récent.
+          </video>
+          <p>La bibliothèque, la voie mouride, l’audio et la recherche globale en un parcours rapide.</p>
         </article>
-        <article class="video-card">
-          <div class="video-card-head"><span class="card-index">02</span><h3>Rafah TV International</h3></div>
-          <p>Chaîne culturelle et religieuse basée à Touba, près de la Grande Mosquée : directs, reportages et actualités mourides.</p>
-          <p><a class="video-btn" href="https://www.youtube.com/@rafahtvinternational3478/streams" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></p>
+        <article class="video-card" id="video-promo-app">
+          <div class="video-card-head"><span class="card-index">≈ 33 s</span><h3>L’application en 33 secondes</h3></div>
+          <video controls playsinline preload="metadata" controlsList="nodownload"
+                 poster="assets/feature-graphic.png" aria-label="L’application en 33 secondes — vidéo de présentation">
+            <source src="https://pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev/VIDEOS/promo-app.mp4" type="video/mp4">
+            Votre navigateur ne lit pas les vidéos MP4. Ouvrez cette page avec un navigateur récent.
+          </video>
+          <p>Les khassaïdes, les prières, les widgets et XAM YOONWI tels qu’ils apparaissent sur le téléphone.</p>
         </article>
-        <article class="video-card">
-          <div class="video-card-head"><span class="card-index">03</span><h3>Bichri TV International - HD</h3></div>
-          <p>Télévision islamique au service de Wakeur Xaadimu Rassoul : directs des Jataayu Mouride, Magal, Gamous et Ziarras.</p>
-          <p><a class="video-btn" href="https://www.youtube.com/@bichritv/streams" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></p>
-        </article>
-        <article class="video-card">
-          <div class="video-card-head"><span class="card-index">04</span><h3>As-Samadiyya TV</h3></div>
-          <p>Dahira Yi du Dimanche : enseignements, rencontres et retransmissions en direct en haute définition.</p>
-          <p><a class="video-btn" href="https://www.youtube.com/@as-samadiyyatv7927/streams" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></p>
-        </article>
-        <article class="video-card">
-          <div class="video-card-head"><span class="card-index">05</span><h3>Al Khadimiyyah TV</h3></div>
-          <p>Chaîne dédiée au patrimoine mouride : khassaïdes en continu, enseignements et directs depuis Touba.</p>
-          <p><a class="video-btn" href="https://www.youtube.com/channel/UCqbQTS505CVDNNmPI0KwoYA/streams" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></p>
-        </article>
-        <article class="video-card">
-          <div class="video-card-head"><span class="card-index">06</span><h3>Al Mouridiyyah TV</h3></div>
-          <p>Chaîne d’Hizbut Tarqiyyah, « À la découverte de l’Univers Touba » : matinale As-Sabaah et directs.</p>
-          <p><a class="video-btn" href="https://www.youtube.com/@Almouridiyyah_Tv_Officiel/streams" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></p>
-        </article>
-        <article class="video-card">
-          <div class="video-card-head"><span class="card-index">07</span><h3>Touba TV Officiel</h3></div>
-          <p>Directs et événements de Touba : discours du Khalife général,Magal et rencontres de la cité sainte.</p>
-          <p><a class="video-btn" href="https://www.youtube.com/channel/UCavUkP6uhnT8wJpFgu-Q3kg/streams" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a></p>
+        <article class="video-card" id="video-promo-site-et-app">
+          <div class="video-card-head"><span class="card-index">≈ 30 s</span><h3>Le site et l’application</h3></div>
+          <video controls playsinline preload="metadata" controlsList="nodownload"
+                 poster="assets/prayer_background.jpg" aria-label="Le site et l’application — vidéo de présentation">
+            <source src="https://pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev/VIDEOS/promo-site-et-app.mp4" type="video/mp4">
+            Votre navigateur ne lit pas les vidéos MP4. Ouvrez cette page avec un navigateur récent.
+          </video>
+          <p>Les deux projets réunis : le site vitrine et l’application Android, en trente secondes.</p>
         </article>
       </div>
-      <p class="video-note">Aucune vidéo n’est hébergée ni copiée sur ce site. Ces liens sont fournis à titre d’accès aux diffusions publiques.</p>
+      <p class="video-note">Les fichiers restent en ligne : aucun téléchargement n’est proposé et aucune donnée n’est envoyée à un service tiers.</p>
     </section>
   </div>
 </main>
