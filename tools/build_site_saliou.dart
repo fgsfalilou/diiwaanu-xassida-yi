@@ -312,8 +312,25 @@ void patchMemo() {
   stdout.writeln('Mémo : page Saliou Sow documentée');
 }
 
+void patchHomeButton() {
+  final file = File('$siteDir\\index.html');
+  var html = file.readAsStringSync(encoding: utf8);
+  if (html.contains('href="$newPage"') &&
+      html.contains('mouride-btn-num" aria-hidden="true">07')) return;
+  const conferenceButton = '<a class="mouride-btn" href="conferences.html"><span class="mouride-btn-num" aria-hidden="true">06</span><span>Conférences</span></a>';
+  if (!html.contains(conferenceButton)) {
+    stdout.writeln('ACCUEIL : bouton Conférences introuvable');
+    return;
+  }
+  html = html.replaceFirst(conferenceButton, '''$conferenceButton
+        <a class="mouride-btn" href="$newPage" aria-label="Conférences de Serigne Saliou Sow"><span class="mouride-btn-num" aria-hidden="true">07</span><span>Conférences — S. Saliou Sow</span></a>''');
+  file.writeAsStringSync(html, encoding: utf8, flush: true);
+  stdout.writeln('Accueil : bouton « Conférences — S. Saliou Sow » ajouté');
+}
+
 void main() {
   patchNavigation();
+  patchHomeButton();
   write(newPage, buildPage());
   patchCss();
   patchSitemap();
