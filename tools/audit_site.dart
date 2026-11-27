@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio43')) {
+    if (!html.contains('?v=biblio44')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,12 +84,12 @@ void main() {
     }
   }
 
-  if (files.length != 24) {
-    stdout.writeln('PAGES ATTENDUES : 24, trouvé ${files.length}');
+  if (files.length != 25) {
+    stdout.writeln('PAGES ATTENDUES : 25, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 24) {
-    stdout.writeln('SITEMAP ATTENDU : 24 URL, trouvé ${locs.length}');
+  if (locs.length != 25) {
+    stdout.writeln('SITEMAP ATTENDU : 25 URL, trouvé ${locs.length}');
     problems++;
   }
 
@@ -288,6 +288,32 @@ void main() {
   }
   if (RegExp(r'<audio\b').allMatches(confPage).length != 1) {
     stdout.writeln('CONFERENCES : le lecteur unique est attendu');
+    problems++;
+  }
+  final saliouPage = read('conferences-saliou-sow.html');
+  final saliouCount = 'class="playlist-row"'.allMatches(saliouPage).length;
+  if (saliouCount != 36) {
+    stdout.writeln('SALIOU SOW pistes : $saliouCount (attendu 36)');
+    problems++;
+  }
+  final saliouCss = read('assets/css/site.css');
+  if (!saliouPage.contains('id="conferences"') ||
+      !saliouPage.contains('id="playlist"') ||
+      !saliouPage.contains('id="saliou-piste-01"') ||
+      !saliouPage.contains('id="saliou-piste-36"') ||
+      !saliouPage.contains('assets/conferences/serigne-saliou-sow.png') ||
+      !saliouCss.contains('.conf-saliou .conf-header') ||
+      !saliouCss.contains('serigne-saliou-sow.png')) {
+    stdout.writeln('SALIOU SOW : page dédiée incomplète');
+    problems++;
+  }
+  if (!saliouPage.contains('/CONFERENCES_SALIOU_SOW/s._saliou_sow_-_01.mp3') ||
+      !saliouPage.contains('/CONFERENCES_SALIOU_SOW/s._saliou_sow_-_36.mp3')) {
+    stdout.writeln('SALIOU SOW : URLs R2 manquantes');
+    problems++;
+  }
+  if (RegExp(r'<audio\b').allMatches(saliouPage).length != 1) {
+    stdout.writeln('SALIOU SOW : le lecteur unique est attendu');
     problems++;
   }
   if (!voieInfos.contains('href="conferences.html"')) {
