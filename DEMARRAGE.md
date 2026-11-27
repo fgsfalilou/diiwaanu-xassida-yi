@@ -23,7 +23,7 @@ Dernier audit connu : **22 pages · 22 URL · 814 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio33`. Toute modification CSS/JS doit passer à `biblio33` (prochaine valeur : `biblio34`) puis mettre à jour
+- Cache des assets : `?v=biblio34`. Toute modification CSS/JS doit passer à `biblio34` (prochaine valeur : `biblio34`) puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -36,6 +36,7 @@ Dernier audit connu : **22 pages · 22 URL · 814 entrées de recherche · 0 pro
   (liens vers les chapitres réels de `xam-yoonwi.html`).
 - `audio.html` : playlist unique de 23 MP3, lecture en ligne via R2, aucun `download`.
 - `recherche.html` + `assets/js/search-data.js` : 814 entrées générées (pages, livres, audio, vidéos), recherche 100 % locale.
+- `index.html#videos-accueil` : à la place de l’ancien bloc « À la une », les trois vidéos du projet et les sept aperçus YouTube ; les quatre boutons mourides sont conservés au-dessus. `media.html` garde les mêmes sections.
 - `media.html#nos-videos` : trois vidéos du projet (`promo-site`, `promo-app`, `promo-site-et-app`) hébergées dans le bucket R2 sous `VIDEOS/`, lues avec le lecteur HTML5 natif. Aucun lecteur tiers, aucun iframe, aucun cookie.
 - `media.html#direct-youtube` : sept chaînes mourides en aperçus cliquables ; miniatures stockées dans `assets/youtube-previews/`, téléchargées une seule fois. Un clic ouvre YouTube dans un nouvel onglet : aucun lecteur intégré, aucun appel à Google au chargement de la page.
 - `index.html` : quatre boutons mourides juste au-dessus de la grille « À la une ».
@@ -60,7 +61,7 @@ Puis, depuis la racine du site : `dart run tools/audit_site.dart`.
 - `tools/audit_site.dart` : liens, ancres, doublons, cache, sitemap, playlist, recherche (chemin relatif au dépôt).
 - `tools/serve_site.dart` : serveur local sans dépendance (port 8765).
 - `tools/build_site_updates.dart`, `tools/build_site_sections.dart`, `tools/build_site_mouride.dart`,
-  `tools/build_site_youtube.dart`, `tools/build_site_videos.dart` et `tools/build_site_youtube_previews.dart` : scripts historiques des ajouts de novembre 2026 ;
+  `tools/build_site_youtube.dart`, `tools/build_site_videos.dart` et `tools/build_site_youtube_previews.dart`, `tools/build_site_home_videos.dart` : scripts historiques des ajouts de novembre 2026 ;
   leurs chemins sont codés en dur pour la machine d’origine et doivent être adaptés avant réutilisation.
 
 ## Déploiement et liens

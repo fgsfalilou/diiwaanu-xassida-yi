@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio33')) {
+    if (!html.contains('?v=biblio34')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -95,13 +95,26 @@ void main() {
 
   String read(String name) => File('$dir/$name').readAsStringSync();
   final home = read('index.html');
-  for (final marker in ['id="actualites-accueil"', 'id="agenda-accueil"', 'href="agenda.html"', 'href="recherche.html"']) {
+  for (final marker in ['id="videos-accueil"', 'id="nos-videos"', 'id="direct-youtube"', 'id="agenda-accueil"', 'href="actualites.html"', 'href="recherche.html"']) {
     if (!home.contains(marker)) {
       stdout.writeln('ACCUEIL $marker : absent');
       problems++;
     }
   }
 
+  if (home.contains('<span class="kicker">À la une</span>')) {
+    stdout.writeln('ACCUEIL : bloc « À la une » toujours présent');
+    problems++;
+  }
+  final homeApercus = 'class="youtube-preview"'.allMatches(home).length;
+  if (homeApercus != 7) {
+    stdout.writeln('ACCUEIL aperçus YouTube : $homeApercus (attendu 7)');
+    problems++;
+  }
+  if (home.contains('<iframe')) {
+    stdout.writeln('ACCUEIL : lecteur intégré détecté');
+    problems++;
+  }
   final voie = read('voie-mouride.html');
   for (final marker in ['id="sous-rubriques"', 'id="fondements"', 'id="lumiere"']) {
     if (!voie.contains(marker)) {

@@ -7,7 +7,7 @@ import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio32';
-const version = 'biblio33';
+const version = 'biblio34';
 
 final channels = <Map<String, Object>>[
   {
