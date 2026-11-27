@@ -2083,3 +2083,84 @@ footer a { color: var(--gold-light); }
   .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .video-card:last-child { grid-column: 1 / -1; max-width: 620px; }
 }
+
+/* ---------- Aperçus YouTube : miniatures locales, aucun lecteur tiers chargé ---------- */
+.youtube-direct { margin-top: 26px; scroll-margin-top: 24px; }
+.youtube-direct .section-head { margin-bottom: 14px; }
+.youtube-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.youtube-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid rgba(201, 154, 46, .42);
+  border-top: 3px solid rgba(201, 154, 46, .72);
+  border-radius: var(--radius);
+  background: rgba(6, 30, 19, .78);
+  scroll-margin-top: 24px;
+}
+.youtube-preview {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(201, 154, 46, .55);
+  border-radius: 12px;
+  background: var(--deep);
+}
+.youtube-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 30, 19, 0) 45%, rgba(6, 30, 19, .82));
+}
+.youtube-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(201, 154, 46, .95);
+  border-radius: 50%;
+  background: rgba(6, 30, 19, .72);
+  color: var(--gold-light);
+  font-size: 1.5rem;
+  padding-left: 4px;
+}
+.preview-cta {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(201, 154, 46, .92);
+  color: #061E13;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.youtube-preview:hover .play-badge,
+.youtube-preview:focus-visible .play-badge {
+  background: rgba(201, 154, 46, .95);
+  color: #061E13;
+}
+.youtube-card-head { display: flex; align-items: baseline; gap: 10px; }
+.youtube-card h3 { margin: 0; color: #FFF7E2; font-size: 1.12rem; line-height: 1.35; }
+.youtube-card p { margin: 0; color: #E7F0E6; }
+.youtube-card .btn { margin-top: auto; align-self: flex-start; }
+@media (min-width: 860px) {
+  .youtube-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

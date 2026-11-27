@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio32')) {
+    if (!html.contains('?v=biblio33')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -208,6 +208,35 @@ void main() {
   }
   if (!recherche.contains('data-search-kind="Vidéo"')) {
     stdout.writeln('RECHERCHE filtre vidéos : absent');
+    problems++;
+  }
+  final youtubePreviews = 'class="youtube-preview"'.allMatches(media).length;
+  if (youtubePreviews != 7) {
+    stdout.writeln('MEDIA aperçus YouTube : $youtubePreviews (attendu 7)');
+    problems++;
+  }
+  for (final marker in [
+    'id="direct-youtube"',
+    'assets/youtube-previews/gmt-tv.jpg',
+    'assets/youtube-previews/touba-tv.jpg',
+    'target="_blank" rel="noopener noreferrer"',
+  ]) {
+    if (!media.contains(marker)) {
+      stdout.writeln('MEDIA $marker : absent');
+      problems++;
+    }
+  }
+  if (media.contains('i.ytimg.com') || media.contains('youtube.com/embed') || media.contains('<iframe')) {
+    stdout.writeln('MEDIA : chargement tiers ou lecteur intégré détecté');
+    problems++;
+  }
+  final indexChaines = '"kind":"Chaîne YouTube"'.allMatches(indexJs).length;
+  if (indexChaines != 7) {
+    stdout.writeln('INDEX chaînes : $indexChaines (attendu 7)');
+    problems++;
+  }
+  if (!recherche.contains('data-search-kind="Chaîne YouTube"')) {
+    stdout.writeln('RECHERCHE filtre chaînes : absent');
     problems++;
   }
   stdout.writeln('Pages : ${files.length} · URLs sitemap : ${locs.length} · Index recherche : $entrees · Problèmes : $problems');
