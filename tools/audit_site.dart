@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio30')) {
+    if (!html.contains('?v=biblio31')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -179,5 +179,30 @@ void main() {
     problems++;
   }
 
+  final media = read('media.html');
+  for (final marker in ['id="direct-youtube"', 'Regarder sur YouTube ↗']) {
+    if (!media.contains(marker)) {
+      stdout.writeln('MEDIA $marker : absent');
+      problems++;
+    }
+  }
+  final videoLinks = RegExp(r'class="video-btn"').allMatches(media).length;
+  if (videoLinks != 7) {
+    stdout.writeln('MEDIA liens YouTube : $videoLinks (attendu 7)');
+    problems++;
+  }
+  if (media.contains('youtube.com/embed') || media.contains('youtube-nocookie') || media.contains('<iframe')) {
+    stdout.writeln('MEDIA : lecteur YouTube intégré détecté');
+    problems++;
+  }
+  final indexChaines = '"kind":"Chaîne YouTube"'.allMatches(indexJs).length;
+  if (indexChaines != 7) {
+    stdout.writeln('INDEX chaînes : $indexChaines (attendu 7)');
+    problems++;
+  }
+  if (!recherche.contains('data-search-kind="Chaîne YouTube"')) {
+    stdout.writeln('RECHERCHE filtre chaînes : absent');
+    problems++;
+  }
   stdout.writeln('Pages : ${files.length} · URLs sitemap : ${locs.length} · Index recherche : $entrees · Problèmes : $problems');
 }

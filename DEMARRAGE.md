@@ -15,7 +15,7 @@ dart run tools/audit_site.dart
 Aucune compilation n’est nécessaire. Ouvrez simplement le dossier comme espace de travail dans OpenCode.
 Pour un aperçu local : `dart run tools/serve_site.dart`, puis `http://127.0.0.1:8765/`.
 
-Dernier audit connu : **22 pages · 22 URL · 804 entrées de recherche · 0 problème**.
+Dernier audit connu : **22 pages · 22 URL · 811 entrées de recherche · 0 problème**.
 
 ## Règles à respecter
 
@@ -23,7 +23,7 @@ Dernier audit connu : **22 pages · 22 URL · 804 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio30`. Toute modification CSS/JS doit passer à `biblio30` puis mettre à jour
+- Cache des assets : `?v=biblio31`. Toute modification CSS/JS doit passer à `biblio32` puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -35,7 +35,8 @@ Dernier audit connu : **22 pages · 22 URL · 804 entrées de recherche · 0 pro
 - `voie-mouride.html#sous-rubriques` : Khalifes, famille, disciples, exils, Sanoussi, témoignages
   (liens vers les chapitres réels de `xam-yoonwi.html`).
 - `audio.html` : playlist unique de 23 MP3, lecture en ligne via R2, aucun `download`.
-- `recherche.html` + `assets/js/search-data.js` : 804 entrées générées (pages, livres, audio), recherche 100 % locale.
+- `recherche.html` + `assets/js/search-data.js` : 811 entrées générées (pages, livres, audio, chaînes YouTube), recherche 100 % locale.
+- `media.html#direct-youtube` : sept chaînes mourides en liens simples « Regarder sur YouTube » (GMT-Tv, Rafah TV, Bichri TV, As-Samadiyya TV, Al Khadimiyyah TV, Al Mouridiyyah TV, Touba TV). Aucun iframe, aucun cookie Google.
 - `index.html` : quatre boutons mourides juste au-dessus de la grille « À la une ».
 - `voie-mouride.html#infos-mourides` : quatre sections « Info mouride », « Xam sa serigne », « Xam sa diine » et « Galerie mouride » (portraits ronds cerclés d’or, lightbox sans dépendance).
 - Navigation déployée sur les 22 pages, avec menu, `noscript` et pied de page synchronisés.
