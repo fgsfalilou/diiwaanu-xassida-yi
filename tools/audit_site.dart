@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio35')) {
+    if (!html.contains('?v=biblio36')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,18 +84,18 @@ void main() {
     }
   }
 
-  if (files.length != 22) {
-    stdout.writeln('PAGES ATTENDUES : 22, trouvé ${files.length}');
+  if (files.length != 23) {
+    stdout.writeln('PAGES ATTENDUES : 23, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 22) {
-    stdout.writeln('SITEMAP ATTENDU : 22 URL, trouvé ${locs.length}');
+  if (locs.length != 23) {
+    stdout.writeln('SITEMAP ATTENDU : 23 URL, trouvé ${locs.length}');
     problems++;
   }
 
   String read(String name) => File('$dir/$name').readAsStringSync();
   final home = read('index.html');
-  for (final marker in ['id="videos-accueil"', 'id="nos-videos"', 'id="direct-youtube"', 'id="agenda-accueil"', 'href="actualites.html"', 'href="recherche.html"']) {
+  for (final marker in ['id="videos-accueil"', 'id="nos-videos"', 'id="direct-youtube"', 'id="agenda-accueil"', 'href="actualites.html"', 'href="recherche.html"', 'href="conferences.html"']) {
     if (!home.contains(marker)) {
       stdout.writeln('ACCUEIL $marker : absent');
       problems++;
@@ -252,14 +252,35 @@ void main() {
     stdout.writeln('RECHERCHE filtre chaînes : absent');
     problems++;
   }
-  final conferences = 'class="conference-item"'.allMatches(voieInfos).length;
+  final confPage = read('conferences.html');
+  final conferences = 'class="playlist-row"'.allMatches(confPage).length;
   if (conferences != 22) {
     stdout.writeln('CONFERENCES pistes : $conferences (attendu 22)');
     problems++;
   }
-  if (!voieInfos.contains('/CONFERENCES/s._moustapha_saliou_-_01.mp3') ||
-      !voieInfos.contains('/CONFERENCES/s._moustapha_saliou_-_22.mp3')) {
+  final confCss = read('assets/css/site.css');
+  if (!confPage.contains('id="conferences"') ||
+      !confPage.contains('id="playlist"') ||
+      !confPage.contains('id="piste-01"') ||
+      !confPage.contains('id="piste-22"') ||
+      !confPage.contains('assets/conferences/serigne-moustapha-saliou.jpg') ||
+      !confCss.contains('serigne-moustapha-saliou-clair.jpg') ||
+      !confCss.contains('.conf-stage') ||
+      !confCss.contains('.conf-playlist')) {
+    stdout.writeln('CONFERENCES : page dédiée incomplète');
+    problems++;
+  }
+  if (!confPage.contains('/CONFERENCES/s._moustapha_saliou_-_01.mp3') ||
+      !confPage.contains('/CONFERENCES/s._moustapha_saliou_-_22.mp3')) {
     stdout.writeln('CONFERENCES : URLs R2 manquantes');
+    problems++;
+  }
+  if (RegExp(r'<audio\b').allMatches(confPage).length != 1) {
+    stdout.writeln('CONFERENCES : le lecteur unique est attendu');
+    problems++;
+  }
+  if (!voieInfos.contains('href="conferences.html"')) {
+    stdout.writeln('VOIE : lien vers la page conférences absent');
     problems++;
   }
   final indexConferences = '"kind":"Conférence"'.allMatches(indexJs).length;

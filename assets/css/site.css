@@ -2164,30 +2164,63 @@ footer a { color: var(--gold-light); }
 @media (min-width: 860px) {
   .youtube-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-
-/* ---------- Conférences : écoute en ligne, lecteur natif, aucun téléchargement ---------- */
-.conference-list {
+/* ---------- Conférences : page dédiée, photo claire en fond, lecteur unique ---------- */
+.conf-header {
+  background-image:
+    radial-gradient(circle at 88% 0%, rgba(201,154,46,.22), transparent 42%),
+    linear-gradient(180deg, rgba(6, 30, 19, .34), rgba(6, 30, 19, .76)),
+    url("../conferences/serigne-moustapha-saliou-clair.jpg"),
+    linear-gradient(155deg, var(--night), var(--green-2) 70%, var(--night-2));
+  background-position: center, center, center 38%, center;
+}
+.conf-hero .lead { max-width: 46rem; }
+.conf-stage {
+  padding: clamp(22px, 4vw, 52px) 0 40px;
+  background-image:
+    linear-gradient(180deg, rgba(6, 30, 19, .30), rgba(6, 30, 19, .78) 62%, rgba(6, 30, 19, .90)),
+    url("../conferences/serigne-moustapha-saliou-clair.jpg");
+  background-size: auto, cover;
+  background-position: center, center 30%;
+  background-repeat: no-repeat;
+}
+.conf-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 12px;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(201, 154, 46, .58);
+  border-radius: 20px;
+  background: rgba(6, 30, 19, .86);
 }
-.conference-item {
-  padding: 12px;
-  border: 1px solid rgba(201, 154, 46, .36);
-  border-radius: 12px;
-  background: rgba(3, 20, 12, .55);
-}
-.conference-item h3 {
-  margin: 0 0 8px;
-  color: #FFF7E2;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-.conference-item audio {
+.conf-intro h2 { margin: 8px 0 12px; color: #FFF7E2; font-size: clamp(1.35rem, 4vw, 1.9rem); }
+.conf-intro p { margin: 0 0 10px; color: #E7F0E6; }
+.conf-intro .links { margin-top: 14px; }
+.conf-portrait { justify-self: center; }
+.conf-portrait img {
   display: block;
-  width: 100%;
-  min-height: 48px;
+  width: clamp(130px, 34vw, 190px);
+  aspect-ratio: 1;
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(3, 20, 12, .45);
 }
-@media (min-width: 860px) {
-  .conference-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.conf-player { margin-bottom: 6px; }
+.conf-playlist { margin-top: 18px; }
+.conf-playlist .playlist-row h3 { font-size: 1rem; }
+.conf-note {
+  margin: 22px 0 0;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(6, 30, 19, .78);
+  color: #E7F0E6;
+}
+.conf-note a { color: var(--gold-light); font-weight: 700; }
+@media (min-width: 820px) {
+  .conf-intro { grid-template-columns: 210px minmax(0, 1fr); }
+  .conf-playlist { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .conf-playlist .playlist-row { grid-template-columns: 48px minmax(0, 1fr); padding: 10px; }
 }
