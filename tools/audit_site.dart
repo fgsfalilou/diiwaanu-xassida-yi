@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio29')) {
+    if (!html.contains('?v=biblio30')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -153,6 +153,30 @@ void main() {
       stdout.writeln('NAVIGATION $name : noscript ou nouveaux liens absents');
       problems++;
     }
+  }
+
+  final homeButtons = read('index.html');
+  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<']) {
+    if (!homeButtons.contains(marker)) {
+      stdout.writeln('BOUTONS $marker : absents');
+      problems++;
+    }
+  }
+  final voieInfos = read('voie-mouride.html');
+  for (final anchor in ['info-mouride', 'xam-sa-serigne', 'xam-sa-diine', 'galerie-mouride']) {
+    if (!voieInfos.contains('id="$anchor"')) {
+      stdout.writeln('SECTION $anchor : absente');
+      problems++;
+    }
+  }
+  if (RegExp(r'class="gallery-item"').allMatches(voieInfos).length < 12) {
+    stdout.writeln('GALERIE : moins de 12 portraits');
+    problems++;
+  }
+  final jsMouride = read('assets/js/site.js');
+  if (!jsMouride.contains('function initMourideGallery()') || !jsMouride.contains('initMourideGallery();')) {
+    stdout.writeln('JS galerie : absent');
+    problems++;
   }
 
   stdout.writeln('Pages : ${files.length} · URLs sitemap : ${locs.length} · Index recherche : $entrees · Problèmes : $problems');

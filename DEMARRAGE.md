@@ -23,7 +23,7 @@ Dernier audit connu : **22 pages · 22 URL · 804 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio29`. Toute modification CSS/JS doit passer à `biblio30` puis mettre à jour
+- Cache des assets : `?v=biblio30`. Toute modification CSS/JS doit passer à `biblio30` puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -36,6 +36,8 @@ Dernier audit connu : **22 pages · 22 URL · 804 entrées de recherche · 0 pro
   (liens vers les chapitres réels de `xam-yoonwi.html`).
 - `audio.html` : playlist unique de 23 MP3, lecture en ligne via R2, aucun `download`.
 - `recherche.html` + `assets/js/search-data.js` : 804 entrées générées (pages, livres, audio), recherche 100 % locale.
+- `index.html` : quatre boutons mourides juste au-dessus de la grille « À la une ».
+- `voie-mouride.html#infos-mourides` : quatre sections « Info mouride », « Xam sa serigne », « Xam sa diine » et « Galerie mouride » (portraits ronds cerclés d’or, lightbox sans dépendance).
 - Navigation déployée sur les 22 pages, avec menu, `noscript` et pied de page synchronisés.
 
 ## Régénération des pages partagées

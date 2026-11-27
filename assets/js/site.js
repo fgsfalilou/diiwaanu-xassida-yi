@@ -213,6 +213,61 @@
   }
 
 
+
+  /* ---------- Infos mourides : navigation interne et galerie agrandie ---------- */
+  function initMourideNav() {
+    const nav = $('.mouride-nav');
+    if (!nav) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    $$('a', nav).forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href') || '';
+        if (!href.startsWith('#')) return;
+        const target = $(href);
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        if (history.replaceState) history.replaceState(null, '', href);
+      });
+    });
+  }
+
+  function initMourideGallery() {
+    const dialog = $('#gallery-lightbox');
+    const items = $$('.gallery-item');
+    if (!dialog || !items.length) return;
+    const image = $('#gallery-image');
+    const caption = $('#gallery-caption');
+    const close = $('[data-gallery-close]', dialog);
+
+    const closeDialog = () => {
+      if (dialog.close) dialog.close(); else dialog.removeAttribute('open');
+      if (image) image.removeAttribute('src');
+    };
+
+    items.forEach((button) => {
+      button.addEventListener('click', () => {
+        const source = button.dataset.src || '';
+        const label = button.dataset.caption || 'Portrait mouride';
+        if (image) {
+          image.src = source;
+          image.alt = label;
+        }
+        if (caption) caption.textContent = label;
+        if (dialog.showModal) dialog.showModal(); else dialog.setAttribute('open', '');
+        if (close) close.focus();
+      });
+    });
+
+    if (close) close.addEventListener('click', closeDialog);
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) closeDialog();
+    });
+    dialog.addEventListener('cancel', () => {
+      if (image) image.removeAttribute('src');
+    });
+  }
+
   /* ---------- Playlist audio : lecture en ligne, aucun téléchargement ---------- */
   function initAudioPlaylist() {
     const player = $('#audio-player');
@@ -369,6 +424,8 @@
     initLibrary();
     initAudioPlaylist();
     initGlobalSearch();
+    initMourideNav();
+    initMourideGallery();
     initToTop();
   });
 })();
