@@ -45,6 +45,17 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - `voie-mouride.html#infos-mourides` : quatre sections « Info mouride », « Xam sa serigne », « Xam sa diine » et « Galerie mouride » (portraits ronds cerclés d’or, lightbox sans dépendance).
 - Navigation déployée sur les 23 pages, avec menu, `noscript` et pied de page synchronisés.
 
+## En attente
+
+- **Conférences _23 à _29** : l’utilisateur va déposer les 7 MP3 manquants dans `C:\Users\akman\Downloads` :
+  `s._moustapha_saliou_-_23.mp3` … `_29.mp3`. Une fois présents, les uploader dans `CONFERENCES/` avec
+  `tools/r2/upload_conferences_to_r2.ps1`, puis régénérer la playlist de `conferences.html`, le sitemap,
+  `assets/js/search-data.js` et l’audit (le contrôle attend actuellement 22 pistes).
+- **Deux chaînes YouTube supplémentaires** : noms et URLs exacts encore à fournir. Les ajouter comme les 7 aperçus
+  existants : miniature locale dans `assets/youtube-previews/`, lien `rel="noopener noreferrer"`, aucun iframe ni appel Google.
+- Search Console : soumettre `sitemap.xml` dans **Sitemaps** si ce n’est pas encore fait.
+- Ancien token Cloudflare créé pour le domaine : à révoquer si ce n’est déjà fait.
+
 ## Régénération des pages partagées
 
 Les deux pages générées depuis l’application sont `nafila-du-jour.html` et `99-noms.html`.
