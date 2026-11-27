@@ -23,7 +23,7 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio46`. Toute modification CSS/JS doit passer à `biblio46` (prochaine valeur) puis mettre à jour
+- Cache des assets : `?v=biblio47`. Toute modification CSS/JS doit passer à `biblio48` puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -45,6 +45,7 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - `media.html#direct-youtube` : sept chaînes mourides en aperçus cliquables ; miniatures stockées dans `assets/youtube-previews/`, téléchargées une seule fois. Un clic ouvre YouTube dans un nouvel onglet : aucun lecteur intégré, aucun appel à Google au chargement de la page.
 - `index.html` : six boutons mourides juste au-dessus de la grille « À la une », le sixième ouvrant le sous-menu des deux conférences.
 - `voie-mouride.html#infos-mourides` : quatre sections « Info mouride », « Xam sa serigne », « Xam sa diine » et « Galerie mouride » (portraits ronds cerclés d’or, lightbox sans dépendance).
+- `voie-mouride.html#info-mouride` : repères biographiques sur Cheikh Ahmadou Bamba (1853-1927), rédigés à partir de sources ouvertes (Wikipédia, Britannica) et reliés au chapitre 2 de XAM YOONWI ; l’entrée « La Voie Mouride » de `assets/js/search-data.js` a été enrichie des mêmes repères.
 - Navigation déployée sur les 25 pages, avec menu, `noscript` et pied de page synchronisés.
 
 ## En attente
