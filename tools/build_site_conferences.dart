@@ -6,7 +6,7 @@ import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio34';
-const version = 'biblio41';
+const version = 'biblio42';
 const r2Base = 'https://pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev';
 
 List<String> get noms => List<String>.generate(
@@ -66,14 +66,14 @@ void bumpVersion() {
 void patchHomeButton() {
   final path = '$siteDir\\index.html';
   var html = File(path).readAsStringSync();
-  if (html.contains('href="assets/pdf/xarnubi.pdf"')) return;
+  if (html.contains('href="taalif.html"')) return;
   const galerie = '''        <a class="mouride-btn" href="voie-mouride.html#galerie-mouride"><span class="mouride-btn-num" aria-hidden="true">04</span><span>Galerie mouride</span></a>''';
   if (!html.contains(galerie)) {
     stdout.writeln('ACCUEIL : bouton Galerie mouride introuvable');
     return;
   }
   html = html.replaceFirst(galerie, '''$galerie
-        <a class="mouride-btn mouride-btn-taalif" href="assets/pdf/xarnubi.pdf" target="_blank" rel="noopener" aria-label="Taalif — ouvrir le PDF Xarnubi"><span class="mouride-btn-num" aria-hidden="true">05</span><span>Taalif</span><span class="mouride-btn-call" lang="ar" dir="rtl" aria-hidden="true">تأليف</span></a>''');
+        <a class="mouride-btn mouride-btn-taalif" href="taalif.html" aria-label="Taalif — lire Xarnubi en ligne"><span class="mouride-btn-num" aria-hidden="true">05</span><span>Taalif</span><span class="mouride-btn-call" lang="ar" dir="rtl" aria-hidden="true">تأليف</span></a>''');
   html = html.replaceFirst('aria-hidden="true">05</span><span>Conférences', 'aria-hidden="true">06</span><span>Conférences');
   write(path, html);
   stdout.writeln('Accueil : bouton Taalif ajouté après Galerie mouride');
@@ -249,7 +249,7 @@ void patchMemo() {
   }
   text = text.replaceFirst(
     marker,
-    '- `index.html` : bouton mouride « Taalif » inséré après « Galerie mouride », vers `assets/pdf/xarnubi.pdf`.\n$marker',
+    '- `index.html` : bouton mouride « Taalif » inséré après « Galerie mouride », vers `taalif.html` (texte extrait du PDF et mis en page avec la palette vert/or).\n$marker',
   );
   write(path, text);
 }

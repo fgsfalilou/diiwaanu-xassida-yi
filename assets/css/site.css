@@ -2283,3 +2283,142 @@ footer a { color: var(--gold-light); }
 @media (max-width: 480px) {
   .conf-playlist .playlist-row { grid-template-columns: 48px minmax(0, 1fr); padding: 10px; }
 }
+
+/* ---------- Taalif : texte extrait, palette vert profond et or ---------- */
+.taalif-page { background: var(--night); }
+.taalif-page .section-head h2 { color: var(--gold-light); }
+.taalif-page .section-head p { color: #E7F0E6; }
+.taalif-hero-call, .taalif-call {
+  font-family: "Amiri Site", serif;
+  color: var(--gold-light);
+  font-weight: 400;
+}
+.taalif-hero-call { font-size: .92em; }
+.taalif-call { margin-right: 8px; font-size: 1.08em; }
+
+.taalif-intro { margin-bottom: 18px; }
+.taalif-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+.taalif-palette span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid rgba(201, 154, 46, .38);
+  border-radius: 999px;
+  background: rgba(6, 30, 19, .72);
+  color: #FFF7E2;
+  font-size: 1rem;
+}
+.swatch {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(247, 230, 168, .62);
+  border-radius: 50%;
+}
+.swatch-night { background: #0B1E15; }
+.swatch-green { background: #0E6B40; }
+.swatch-gold { background: #C99A2E; }
+.swatch-cream { background: #F7E6A8; }
+
+.taalif-note {
+  margin: 0 0 14px;
+  padding: 14px;
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  background: rgba(6, 30, 19, .72);
+  color: #E7F0E6;
+  font-size: 1rem;
+}
+.taalif-jump {
+  margin-bottom: 16px;
+  border: 1px solid rgba(201, 154, 46, .42);
+  border-radius: 14px;
+  background: rgba(6, 30, 19, .78);
+}
+.taalif-jump summary {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 14px;
+  color: var(--gold-light);
+  font-weight: 800;
+  cursor: pointer;
+}
+.taalif-jump-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0 14px 14px;
+}
+.taalif-jump-grid a {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border: 1px solid rgba(201, 154, 46, .40);
+  border-radius: 10px;
+  color: #FFF7E2;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.taalif-jump-grid a:hover, .taalif-jump-grid a:focus-visible {
+  border-color: var(--gold-light);
+  background: rgba(201, 154, 46, .18);
+  text-decoration: none;
+}
+
+.taalif-sheet {
+  scroll-margin-top: 22px;
+  margin-top: 18px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgba(201, 154, 46, .44);
+  border-top: 3px solid rgba(201, 154, 46, .78);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 100% 0, rgba(201, 154, 46, .12), transparent 46%),
+    rgba(6, 30, 19, .82);
+  box-shadow: 0 10px 26px rgba(3, 20, 12, .28);
+}
+.taalif-sheet header { margin-bottom: 14px; }
+.taalif-sheet h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--gold-light);
+  font-size: 1.35rem;
+}
+.taalif-num {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(201, 154, 46, .22);
+  color: var(--gold-light);
+  font-size: 1rem;
+}
+.taalif-verses { columns: 1; column-gap: 28px; }
+.taalif-verses .vers {
+  margin: 0 0 6px;
+  color: #FFF7E2;
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  break-inside: avoid;
+}
+.taalif-verses .vers:nth-child(4n) { color: var(--gold-light); }
+@media (min-width: 820px) {
+  .taalif-verses { columns: 2; }
+}
+@media (max-width: 480px) {
+  .taalif-jump-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

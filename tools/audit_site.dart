@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio41')) {
+    if (!html.contains('?v=biblio42')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,12 +84,12 @@ void main() {
     }
   }
 
-  if (files.length != 23) {
-    stdout.writeln('PAGES ATTENDUES : 23, trouvé ${files.length}');
+  if (files.length != 24) {
+    stdout.writeln('PAGES ATTENDUES : 24, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 23) {
-    stdout.writeln('SITEMAP ATTENDU : 23 URL, trouvé ${locs.length}');
+  if (locs.length != 24) {
+    stdout.writeln('SITEMAP ATTENDU : 24 URL, trouvé ${locs.length}');
     problems++;
   }
 
@@ -177,6 +177,13 @@ void main() {
   }
   if (!File('$dir/assets/pdf/xarnubi.pdf').existsSync()) {
     stdout.writeln('PDF Taalif : assets/pdf/xarnubi.pdf absent');
+    problems++;
+  }
+  final taalif = read('taalif.html');
+  if (!taalif.contains('id="taalif"') ||
+      !taalif.contains('class="taalif-palette"') ||
+      RegExp(r'class="vers"').allMatches(taalif).length < 1000) {
+    stdout.writeln('TAALIF : page, palette ou vers absents');
     problems++;
   }
   final voieInfos = read('voie-mouride.html');

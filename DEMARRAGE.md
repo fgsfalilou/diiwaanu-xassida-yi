@@ -23,7 +23,7 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio41`. Toute modification CSS/JS doit passer à `biblio42` (prochaine valeur) puis mettre à jour
+- Cache des assets : `?v=biblio42`. Toute modification CSS/JS doit passer à `biblio43` (prochaine valeur) puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -35,15 +35,16 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - `voie-mouride.html#sous-rubriques` : Khalifes, famille, disciples, exils, Sanoussi, témoignages
   (liens vers les chapitres réels de `xam-yoonwi.html`).
 - `audio.html` : playlist unique de 23 MP3, lecture en ligne via R2, aucun `download`.
-- `recherche.html` + `assets/js/search-data.js` : 837 entrées générées (pages, livres, audio, vidéos), recherche 100 % locale.
+- `recherche.html` + `assets/js/search-data.js` : 838 entrées générées (pages, livres, audio, vidéos), recherche 100 % locale.
 - `conferences.html` : page dédiée aux conférences de Serigne Moustapha Saliou. Un seul lecteur, 22 pistes compactes, photo éclaircie `assets/conferences/serigne-moustapha-saliou-clair.jpg` en fond et portrait net en haut. `voie-mouride.html#conferences` renvoie désormais vers cette page.
-- `index.html` : six boutons mourides dans l’ordre « Info mouride », « Xam sa serigne », « Xam sa diine », « Galerie mouride », « Taalif » et « Conférences ». Le bouton « Taalif » ouvre `assets/pdf/xarnubi.pdf` dans un nouvel onglet, avec une calligraphie arabe `تأليف` en filigrane doré ; le bouton « Conférences » mène à `conferences.html` (22 MP3 de S. Moustapha Saliou, préfixe R2 `CONFERENCES/`, lecteur unique, aucun téléchargement).
+- `index.html` : six boutons mourides dans l’ordre « Info mouride », « Xam sa serigne », « Xam sa diine », « Galerie mouride », « Taalif » et « Conférences ». Le bouton « Taalif » ouvre `taalif.html`, avec une calligraphie arabe `تأليف` en filigrane doré ; le bouton « Conférences » mène à `conferences.html` (22 MP3 de S. Moustapha Saliou, préfixe R2 `CONFERENCES/`, lecteur unique, aucun téléchargement).
+- `taalif.html` : texte intégral de `assets/pdf/xarnubi.pdf` extrait du PDF natif (36 feuillets, 1078 vers), mis en page en vert profond et or avec palette visible, saut entre feuillets et lien discret vers le PDF source. Seules les coupures de ligne évidentes et la ponctuation typographique ont été rétablies.
 - `index.html#videos-accueil` : à la place de l’ancien bloc « À la une », les trois vidéos du projet et les sept aperçus YouTube ; les six boutons mourides sont conservés au-dessus. `media.html` garde les mêmes sections.
 - `media.html#nos-videos` : trois vidéos du projet (`promo-site`, `promo-app`, `promo-site-et-app`) hébergées dans le bucket R2 sous `VIDEOS/`, lues avec le lecteur HTML5 natif. Aucun lecteur tiers, aucun iframe, aucun cookie.
 - `media.html#direct-youtube` : sept chaînes mourides en aperçus cliquables ; miniatures stockées dans `assets/youtube-previews/`, téléchargées une seule fois. Un clic ouvre YouTube dans un nouvel onglet : aucun lecteur intégré, aucun appel à Google au chargement de la page.
 - `index.html` : six boutons mourides juste au-dessus de la grille « À la une ».
 - `voie-mouride.html#infos-mourides` : quatre sections « Info mouride », « Xam sa serigne », « Xam sa diine » et « Galerie mouride » (portraits ronds cerclés d’or, lightbox sans dépendance).
-- Navigation déployée sur les 23 pages, avec menu, `noscript` et pied de page synchronisés.
+- Navigation déployée sur les 24 pages, avec menu, `noscript` et pied de page synchronisés.
 
 ## En attente
 
