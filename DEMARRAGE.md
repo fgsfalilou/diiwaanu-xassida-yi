@@ -15,7 +15,7 @@ dart run tools/audit_site.dart
 Aucune compilation n’est nécessaire. Ouvrez simplement le dossier comme espace de travail dans OpenCode.
 Pour un aperçu local : `dart run tools/serve_site.dart`, puis `http://127.0.0.1:8765/`.
 
-Dernier audit connu : **22 pages · 22 URL · 814 entrées de recherche · 0 problème**.
+Dernier audit connu : **22 pages · 22 URL · 836 entrées de recherche · 0 problème**.
 
 ## Règles à respecter
 
@@ -23,7 +23,7 @@ Dernier audit connu : **22 pages · 22 URL · 814 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio34`. Toute modification CSS/JS doit passer à `biblio34` (prochaine valeur : `biblio34`) puis mettre à jour
+- Cache des assets : `?v=biblio35`. Toute modification CSS/JS doit passer à `biblio35` (prochaine valeur : `biblio35`) puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -35,7 +35,8 @@ Dernier audit connu : **22 pages · 22 URL · 814 entrées de recherche · 0 pro
 - `voie-mouride.html#sous-rubriques` : Khalifes, famille, disciples, exils, Sanoussi, témoignages
   (liens vers les chapitres réels de `xam-yoonwi.html`).
 - `audio.html` : playlist unique de 23 MP3, lecture en ligne via R2, aucun `download`.
-- `recherche.html` + `assets/js/search-data.js` : 814 entrées générées (pages, livres, audio, vidéos), recherche 100 % locale.
+- `recherche.html` + `assets/js/search-data.js` : 836 entrées générées (pages, livres, audio, vidéos), recherche 100 % locale.
+- `index.html` : cinquième bouton mouride « Conférences » à côté de « Galerie mouride », vers `voie-mouride.html#conferences` (22 MP3 de S. Moustapha Saliou, préfixe R2 `CONFERENCES/`, lecteur natif, aucun téléchargement).
 - `index.html#videos-accueil` : à la place de l’ancien bloc « À la une », les trois vidéos du projet et les sept aperçus YouTube ; les quatre boutons mourides sont conservés au-dessus. `media.html` garde les mêmes sections.
 - `media.html#nos-videos` : trois vidéos du projet (`promo-site`, `promo-app`, `promo-site-et-app`) hébergées dans le bucket R2 sous `VIDEOS/`, lues avec le lecteur HTML5 natif. Aucun lecteur tiers, aucun iframe, aucun cookie.
 - `media.html#direct-youtube` : sept chaînes mourides en aperçus cliquables ; miniatures stockées dans `assets/youtube-previews/`, téléchargées une seule fois. Un clic ouvre YouTube dans un nouvel onglet : aucun lecteur intégré, aucun appel à Google au chargement de la page.

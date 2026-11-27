@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio34')) {
+    if (!html.contains('?v=biblio35')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -169,14 +169,14 @@ void main() {
   }
 
   final homeButtons = read('index.html');
-  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<']) {
+  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<', '>Conférences<']) {
     if (!homeButtons.contains(marker)) {
       stdout.writeln('BOUTONS $marker : absents');
       problems++;
     }
   }
   final voieInfos = read('voie-mouride.html');
-  for (final anchor in ['info-mouride', 'xam-sa-serigne', 'xam-sa-diine', 'galerie-mouride']) {
+  for (final anchor in ['info-mouride', 'xam-sa-serigne', 'xam-sa-diine', 'galerie-mouride', 'conferences']) {
     if (!voieInfos.contains('id="$anchor"')) {
       stdout.writeln('SECTION $anchor : absente');
       problems++;
@@ -250,6 +250,25 @@ void main() {
   }
   if (!recherche.contains('data-search-kind="Chaîne YouTube"')) {
     stdout.writeln('RECHERCHE filtre chaînes : absent');
+    problems++;
+  }
+  final conferences = 'class="conference-item"'.allMatches(voieInfos).length;
+  if (conferences != 22) {
+    stdout.writeln('CONFERENCES pistes : $conferences (attendu 22)');
+    problems++;
+  }
+  if (!voieInfos.contains('/CONFERENCES/s._moustapha_saliou_-_01.mp3') ||
+      !voieInfos.contains('/CONFERENCES/s._moustapha_saliou_-_22.mp3')) {
+    stdout.writeln('CONFERENCES : URLs R2 manquantes');
+    problems++;
+  }
+  final indexConferences = '"kind":"Conférence"'.allMatches(indexJs).length;
+  if (indexConferences != 22) {
+    stdout.writeln('INDEX conférences : $indexConferences (attendu 22)');
+    problems++;
+  }
+  if (!recherche.contains('data-search-kind="Conférence"')) {
+    stdout.writeln('RECHERCHE filtre conférences : absent');
     problems++;
   }
   stdout.writeln('Pages : ${files.length} · URLs sitemap : ${locs.length} · Index recherche : $entrees · Problèmes : $problems');

@@ -2164,3 +2164,30 @@ footer a { color: var(--gold-light); }
 @media (min-width: 860px) {
   .youtube-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* ---------- Conférences : écoute en ligne, lecteur natif, aucun téléchargement ---------- */
+.conference-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+.conference-item {
+  padding: 12px;
+  border: 1px solid rgba(201, 154, 46, .36);
+  border-radius: 12px;
+  background: rgba(3, 20, 12, .55);
+}
+.conference-item h3 {
+  margin: 0 0 8px;
+  color: #FFF7E2;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.conference-item audio {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+}
+@media (min-width: 860px) {
+  .conference-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
