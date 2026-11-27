@@ -232,6 +232,36 @@
     });
   }
 
+  /* ---------- Bouton Conférences : sous-menu local, sans navigation automatique ---------- */
+  function initConferenceMenu() {
+    const toggle = $('[data-conferences-toggle]');
+    const submenu = $('#conferences-submenu');
+    if (!toggle || !submenu) return;
+
+    const setOpen = (open) => {
+      submenu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    $$('a', submenu).forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+    document.addEventListener('click', (event) => {
+      if (!submenu.hidden && !toggle.contains(event.target) && !submenu.contains(event.target)) {
+        setOpen(false);
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !submenu.hidden) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  }
+
   function initMourideGallery() {
     const dialog = $('#gallery-lightbox');
     const items = $$('.gallery-item');
@@ -425,6 +455,7 @@
     initAudioPlaylist();
     initGlobalSearch();
     initMourideNav();
+    initConferenceMenu();
     initMourideGallery();
     initToTop();
   });

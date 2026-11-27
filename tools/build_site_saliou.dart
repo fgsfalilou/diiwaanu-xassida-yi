@@ -315,17 +315,28 @@ void patchMemo() {
 void patchHomeButton() {
   final file = File('$siteDir\\index.html');
   var html = file.readAsStringSync(encoding: utf8);
-  if (html.contains('href="$newPage"') &&
-      html.contains('mouride-btn-num" aria-hidden="true">07')) return;
-  const conferenceButton = '<a class="mouride-btn" href="conferences.html"><span class="mouride-btn-num" aria-hidden="true">06</span><span>Conférences</span></a>';
-  if (!html.contains(conferenceButton)) {
+  if (html.contains('id="conferences-toggle"')) return;
+
+  const oldButton = '<a class="mouride-btn" href="conferences.html"><span class="mouride-btn-num" aria-hidden="true">06</span><span>Conférences</span></a>';
+  const oldExtra = '<a class="mouride-btn" href="conferences-saliou-sow.html" aria-label="Conférences de Serigne Saliou Sow"><span class="mouride-btn-num" aria-hidden="true">07</span><span>Conférences — S. Saliou Sow</span></a>\n';
+  if (!html.contains(oldButton)) {
     stdout.writeln('ACCUEIL : bouton Conférences introuvable');
     return;
   }
-  html = html.replaceFirst(conferenceButton, '''$conferenceButton
-        <a class="mouride-btn" href="$newPage" aria-label="Conférences de Serigne Saliou Sow"><span class="mouride-btn-num" aria-hidden="true">07</span><span>Conférences — S. Saliou Sow</span></a>''');
+  html = html.replaceFirst(oldExtra, '');
+  html = html.replaceFirst(oldButton, '''<div class="mouride-dropdown">
+          <button class="mouride-btn mouride-btn-conferences" type="button" id="conferences-toggle"
+                  aria-expanded="false" aria-controls="conferences-submenu" data-conferences-toggle>
+            <span class="mouride-btn-num" aria-hidden="true">06</span><span>Conférences</span>
+            <span class="mouride-btn-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="mouride-submenu" id="conferences-submenu" hidden>
+            <a href="conferences.html"><span class="mouride-sub-num" aria-hidden="true">01</span><span>Serigne Moustapha Saliou</span></a>
+            <a href="$newPage"><span class="mouride-sub-num" aria-hidden="true">02</span><span>Serigne Saliou Sow</span></a>
+          </div>
+        </div>''');
   file.writeAsStringSync(html, encoding: utf8, flush: true);
-  stdout.writeln('Accueil : bouton « Conférences — S. Saliou Sow » ajouté');
+  stdout.writeln('Accueil : sous-menu « Conférences » avec les deux séries');
 }
 
 void main() {
