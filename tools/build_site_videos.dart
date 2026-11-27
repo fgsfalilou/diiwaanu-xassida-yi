@@ -1,12 +1,12 @@
-// Remplace la section « directs YouTube » par trois vidéos du projet
-// hébergées sur R2 et lues avec le lecteur HTML5 natif (bouton play intégré).
+// Script historique (novembre 2026) : les trois vidéos ont été retirées du site
+// et leurs MP4 supprimés de R2 le 27 novembre 2026. Ne pas relancer.
 
 import 'dart:convert';
 import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio31';
-const version = 'biblio45';
+const version = 'biblio46';
 const r2Base = 'https://pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev';
 
 final videos = <Map<String, String>>[

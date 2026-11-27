@@ -1,3 +1,5 @@
+// Script historique (novembre 2026) : les aperçus YouTube sont en place.
+// Ne pas relancer tel quel : il réintroduirait l'ancienne carte vidéo et l'ancien filtre.
 // Ajoute sept aperçus de chaînes YouTube cliquables dans media.html.
 // Les miniatures sont stockées localement : aucun appel à Google au chargement,
 // aucun lecteur intégré, aucun cookie. Chaque aperçu ouvre YouTube dans un nouvel onglet.
@@ -7,7 +9,7 @@ import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio32';
-const version = 'biblio45';
+const version = 'biblio46';
 
 final channels = <Map<String, Object>>[
   {

@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio45')) {
+    if (!html.contains('?v=biblio46')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -95,7 +95,7 @@ void main() {
 
   String read(String name) => File('$dir/$name').readAsStringSync();
   final home = read('index.html');
-  for (final marker in ['id="videos-accueil"', 'id="nos-videos"', 'id="direct-youtube"', 'id="agenda-accueil"', 'href="actualites.html"', 'href="recherche.html"', 'href="conferences.html"']) {
+  for (final marker in ['id="videos-accueil"', 'id="direct-youtube"', 'id="agenda-accueil"', 'href="actualites.html"', 'href="recherche.html"', 'href="conferences.html"']) {
     if (!home.contains(marker)) {
       stdout.writeln('ACCUEIL $marker : absent');
       problems++;
@@ -111,8 +111,8 @@ void main() {
     stdout.writeln('ACCUEIL aperçus YouTube : $homeApercus (attendu 7)');
     problems++;
   }
-  if (home.contains('<iframe')) {
-    stdout.writeln('ACCUEIL : lecteur intégré détecté');
+  if (home.contains('<iframe') || home.contains('<video') || home.contains('VIDEOS/promo-')) {
+    stdout.writeln('ACCUEIL : lecteur intégré ou vidéo de présentation détecté');
     problems++;
   }
   final voie = read('voie-mouride.html');
@@ -204,21 +204,10 @@ void main() {
   }
 
   final media = read('media.html');
-  for (final marker in ['id="nos-videos"', '<video controls', 'controlsList="nodownload"']) {
-    if (!media.contains(marker)) {
-      stdout.writeln('MEDIA $marker : absent');
-      problems++;
-    }
-  }
-  final lecteursVideo = '<video'.allMatches(media).length;
-  if (lecteursVideo != 3) {
-    stdout.writeln('MEDIA lecteurs vidéo : $lecteursVideo (attendu 3)');
-    problems++;
-  }
-  if (!media.contains('VIDEOS/promo-site.mp4') ||
-      !media.contains('VIDEOS/promo-app.mp4') ||
-      !media.contains('VIDEOS/promo-site-et-app.mp4')) {
-    stdout.writeln('MEDIA : URLs R2 vidéo manquantes');
+  if (media.contains('id="nos-videos"') ||
+      media.contains('<video') ||
+      media.contains('VIDEOS/promo-')) {
+    stdout.writeln('MEDIA : lecteur vidéo encore présent');
     problems++;
   }
   if (media.contains('youtube.com/embed') || media.contains('youtube-nocookie') || media.contains('<iframe')) {
@@ -226,12 +215,12 @@ void main() {
     problems++;
   }
   final indexVideos = '"kind":"Vidéo"'.allMatches(indexJs).length;
-  if (indexVideos != 3) {
-    stdout.writeln('INDEX vidéos : $indexVideos (attendu 3)');
+  if (indexVideos != 0) {
+    stdout.writeln('INDEX vidéos : $indexVideos (attendu 0)');
     problems++;
   }
-  if (!recherche.contains('data-search-kind="Vidéo"')) {
-    stdout.writeln('RECHERCHE filtre vidéos : absent');
+  if (recherche.contains('data-search-kind="Vidéo"')) {
+    stdout.writeln('RECHERCHE filtre vidéos : encore présent');
     problems++;
   }
   final youtubePreviews = 'class="youtube-preview"'.allMatches(media).length;

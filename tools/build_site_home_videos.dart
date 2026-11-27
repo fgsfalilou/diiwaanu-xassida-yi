@@ -1,13 +1,13 @@
-// Remplace le bloc « À la une » de l'accueil par les vidéos du projet
-// et les sept aperçus des chaînes mourides. Les sections restent aussi
-// disponibles sur media.html ; la recherche pointe désormais vers l'accueil.
+// Script historique (novembre 2026) : les trois vidéos du projet ont été retirées
+// du site le 27 novembre 2026 ; seuls les sept aperçus YouTube restent.
+// Ne pas relancer tel quel : il réintroduirait les vidéos supprimées.
 
 import 'dart:convert';
 import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio33';
-const version = 'biblio45';
+const version = 'biblio46';
 
 List<File> htmlFiles() => Directory(siteDir)
     .listSync()
