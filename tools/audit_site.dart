@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio48')) {
+    if (!html.contains('?v=biblio49')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,12 +84,12 @@ void main() {
     }
   }
 
-  if (files.length != 25) {
-    stdout.writeln('PAGES ATTENDUES : 25, trouvé ${files.length}');
+  if (files.length != 26) {
+    stdout.writeln('PAGES ATTENDUES : 26, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 25) {
-    stdout.writeln('SITEMAP ATTENDU : 25 URL, trouvé ${locs.length}');
+  if (locs.length != 26) {
+    stdout.writeln('SITEMAP ATTENDU : 26 URL, trouvé ${locs.length}');
     problems++;
   }
 
@@ -309,6 +309,32 @@ void main() {
   }
   if (RegExp(r'<audio\b').allMatches(saliouPage).length != 1) {
     stdout.writeln('SALIOU SOW : le lecteur unique est attendu');
+    problems++;
+  }
+  final boussoPage = read('conferences-bousso-seck.html');
+  final boussoCount = 'class="playlist-row"'.allMatches(boussoPage).length;
+  if (boussoCount != 14) {
+    stdout.writeln('BOUSSO SECK pistes : $boussoCount (attendu 14)');
+    problems++;
+  }
+  final boussoCss = read('assets/css/site.css');
+  if (!boussoPage.contains('id="conferences"') ||
+      !boussoPage.contains('id="playlist"') ||
+      !boussoPage.contains('id="bousso-piste-01"') ||
+      !boussoPage.contains('id="bousso-piste-14"') ||
+      !boussoPage.contains('assets/conferences/serigneboussoseck.png') ||
+      !boussoCss.contains('.conf-bousso .conf-header') ||
+      !boussoCss.contains('serigneboussoseck.png')) {
+    stdout.writeln('BOUSSO SECK : page dédiée incomplète');
+    problems++;
+  }
+  if (!boussoPage.contains('/CONFERENCES_BOUSSO_SECK/s._bousso_seck_-_01.mp3') ||
+      !boussoPage.contains('/CONFERENCES_BOUSSO_SECK/s._bousso_seck_-_14.mp3')) {
+    stdout.writeln('BOUSSO SECK : URLs R2 manquantes');
+    problems++;
+  }
+  if (RegExp(r'<audio\b').allMatches(boussoPage).length != 1) {
+    stdout.writeln('BOUSSO SECK : le lecteur unique est attendu');
     problems++;
   }
   if (!voieInfos.contains('href="conferences.html"')) {
