@@ -23,7 +23,7 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio47`. Toute modification CSS/JS doit passer à `biblio48` puis mettre à jour
+- Cache des assets : `?v=biblio48`. Toute modification CSS/JS doit passer à `biblio49` puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -40,7 +40,7 @@ Dernier audit connu : **23 pages · 23 URL · 837 entrées de recherche · 0 pro
 - `conferences-saliou-sow.html` : trente-six conférences de Serigne Saliou Sow, même structure que `conferences.html` (photo dédiée, un seul lecteur, playlist R2 `CONFERENCES_SALIOU_SOW/`, aucun téléchargement).
 - `index.html` : six boutons mourides dans l’ordre « Info mouride », « Xam sa serigne », « Xam sa diine », « Galerie mouride », « Taalif » et « Conférences ». Le bouton « Taalif » ouvre `taalif.html`, avec une calligraphie arabe `تأليف` en filigrane doré. Le bouton « Conférences » ouvre un sous-menu local avec deux entrées : « Serigne Moustapha Saliou » (`conferences.html`, 22 MP3, préfixe R2 `CONFERENCES/`) et « Serigne Saliou Sow » (`conferences-saliou-sow.html`, 36 MP3, préfixe R2 `CONFERENCES_SALIOU_SOW/`) ; lecteur unique et aucun téléchargement.
 - `taalif.html` : texte intégral de `assets/pdf/xarnubi.pdf` extrait du PDF natif (36 feuillets, 1079 vers), mis en page en vert profond et or avec palette visible, saut entre feuillets et lien discret vers le PDF source. Seules les coupures de ligne évidentes et la ponctuation typographique ont été rétablies.
-- `index.html#videos-accueil` : les sept aperçus YouTube cliquables et les six boutons mourides conservés au-dessus. Les trois vidéos de présentation ont été retirées du site le 27 novembre 2026.
+- `index.html#accueil-rubriques` : la bibliothèque des khassaïdes est le bouton principal, suivi des six boutons mourides et de huit raccourcis du menu (arabe, français, wolof, anglais, audio, nafilas, 99 Noms, recherche). Le bloc « En direct » et ses sept aperçus YouTube ont été retirés de l’accueil le 28 novembre 2026 ; ils restent sur `media.html#direct-youtube`. Les trois vidéos de présentation avaient été retirées du site le 27 novembre 2026.
 - Vidéos de présentation : sections supprimées de `index.html` et `media.html`, entrées retirées de la recherche et trois MP4 supprimés du préfixe R2 `VIDEOS/`. Aucun lecteur vidéo, aucun iframe, aucun appel tiers.
 - `media.html#direct-youtube` : sept chaînes mourides en aperçus cliquables ; miniatures stockées dans `assets/youtube-previews/`, téléchargées une seule fois. Un clic ouvre YouTube dans un nouvel onglet : aucun lecteur intégré, aucun appel à Google au chargement de la page.
 - `index.html` : six boutons mourides juste au-dessus de la grille « À la une », le sixième ouvrant le sous-menu des deux conférences.

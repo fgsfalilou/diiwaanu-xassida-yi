@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio47')) {
+    if (!html.contains('?v=biblio48')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -95,7 +95,7 @@ void main() {
 
   String read(String name) => File('$dir/$name').readAsStringSync();
   final home = read('index.html');
-  for (final marker in ['id="videos-accueil"', 'id="direct-youtube"', 'id="agenda-accueil"', 'href="actualites.html"', 'href="recherche.html"', 'href="conferences.html"']) {
+  for (final marker in ['id="accueil-rubriques"', 'class="bibliotheque-principale"', 'href="bibliotheque.html"', 'class="menu-raccourcis"', 'href="bibliotheque-arabe.html"', 'href="audio.html"', 'id="agenda-accueil"', 'href="actualites.html"', 'href="recherche.html"', 'href="conferences.html"']) {
     if (!home.contains(marker)) {
       stdout.writeln('ACCUEIL $marker : absent');
       problems++;
@@ -107,8 +107,14 @@ void main() {
     problems++;
   }
   final homeApercus = 'class="youtube-preview"'.allMatches(home).length;
-  if (homeApercus != 7) {
-    stdout.writeln('ACCUEIL aperçus YouTube : $homeApercus (attendu 7)');
+  if (homeApercus != 0) {
+    stdout.writeln('ACCUEIL aperçus YouTube : $homeApercus (attendu 0, directs sur media.html)');
+    problems++;
+  }
+  final raccourcis = RegExp(r'class="menu-raccourcis"[\s\S]*?</nav>').firstMatch(home)?.group(0) ?? '';
+  final nbRaccourcis = '<a href='.allMatches(raccourcis).length;
+  if (nbRaccourcis != 8) {
+    stdout.writeln('ACCUEIL raccourcis du menu : $nbRaccourcis (attendu 8)');
     problems++;
   }
   if (home.contains('<iframe') || home.contains('<video') || home.contains('VIDEOS/promo-')) {
