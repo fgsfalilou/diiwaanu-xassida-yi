@@ -175,11 +175,16 @@ void main() {
   }
 
   final homeButtons = read('index.html');
-  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<', '>Taalif<', '>Conférences<']) {
+  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<', '>Taalif<', '>Conférences<', 'mouride-btn-rajaz']) {
     if (!homeButtons.contains(marker)) {
       stdout.writeln('BOUTONS $marker : absents');
       problems++;
     }
+  }
+  if (homeButtons.indexOf('id="conferences-toggle"') >=
+      homeButtons.indexOf('mouride-btn-rajaz')) {
+    stdout.writeln('BOUTONS Rajaz : doit suivre Conférences sur l’accueil');
+    problems++;
   }
   if (!File('$dir/assets/pdf/xarnubi.pdf').existsSync()) {
     stdout.writeln('PDF Taalif : assets/pdf/xarnubi.pdf absent');

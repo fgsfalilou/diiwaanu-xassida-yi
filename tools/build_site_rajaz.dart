@@ -172,6 +172,26 @@ ${options(artists)}          </select>
   stdout.writeln('Écrit : $newPage (${tracks.length} pistes)');
 }
 
+/// Place le bouton Rajaz juste après le sous-menu Conférences de l'accueil.
+void patchHomeButton() {
+  var html = read('index.html');
+  if (html.contains('class="mouride-btn mouride-btn-rajaz"')) return;
+  const anchor = '          </div>\r\n        </div>\r\n      </nav>';
+  if (!html.contains(anchor)) {
+    throw StateError('Sous-menu Conférences introuvable sur l’accueil');
+  }
+  const button = '        <a class="mouride-btn mouride-btn-rajaz" href="rajaz.html" '
+      'aria-label="Rajaz — écouter les khassaïdes">'
+      '<span class="mouride-btn-num" aria-hidden="true">08</span>'
+      '<span>Rajaz</span></a>\r\n';
+  html = html.replaceFirst(
+    anchor,
+    '          </div>\r\n        </div>\r\n$button      </nav>',
+  );
+  write('index.html', html);
+  stdout.writeln('Accueil : bouton Rajaz ajouté après Conférences');
+}
+
 void patchNavigation() {
   var touched = 0;
   for (final entity in Directory(siteDir).listSync()) {
@@ -557,6 +577,7 @@ void main() {
     throw StateError('230 pistes Rajaz attendues');
   }
   buildPage(data);
+  patchHomeButton();
   patchNavigation();
   patchCss();
   patchJs();
