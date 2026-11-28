@@ -448,11 +448,116 @@
     render();
   }
 
+  /* ---------- Rajaz : un seul lecteur, filtres locaux, aucun téléchargement ---------- */
+  function initRajazPlaylist() {
+    const player = $('#rajaz-player');
+    const list = $('#rajaz-playlist');
+    const status = $('#rajaz-status');
+    const select = $('#rajaz-artist');
+    const search = $('#rajaz-search');
+    const count = $('#rajaz-count');
+    if (!player || !list) return;
+    const rows = $$('.playlist-row', list);
+    if (!rows.length) return;
+    let current = null;
+
+    const titleOf = (row) => row.dataset.title || 'cette khassida';
+    const visible = () => rows.filter((row) => !row.hidden);
+
+    const reflect = () => {
+      rows.forEach((row) => {
+        const playing = row === current && !player.paused;
+        row.classList.toggle('is-current', row === current);
+        const button = $('.playlist-play', row);
+        if (button) {
+          button.textContent = playing ? '❚❚' : '▶';
+          button.setAttribute('aria-label', (playing ? 'Mettre en pause : ' : 'Lire : ') + titleOf(row));
+        }
+      });
+    };
+
+    const announce = (message) => {
+      if (status) status.textContent = message;
+    };
+
+    const setTrack = (row, play) => {
+      if (!row) return;
+      current = row;
+      player.src = row.dataset.src;
+      player.load();
+      announce('En cours : ' + titleOf(row));
+      reflect();
+      if (play) {
+        const pending = player.play();
+        if (pending && pending.catch) {
+          pending.catch(() => announce('Lecture bloquée par le navigateur : utilisez le bouton du lecteur.'));
+        }
+      }
+    };
+
+    const step = (offset) => {
+      const shown = visible();
+      if (!shown.length) return;
+      const index = shown.indexOf(current);
+      const next = index < 0 ? 0 : (index + offset + shown.length) % shown.length;
+      setTrack(shown[next], true);
+    };
+
+    const applyFilters = () => {
+      const artist = select ? select.value : '';
+      const query = search ? search.value.trim().toLowerCase() : '';
+      let shown = 0;
+      rows.forEach((row) => {
+        const artistOk = !artist || row.dataset.artist === artist;
+        const textOk = !query || (row.dataset.search || '').includes(query);
+        row.hidden = !(artistOk && textOk);
+        if (!row.hidden) shown++;
+      });
+      if (count) {
+        count.textContent = shown + ' enregistrement' + (shown > 1 ? 's' : '');
+      }
+      if (current && current.hidden) {
+        current = null;
+        player.pause();
+        player.removeAttribute('src');
+        player.load();
+        announce('Choisissez une khassida pour commencer l’écoute.');
+      }
+      reflect();
+    };
+
+    rows.forEach((row) => {
+      const button = $('.playlist-play', row);
+      if (button) button.addEventListener('click', () => setTrack(row, true));
+    });
+    const previous = $('[data-rajaz-prev]');
+    const next = $('[data-rajaz-next]');
+    if (previous) previous.addEventListener('click', () => step(-1));
+    if (next) next.addEventListener('click', () => step(1));
+    player.addEventListener('play', reflect);
+    player.addEventListener('pause', reflect);
+    player.addEventListener('ended', () => step(1));
+
+    if (select) {
+      const requested = new URLSearchParams(window.location.search).get('artiste');
+      if (requested && rows.some((row) => row.dataset.artist === requested)) {
+        select.value = requested;
+      }
+      select.addEventListener('change', applyFilters);
+    }
+    if (search) {
+      search.addEventListener('input', applyFilters);
+      search.addEventListener('search', applyFilters);
+    }
+    applyFilters();
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initNotifyForm();
     initLibrary();
     initAudioPlaylist();
+    initRajazPlaylist();
     initGlobalSearch();
     initMourideNav();
     initConferenceMenu();

@@ -1,6 +1,6 @@
 // Construit la page des conférences de Serigne Bousso Seck sur le modèle de
 // conferences-saliou-sow.html, puis synchronise navigation, styles, sitemap,
-// recherche, audit, mémo et cache des assets (biblio51).
+// recherche, audit, mémo et cache des assets (biblio52).
 
 import 'dart:convert';
 import 'dart:io';
@@ -456,9 +456,9 @@ void bumpCache() {
       continue;
     }
     final content = entity.readAsStringSync(encoding: utf8);
-    if (!content.contains('biblio51')) continue;
+    if (!content.contains('biblio52')) continue;
     entity.writeAsStringSync(
-      content.replaceAll('biblio51', 'biblio51'),
+      content.replaceAll('biblio52', 'biblio52'),
       encoding: utf8,
       flush: true,
     );
@@ -473,15 +473,15 @@ void bumpCache() {
     final file = File('$appDir\\$relative');
     if (!file.existsSync()) continue;
     final content = file.readAsStringSync(encoding: utf8);
-    if (!content.contains('biblio51')) continue;
+    if (!content.contains('biblio52')) continue;
     file.writeAsStringSync(
-      content.replaceAll('biblio51', 'biblio51'),
+      content.replaceAll('biblio52', 'biblio52'),
       encoding: utf8,
       flush: true,
     );
     changed++;
   }
-  stdout.writeln('Cache : biblio51 sur $changed fichiers');
+  stdout.writeln('Cache : biblio52 sur $changed fichiers');
 }
 
 void main() {

@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio51')) {
+    if (!html.contains('?v=biblio52')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,12 +84,12 @@ void main() {
     }
   }
 
-  if (files.length != 28) {
-    stdout.writeln('PAGES ATTENDUES : 28, trouvé ${files.length}');
+  if (files.length != 29) {
+    stdout.writeln('PAGES ATTENDUES : 29, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 28) {
-    stdout.writeln('SITEMAP ATTENDU : 28 URL, trouvé ${locs.length}');
+  if (locs.length != 29) {
+    stdout.writeln('SITEMAP ATTENDU : 29 URL, trouvé ${locs.length}');
     problems++;
   }
 
@@ -387,6 +387,36 @@ void main() {
   }
   if (RegExp(r'<audio\b').allMatches(djilyPage).length != 1) {
     stdout.writeln('DJILY MBACKE : le lecteur unique est attendu');
+    problems++;
+  }
+  final rajazPage = read('rajaz.html');
+  final rajazCount = '<li class="playlist-row"'.allMatches(rajazPage).length;
+  if (rajazCount != 230) {
+    stdout.writeln('RAJAZ pistes : $rajazCount (attendu 230)');
+    problems++;
+  }
+  if (!rajazPage.contains('id="rajaz-piste-001"') ||
+      !rajazPage.contains('id="rajaz-piste-234"') ||
+      !rajazPage.contains('id="rajaz-player"') ||
+      !rajazPage.contains('id="rajaz-artist"') ||
+      !rajazPage.contains('id="rajaz-search"') ||
+      !rajazPage.contains('id="rajaz-count"')) {
+    stdout.writeln('RAJAZ : page dédiée incomplète');
+    problems++;
+  }
+  if (!rajazPage.contains('/RAJAZ/s._rajaz_-_001.mp3') ||
+      !rajazPage.contains('/RAJAZ/s._rajaz_-_234.mp3')) {
+    stdout.writeln('RAJAZ : URLs R2 manquantes');
+    problems++;
+  }
+  if (RegExp(r'<audio\b').allMatches(rajazPage).length != 1) {
+    stdout.writeln('RAJAZ : le lecteur unique est attendu');
+    problems++;
+  }
+  if (!siteJs.contains('function initRajazPlaylist()') ||
+      !siteJs.contains('initRajazPlaylist();') ||
+      !read('assets/css/site.css').contains('.rajaz-filters')) {
+    stdout.writeln('RAJAZ : filtres ou CSS absents');
     problems++;
   }
   if (!voieInfos.contains('href="conferences.html"')) {
