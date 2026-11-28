@@ -1,6 +1,6 @@
 # Démarrage — Site Diiwaanu Xassida Yi
 
-Site statique, sans backend, sans analytics ni publicité. 27 pages, 27 URL dans le sitemap.
+Site statique, sans backend, sans analytics ni publicité. 28 pages, 28 URL dans le sitemap.
 Dépôt public : `https://github.com/fgsfalilou/diiwaanu-xassida-yi` · branches `main` et `master`.
 Site en ligne : `https://www.diiwaanu-xassida-yi.com/`.
 
@@ -15,7 +15,7 @@ dart run tools/audit_site.dart
 Aucune compilation n’est nécessaire. Ouvrez simplement le dossier comme espace de travail dans OpenCode.
 Pour un aperçu local : `dart run tools/serve_site.dart`, puis `http://127.0.0.1:8765/`.
 
-Dernier audit connu : **27 pages · 27 URL · 838 entrées de recherche · 0 problème**.
+Dernier audit connu : **28 pages · 28 URL · 839 entrées de recherche · 0 problème**.
 
 ## Règles à respecter
 
@@ -23,7 +23,7 @@ Dernier audit connu : **27 pages · 27 URL · 838 entrées de recherche · 0 pro
 - UTF-8 explicite, textes ≥ 16 px, cibles tactiles ≥ 48 px.
 - Orthographe **khassaïdes** en prose ; `Diiwaanu Xassida Yi` inchangé.
 - URLs canoniques, OG et sitemap en `https://www.diiwaanu-xassida-yi.com`.
-- Cache des assets : `?v=biblio50`. Toute modification CSS/JS doit passer à `biblio50` puis mettre à jour
+- Cache des assets : `?v=biblio51`. Toute modification CSS/JS doit passer à `biblio51` puis mettre à jour
   `tools/generate_site_pages.dart` (dans le dépôt privé de l’application) et l’audit.
 - Formulaires en `mailto:beguefallou@gmail.com`, sans backend ni suivi.
 - Aucune donnée d’un autre site (AdSense, GTM, compteurs, réseaux sociaux, IBM Plex) ne doit être reprise.
@@ -35,12 +35,13 @@ Dernier audit connu : **27 pages · 27 URL · 838 entrées de recherche · 0 pro
 - `voie-mouride.html#sous-rubriques` : Khalifes, famille, disciples, exils, Sanoussi, témoignages
   (liens vers les chapitres réels de `xam-yoonwi.html`).
 - `audio.html` : playlist unique de 23 MP3, lecture en ligne via R2, aucun `download`.
-- `recherche.html` + `assets/js/search-data.js` : 838 entrées générées (pages, livres, audio, conférences et chaînes), recherche 100 % locale.
+- `recherche.html` + `assets/js/search-data.js` : 839 entrées générées (pages, livres, audio, conférences et chaînes), recherche 100 % locale.
 - `conferences.html` : page dédiée aux conférences de Serigne Moustapha Saliou. Un seul lecteur, 22 pistes compactes, photo éclaircie `assets/conferences/serigne-moustapha-saliou-clair.jpg` en fond et portrait net en haut. `voie-mouride.html#conferences` renvoie désormais vers cette page.
 - `conferences-saliou-sow.html` : trente-six conférences de Serigne Saliou Sow, même structure que `conferences.html` (photo dédiée, un seul lecteur, playlist R2 `CONFERENCES_SALIOU_SOW/`, aucun téléchargement).
 - `conferences-bousso-seck.html` : quatorze conférences de Serigne Bousso Seck, même structure que `conferences.html` (photo fournie dans le dossier audio, un seul lecteur, playlist R2 `CONFERENCES_BOUSSO_SECK/`, aucun téléchargement).
 - `conferences-bassirou-mbacke.html` : cent trente conférences de Serigne Bassirou Mbacke Xelcome, même structure que `conferences.html` (photo fournie dans le dossier audio, un seul lecteur, playlist R2 `CONFERENCES_BASSIROU_MBACKE/`, aucun téléchargement).
-- `index.html` : six boutons mourides dans l’ordre « Info mouride », « Xam sa serigne », « Xam sa diine », « Galerie mouride », « Taalif » et « Conférences ». Le bouton « Taalif » ouvre `taalif.html`, avec une calligraphie arabe `تأليف` en filigrane doré. Le bouton « Conférences » ouvre un sous-menu local avec quatre entrées : « Serigne Moustapha Saliou » (`conferences.html`, 22 MP3, préfixe R2 `CONFERENCES/`), « Serigne Saliou Sow » (`conferences-saliou-sow.html`, 36 MP3, préfixe R2 `CONFERENCES_SALIOU_SOW/`) et « Serigne Bousso Seck » (`conferences-bousso-seck.html`, 14 MP3, préfixe R2 `CONFERENCES_BOUSSO_SECK/`) et « Serigne Bassirou Mbacke Xelcome » (`conferences-bassirou-mbacke.html`, 130 MP3, préfixe R2 `CONFERENCES_BASSIROU_MBACKE/`) ; lecteur unique et aucun téléchargement.
+- `conferences-djily-mbacke.html` : dix conférences de Serigne Djily Mbacke, même structure que `conferences.html` (photo fournie dans le dossier audio, un seul lecteur, playlist R2 `CONFERENCES_DJILY_MBACKE/`, aucun téléchargement).
+- `index.html` : six boutons mourides dans l’ordre « Info mouride », « Xam sa serigne », « Xam sa diine », « Galerie mouride », « Taalif » et « Conférences ». Le bouton « Taalif » ouvre `taalif.html`, avec une calligraphie arabe `تأليف` en filigrane doré. Le bouton « Conférences » ouvre un sous-menu local avec cinq entrées : « Serigne Moustapha Saliou » (`conferences.html`, 22 MP3, préfixe R2 `CONFERENCES/`), « Serigne Saliou Sow » (`conferences-saliou-sow.html`, 36 MP3, préfixe R2 `CONFERENCES_SALIOU_SOW/`) et « Serigne Bousso Seck » (`conferences-bousso-seck.html`, 14 MP3, préfixe R2 `CONFERENCES_BOUSSO_SECK/`) et « Serigne Bassirou Mbacke Xelcome » (`conferences-bassirou-mbacke.html`, 130 MP3, préfixe R2 `CONFERENCES_BASSIROU_MBACKE/`) et « Serigne Djily Mbacke » (`conferences-djily-mbacke.html`, 10 MP3, préfixe R2 `CONFERENCES_DJILY_MBACKE/`) ; lecteur unique et aucun téléchargement.
 - `taalif.html` : texte intégral de `assets/pdf/xarnubi.pdf` extrait du PDF natif (36 feuillets, 1079 vers), mis en page en vert profond et or avec palette visible, saut entre feuillets et lien discret vers le PDF source. Seules les coupures de ligne évidentes et la ponctuation typographique ont été rétablies.
 - `index.html#accueil-rubriques` : la bibliothèque des khassaïdes est le bouton principal, suivi des six boutons mourides et de huit raccourcis du menu (arabe, français, wolof, anglais, audio, nafilas, 99 Noms, recherche). Le bloc « En direct » et ses sept aperçus YouTube ont été retirés de l’accueil le 28 novembre 2026 ; ils restent sur `media.html#direct-youtube`. Les trois vidéos de présentation avaient été retirées du site le 27 novembre 2026.
 - Vidéos de présentation : sections supprimées de `index.html` et `media.html`, entrées retirées de la recherche et trois MP4 supprimés du préfixe R2 `VIDEOS/`. Aucun lecteur vidéo, aucun iframe, aucun appel tiers.
@@ -48,7 +49,7 @@ Dernier audit connu : **27 pages · 27 URL · 838 entrées de recherche · 0 pro
 - `index.html` : six boutons mourides juste au-dessus de la grille « À la une », le sixième ouvrant le sous-menu des deux conférences.
 - `voie-mouride.html#infos-mourides` : quatre sections « Info mouride », « Xam sa serigne », « Xam sa diine » et « Galerie mouride » (portraits ronds cerclés d’or, lightbox sans dépendance).
 - `voie-mouride.html#info-mouride` : repères biographiques sur Cheikh Ahmadou Bamba (1853-1927), rédigés à partir de sources ouvertes (Wikipédia, Britannica) et reliés au chapitre 2 de XAM YOONWI ; l’entrée « La Voie Mouride » de `assets/js/search-data.js` a été enrichie des mêmes repères.
-- Navigation déployée sur les 27 pages, avec menu, `noscript` et pied de page synchronisés.
+- Navigation déployée sur les 28 pages, avec menu, `noscript` et pied de page synchronisés.
 
 ## En attente
 

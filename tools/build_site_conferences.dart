@@ -6,7 +6,7 @@ import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio34';
-const version = 'biblio50';
+const version = 'biblio51';
 const r2Base = 'https://pub-f07ad970b3b84dfa8539a6cf6ce3f5b3.r2.dev';
 
 List<String> get noms => List<String>.generate(

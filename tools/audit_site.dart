@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio50')) {
+    if (!html.contains('?v=biblio51')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,12 +84,12 @@ void main() {
     }
   }
 
-  if (files.length != 27) {
-    stdout.writeln('PAGES ATTENDUES : 27, trouvé ${files.length}');
+  if (files.length != 28) {
+    stdout.writeln('PAGES ATTENDUES : 28, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 27) {
-    stdout.writeln('SITEMAP ATTENDU : 27 URL, trouvé ${locs.length}');
+  if (locs.length != 28) {
+    stdout.writeln('SITEMAP ATTENDU : 28 URL, trouvé ${locs.length}');
     problems++;
   }
 
@@ -361,6 +361,32 @@ void main() {
   }
   if (RegExp(r'<audio\b').allMatches(bassirouPage).length != 1) {
     stdout.writeln('BASSIROU MBACKE : le lecteur unique est attendu');
+    problems++;
+  }
+  final djilyPage = read('conferences-djily-mbacke.html');
+  final djilyCount = 'class="playlist-row"'.allMatches(djilyPage).length;
+  if (djilyCount != 10) {
+    stdout.writeln('DJILY MBACKE pistes : $djilyCount (attendu 10)');
+    problems++;
+  }
+  final djilyCss = read('assets/css/site.css');
+  if (!djilyPage.contains('id="conferences"') ||
+      !djilyPage.contains('id="playlist"') ||
+      !djilyPage.contains('id="djily-piste-01"') ||
+      !djilyPage.contains('id="djily-piste-10"') ||
+      !djilyPage.contains('assets/conferences/serignedjilymbacke.png') ||
+      !djilyCss.contains('.conf-djily .conf-header') ||
+      !djilyCss.contains('serignedjilymbacke.png')) {
+    stdout.writeln('DJILY MBACKE : page dédiée incomplète');
+    problems++;
+  }
+  if (!djilyPage.contains('/CONFERENCES_DJILY_MBACKE/s._djily_mbacke_-_01.mp3') ||
+      !djilyPage.contains('/CONFERENCES_DJILY_MBACKE/s._djily_mbacke_-_10.mp3')) {
+    stdout.writeln('DJILY MBACKE : URLs R2 manquantes');
+    problems++;
+  }
+  if (RegExp(r'<audio\b').allMatches(djilyPage).length != 1) {
+    stdout.writeln('DJILY MBACKE : le lecteur unique est attendu');
     problems++;
   }
   if (!voieInfos.contains('href="conferences.html"')) {
