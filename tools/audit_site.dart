@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio49')) {
+    if (!html.contains('?v=biblio50')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,12 +84,12 @@ void main() {
     }
   }
 
-  if (files.length != 26) {
-    stdout.writeln('PAGES ATTENDUES : 26, trouvé ${files.length}');
+  if (files.length != 27) {
+    stdout.writeln('PAGES ATTENDUES : 27, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 26) {
-    stdout.writeln('SITEMAP ATTENDU : 26 URL, trouvé ${locs.length}');
+  if (locs.length != 27) {
+    stdout.writeln('SITEMAP ATTENDU : 27 URL, trouvé ${locs.length}');
     problems++;
   }
 
@@ -335,6 +335,32 @@ void main() {
   }
   if (RegExp(r'<audio\b').allMatches(boussoPage).length != 1) {
     stdout.writeln('BOUSSO SECK : le lecteur unique est attendu');
+    problems++;
+  }
+  final bassirouPage = read('conferences-bassirou-mbacke.html');
+  final bassirouCount = 'class="playlist-row"'.allMatches(bassirouPage).length;
+  if (bassirouCount != 130) {
+    stdout.writeln('BASSIROU MBACKE pistes : $bassirouCount (attendu 130)');
+    problems++;
+  }
+  final bassirouCss = read('assets/css/site.css');
+  if (!bassirouPage.contains('id="conferences"') ||
+      !bassirouPage.contains('id="playlist"') ||
+      !bassirouPage.contains('id="bassirou-piste-001"') ||
+      !bassirouPage.contains('id="bassirou-piste-130"') ||
+      !bassirouPage.contains('assets/conferences/serignebassiroumbackexelcom.png') ||
+      !bassirouCss.contains('.conf-bassirou .conf-header') ||
+      !bassirouCss.contains('serignebassiroumbackexelcom.png')) {
+    stdout.writeln('BASSIROU MBACKE : page dédiée incomplète');
+    problems++;
+  }
+  if (!bassirouPage.contains('/CONFERENCES_BASSIROU_MBACKE/s._bassirou_mbacke_-_001.mp3') ||
+      !bassirouPage.contains('/CONFERENCES_BASSIROU_MBACKE/s._bassirou_mbacke_-_130.mp3')) {
+    stdout.writeln('BASSIROU MBACKE : URLs R2 manquantes');
+    problems++;
+  }
+  if (RegExp(r'<audio\b').allMatches(bassirouPage).length != 1) {
+    stdout.writeln('BASSIROU MBACKE : le lecteur unique est attendu');
     problems++;
   }
   if (!voieInfos.contains('href="conferences.html"')) {

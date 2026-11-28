@@ -9,7 +9,7 @@ import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio32';
-const version = 'biblio49';
+const version = 'biblio50';
 
 final channels = <Map<String, Object>>[
   {
@@ -348,7 +348,7 @@ void patchMemo() {
   text = text.replaceAll('807 entrées', '814 entrées');
   text = text.replaceFirst(
     'Toute modification CSS/JS doit passer à `$version` puis mettre à jour',
-    'Toute modification CSS/JS doit passer à `biblio49` puis mettre à jour',
+    'Toute modification CSS/JS doit passer à `biblio50` puis mettre à jour',
   );
   const marker = '- `media.html#nos-videos` : trois vidéos du projet';
   if (!text.contains(marker)) {

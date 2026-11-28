@@ -7,7 +7,7 @@ import 'dart:io';
 
 const siteDir = r'C:\Users\akman\AppData\Local\Temp\opencode\diiwaanu-site';
 const oldVersion = 'biblio33';
-const version = 'biblio49';
+const version = 'biblio50';
 
 List<File> htmlFiles() => Directory(siteDir)
     .listSync()
