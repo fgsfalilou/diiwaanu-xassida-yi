@@ -2584,3 +2584,42 @@ footer a { color: var(--gold-light); }
   color: #E7F0E6;
 }
 .playlist-row[hidden] { display: none; }
+
+/* Filtres de la page FATWA : cibles larges, texte lisible sur mobile. */
+.fatwa-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid rgba(201, 154, 46, 0.45);
+  border-radius: 18px;
+  background: rgba(6, 30, 19, 0.35);
+}
+.fatwa-filters label {
+  display: flex;
+  flex: 1 1 240px;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #F7E6A8;
+}
+.fatwa-filters select,
+.fatwa-filters input {
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid rgba(201, 154, 46, 0.55);
+  border-radius: 12px;
+  background: #061E13;
+  color: #FFF7E2;
+  font: inherit;
+  font-size: 16px;
+}
+.fatwa-filters p {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 14px;
+  color: #E7F0E6;
+}

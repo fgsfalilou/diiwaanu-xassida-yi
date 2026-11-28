@@ -30,7 +30,7 @@ void main() {
       stdout.writeln('BACKDROP $name : $backdrops');
       problems++;
     }
-    if (!html.contains('?v=biblio52')) {
+    if (!html.contains('?v=biblio53')) {
       stdout.writeln('CACHE $name : absent');
       problems++;
     }
@@ -84,12 +84,12 @@ void main() {
     }
   }
 
-  if (files.length != 29) {
-    stdout.writeln('PAGES ATTENDUES : 29, trouvé ${files.length}');
+  if (files.length != 30) {
+    stdout.writeln('PAGES ATTENDUES : 30, trouvé ${files.length}');
     problems++;
   }
-  if (locs.length != 29) {
-    stdout.writeln('SITEMAP ATTENDU : 29 URL, trouvé ${locs.length}');
+  if (locs.length != 30) {
+    stdout.writeln('SITEMAP ATTENDU : 30 URL, trouvé ${locs.length}');
     problems++;
   }
 
@@ -175,7 +175,7 @@ void main() {
   }
 
   final homeButtons = read('index.html');
-  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<', '>Taalif<', '>Conférences<', 'mouride-btn-rajaz']) {
+  for (final marker in ['class="mouride-actions"', '>Info mouride<', '>Xam sa serigne<', '>Xam sa diine<', '>Galerie mouride<', '>Taalif<', '>Conférences<', 'mouride-btn-rajaz', 'mouride-btn-fatwa']) {
     if (!homeButtons.contains(marker)) {
       stdout.writeln('BOUTONS $marker : absents');
       problems++;
@@ -422,6 +422,41 @@ void main() {
       !siteJs.contains('initRajazPlaylist();') ||
       !read('assets/css/site.css').contains('.rajaz-filters')) {
     stdout.writeln('RAJAZ : filtres ou CSS absents');
+    problems++;
+  }
+  final fatwaPage = read('fatwa.html');
+  final fatwaCount = '<li class="playlist-row"'.allMatches(fatwaPage).length;
+  if (fatwaCount != 61) {
+    stdout.writeln('FATWA pistes : $fatwaCount (attendu 61)');
+    problems++;
+  }
+  if (!fatwaPage.contains('id="fatwa-piste-001"') ||
+      !fatwaPage.contains('id="fatwa-piste-061"') ||
+      !fatwaPage.contains('id="fatwa-player"') ||
+      !fatwaPage.contains('id="fatwa-author"') ||
+      !fatwaPage.contains('id="fatwa-search"') ||
+      !fatwaPage.contains('id="fatwa-count"')) {
+    stdout.writeln('FATWA : page dédiée incomplète');
+    problems++;
+  }
+  if (!fatwaPage.contains('/FATWA/fatwa_001.mp3') ||
+      !fatwaPage.contains('/FATWA/fatwa_061.mp3')) {
+    stdout.writeln('FATWA : URLs R2 manquantes');
+    problems++;
+  }
+  if (RegExp(r'<audio\b').allMatches(fatwaPage).length != 1) {
+    stdout.writeln('FATWA : le lecteur unique est attendu');
+    problems++;
+  }
+  if (!siteJs.contains('function initFatwaPlaylist()') ||
+      !siteJs.contains('initFatwaPlaylist();') ||
+      !read('assets/css/site.css').contains('.fatwa-filters')) {
+    stdout.writeln('FATWA : filtres ou CSS absents');
+    problems++;
+  }
+  if (homeButtons.indexOf('mouride-btn-rajaz') >=
+      homeButtons.indexOf('mouride-btn-fatwa')) {
+    stdout.writeln('BOUTONS FATWA : doit suivre Rajaz sur l’accueil');
     problems++;
   }
   if (!voieInfos.contains('href="conferences.html"')) {
